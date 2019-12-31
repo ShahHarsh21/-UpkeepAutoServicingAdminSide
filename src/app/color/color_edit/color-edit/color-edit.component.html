@@ -1,0 +1,31 @@
+<!-- <p>color-edit works!</p> -->
+<!-- <p>product-edit works!</p>-->
+<!-- <div class="container">
+  <form [formGroup]="colorupdate" (ngSubmit)="onColorEdit()">
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Color Id"  formControlName="color_id" disabled>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Color Name"  formControlName="color_name">
+      </mat-form-field>
+      <br>
+      <button type="submit">UPDATE</button>
+    </form>
+  </div> -->
+
+<div class="container">
+  <form>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Color Id" [(ngModel)]="color_id" name="color_id" disabled>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Color Name"  [(ngModel)]="color_name" name="color_name">
+      </mat-form-field>
+      <br>
+      <button type="submit" (click)="onColorEdit()">UPDATE</button>
+    </form>
+  </div>

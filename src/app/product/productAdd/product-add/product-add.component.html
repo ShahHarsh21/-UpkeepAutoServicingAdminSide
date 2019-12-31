@@ -1,0 +1,31 @@
+<!-- <p>product-add works!</p> -->
+<div>
+  <form [formGroup]="addproduct" (ngSubmit)="onProductAdd()" >
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Product Name" formControlName="product_name">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Product Description" formControlName="product_description">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Product Price" formControlName="product_price">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Product color" formControlName="product_color">
+      </mat-form-field>
+      <br>
+
+      <mat-label>PRODUCT IMAGE</mat-label><br>
+      <input type="file" name="product_image" formControlName="product_image">
+      <br>
+
+      <button type="submit">ADD</button>
+    </form>
+  </div>

@@ -1,0 +1,47 @@
+<!-- <p>product-add works!</p> -->
+<div>
+  <form [formGroup]="addslot" (ngSubmit)="onSlotAdd()" >
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER VEHICLE-TYPE" formControlName="vehicle_type">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER VEHICLE-MODEL" formControlName="vehicle_model">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER SERVICE-TYPE" formControlName="service_type">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER  TIME PERIOD" formControlName="time_period">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER PICKUP TIME" formControlName="pickup_time">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER PICKUP ADDRESS" formControlName="pickup_address">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER REQUIREMENT" formControlName="requirement">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER  DROP-ADDRESS" formControlName="drop_address">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER ALLOTMENT_EMP_ID" formControlName="alltment_emp_id">
+      </mat-form-field>
+      <br>
+
+            <button type="submit">ADD</button>
+    </form>
+  </div>

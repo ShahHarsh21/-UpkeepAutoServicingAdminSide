@@ -1,0 +1,22 @@
+<p>category-edit works!</p>
+<div>
+  <form>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Category Id" [(ngModel)]="category_id" name="category_id" disabled>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Category Name" [(ngModel)]="category_name" name="category_name">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Category Type" [(ngModel)]="category_type" name="category_type">
+      </mat-form-field>
+      <br>
+
+      <button type="submit" (click)="onProductEdit()">ADD</button>
+    </form>
+  </div>

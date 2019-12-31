@@ -1,0 +1,70 @@
+<!-- <p>employee-edit works!</p> -->
+<!-- <div>
+    <form [formGroup]="editEmployee" (ngSubmit)="onEmployeeEdit()" >
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Id" formControlName="employee_id" disabled>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Designation" formControlName="employee_designation">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Salary of Employee" formControlName="salary">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Type" formControlName="employee_type">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Fk User Id" formControlName="fk_user_id" disabled>
+      </mat-form-field>
+      <br>
+
+      <mat-label>Employee Image</mat-label><br>
+      <input type="file" name="employee_img" formControlName="employee_img">
+      <br>
+
+      <button type="submit">UPDATE</button>
+  </form>
+</div> -->
+<div>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="ENTER Employee Id" [(ngModel)]="employee_id" name="employee_id" disabled>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <input matInput placeholder="ENTER Employee Designation" [(ngModel)]="employee_designation" name="employee_designation">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <input matInput placeholder="ENTER Salary of Employee" [(ngModel)]="salary" name="salary">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <input matInput placeholder="ENTER Employee Type" [(ngModel)]="employee_type" name="employee_type">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field>
+      <input matInput placeholder="ENTER Fk User Id" [(ngModel)]="fk_user_id" name="fk_user_id" disabled>
+    </mat-form-field>
+    <br>
+
+    <mat-label>Employee Image</mat-label><br>
+    <input type="file" name="employee_img" [(ngModel)]="employee_img">
+    <br>
+
+    <button type="submit" (click)="onEmployeeEdit(row.employee_id,row)">UPDATE</button>
+</form>
+</div>
