@@ -22,7 +22,7 @@ export class ProductDisplayComponent implements OnInit {
   this.dataSource = new MatTableDataSource();
 }
   ngOnInit() {
-    this  ._data.getAllProduct().subscribe(
+    this._data.getAllProduct().subscribe(
       (data:any)=>{
 
             //this.productarr.splice(this.productarr.indexOf(data),1)
@@ -35,7 +35,7 @@ export class ProductDisplayComponent implements OnInit {
     this.dataSource.filter = filtervalue.trim().toLowerCase();
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
-    }
+  }
   }
   onDelete(row)
   {
