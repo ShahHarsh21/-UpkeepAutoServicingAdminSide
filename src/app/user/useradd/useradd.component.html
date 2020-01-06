@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup]="adduser" (ngSubmit)="onUserAdd()" >
+
+        <mat-form-field>
+            <input matInput placeholder="ENTER email_id" formControlName="email_id">
+          </mat-form-field>
+          <br>
+
+          <!-- <mat-form-field>
+            <input matInput placeholder="ENTER Password" formControlName="password">
+          </mat-form-field>
+          <br> -->
+
+        <mat-form-field>
+          <input matInput placeholder="ENTER YOUR NAME" formControlName="user_name">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input matInput placeholder="ENTER YOUR MOBILE_NO" formControlName="mobile_no">
+        </mat-form-field>
+          <br>
+
+        <mat-form-field>
+          <input matInput placeholder="ENTER your address" formControlName="address">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="ENTER Date Of BIRTH" formControlName="date_of_birth">
+        </mat-form-field>
+        <br>
+
+        <button type="submit">ADD</button>
+      </form>
+    </div>
+

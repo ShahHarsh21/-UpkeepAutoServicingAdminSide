@@ -47,7 +47,7 @@ export class ProductDisplayComponent implements OnInit {
           console.log(data);
           this.productarr.splice(x,1);
           this.dataSource.data=this.productarr;
-          this._router.navigate(['product']);
+          this._router.navigate(['/nav/product']);
         }
       );
     }

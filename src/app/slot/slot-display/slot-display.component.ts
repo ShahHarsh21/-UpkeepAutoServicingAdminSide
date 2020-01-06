@@ -11,16 +11,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./slot-display.component.css']
 })
 export class SlotDisplayComponent implements OnInit {
-  displayedColumns:string[]=['product_name','product_description','product_price','product_image','product_color','Action'];
+  displayedColumns:string[]=['vehicle_type','vehicle_model','service_type','time_period','pickup_time','pickup_address','requirment','drop_address',
+    'Action'];
   slotarr:slot[]=[];
   dataSource: MatTableDataSource<slot>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private _data:SlotdataService,private _dialog:MatDialog,private _routs:Router) { }
+  constructor(private _data:SlotdataService,private _dialog:MatDialog,private _router:Router) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   ngOnInit() {
     this._data.getAllSlots().subscribe(
       (data:any)=>{
+        console.log(data);
         this.dataSource.data=data;
       }
     );
@@ -35,7 +39,7 @@ export class SlotDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-      this._routs.navigate(['slotAdd']);
+      this._router.navigate(['slotAdd']);
   }
   onViewMore(row)
   {
@@ -47,6 +51,17 @@ export class SlotDisplayComponent implements OnInit {
   }
   onDelete(row)
   {
-
+    let x:number = this.slotarr.indexOf(row);
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
+    {
+      this._data.deleteSlot(row.slot_register_id).subscribe(
+        (data:any)=>{
+          console.log(data);
+          this.slotarr.splice(x,1);
+          this.dataSource.data=this.slotarr;
+          this._router.navigate(['/nav/Slot']);
+        }
+      );
+    }
   }
 }

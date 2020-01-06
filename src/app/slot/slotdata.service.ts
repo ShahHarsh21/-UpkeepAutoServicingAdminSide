@@ -11,4 +11,8 @@ export class SlotdataService {
   {
     return this._http.get(this.url);
   }
+  deleteSlot(slot_register_id)
+  {
+    return this._http.delete(this.url+slot_register_id);
+  }
 }

@@ -3,7 +3,6 @@ import { MatTableDataSource, MatSort, MatPaginator, MatDialogRef, MatDialog } fr
 import { color_class } from '../color';
 import { ColordataService } from '../colordata.service';
 import { Router } from '@angular/router';
-import { CategoryviewmoreComponent } from 'src/app/category/categoryviewmore/categoryviewmore/categoryviewmore.component';
 
 @Component({
   selector: 'app-color-display',

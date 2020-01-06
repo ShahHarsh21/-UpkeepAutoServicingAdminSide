@@ -11,7 +11,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-
 import { MatPaginatorModule,
    MatFormFieldModule,
     MatInputModule,
@@ -21,15 +20,16 @@ import { MatPaginatorModule,
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { LoginDisplayComponent } from './login/login-display/login-display.component';
+import{SignupdisplayComponent}from './signup/signupdisplay/signupdisplay.component';
+import{UserDisplayComponent}from './user/user-display/user-display.component';
 import { ProductDisplayComponent } from './product/product-display/product-display.component';
 import { ProductViewMoreComponent } from './product/product_view_more/product-view-more/product-view-more.component';
-import { ProductEditComponent } from './product_edit/product-edit/product-edit.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { CategoryDisplayComponent } from './category/category-display/category-display.component';
 import { CategoryviewmoreComponent } from './category/categoryviewmore/categoryviewmore/categoryviewmore.component';
 import { CategoryEditComponent } from './category/categoryEdit/category-edit/category-edit.component';
-import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
@@ -41,10 +41,14 @@ import { SlotDisplayComponent } from './slot/slot-display/slot-display.component
 import { SupplierDisplayComponent } from './supplier/supplier-display/supplier-display.component';
 import { SlotViewmoreComponent } from './slot/slotviewmore/slot-viewmore/slot-viewmore.component';
 import { SlotAddComponent } from './slot/slot-add/slot-add.component';
+import { UserViewMoreComponent } from './user/user-view-more/user-view-more.component';
+import { UseraddComponent } from './user/useradd/useradd.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
+    UserDisplayComponent,
     ProductDisplayComponent,
     ProductViewMoreComponent,
     ProductEditComponent,
@@ -63,7 +67,10 @@ import { SlotAddComponent } from './slot/slot-add/slot-add.component';
     SupplierDisplayComponent,
     SlotViewmoreComponent,
     SlotAddComponent,
-
+    UserViewMoreComponent,
+    LoginDisplayComponent,
+    SignupdisplayComponent,
+    UseraddComponent,
   ],
   imports: [
     BrowserModule,

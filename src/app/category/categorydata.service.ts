@@ -6,24 +6,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategorydataService {
-  private url:string=environment.url+'category/';
+  private url:string=environment.url+'nav/category/';
   constructor(private _http : HttpClient) { }
   getAllCategory()
   {
-    return this._http.get(environment.url+'category');
+    console.log(this._http.get(this.url));
+    return this._http.get(this.url)
   }
   deleteCategory(category_id)
   {
-    return this._http.delete(environment.url+'category'+category_id);
+    return this._http.delete(this.url+category_id);
   }
   getCategoryById(category_id)
   {
-    return this._http.get(environment.url+'category'+category_id);
+    return this._http.get(this.url+category_id);
   }
   updateCategory(category_id,item)
   {
       const body = JSON.stringify(item);
       const head = new HttpHeaders().set(environment.header, environment.value);
-      return this._http.put(this.url+'category'+category_id, body, { headers: head });
+      return this._http.put(this.url+category_id, body, { headers: head });
   }
 }
