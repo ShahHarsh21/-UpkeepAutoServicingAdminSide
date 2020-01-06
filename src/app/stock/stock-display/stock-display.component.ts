@@ -19,7 +19,7 @@ export class StockDisplayComponent implements OnInit {
    }
 
   ngOnInit() {
-    this._data.getAllStock();
+    // this._data.getAllStock();
   }
   applyFilter(filtervalue:string)
   {
