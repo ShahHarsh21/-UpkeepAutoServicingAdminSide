@@ -1,7 +1,7 @@
 <div class="container">
 
     <h1>Signup</h1>
-  
+
     <form [formGroup]="signupForm" (ngSubmit)="onSignup()" >
       <div class="form-group" >
         <input class="form-control" placeholder="Enter Email" formControlName="email_id" >
@@ -29,8 +29,7 @@
         <label class="alert alert-danger" *ngIf="signupForm.get('mobile_no').hasError('pattern') " > Only digits</label>
       </div><br>
       <div class="form-group" >
-        <button [disabled]="!signupForm.valid" type="submit" class="btn btn-primary" >Signup</button>
+        <button *ngIf="!signupForm.valid" type="submit" class="btn btn-primary" >Signup</button>
       </div>
     </form>
   </div>
-  

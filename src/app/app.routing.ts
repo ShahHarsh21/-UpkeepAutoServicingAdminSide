@@ -6,7 +6,7 @@ import{UserDisplayComponent}from './user/user-display/user-display.component';
 import { ProductDisplayComponent } from './product/product-display/product-display.component';
 import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { CategoryDisplayComponent } from './category/category-display/category-display.component'; 
+import { CategoryDisplayComponent } from './category/category-display/category-display.component';
 import { CategoryEditComponent } from './category/categoryEdit/category-edit/category-edit.component';
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
@@ -19,6 +19,8 @@ import { StockDisplayComponent } from './stock/stock-display/stock-display.compo
 import { SupplierDisplayComponent } from './supplier/supplier-display/supplier-display.component';
 import{UserauthguardService}from './userauthguard.service';
 import { UseraddComponent } from './user/useradd/useradd.component';
+import { UserEditComponent } from './user/userEdit/user-edit/user-edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
@@ -40,8 +42,10 @@ const arr:Routes=[
         {path:'slotAdd',component:SlotAddComponent},
         {path:'stock',component:StockDisplayComponent},
         {path:'supplier',component:SupplierDisplayComponent},
-        {path:'userAdd',component:UseraddComponent}
+        {path:'userAdd',component:UseraddComponent},
+        {path:'userEdit/:user_id',component:UserEditComponent}
     ]
-    }
+    },
+    {path:'**',component:PageNotFoundComponent}
 ]
 export const routingArr=RouterModule.forRoot(arr);

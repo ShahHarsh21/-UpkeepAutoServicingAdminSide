@@ -24,7 +24,7 @@ export class ProductDisplayComponent implements OnInit {
   ngOnInit() {
     this._data.getAllProduct().subscribe(
       (data:any)=>{
-
+            console.log(data);
             //this.productarr.splice(this.productarr.indexOf(data),1)
             this.dataSource.data=data;
       }

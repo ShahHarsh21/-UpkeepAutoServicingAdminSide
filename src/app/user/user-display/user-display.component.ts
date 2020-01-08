@@ -21,7 +21,7 @@ export class UserDisplayComponent implements OnInit {
   constructor(private _data:UserdataService, private _dialog:MatDialog, private _router:Router) {
     this.dataSource = new MatTableDataSource();
    }
-  
+
 
   ngOnInit() {
     this  ._data.getAllUser().subscribe(
@@ -59,8 +59,8 @@ applyFilter(filtervalue:string)
   }
   onEdit(row)
   {
-    let user_id=row.user_id;
-    this._router.navigate(['userEdit/:user_id']);
+    // let user_id=row.user_id;
+    this._router.navigate(['/nav/userEdit/'+row.user_id]);
   }
   onViewMore(row)
   {

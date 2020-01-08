@@ -12,7 +12,7 @@ export class UserauthguardService implements CanActivate {
       return true;
     }
     alert('login first');
-    this._router.navigate(['/']);
+    this._router.navigate(['']);
     return false;
   }
   constructor(private _router:Router) { }

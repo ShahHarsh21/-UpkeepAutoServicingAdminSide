@@ -43,6 +43,8 @@ import { SlotViewmoreComponent } from './slot/slotviewmore/slot-viewmore/slot-vi
 import { SlotAddComponent } from './slot/slot-add/slot-add.component';
 import { UserViewMoreComponent } from './user/user-view-more/user-view-more.component';
 import { UseraddComponent } from './user/useradd/useradd.component';
+import { UserEditComponent } from './user/userEdit/user-edit/user-edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { UseraddComponent } from './user/useradd/useradd.component';
     LoginDisplayComponent,
     SignupdisplayComponent,
     UseraddComponent,
+    UserEditComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
