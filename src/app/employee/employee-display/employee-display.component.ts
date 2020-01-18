@@ -50,7 +50,7 @@ export class EmployeeDisplayComponent implements OnInit {
   }
   onEdit(row)
   {
-    this._routs.navigate(['EmloyeeEdit']);
+    this._routs.navigate(['EmployeeEdit']);
   }
   onViewMore(row)
   {

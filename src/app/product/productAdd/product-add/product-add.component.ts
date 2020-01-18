@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
 
-
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',

@@ -13,20 +13,10 @@ export class UseraddComponent implements OnInit {
   constructor(public _data:UserdataService,private _router:Router) { }
 
   ngOnInit() {
-  //   this.adduser = new FormGroup({
-  //     email_id: new FormControl(null, [Validators.required, Validators.email]),
-  //     user_type: new FormControl('user'),
-  //     user_name: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z]*'), this.checkUname.bind(this)]),
-  //     address: new FormControl(null),
-  //     mobile_no: new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')])
-  //   });
   this.adduser = new FormGroup({
+
     email_id:new FormControl(),
     user_name:new FormControl(),
-    // password: new FormGroup({
-    //   user_password: new FormControl(null, [Validators.required]),
-    //   user_confirm_password: new FormControl(null)
-    // }),
     user_type:new FormControl(),
     address:new FormControl(),
     mobile_no:new FormControl()

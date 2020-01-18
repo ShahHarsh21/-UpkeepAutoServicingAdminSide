@@ -1,1 +1,31 @@
 <p>employee-add works!</p>
+<div>
+  <form [formGroup]="addemployee" (ngSubmit)="onEmployeeAdd()" >
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Id" formControlName="employee_id">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Description" formControlName="employee_description">
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <input matInput placeholder="ENTER Employee Salary" formControlName="Salary">
+      </mat-form-field>
+      <br>
+
+      <!-- <mat-form-field>
+        <input matInput placeholder="ENTER Product color" formControlName="product_color">
+      </mat-form-field>
+      <br> -->
+
+      <mat-label>Employee IMAGE</mat-label><br>
+      <input type="file" name="Employee_image" formControlName="employee_img">
+      <br>
+
+      <button type="submit">ADD</button>
+    </form>
+  </div>

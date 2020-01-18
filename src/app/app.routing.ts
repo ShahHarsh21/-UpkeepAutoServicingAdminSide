@@ -6,7 +6,7 @@ import{UserDisplayComponent}from './user/user-display/user-display.component';
 import { ProductDisplayComponent } from './product/product-display/product-display.component';
 import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { CategoryDisplayComponent } from './category/category-display/category-display.component'; 
+import { CategoryDisplayComponent } from './category/category-display/category-display.component';
 import { CategoryEditComponent } from './category/categoryEdit/category-edit/category-edit.component';
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
@@ -35,7 +35,7 @@ const arr:Routes=[
         {path:'colorEdit',component:ColorEditComponent},
         {path:'Employee',component:EmployeeDisplayComponent},
         {path:'EmployeeAdd',component:EmployeeAddComponent},
-        {path:'EmloyeeEdit',component:EmployeeEditComponent},
+        {path:'EmployeeEdit',component:EmployeeEditComponent},
         {path:'Slot',component:SlotDisplayComponent},
         {path:'slotAdd',component:SlotAddComponent},
         {path:'stock',component:StockDisplayComponent},
