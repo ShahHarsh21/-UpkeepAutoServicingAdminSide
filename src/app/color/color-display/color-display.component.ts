@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./color-display.component.css']
 })
 export class ColorDisplayComponent implements OnInit {
-  displayedColumns:string[]=['color_id','color_name','Action'];
+  displayedColumns:string[]=['color_name','Action'];
   colorarr:color_class[]=[];
   dataSource: MatTableDataSource<color_class>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

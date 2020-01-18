@@ -11,7 +11,7 @@ import { UserViewMoreComponent } from '../user-view-more/user-view-more.componen
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit {
-  displayedColumns:string[]=['email_id','password','user_name','mobile_no','address','date_of_birth','user_type','Action'];
+  displayedColumns:string[]=['email_id','password','user_name','Action'];
   userarr:user[]=[];
   dataSource: MatTableDataSource<user>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -21,7 +21,7 @@ export class UserDisplayComponent implements OnInit {
   constructor(private _data:UserdataService, private _dialog:MatDialog, private _router:Router) {
     this.dataSource = new MatTableDataSource();
    }
-  
+
 
   ngOnInit() {
     this  ._data.getAllUser().subscribe(

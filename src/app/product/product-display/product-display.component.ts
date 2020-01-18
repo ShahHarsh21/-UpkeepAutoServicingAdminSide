@@ -11,7 +11,7 @@ import { ProductViewMoreComponent } from '../product_view_more/product-view-more
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
-  displayedColumns:string[]=['product_name','product_description','product_price','product_image','product_color','Action'];
+  displayedColumns:string[]=['product_name','product_description','product_price','Action'];
   productarr:Product[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

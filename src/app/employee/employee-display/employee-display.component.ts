@@ -11,7 +11,7 @@ import { EmpViewmoreComponent } from '../employeeviewmore/emp-viewmore/emp-viewm
   styleUrls: ['./employee-display.component.css']
 })
 export class EmployeeDisplayComponent implements OnInit {
-  displayedColumns:string[]=['employee_img','employee_designation','salary','employee_type','Action'];
+  displayedColumns:string[]=['employee_designation','salary','employee_type','Action'];
   productarr:employee[]=[];
   dataSource: MatTableDataSource<employee>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./slot-display.component.css']
 })
 export class SlotDisplayComponent implements OnInit {
-  displayedColumns:string[]=['vehicle_type','vehicle_model','service_type','time_period','pickup_time','pickup_address','requirment','drop_address',
-    'Action'];
+  displayedColumns:string[]=['vehicle_type','vehicle_model','Action'];
   slotarr:slot[]=[];
   dataSource: MatTableDataSource<slot>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

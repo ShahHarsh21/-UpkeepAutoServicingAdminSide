@@ -3,7 +3,6 @@ import { category } from '../category';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
 import { CategorydataService } from '../categorydata.service';
 import { Router } from '@angular/router';
-import { CategoryviewmoreComponent } from '../categoryviewmore/categoryviewmore/categoryviewmore.component';
 
 @Component({
   selector: 'app-category-display',
@@ -11,7 +10,7 @@ import { CategoryviewmoreComponent } from '../categoryviewmore/categoryviewmore/
   styleUrls: ['./category-display.component.css']
 })
 export class CategoryDisplayComponent implements OnInit {
-  displayedColumns:string[]=['category_id','category_name','category_type','Action'];
+  displayedColumns:string[]=['category_name','category_type','Action'];
   categoryarr:category[]=[];
   dataSource: MatTableDataSource<category>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -53,10 +52,6 @@ export class CategoryDisplayComponent implements OnInit {
   onEdit(row)
   {
     this._routes.navigate(['categoryEdit']);
-  }
-  onViewMore(row)
-  {
-   this._dialog.open(CategoryviewmoreComponent,{data:row})
   }
   onAddClick()
   {
