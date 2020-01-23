@@ -6,12 +6,15 @@
   <mat-divider></mat-divider>
   <mat-list-item>{{product_description}}</mat-list-item>
   <mat-divider></mat-divider>
+  <mat-list-item *ngFor="let item of cate_arr">{{item.category_name}}</mat-list-item>
+  <mat-divider></mat-divider>
   <mat-list-item>{{product_price}}</mat-list-item>
   <mat-divider></mat-divider>
   <mat-list-item>{{product_image}}</mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item>{{product_color}}</mat-list-item>
+  <mat-list-item>{{fk_color_name}}</mat-list-item>
   <mat-divider></mat-divider>
+  <mat-list-item>{{fk_cate_name}}</mat-list-item>
 </mat-list>
 <div mat-dialog-actions>
     <button mat-button (click)="onClickCancel()">Cancel</button>

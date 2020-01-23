@@ -44,6 +44,16 @@ export class ProductAddComponent implements OnInit {
    }
   onProductAdd()
   {
+  //   let x={
+  //     product_id:this.addproduct.value.product_id,
+  //     product_name:this.addproduct.value.product_name,
+  //     product_description:this.addproduct.value.product_description,
+  //     fk_cat_id:this.addproduct.value.fk_cat_id,
+  //     product_price:this.addproduct.value.product_price,
+  //     product_image:this.addproduct.value.product_image,
+  //     fk_color_id:this.addproduct.value.fk_color_id
+  //   };
+  console.log(this.addproduct.value.fk_color_id);
     let x=this.addproduct.value;
    this._data.addProduct(x).subscribe(
      (data:any)=>{
@@ -51,9 +61,5 @@ export class ProductAddComponent implements OnInit {
        this._router.navigate(['/nav/product']);
      }
    );
-  }
-  onCateSelect()
-  {
-
   }
 }
