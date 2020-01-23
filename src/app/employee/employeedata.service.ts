@@ -30,6 +30,6 @@ export class EmployeedataService {
     {
       const body = JSON.stringify(item);
       const head = new HttpHeaders().set(environment.header, environment.value);
-      return this._http.put(this.url,body,{headers:head});
+      return this._http.put(this.url+employee_id,body,{headers:head});
     }
 }

@@ -3,7 +3,6 @@ import { category } from '../category';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
 import { CategorydataService } from '../categorydata.service';
 import { Router } from '@angular/router';
-import { CategoryviewmoreComponent } from '../categoryviewmore/categoryviewmore/categoryviewmore.component';
 
 @Component({
   selector: 'app-category-display',
@@ -53,10 +52,6 @@ export class CategoryDisplayComponent implements OnInit {
   onEdit(row)
   {
     this._routes.navigate(['categoryEdit']);
-  }
-  onViewMore(row)
-  {
-   this._dialog.open(CategoryviewmoreComponent,{data:row})
   }
   onAddClick()
   {

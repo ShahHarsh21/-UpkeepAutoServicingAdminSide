@@ -11,7 +11,11 @@ export class ProductdataService {
 
   getAllProduct()
   {
+<<<<<<< HEAD
     return this._http.get(this.url);
+=======
+    return this._http.get(environment.url+'product/');
+>>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   }
   deleteProduct(product_id: number)
   {

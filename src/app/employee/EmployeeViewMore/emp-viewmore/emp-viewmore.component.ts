@@ -14,7 +14,7 @@ export class EmpViewmoreComponent implements OnInit {
   salary:string='';
   employee_type: string='';
   fk_user_id:number=0;
-  constructor(public dialogref: MatDialogRef<EmpViewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: employee) { }
+   constructor(public dialogref: MatDialogRef<EmpViewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: employee) { }
 
   ngOnInit() {
     this.employee_id=this.data.employee_id;

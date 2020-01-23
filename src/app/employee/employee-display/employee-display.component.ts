@@ -11,8 +11,13 @@ import { EmpViewmoreComponent } from '../employeeviewmore/emp-viewmore/emp-viewm
   styleUrls: ['./employee-display.component.css']
 })
 export class EmployeeDisplayComponent implements OnInit {
+<<<<<<< HEAD
   displayedColumns:string[]=['employee_name','employee_designation','Action'];
   empArr:employee[]=[];
+=======
+  displayedColumns:string[]=['employee_designation','salary','employee_type','Action'];
+  productarr:employee[]=[];
+>>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   dataSource: MatTableDataSource<employee>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -51,7 +56,7 @@ export class EmployeeDisplayComponent implements OnInit {
   }
   onEdit(row)
   {
-    this._routs.navigate(['EmloyeeEdit']);
+    this._routs.navigate(['EmployeeEdit']);
   }
   onViewMore(row)
   {

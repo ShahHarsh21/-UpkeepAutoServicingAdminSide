@@ -11,7 +11,11 @@ import { ProductViewMoreComponent } from '../product_view_more/product-view-more
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
+<<<<<<< HEAD
   displayedColumns:string[]=['product_name','product_price','Action'];
+=======
+  displayedColumns:string[]=['product_name','product_description','product_price','Action'];
+>>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   productarr:Product[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

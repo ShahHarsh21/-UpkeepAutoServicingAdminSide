@@ -7,7 +7,6 @@ import { CategorydataService } from 'src/app/category/categorydata.service';
 import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
 
-
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',

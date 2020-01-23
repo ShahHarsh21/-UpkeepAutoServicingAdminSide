@@ -29,7 +29,7 @@ import { ProductViewMoreComponent } from './product/product_view_more/product-vi
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { CategoryDisplayComponent } from './category/category-display/category-display.component';
-import { CategoryviewmoreComponent } from './category/categoryviewmore/categoryviewmore/categoryviewmore.component';
+
 import { CategoryEditComponent } from './category/categoryEdit/category-edit/category-edit.component';
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
@@ -59,7 +59,6 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
     ProductViewMoreComponent,
     ProductEditComponent,
     CategoryDisplayComponent,
-    CategoryviewmoreComponent,
     CategoryEditComponent,
     ProductAddComponent,
     ColorDisplayComponent,
@@ -106,10 +105,14 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
   ],
   entryComponents: [
     ProductViewMoreComponent,
+<<<<<<< HEAD
     CategoryviewmoreComponent,
     EmpViewmoreComponent,
     UserViewMoreComponent,
     SlotViewmoreComponent
+=======
+    EmpViewmoreComponent
+>>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   ],
   providers: [],
   bootstrap: [AppComponent]
