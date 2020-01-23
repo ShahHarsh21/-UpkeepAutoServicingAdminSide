@@ -105,14 +105,9 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
   ],
   entryComponents: [
     ProductViewMoreComponent,
-<<<<<<< HEAD
-    CategoryviewmoreComponent,
     EmpViewmoreComponent,
     UserViewMoreComponent,
     SlotViewmoreComponent
-=======
-    EmpViewmoreComponent
->>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   ],
   providers: [],
   bootstrap: [AppComponent]
