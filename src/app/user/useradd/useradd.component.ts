@@ -19,7 +19,6 @@ export class UseraddComponent implements OnInit {
   constructor(public _data:UserdataService,private _router:Router) { }
 
   ngOnInit() {
-<<<<<<< HEAD
 
     this.adduser= new FormGroup({
       email_id: new FormControl(null, [Validators.required, Validators.email]),
@@ -51,25 +50,6 @@ export class UseraddComponent implements OnInit {
       return { 'invalidName': true };
     }
     return null;
-=======
-  this.adduser = new FormGroup({
-
-    email_id:new FormControl(),
-    user_name:new FormControl(),
-    user_type:new FormControl(),
-    address:new FormControl(),
-    mobile_no:new FormControl()
-  });
-  // }
-  // passwordMatch(c: AbstractControl): { [s: string]: boolean } {
-  //   const pass = c.get('user_password').value;
-  //   const cpass = c.get('user_confirm_password').value;
-  //   if (pass != cpass) {
-
-  //     return { 'sarkhanathi': true };
-  //   }
-  //   return null;
->>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
   }
   onUserAdd()
   {

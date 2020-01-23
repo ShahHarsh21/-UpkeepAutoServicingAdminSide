@@ -38,7 +38,6 @@ export class ProductEditComponent implements OnInit {
       }
     );
   }
-<<<<<<< HEAD
     formDataBind(item:Product)
     {
       this.editProduct.patchValue({
@@ -54,11 +53,6 @@ export class ProductEditComponent implements OnInit {
   onProductEdit(item:Product)
   {
       this._productdata.updateProduct(item.product_id,item).subscribe(
-=======
-  onProductEdit(item:Product[])
-{
-      this._productdata.updateProduct(this.product_id,new Product(this.product_id,this.product_name,this.product_description,this.fk_cat_id,this.product_price,this.product_image,this.product_color,this.fk_color_id)).subscribe(
->>>>>>> 220fe60b334123fd247f799cf1c3d9bc461fc54c
         (data:any)=>{
           console.log(data);
           this._router.navigate(['/nav/Product']);
