@@ -11,7 +11,7 @@ import { ProductViewMoreComponent } from '../product_view_more/product-view-more
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
-  displayedColumns:string[]=['product_name','product_description','product_price','product_image','product_color','Action'];
+  displayedColumns:string[]=['product_name','product_price','Action'];
   productarr:Product[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -55,12 +55,11 @@ export class ProductDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-    this._router.navigate(['productAdd']);
+    this._router.navigate(['/nav/productAdd']);
   }
   onEdit(row)
   {
-    let product_id=row.product_id;
-    this._router.navigate(['productEdit/:product_id']);
+    this._router.navigate(['/nav/productEdit/'+row.product_id]);
   }
   onViewMore(row)
   {

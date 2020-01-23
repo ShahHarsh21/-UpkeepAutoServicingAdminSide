@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, IterableDiffers } from '@angular/core';
 import { Product } from 'src/app/product/product';
 import { ProductdataService } from 'src/app/product/productdata.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-product-edit',
@@ -10,46 +12,50 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductEditComponent implements OnInit {
 
-  // addProduct:FormGroup;
+  editProduct:FormGroup;
   pro_arr : Product[] = [];
-  product_re:Product;
-  product_id : number;
-  product_name : string;
-  product_description : string;
-  fk_cat_id : number;
-  product_price : string;
-  product_image : string;
-  product_color : string;
-  fk_color_id : number;
-  constructor(private _productdata : ProductdataService,private _router:Router,private _act_routs:ActivatedRoute) { }
+  constructor(private _productdata : ProductdataService,private _router:Router,private _act_routs:ActivatedRoute) {
+
+    this._act_routs=this._act_routs.snapshot.params['product_id'];
+      console.log( this._act_routs);
+
+
+    this.editProduct=new FormGroup({
+      product_id : new FormControl(null),
+      product_name : new FormControl(null),
+      fk_cat_id : new FormControl(null),
+      product_price : new FormControl(null),
+      product_image : new FormControl(),
+      product_color : new FormControl(null),
+      fk_color_id : new FormControl(null)}
+    );
+  }
   ngOnInit()
   {
-    this.product_id=this._act_routs.snapshot.params['product_id'];
-    console.log(this.product_id);
-    this._productdata.getAllProduct().subscribe(
-      (data: any ) => {
-        console.log(data);
-      }
-    );
-    this._productdata.getProductById(this.product_id).subscribe(
-      (data:any)=>{
-        this.product_id=data[0].product_id;
-        this.product_name=data[0].product_name;
-        this.product_description=data[0].product_description;
-        this.fk_cat_id=data[0].fk_cat_id;
-        this.product_price=data[0].product_price;
-        this.product_image=data[0].product_image;
-        this.product_color=data[0].product_color;
-        this.fk_color_id=data[0].fk_color_id;
+    this._productdata.getProductById(this._act_routs).subscribe(
+      (Data:any)=>{
+        console.log(Data);
       }
     );
   }
-  onProductEdit(item:Product[])
+    formDataBind(item:Product)
+    {
+      this.editProduct.patchValue({
+        product_id : item.product_id,
+      product_name : item.product_name,
+      fk_cat_id : item.fk_cat_id,
+      product_price : item.product_price,
+      product_image : item.product_image,
+      product_color : item.product_color,
+      fk_color_id : item.fk_color_id
+      });
+    }
+  onProductEdit(item:Product)
   {
-      this._productdata.updateProduct(this.product_id,new Product(this.product_id,this.product_name,this.product_description,this.fk_cat_id,this.product_price,this.product_image,this.product_color,this.fk_color_id)).subscribe(
+      this._productdata.updateProduct(item.product_id,item).subscribe(
         (data:any)=>{
           console.log(data);
-          this._router.navigate(['product']);
+          this._router.navigate(['/nav/Product']);
         }
       );
   }

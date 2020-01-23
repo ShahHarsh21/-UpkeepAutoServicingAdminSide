@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SignupdataService {
-  private url:string= environment.url+"/nav/signup";
+  private url:string= environment.url+"signup/";
   constructor(private _http:HttpClient) { }
 
   signup(obj)

@@ -11,7 +11,7 @@ import { UserViewMoreComponent } from '../user-view-more/user-view-more.componen
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit {
-  displayedColumns:string[]=['email_id','password','user_name','mobile_no','address','date_of_birth','user_type','Action'];
+  displayedColumns:string[]=['email_id','password','user_name','Action'];
   userarr:user[]=[];
   dataSource: MatTableDataSource<user>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -45,9 +45,9 @@ applyFilter(filtervalue:string)
     {
       this._data.deleteUser(row.user_id).subscribe(
         (data:any)=>{
-          this.userarr.splice(x,1);
+          this.userarr.splice(this.userarr.indexOf(row),1);
           this.dataSource.data=this.userarr;
-          this._router.navigate(['user']);
+          this._router.navigate(['nav/user/']);
         }
       );
     }
@@ -60,6 +60,7 @@ applyFilter(filtervalue:string)
   onEdit(row)
   {
     // let user_id=row.user_id;
+    console.log(row.user_id);
     this._router.navigate(['/nav/userEdit/'+row.user_id]);
   }
   onViewMore(row)

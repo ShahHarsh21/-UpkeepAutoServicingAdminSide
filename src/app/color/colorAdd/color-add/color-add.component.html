@@ -1,0 +1,14 @@
+<!-- <p>color-add works!</p> -->
+<div>
+  <form [formGroup]="addColor" (ngSubmit)="onColorAdd()" >
+
+      <mat-form-field>
+          <input matInput placeholder="ENTER Color Name" formControlName="color_name">
+        </mat-form-field>
+        <br>
+
+      <button type="submit">ADD</button>
+    </form>
+  </div>
+
+

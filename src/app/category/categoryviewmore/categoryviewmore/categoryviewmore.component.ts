@@ -10,14 +10,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 export class CategoryviewmoreComponent implements OnInit {
   category_id:number=0;
   category_name:string='';
-  category_type:number=0;
   dialogref: any;
   constructor(public _dialogref: MatDialogRef<CategoryviewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: category) { }
 
   ngOnInit() {
     this.category_id=this.data.category_id;
     this.category_name=this.data.category_name;
-    this.category_type=this.data.category_type;
   }
   onClickCancel()
   {

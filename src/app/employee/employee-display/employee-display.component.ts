@@ -11,8 +11,8 @@ import { EmpViewmoreComponent } from '../employeeviewmore/emp-viewmore/emp-viewm
   styleUrls: ['./employee-display.component.css']
 })
 export class EmployeeDisplayComponent implements OnInit {
-  displayedColumns:string[]=['employee_img','employee_designation','salary','employee_type','Action'];
-  productarr:employee[]=[];
+  displayedColumns:string[]=['employee_name','employee_designation','Action'];
+  empArr:employee[]=[];
   dataSource: MatTableDataSource<employee>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -41,9 +41,10 @@ export class EmployeeDisplayComponent implements OnInit {
   {
     if(confirm("ARE YOU SURE YOU WANT TO DELETE THIS RECORE?"))
     {
-      this._data.deleteemployee(row.employee_id).subscribe(
+      this._data.deleteEmployee(row.employee_id).subscribe(
         (data:any)=>{
-          console.log(data);
+          this.empArr.splice(this.empArr.indexOf(row),1);
+          this.dataSource.data=this.empArr;
         }
       );
     }
@@ -58,6 +59,6 @@ export class EmployeeDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-    this._routs.navigate(['EmployeeAdd']);
+    this._routs.navigate(['/nav/EmployeeAdd']);
   }
 }

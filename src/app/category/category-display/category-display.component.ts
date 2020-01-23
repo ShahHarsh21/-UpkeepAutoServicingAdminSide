@@ -11,7 +11,7 @@ import { CategoryviewmoreComponent } from '../categoryviewmore/categoryviewmore/
   styleUrls: ['./category-display.component.css']
 })
 export class CategoryDisplayComponent implements OnInit {
-  displayedColumns:string[]=['category_id','category_name','category_type','Action'];
+  displayedColumns:string[]=['category_name','category_type','Action'];
   categoryarr:category[]=[];
   dataSource: MatTableDataSource<category>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -44,7 +44,7 @@ export class CategoryDisplayComponent implements OnInit {
       this._data.deleteCategory(row.category_id).subscribe(
         (data:any)=>{
           console.log(data);
-          this.categoryarr.splice(x,1);
+          this.categoryarr.splice( this.categoryarr.indexOf(row),1);
           this.dataSource.data=this.categoryarr;
         }
       );
@@ -60,6 +60,6 @@ export class CategoryDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-
+    this._routes.navigate(['/nav/categoryAdd']);
   }
 }

@@ -46,6 +46,9 @@ import { UserViewMoreComponent } from './user/user-view-more/user-view-more.comp
 import { UseraddComponent } from './user/useradd/useradd.component';
 import { UserEditComponent } from './user/userEdit/user-edit/user-edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SlotEditComponent } from './slot/slot_edit/slot-edit/slot-edit.component';
+import { CategoryAddComponent } from './category/categoryAdd/category-add/category-add.component';
+import { ColorAddComponent } from './color/colorAdd/color-add/color-add.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     UseraddComponent,
     UserEditComponent,
     PageNotFoundComponent,
+    SlotEditComponent,
+    CategoryAddComponent,
+    ColorAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +107,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   entryComponents: [
     ProductViewMoreComponent,
     CategoryviewmoreComponent,
-    EmpViewmoreComponent
+    EmpViewmoreComponent,
+    UserViewMoreComponent,
+    SlotViewmoreComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

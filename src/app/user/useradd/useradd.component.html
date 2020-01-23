@@ -1,37 +1,47 @@
-<div>
-    <form [formGroup]="adduser" (ngSubmit)="onUserAdd()" >
+<div class="container">
 
-        <mat-form-field>
-            <input matInput placeholder="ENTER email_id" formControlName="email_id">
-          </mat-form-field>
-          <br>
+  <h2><b>ADD USER</b></h2>
 
-          <!-- <mat-form-field>
-            <input matInput placeholder="ENTER Password" formControlName="password">
-          </mat-form-field>
-          <br> -->
-
-        <mat-form-field>
-          <input matInput placeholder="ENTER YOUR NAME" formControlName="user_name">
-        </mat-form-field>
-        <br>
-
-        <mat-form-field>
-            <input matInput placeholder="ENTER YOUR MOBILE_NO" formControlName="mobile_no">
-        </mat-form-field>
-          <br>
-
-        <mat-form-field>
-          <input matInput placeholder="ENTER your address" formControlName="address">
-        </mat-form-field>
-        <br>
-
-        <mat-form-field>
-          <input matInput placeholder="ENTER Date Of BIRTH" formControlName="date_of_birth">
-        </mat-form-field>
-        <br>
-
-        <button type="submit">ADD</button>
-      </form>
+  <form [formGroup]="adduser" (ngSubmit)="onUserAdd()" >
+    <div class="form-groupup">
+      <mat-label><b>Email Id</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Email" formControlName="email_id" >
+      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
+    </div><br>
+    <div formGroupName="password_group" class="form-group" >
+      <mat-label><b>Password</b></mat-label><br>
+      <input class="form-control" type="password" placeholder="Enter Password" formControlName="user_password" >
+      <br>
+      <br>
+      <mat-label><b>Confirm Password</b></mat-label><br>
+      <input class="form-control" type="password" placeholder="Enter confirm Password" formControlName="user_confirm_password" >
+    <label class="alert alert-danger" *ngIf="adduser.get('password_group').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>User Name</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Name" formControlName="user_name" >
+      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('required') && !adduser.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('minlength') && !adduser.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('pattern') && !adduser.get('user_name').pristine" > Only Chars</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Address</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Address" formControlName="address" >
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Mobile No</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" >
+      <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('pattern') " > Only digits</label>
+    </div><br>
+    <div>
+    <mat-label><b>Date Of Birth :</b></mat-label><br>
+      <input class="form-control" type="date" formControlName="dob" >
+    </div><br>
+    <div class="form-group">
+      <button  type="submit" class="btn btn-primary" >Signup</button>
     </div>
-
+  </form>
+</div>

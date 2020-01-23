@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../../environments/environment";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { slot } from './slot-display/slot';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,5 +15,15 @@ export class SlotdataService {
   deleteSlot(slot_register_id)
   {
     return this._http.delete(this.url+slot_register_id);
+  }
+  getSlotById(slot_register_id)
+  {
+    return this._http.get(this.url+slot_register_id);
+  }
+  updateSlot(item:slot)
+  {
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.put(this.url+item.slot_register_id, body, { headers: head });
   }
 }

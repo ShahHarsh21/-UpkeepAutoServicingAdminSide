@@ -1,0 +1,53 @@
+<!-- <p>slot-edit works!</p> -->
+<div>
+  <form [formGroup]="">
+
+      <mat-label><b>VEHICLE TYPE</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Vehicle Type"  formControlName="vehicle_type">
+      </mat-form-field>
+      <br>
+      <mat-label><b>VEHICLE MODEL</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Vehicle Model" formControlName="vehicle_model">
+      </mat-form-field>
+
+      <br>
+      <mat-label><b>SERVICE TYPE</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Service Type" formControlName="service_type" >
+      </mat-form-field>
+      <br>
+      <mat-label><b>TIME PERIOD</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Time Period" formControlName="time_period">
+      </mat-form-field>
+      <br>
+
+      <mat-label><b>PICKUP TIME</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Pickup Time " formControlName="pickup_time">
+      </mat-form-field>
+      <br>
+
+      <mat-label><b>PICKUP ADDRESS</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="Enter Pickup Address" formControlName="pickup_address">
+      </mat-form-field>
+      <br>
+
+      <mat-label><b>REQUIRMENT</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="Enter Requirment" formControlName="requirment">
+      </mat-form-field>
+      <br>
+
+      <mat-label><b>DROP ADDRESS</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="Enter Drop Address" formControlName="drop_address">
+      </mat-form-field>
+      <br>
+
+      <button type="btn btn-success" (click)="onSlotEdit()">ADD</button>
+    </form>
+  </div>

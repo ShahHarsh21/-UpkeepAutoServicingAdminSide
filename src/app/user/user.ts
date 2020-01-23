@@ -6,9 +6,8 @@ export class user {
       public user_name:string,
       public mobile_no: number,
       public address: string,
-      public date_of_birth: string,
+      public date_of_birth: Date,
       public user_type:string) {
     }
-  
+
   }
-  

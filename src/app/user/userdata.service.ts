@@ -16,7 +16,8 @@ export class UserdataService {
   }
   getUserById(user_id)
   {
-    return this._http.get(this.url,user_id);
+    let x = new HttpHeaders().set(environment.header,environment.value);
+    return this._http.get(this.url+user_id);
   }
   deleteUser(user_id: number)
    {

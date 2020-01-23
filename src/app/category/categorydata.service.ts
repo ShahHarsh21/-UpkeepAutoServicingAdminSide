@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { category } from './category';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,18 @@ export class CategorydataService {
   }
   deleteCategory(category_id)
   {
-    return this._http.delete(this.url+category_id);
+    let x = new HttpHeaders().set(environment.header,environment.value);
+    return this._http.delete(this.url+category_id,{headers:x});
   }
   getCategoryById(category_id)
   {
     return this._http.get(this.url+category_id);
+  }
+  addCategory(item:category)
+  {
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(this.url, body, { headers: head });
   }
   updateCategory(category_id,item)
   {

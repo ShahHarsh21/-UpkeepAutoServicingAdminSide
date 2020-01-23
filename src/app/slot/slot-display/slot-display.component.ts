@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./slot-display.component.css']
 })
 export class SlotDisplayComponent implements OnInit {
-  displayedColumns:string[]=['vehicle_type','vehicle_model','service_type','time_period','pickup_time','pickup_address','requirment','drop_address',
-    'Action'];
+  displayedColumns:string[]=['vehicle_type','vehicle_model','Action'];
   slotarr:slot[]=[];
   dataSource: MatTableDataSource<slot>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -39,7 +38,7 @@ export class SlotDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-      this._router.navigate(['slotAdd']);
+      this._router.navigate(['/nav/slotAdd']);
   }
   onViewMore(row)
   {
@@ -47,7 +46,7 @@ export class SlotDisplayComponent implements OnInit {
   }
   onEdit(row)
   {
-
+    this._router.navigate(['/nav/slotEdit/'+row.slot_register_id]);
   }
   onDelete(row)
   {

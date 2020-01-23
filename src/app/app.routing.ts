@@ -21,6 +21,9 @@ import{UserauthguardService}from './userauthguard.service';
 import { UseraddComponent } from './user/useradd/useradd.component';
 import { UserEditComponent } from './user/userEdit/user-edit/user-edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SlotEditComponent } from './slot/slot_edit/slot-edit/slot-edit.component';
+import { CategoryAddComponent } from './category/categoryAdd/category-add/category-add.component';
+import { ColorAddComponent } from './color/colorAdd/color-add/color-add.component';
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
@@ -32,9 +35,11 @@ const arr:Routes=[
         {path:'productEdit/:product_id',component:ProductEditComponent},
         {path:'category',component:CategoryDisplayComponent},
         {path:'categoryEdit',component:CategoryEditComponent},
+        {path:'categoryAdd',component:CategoryAddComponent},
         {path:'productAdd',component:ProductAddComponent},
         {path:'color',component:ColorDisplayComponent},
         {path:'colorEdit',component:ColorEditComponent},
+        {path:'colorAdd',component:ColorAddComponent},
         {path:'Employee',component:EmployeeDisplayComponent},
         {path:'EmployeeAdd',component:EmployeeAddComponent},
         {path:'EmloyeeEdit',component:EmployeeEditComponent},
@@ -43,7 +48,8 @@ const arr:Routes=[
         {path:'stock',component:StockDisplayComponent},
         {path:'supplier',component:SupplierDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
-        {path:'userEdit/:user_id',component:UserEditComponent}
+        {path:'userEdit/:user_id',component:UserEditComponent},
+        {path:'slotEdit/:slot_regester_id',component:SlotEditComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}

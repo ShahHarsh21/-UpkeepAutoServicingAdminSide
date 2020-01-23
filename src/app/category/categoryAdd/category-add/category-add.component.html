@@ -1,0 +1,14 @@
+<!-- <p>category-add works!</p> -->
+<div>
+  <form [formGroup]="categoryAdd" (ngSubmit)="onCategoryAdd()" >
+
+        <mat-label><b>Category Name</b></mat-label><br>
+      <mat-form-field>
+        <input matInput placeholder="ENTER Category Name" formControlName="category_name">
+      </mat-form-field>
+      <br>
+
+      <button type="submit">ADD</button>
+    </form>
+  </div>
+

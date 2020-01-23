@@ -11,7 +11,7 @@ export class EmployeedataService {
   {
     return this._http.get(this.url);
   }
-  deleteemployee(employee_id)
+  deleteEmployee(employee_id)
   {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.delete(this.url+employee_id,{headers:head});

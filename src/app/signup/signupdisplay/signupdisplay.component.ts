@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SignupdataService } from '../signupdata.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-signupdisplay',
@@ -16,35 +17,41 @@ export class SignupdisplayComponent implements OnInit {
     'krunal'
   ];
 
-  constructor(private _signupdata:SignupdataService) { }
+  constructor(private _signupdata:SignupdataService,private _routs:Router) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
       email_id: new FormControl(null, [Validators.required, Validators.email]),
+
       password_group: new FormGroup({
         user_password: new FormControl(null, [Validators.required]),
         user_confirm_password: new FormControl(null)
       }, [this.passwordMatch.bind(this)]),
-      
+
       user_type: new FormControl('user'),
       user_name: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z]*'), this.checkUname.bind(this)]),
       address: new FormControl(null),
-      mobile_no: new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')])
+      mobile_no: new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')]),
+      dob:new FormControl(null)
     });
+
   }
   onSignup() {
+
     let userobj = {
-      user_email: this.signupForm.value.user_email,
-      user_password: this.signupForm.value.password_group.user_password,
+      email_id: this.signupForm.value.email_id,
+      password: this.signupForm.value.password_group.user_password,
       user_type: this.signupForm.value.user_type,
       user_name: this.signupForm.value.user_name,
       address: this.signupForm.value.address,
       mobile_no: this.signupForm.value.mobile_no,
-      date_of_birth:this.signupForm.value.date_of_birth,
+      date_of_birth:this.signupForm.value.dob,
     };
-    this._signupData.signup(userobj).subscribe(
-      (x: any) => {
-            alert('patyu');
+    console.log(userobj);
+    this._signupdata.signup(userobj).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this._routs.navigate(['nav/user']);
       }
     );
   }
