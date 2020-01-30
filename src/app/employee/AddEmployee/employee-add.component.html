@@ -1,31 +1,65 @@
-<p>employee-add works!</p>
-<div>
+<div class="container">
+
+  <h1>ADD EMPLOYEE</h1>
+
   <form [formGroup]="addemployee" (ngSubmit)="onEmployeeAdd()" >
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Id" formControlName="employee_id">
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Description" formControlName="employee_description">
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Salary" formControlName="Salary">
-      </mat-form-field>
-      <br>
-
-      <!-- <mat-form-field>
-        <input matInput placeholder="ENTER Product color" formControlName="product_color">
-      </mat-form-field>
-      <br> -->
-
-      <mat-label>Employee IMAGE</mat-label><br>
-      <input type="file" name="Employee_image" formControlName="employee_img">
-      <br>
-
-      <button type="submit">ADD</button>
-    </form>
-  </div>
+    <div class="form-groupup">
+      <mat-label><b>Name</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Name" formControlName="user_name" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('email_id').hasError('required') && !addemployee.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('email_id').hasError('email') && !addemployee.get('email_id').pristine" >Email is Invalid</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Email Id</b></mat-label><br>
+      <input class="form-control" placeholder="Enter EMAIL_ID" formControlName="email_id" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('required') && !addemployee.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('minlength') && !addemployee.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('pattern') && !addemployee.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Mobile No</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Address</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Address" formControlName="address">
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div>
+    <mat-label><b>Date Of Birth :</b></mat-label><br>
+      <input class="form-control" type= "date" formControlName="date_of_birth" >
+    </div><br>
+    <div>
+      <mat-label><b>USER TYPE :</b></mat-label><br>
+      <select formControlName="user_type">
+        <option value="user">USER</option>
+        <option value="admin">ADMIN</option>
+      </select>
+    </div><br>
+    <div>
+      <mat-label><b>EMPLOYEE's Designation :</b></mat-label><br>
+      <select formControlName="employee_designation">
+        <option *ngFor="let item of designationArr" >{{item.employee_designation}}</option>
+      </select>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Employee's Salary</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Employee's Salary" formControlName="salary">
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div>
+      <mat-label><b>Employee's Image</b></mat-label><br>
+      <input type="file" formControlName="employee_img">
+    </div>
+    <div class="form-group">
+      <button  type="submit" class="btn btn-primary" >ADD</button>
+    </div>
+  </form>
+</div>

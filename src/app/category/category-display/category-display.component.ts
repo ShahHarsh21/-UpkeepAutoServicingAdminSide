@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./category-display.component.css']
 })
 export class CategoryDisplayComponent implements OnInit {
-  displayedColumns:string[]=['category_name','category_type','Action'];
+  displayedColumns:string[]=['category_name','Action'];
   categoryarr:category[]=[];
   dataSource: MatTableDataSource<category>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -38,8 +38,10 @@ export class CategoryDisplayComponent implements OnInit {
   onDelete(row)
   {
     let x:number = this.categoryarr.indexOf(row);
+    console.log(row.category_id);
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
+
       this._data.deleteCategory(row.category_id).subscribe(
         (data:any)=>{
           console.log(data);
@@ -48,10 +50,6 @@ export class CategoryDisplayComponent implements OnInit {
         }
       );
     }
-  }
-  onEdit(row)
-  {
-    this._routes.navigate(['categoryEdit']);
   }
   onAddClick()
   {

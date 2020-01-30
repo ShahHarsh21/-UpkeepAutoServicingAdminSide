@@ -1,21 +1,27 @@
 <div class="container">
 
-  <h1>Login</h1>
 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <mat-form-field>
-      <input matInput formControlName="email_id" placeholder="ENTER EMAIL">
+  <h1 class="hh">Login</h1>
+  <div class="imgcontainer">
+      <img  alt="Avatar" class="avatar">
+    </div>
+  <div class="container">
+   <!-- <mat-form-field> -->
+      <label ><b>ENTER EMAIL</b></label>
+      <input matInput formControlName="email_id"  type="text" ><span><i class="material-icons" >mail</i></span>
       <mat-label *ngIf="loginForm.get('email_id').hasError('required') && !loginForm.get('email_id').pristine ">Email
         should not be empty</mat-label>
       <mat-label *ngIf="loginForm.get('email_id').hasError('email') && !loginForm.get('email_id').pristine ">Invalid
         Email</mat-label>
-    </mat-form-field>
+    <!-- </mat-form-field> -->
     <br>
-    <mat-form-field>
-      <input type="password" matInput formControlName="password" placeholder="ENTER PASSWORD">
+    <!-- <mat-form-field> -->
+      <label ><b>Password</b></label>
+      <input type="password" matInput formControlName="password"><i class="material-icons">remove_red_eye</i>
       <mat-label *ngIf="loginForm.get('password').hasError('required') && !loginForm.get('password').pristine ">Email
         should not be empty</mat-label>
-    </mat-form-field>
-  
-    <button type="submit" mat-button color="primary">Login</button>
+    <!-- </mat-form-field> -->
+    </div>
+    <button type="submit" >Login</button>
   </form>
 </div>

@@ -24,7 +24,7 @@ export class CategoryAddComponent implements OnInit {
     this._Data.addCategory(this.categoryAdd.value).subscribe(
       (data:any)=>{
         console.log(data);
-        this._routs.navigate(['nav/Category']);
+        this._routs.navigate(['/nav/category']);
       }
     );
   }
