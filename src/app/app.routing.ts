@@ -42,7 +42,7 @@ const arr:Routes=[
         {path:'colorAdd',component:ColorAddComponent},
         {path:'Employee',component:EmployeeDisplayComponent},
         {path:'EmployeeAdd',component:EmployeeAddComponent},
-        {path:'EmployeeEdit',component:EmployeeEditComponent},
+        {path:'EmployeeEdit/:employee_id',component:EmployeeEditComponent},
         {path:'Slot',component:SlotDisplayComponent},
         {path:'slotAdd',component:SlotAddComponent},
         {path:'stock',component:StockDisplayComponent},

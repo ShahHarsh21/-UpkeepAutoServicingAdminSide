@@ -1,13 +1,13 @@
 <div class="container">
 
-  <h2><b>ADD USER</b></h2>
-
   <form [formGroup]="adduser" (ngSubmit)="onUserAdd()" >
+    <div class="container">
+    <h1 class="hh"><b>ADD USER</b></h1>
     <div class="form-groupup">
       <mat-label><b>Email Id</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Email" formControlName="email_id" >
-      <!-- <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label> -->
+      <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text">
+      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
     </div><br>
     <div formGroupName="password_group" class="form-group" >
       <mat-label><b>Password</b></mat-label><br>
@@ -20,18 +20,18 @@
     </div><br>
     <div class="form-group" >
       <mat-label><b>User Name</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Name" formControlName="user_name" >
+      <input class="form-control" placeholder="Enter Name" formControlName="user_name" type="text">
       <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('required') && !adduser.get('user_name').pristine" >Name is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('minlength') && !adduser.get('user_name').pristine" >Name shoul be > 5</label>
       <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('pattern') && !adduser.get('user_name').pristine" > Only Chars</label>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Address</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Address" formControlName="address" >
+      <input class="form-control" placeholder="Enter Address" formControlName="address" type="text">
     </div><br>
     <div class="form-group" >
       <mat-label><b>Mobile No</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" >
+      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('pattern') " > Only digits</label>
@@ -41,7 +41,13 @@
       <input class="form-control" type="date" formControlName="dob" >
     </div><br>
     <div class="form-group">
+<<<<<<< HEAD
       <button  type="submit" class="btn btn-primary" >Add</button>
+=======
+      <button  type="submit" class="btn" >Add</button>
+      <button  class="can">Cancle</button>
+>>>>>>> 56e2f6b69e9bfe422250a340f82799c05e34bbf7
     </div>
+  </div>
   </form>
 </div>

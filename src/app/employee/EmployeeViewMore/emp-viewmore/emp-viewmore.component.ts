@@ -14,6 +14,14 @@ export class EmpViewmoreComponent implements OnInit {
   salary:string='';
   employee_type: string='';
   fk_user_id:number=0;
+  user_id: number=0;
+  email_id: string='';
+  password: string='';
+  user_name:string='';
+  mobile_no: number=0;
+  address: string='';
+  date_of_birth: Date;
+  user_type:string='';
    constructor(public dialogref: MatDialogRef<EmpViewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: employee) { }
 
   ngOnInit() {
@@ -23,6 +31,12 @@ export class EmpViewmoreComponent implements OnInit {
     this.salary=this.data.salary
     this.employee_type=this.data.employee_type;
     this.fk_user_id=this.data.fk_user_id;
+    this.email_id=this.data.email_id;
+    this.user_name=this.data.user_name;
+    this.mobile_no=this.data.mobile_no;
+    this.address=this.data.address;
+    this.date_of_birth=this.data.date_of_birth;
+    this.user_type=this.data.user_type;
   }
   onClickCancel()
   {

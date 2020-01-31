@@ -1,70 +1,64 @@
-<p>employee-edit works!</p>
-<!-- <div>
-    <form [formGroup]="editEmployee" (ngSubmit)="onEmployeeEdit()" >
+<div class="container">
 
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Id" formControlName="employee_id" disabled>
-      </mat-form-field>
-      <br>
+  <h1>UPDATE EMPLOYEE</h1>
 
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Designation" formControlName="employee_designation">
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Salary of Employee" formControlName="salary">
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Employee Type" formControlName="employee_type">
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-        <input matInput placeholder="ENTER Fk User Id" formControlName="fk_user_id" disabled>
-      </mat-form-field>
-      <br>
-
-      <mat-label>Employee Image</mat-label><br>
-      <input type="file" name="employee_img" formControlName="employee_img">
-      <br>
-
-      <button type="submit">UPDATE</button>
+  <form [formGroup]="editEmployee" (ngSubmit)="onEmployeeEdit()" >
+    <div class="form-groupup">
+      <mat-label><b>Name</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Name" formControlName="user_name" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('email_id').hasError('required') && !addemployee.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('email_id').hasError('email') && !addemployee.get('email_id').pristine" >Email is Invalid</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Email Id</b></mat-label><br>
+      <input class="form-control" placeholder="Enter EMAIL_ID" formControlName="email_id" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('required') && !addemployee.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('minlength') && !addemployee.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('user_name').hasError('pattern') && !addemployee.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Mobile No</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" >
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Address</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Address" formControlName="address">
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div>
+    <mat-label><b>Date Of Birth :</b></mat-label><br>
+      <input class="form-control" type="date" formControlName="date_of_birth" >
+    </div><br>
+    <div>
+      <mat-label><b>USER TYPE :</b></mat-label><br>
+      <select>
+        <option *ngFor="let item of typeArr">{{item.user_type}}</option>
+      </select>
+    </div><br>
+    <div>
+      <mat-label><b>EMPLOYEE's Designation :</b></mat-label><br>
+      <select>
+        <option *ngFor="let item of designationArr" [value]="item.employee_id">{{item.employee_designation}}</option>
+      </select>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Employee's Salary</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Employee's Salary" formControlName="salary">
+      <!-- <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('required') && !addemployee.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addemployee.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div>
+      <mat-label><b>Employee's Image</b></mat-label><br>
+      <input type="file" >
+    </div>
+    <div class="form-group">
+      <button  type="submit" class="btn btn-primary" >ADD</button>
+    </div>
   </form>
-</div> -->
-<div>
-  <form>
-    <mat-form-field>
-      <input matInput placeholder="ENTER Employee Id" [(ngModel)]="employee_id" name="employee_id" disabled>
-    </mat-form-field>
-    <br>
-
-    <mat-form-field>
-      <input matInput placeholder="ENTER Employee Designation" [(ngModel)]="employee_designation" name="employee_designation">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field>
-      <input matInput placeholder="ENTER Salary of Employee" [(ngModel)]="salary" name="salary">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field>
-      <input matInput placeholder="ENTER Employee Type" [(ngModel)]="employee_type" name="employee_type">
-    </mat-form-field>
-    <br>
-
-    <mat-form-field>
-      <input matInput placeholder="ENTER Fk User Id" [(ngModel)]="fk_user_id" name="fk_user_id" disabled>
-    </mat-form-field>
-    <br>
-
-    <mat-label>Employee Image</mat-label><br>
-    <input type="file" name="employee_img" [(ngModel)]="employee_img">
-    <br>
-
-    <button type="submit" (click)="onEmployeeEdit(row.employee_id,row)">UPDATE</button>
-</form>
 </div>

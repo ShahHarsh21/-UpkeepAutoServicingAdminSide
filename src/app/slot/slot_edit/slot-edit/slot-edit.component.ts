@@ -10,11 +10,11 @@ import { slot } from '../../slot-display/slot';
   styleUrls: ['./slot-edit.component.css']
 })
 export class SlotEditComponent implements OnInit {
-  slot_edit:FormGroup;
+  editSlot:FormGroup;
   constructor(private _slotdata :SlotdataService,private _router:Router,private _act_routs:ActivatedRoute) {
     var slot_id :number= this._act_routs.snapshot.params['slot_regester_id'];
 
-    this.slot_edit=new FormGroup({
+    this.editSlot=new FormGroup({
       slot_register_id:new FormControl(null),
       vehicle_type: new FormControl(null),
       vehicle_model:new FormControl(null),
@@ -32,14 +32,15 @@ export class SlotEditComponent implements OnInit {
     this._slotdata.getAllSlots().subscribe(
       (data:any)=>{
         console.log(data);
-        this.formDataBind(data[0]);
+        this.formDataBind(data);
      }
     );
-}
+
+  }
 formDataBind(item:slot)
 {
-  this.slot_edit.patchValue({
-    slot_register_id:item.vehicle_type,
+  this.editSlot.patchValue({
+    slot_register_id:item.slot_register_id,
       vehicle_type:item.vehicle_model,
       vehicle_model:item.vehicle_model,
       service_type:item.service_type,
@@ -51,11 +52,10 @@ formDataBind(item:slot)
       allotment_emp_id:item.allotment_emp_id
      });
   }
-  onSlotEdit(item:slot)
+  onSlotedit()
   {
-
-    let x:number=item.slot_register_id;
-    this._slotdata.updateSlot(item).subscribe(
+    console.log(this.editSlot.value);
+    this._slotdata.updateSlot(this.editSlot.value).subscribe(
       (data:any)=>{
         console.log(data);
         this._router.navigate(['/nav/Slot']);

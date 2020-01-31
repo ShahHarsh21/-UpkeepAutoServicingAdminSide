@@ -16,7 +16,9 @@ export class CategorydataService {
   }
   deleteCategory(category_id)
   {
+    console.log(category_id);
     let x = new HttpHeaders().set(environment.header,environment.value);
+    console.log(x);
     return this._http.delete(this.url+category_id,{headers:x});
   }
   getCategoryById(category_id)

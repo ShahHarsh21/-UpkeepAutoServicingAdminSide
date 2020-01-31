@@ -1,14 +1,13 @@
-<!-- <p>category-add works!</p> -->
-<div>
+<div >
   <form [formGroup]="categoryAdd" (ngSubmit)="onCategoryAdd()" >
-
-        <mat-label><b>Category Name</b></mat-label><br>
-      <mat-form-field>
-        <input matInput placeholder="ENTER Category Name" formControlName="category_name">
-      </mat-form-field>
+      <div class="container">
+      <mat-label><b>Category Name</b></mat-label><br>
+      <input matInput  formControlName="category_name" type="text">
       <br>
 
-      <button type="submit">ADD</button>
-    </form>
-  </div>
+      <button type="submit" class="btn" >ADD</button>
+      <button  class="can">Cancle</button>
+    </div>
+  </form>
+</div>
 

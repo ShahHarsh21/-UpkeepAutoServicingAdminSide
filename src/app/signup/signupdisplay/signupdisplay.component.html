@@ -1,11 +1,10 @@
 <div class="container">
 
-    <h1>Signup</h1>
-
     <form [formGroup]="signupForm" (ngSubmit)="onSignup()" >
+      <h1 class="hh" >Signup</h1>
       <div class="form-groupup">
         <mat-label><b>Email Id</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Email" formControlName="email_id" >
+        <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text" >
         <label class="alert alert-danger" *ngIf="signupForm.get('email_id').hasError('required') && !signupForm.get('email_id').pristine" >Email is required</label>
         <label class="alert alert-danger" *ngIf="signupForm.get('email_id').hasError('email') && !signupForm.get('email_id').pristine" >Email is Invalid</label>
       </div><br>
@@ -20,18 +19,18 @@
       </div><br>
       <div class="form-group" >
         <mat-label><b>User Name</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Name" formControlName="user_name" >
+        <input class="form-control" placeholder="Enter Name" formControlName="user_name" type="text" >
         <label class="alert alert-danger" *ngIf="signupForm.get('user_name').hasError('required') && !signupForm.get('user_name').pristine" >Name is required</label>
         <label class="alert alert-danger" *ngIf="signupForm.get('user_name').hasError('minlength') && !signupForm.get('user_name').pristine" >Name shoul be > 5</label>
         <label class="alert alert-danger" *ngIf="signupForm.get('user_name').hasError('pattern') && !signupForm.get('user_name').pristine" > Only Chars</label>
       </div><br>
       <div class="form-group" >
         <mat-label><b>Address</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Address" formControlName="address" >
+        <input class="form-control" placeholder="Enter Address" formControlName="address" type="text">
       </div><br>
       <div class="form-group" >
         <mat-label><b>Mobile No</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" >
+        <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
         <label class="alert alert-danger" *ngIf="signupForm.get('mobile_no').hasError('required') && !signupForm.get('mobile_no').pristine" >mobile no is required</label>
         <label class="alert alert-danger" *ngIf="signupForm.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
         <label class="alert alert-danger" *ngIf="signupForm.get('mobile_no').hasError('pattern') " > Only digits</label>
@@ -42,7 +41,10 @@
         <label class="alert alert-danger" *ngIf="signupForm.get('dob').hasError('required') && !signupForm.get('dob').pristine" >FIRST ENTER DATE</label>
       </div><br>
       <div class="form-group">
-        <button  type="submit" class="btn btn-primary" [disabled]="!this.signupForm.valid">Signup</button>
+        <button  type="submit"  >Signup</button>
+
+        <button   style="background-color: #f44336;" >Cancle</button>
       </div>
+
     </form>
   </div>

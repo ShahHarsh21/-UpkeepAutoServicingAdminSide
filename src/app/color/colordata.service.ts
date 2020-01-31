@@ -26,4 +26,10 @@ export class ColordataService {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.put(this.url+'/'+color_id,body, { headers: head });
   }
+  addColor(item)
+  {
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(this.url,body, { headers: head });
+  }
 }
