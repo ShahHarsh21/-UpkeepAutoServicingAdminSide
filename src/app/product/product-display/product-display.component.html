@@ -56,7 +56,7 @@
       </ng-container>
 
       <ng-container matColumnDef="Action">
-        <th mat-header-cell *matHeaderCellDef > Action </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
         <td mat-cell *matCellDef="let row">
           <button (click)="onDelete(row)" mat-mini-fab color="warn" aria-label="Example icon-button with a heart icon">
             <mat-icon>delete</mat-icon>

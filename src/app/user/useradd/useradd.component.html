@@ -6,8 +6,8 @@
     <div class="form-groupup">
       <mat-label><b>Email Id</b></mat-label><br>
       <input class="form-control" placeholder="Enter Email" formControlName="email_id" >
-      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
+      <!-- <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label> -->
     </div><br>
     <div formGroupName="password_group" class="form-group" >
       <mat-label><b>Password</b></mat-label><br>
@@ -41,7 +41,7 @@
       <input class="form-control" type="date" formControlName="dob" >
     </div><br>
     <div class="form-group">
-      <button  type="submit" class="btn btn-primary" >Signup</button>
+      <button  type="submit" class="btn btn-primary" >Add</button>
     </div>
   </form>
 </div>

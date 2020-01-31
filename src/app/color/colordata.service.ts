@@ -5,7 +5,7 @@ import { environment } from "../../environments/environment";
   providedIn: 'root'
 })
 export class ColordataService {
-  url:string=environment.url+'color';
+  url:string=environment.url+'color/';
 
   constructor(private _http:HttpClient) { }
   getAllColor()

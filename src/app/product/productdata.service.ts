@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ProductdataService {
-  private url:string=environment.url+'product/';
+  private url : string=environment.url+'product/';
   constructor(private _http : HttpClient) { }
 
   getAllProduct()

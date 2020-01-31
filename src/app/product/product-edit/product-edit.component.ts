@@ -76,14 +76,6 @@ export class ProductEditComponent implements OnInit {
     }
   onProductEdit()
   {
-<<<<<<< HEAD
-      this._productdata.updateProduct(item.product_id,item).subscribe(
-        (data:any)=>{
-          console.log(data);
-          this._router.navigate(['/nav/Product']);
-        }
-      );
-=======
     console.log(this.editProduct.value.fk_cat_id);
     console.log(this.editProduct.value.fk_color_id);
     let productObj={
@@ -102,6 +94,5 @@ export class ProductEditComponent implements OnInit {
         this._router.navigate(['/nav/product/']);
       }
     );
->>>>>>> cec374e2f39fdfbf0d61bf16b4e67e0572d08894
   }
 }
