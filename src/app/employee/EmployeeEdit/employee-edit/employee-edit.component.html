@@ -36,8 +36,11 @@
     </div><br>
     <div>
       <mat-label><b>USER TYPE :</b></mat-label><br>
-      <select>
-        <option *ngFor="let item of typeArr">{{item.user_type}}</option>
+      <select class="form-control" formControlName="user_type">
+        <option id="1">{{"USER"}}</option>
+        <option id="2">{{"ADMIN"}}</option>
+        <option id="3">{{"EMPLOYEE"}}</option>
+        <option id="4">{{"SUPER ADMIN"}}</option>
       </select>
     </div><br>
     <div>

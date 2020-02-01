@@ -3,6 +3,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { UserdataService } from '../../userdata.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { user } from '../../user';
+import { emp_type } from 'src/app/employee/emp_type_class';
+import { Type } from '@angular/compiler';
+import { EmployeedataService } from 'src/app/employee/employeedata.service';
 
 
 @Component({
@@ -13,7 +16,8 @@ import { user } from '../../user';
 export class UserEditComponent implements OnInit {
   userEdit:FormGroup;
   user_rout:number=0;
-  constructor(public _data:UserdataService,public _act_routs:ActivatedRoute,public _routs:Router) {
+  typeArr:emp_type[]=[];
+  constructor(public _emp_data:EmployeedataService,public _data:UserdataService,public _act_routs:ActivatedRoute,public _routs:Router) {
 
   }
 
@@ -55,12 +59,28 @@ export class UserEditComponent implements OnInit {
   }
   onUserEdit()
   {
-    console.log(this.userEdit.value);
-    this._data.updateUser(this.userEdit.value).subscribe(
-      (data:any)=>{
-        console.log(data);
-        this._routs.navigate(['/nav/user']);
-      }
-    );
+    // console.log(this.userEdit.value);
+    // console.log(this.userEdit.value.user_type);
+    this.userEdit.value.user_type="employee";
+    if(this.userEdit.value.user_type == "employee")
+    {
+      console.log(this.userEdit.value);
+      this._emp_data.addEmployee(this.user_rout).subscribe(
+        (data:any)=>{
+          console.log(data);
+          this._routs.navigate(['/nav/Employee']);
+        }
+      );
+    }
+    else
+    {
+      this._data.updateUser(this.userEdit.value).subscribe(
+        (data:any)=>{
+          console.log(data);
+          this._routs.navigate(['/nav/user']);
+        }
+      );
+
+    }
   }
 }

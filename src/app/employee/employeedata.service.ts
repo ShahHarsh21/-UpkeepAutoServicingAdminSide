@@ -6,7 +6,7 @@ import { employee } from './employee-display/employee';
   providedIn: 'root'
 })
 export class EmployeedataService {
-  url:string=environment.url+'Employee/';
+  url:string=environment.url+'employee/';
   url2:string=environment.url+'emp_designation/';
   url3:string=environment.url+'emp_type/';
   url4:string=environment.url+'emp_With_Username/';
@@ -29,12 +29,14 @@ export class EmployeedataService {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.delete(this.url+employee_id,{headers:head});
   }
-  addEmployee(item)
+  addEmployee(fk_user_id: number)
   {
-    console.log(item);
-    const body = JSON.stringify(item);
+    console.log(fk_user_id);
+    let obj= {"fk_user_id": fk_user_id};
+    //const body = JSON.stringify(obj);
+    //console.log(body);
     const head = new HttpHeaders().set(environment.header, environment.value);
-    return this._http.post(this.url,body,{headers:head});
+    return this._http.post(this.url,obj,{headers:head});
   }
   getEmployeeById(employee_id)
   {

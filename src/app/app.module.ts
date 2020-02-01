@@ -34,7 +34,6 @@ import { CategoryEditComponent } from './category/categoryEdit/category-edit/cat
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
-import { EmployeeAddComponent } from './employee/AddEmployee/employee-add.component';
 import { EmpViewmoreComponent } from './employee/employeeviewmore/emp-viewmore/emp-viewmore.component';
 import { EmployeeEditComponent } from './employee/employeeEdit/employee-edit/employee-edit.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
@@ -64,7 +63,6 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
     ColorDisplayComponent,
     ColorEditComponent,
     EmployeeDisplayComponent,
-    EmployeeAddComponent,
     EmpViewmoreComponent,
     EmployeeEditComponent,
     StockDisplayComponent,

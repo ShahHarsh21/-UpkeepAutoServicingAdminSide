@@ -1,8 +1,9 @@
 <div class="container">
 
-  <h1>Signup</h1>
 
   <form [formGroup]="addproduct" (ngSubmit)="onProductAdd()" >
+    <h1 class="hh"><b>Add Product</b></h1>
+
     <div class="form-groupup">
       <mat-label><b>Product Name</b></mat-label><br>
       <input class="form-control" placeholder="Enter Name" formControlName="product_name" >
