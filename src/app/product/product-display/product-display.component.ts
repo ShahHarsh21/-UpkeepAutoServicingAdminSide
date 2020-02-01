@@ -37,13 +37,13 @@ export class ProductDisplayComponent implements OnInit {
       this.dataSource.paginator.firstPage();
   }
   }
-  onDelete(row)
+  onDelete(item:Product)
   {
-    let x:number = this.productarr.indexOf(row);
+    let x:number = this.productarr.indexOf(item);
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
-      this._data.deleteProduct(row.product_id).subscribe(
-        (data:any)=>{
+      this._data.deleteProduct(item.product_id).subscribe(
+        (data:Product)=>{
           console.log(data);
           this.productarr.splice(x,1);
           this.dataSource.data=this.productarr;
@@ -51,8 +51,24 @@ export class ProductDisplayComponent implements OnInit {
         }
       );
     }
-    // this._data.deleteProduct
   }
+    // this._data.deleteProduct
+
+  // onDelete(item:Product)
+  // {
+  //   if (confirm("R U SURE U WANT TO DELETE?"))
+  //   {
+  //       this._data.deleteProduct(item.product_id).subscribe(
+  //         (data:Product)=>{
+  //           let position= this.productarr.indexOf(item);
+  //           this.productarr.splice(position,1);
+  //           this.dataSource.data=this.productarr;
+  //           this._router.navigate(['/nav/product']);
+
+  //         }
+  //       );
+  //    }
+  // }
   onAddClick()
   {
     this._router.navigate(['/nav/productAdd']);

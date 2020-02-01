@@ -38,6 +38,7 @@
       <div>
       <mat-label><b>Date Of Birth :</b></mat-label><br>
         <input class="form-control" type="date" formControlName="dob" >
+        <label class="alert alert-danger" *ngIf="signupForm.get('dob').hasError('required') && !signupForm.get('dob').pristine" >FIRST ENTER DATE</label>
       </div><br>
       <div class="form-group">
         <button  type="submit"  >Signup</button>

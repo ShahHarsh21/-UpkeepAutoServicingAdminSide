@@ -26,6 +26,7 @@ export class UserDisplayComponent implements OnInit {
   ngOnInit() {
     this  ._data.getAllUser().subscribe(
       (data:any)=>{
+            this.userarr=data;
             this.dataSource.data=data;
       }
     );

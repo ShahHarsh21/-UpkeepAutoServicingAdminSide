@@ -25,7 +25,7 @@ export class SignupdisplayComponent implements OnInit {
 
       password_group: new FormGroup({
         user_password: new FormControl(null, [Validators.required]),
-        user_confirm_password: new FormControl(null)
+        user_confirm_password: new FormControl(null,[Validators.required])
       }, [this.passwordMatch.bind(this)]),
 
       user_type: new FormControl('user'),
@@ -45,7 +45,7 @@ export class SignupdisplayComponent implements OnInit {
       user_name: this.signupForm.value.user_name,
       address: this.signupForm.value.address,
       mobile_no: this.signupForm.value.mobile_no,
-      date_of_birth:this.signupForm.value.dob,
+      dob:this.signupForm.value.dob
     };
     console.log(userobj);
     this._signupdata.signup(userobj).subscribe(
@@ -59,8 +59,7 @@ export class SignupdisplayComponent implements OnInit {
     const pass = c.get('user_password').value;
     const cpass = c.get('user_confirm_password').value;
     if (pass != cpass) {
-
-      return { 'sarkhanathi': true };
+      return { 'BOTH PASSWORD MUST BE SAME': true };
     }
     return null;
   }
