@@ -5,7 +5,7 @@ export class slot{
     public vehicle_model: string,
     public service_type:number,
     public time_period: string,
-    public pickup_time: string,
+    public pickup_date: string,
     public pickup_address: string,
     public requirment:number,
     public drop_address:string,

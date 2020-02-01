@@ -12,26 +12,35 @@
     <div class="form-group" >
       <mat-label><b>Vehicle Type</b></mat-label><br>
       <select class="form-control" formControlName="vehicle_type" >
-        <option *ngFor="let item of " [value]="">{{item.vehicle_type}}</option>
+          <option><b>SELECT VEHICLE IS 2 OR 4 WHEELER</b></option>
+          <option value='2 wheeler'>2 WHEELER</option>
+          <option value='3 wheeler'>4 WHEELER</option>
       </select>
     </div><br>
       <div class="form-group" >
         <mat-label><b>Service Type</b></mat-label><br>
         <select class="form-control" formControlName="service_type" >
-          <option *ngFor="let item of " [value]="">{{item.service_type}}</option>
+          <option value='Body Paint & Design'><b>BODY PAINT & DESIGN</b></option>
+          <option value='Engine Oil & Filter'>ENGINE OIL & FILTER</option>
+          <option value='Engine Diagonostic'>ENGINE DIAGONOSTIC</option>
+          <option value='Air Conditioning'>AIR CONDITIONING</option>
+          <option value='Belt And Hoses'>BELT AND HOSES</option>
+          <option value='Wheel Repair'>WHEEL REPAIR</option>
+          <option value='Break Repair'>BREAK REPAIR</option>
+          <option value='Water Kit'>WATER KIT</option>
         </select>
       </div><br>
+
       <div class="form-group" >
         <mat-label><b>Time Period</b></mat-label><br>
-        <label id="note"><b>NOTE:<br>You have to add date.</b></label><br>
-        <input class="form-control"  formControlName="time_period" >
+        <input class="form-control" type="time"  formControlName="time_period" >
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
       </div><br>
       <div class="form-group" >
         <mat-label><b>Pick-Up Time</b></mat-label><br>
-        <input class="form-control"  formControlName="pickup_time">
+        <input class="form-control" type="date" formControlName="pickup_time">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->

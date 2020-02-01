@@ -48,7 +48,7 @@ const arr:Routes=[
         {path:'supplier',component:SupplierDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
-        {path:'slotEdit/:slot_regester_id',component:SlotEditComponent}
+        {path:'slotEdit/:slot_register_id',component:SlotEditComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}

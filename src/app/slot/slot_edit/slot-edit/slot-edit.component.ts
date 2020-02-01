@@ -11,8 +11,10 @@ import { slot } from '../../slot-display/slot';
 })
 export class SlotEditComponent implements OnInit {
   editSlot:FormGroup;
+  slot_id:number;
   constructor(private _slotdata :SlotdataService,private _router:Router,private _act_routs:ActivatedRoute) {
-    var slot_id :number= this._act_routs.snapshot.params['slot_regester_id'];
+    this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
+    console.log(this.slot_id);
 
     this.editSlot=new FormGroup({
       slot_register_id:new FormControl(null),
@@ -26,10 +28,11 @@ export class SlotEditComponent implements OnInit {
       drop_address:new FormControl(null),
       allotment_emp_id:new FormControl(null)
     });
+
   }
 
   ngOnInit() {
-    this._slotdata.getAllSlots().subscribe(
+    this._slotdata.getSlotById(this.slot_id).subscribe(
       (data:any)=>{
         console.log(data);
         this.formDataBind(data);
@@ -40,12 +43,12 @@ export class SlotEditComponent implements OnInit {
 formDataBind(item:slot)
 {
   this.editSlot.patchValue({
-    slot_register_id:item.slot_register_id,
-      vehicle_type:item.vehicle_model,
+      slot_register_id:item.slot_register_id,
+      vehicle_type:item.vehicle_type,
       vehicle_model:item.vehicle_model,
       service_type:item.service_type,
       time_period: item.time_period,
-      pickup_time: item.pickup_time,
+      pickup_date: item.pickup_date,
       pickup_address: item.pickup_address,
       requirment:item.requirment,
       drop_address:item.drop_address,
@@ -55,11 +58,11 @@ formDataBind(item:slot)
   onSlotedit()
   {
     console.log(this.editSlot.value);
-    this._slotdata.updateSlot(this.editSlot.value).subscribe(
-      (data:any)=>{
-        console.log(data);
-        this._router.navigate(['/nav/Slot']);
-      }
-    );
+    // this._slotdata.updateSlot(this.editSlot.value).subscribe(
+    //   (data:any)=>{
+    //     console.log(data);
+    //     this._router.navigate(['/nav/Slot']);
+    //   }
+    // );
   }
 }

@@ -17,10 +17,9 @@ export class SlotAddComponent implements OnInit {
 
   ngOnInit() {
     this.addslot=new FormGroup({
-      slot_register_id:new FormControl(null),
-      vehicle_type:new FormControl(null),
-      vehicle_model: new FormControl(null),
-      service_type:new FormControl(null),
+      vehicle_type:new FormControl("SELECT VEHICLE IS 2 OR 4 WHEELER"),
+      vehicle_model: new FormControl(),
+      service_type:new FormControl("Body Paint & Design"),
       time_period: new FormControl(null),
       pickup_time: new FormControl(null),
       pickup_address: new FormControl(null),
@@ -28,12 +27,7 @@ export class SlotAddComponent implements OnInit {
       drop_address:new FormControl(null),
       allotment_emp_id:new FormControl(null)
     });
-    // this._emp_data.getAllEmployee().subscribe(
-    //   (data:any)=>{
-    //     let data1=data
-    //     this.all_id.push();
-    //   }
-    // );
+
   }
   onSlotAdd()
   {
@@ -48,11 +42,11 @@ export class SlotAddComponent implements OnInit {
       requirment:this.addslot.value.requirment,
       drop_address:this.addslot.value.drop_address
     };
-    console.log(slotObj);
-    this._data.addSlots(slotObj).subscribe(
+    console.log(this.addslot.value);
+    this._data.addSlots(this.addslot.value).subscribe(
       (data:any)=>{
         console.log(data);
-        this._routs.navigate(['/nav/Slots']);
+        this._routs.navigate(['/nav/Slot']);
       }
     );
   }
