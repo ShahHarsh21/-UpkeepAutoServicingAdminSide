@@ -3,7 +3,7 @@ import { employee } from './employee';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
 import { EmployeedataService } from '../employeedata.service';
 import { Router } from '@angular/router';
-import { EmpViewmoreComponent } from '../employeeviewmore/emp-viewmore/emp-viewmore.component';
+import { EmpViewmoreComponent } from '../emp-viewmore/emp-viewmore.component';
 import { UserdataService } from 'src/app/user/userdata.service';
 import { user } from 'src/app/user/user';
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { CategorydataService } from '../../categorydata.service';
+import { CategorydataService } from '../categorydata.service';
 import { Router } from '@angular/router';
-import { category } from '../../category';
+import { category } from '../category';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -27,13 +27,13 @@ export class CategoryAddComponent implements OnInit {
     this._Data.addCategory(this.categoryAdd.value).subscribe(
       (data:any)=>{
         console.log(data);
-        this._routs.navigate(['/nav/category']);
+        this.dialogref.close();
       }
     );
   }
   onClickCancel()
   {
-    this._routs.navigate(['nav/category   ']);
+    this.dialogref.close();
   }
 }
 

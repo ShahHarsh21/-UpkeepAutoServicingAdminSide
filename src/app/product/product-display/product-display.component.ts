@@ -3,7 +3,7 @@ import { ProductdataService } from '../productdata.service';
 import { Product } from '../product';
 import { MatTableDataSource, MatDialog, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
-import { ProductViewMoreComponent } from '../product_view_more/product-view-more/product-view-more.component';
+import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
 
 @Component({
   selector: 'app-product-display',
@@ -24,9 +24,8 @@ export class ProductDisplayComponent implements OnInit {
   ngOnInit() {
     this._data.getAllProduct().subscribe(
       (data:any)=>{
-            console.log(data);
-            //this.productarr.splice(this.productarr.indexOf(data),1)
-            this.dataSource.data=data;
+          console.log(data);
+          this.dataSource.data=data;
       }
     );
   }
@@ -39,39 +38,21 @@ export class ProductDisplayComponent implements OnInit {
   }
   onDelete(item:Product)
   {
-    let x:number = this.productarr.indexOf(item);
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
       this._data.deleteProduct(item.product_id).subscribe(
-        (data:Product)=>{
-          console.log(data);
-          this.productarr.splice(x,1);
+        (data:any)=>{
+          this.productarr.splice(this.productarr.indexOf(item),1);
           this.dataSource.data=this.productarr;
-          this._router.navigate(['/nav/product']);
+          this._router.navigate(['/nav/product/']);
         }
       );
     }
   }
-    // this._data.deleteProduct
 
-  // onDelete(item:Product)
-  // {
-  //   if (confirm("R U SURE U WANT TO DELETE?"))
-  //   {
-  //       this._data.deleteProduct(item.product_id).subscribe(
-  //         (data:Product)=>{
-  //           let position= this.productarr.indexOf(item);
-  //           this.productarr.splice(position,1);
-  //           this.dataSource.data=this.productarr;
-  //           this._router.navigate(['/nav/product']);
-
-  //         }
-  //       );
-  //    }
-  // }
   onAddClick()
   {
-    this._router.navigate(['/nav/productAdd']);
+    this._router.navigate(['/nav/productAdd/']);
   }
   onEdit(row)
   {

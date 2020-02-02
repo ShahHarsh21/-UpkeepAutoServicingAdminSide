@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { UserdataService } from '../../userdata.service';
+import { UserdataService } from '../userdata.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { user } from '../../user';
+import { user } from '../user';
 import { emp_type } from 'src/app/employee/emp_type_class';
 import { Type } from '@angular/compiler';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
@@ -14,6 +14,7 @@ import { EmployeedataService } from 'src/app/employee/employeedata.service';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
+  [x: string]: any;
   userEdit:FormGroup;
   user_rout:number=0;
   typeArr:emp_type[]=[];
@@ -68,7 +69,7 @@ export class UserEditComponent implements OnInit {
       this._emp_data.addEmployee(this.user_rout).subscribe(
         (data:any)=>{
           console.log(data);
-          this._routs.navigate(['/nav/Employee']);
+          this._routs.navigate(['/nav/Employee/']);
         }
       );
     }
@@ -77,10 +78,14 @@ export class UserEditComponent implements OnInit {
       this._data.updateUser(this.userEdit.value).subscribe(
         (data:any)=>{
           console.log(data);
-          this._routs.navigate(['/nav/user']);
+          this._routs.navigate(['/nav/user/']);
         }
       );
 
     }
+  }
+  onCancle()
+  {
+	this._router.navigate(['/nav/user/']);
   }
 }

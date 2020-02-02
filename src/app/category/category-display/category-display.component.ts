@@ -3,7 +3,7 @@ import { category } from '../category';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
 import { CategorydataService } from '../categorydata.service';
 import { Router } from '@angular/router';
-import { CategoryAddComponent } from '../categoryAdd/category-add/category-add.component';
+import { CategoryAddComponent } from '../category-add/category-add.component';
 
 @Component({
   selector: 'app-category-display',
@@ -48,6 +48,7 @@ export class CategoryDisplayComponent implements OnInit {
           console.log(data);
           this.categoryarr.splice( this.categoryarr.indexOf(row),1);
           this.dataSource.data=this.categoryarr;
+          this._routes.navigate(['/nav/category/']);
         }
       );
     }
@@ -55,6 +56,5 @@ export class CategoryDisplayComponent implements OnInit {
   onAddClick()
   {
     this._dialog.open(CategoryAddComponent);
-    // this._routes.navigate(['/nav/categoryAdd']);
   }
 }

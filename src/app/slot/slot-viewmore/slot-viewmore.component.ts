@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { slot } from '../../slot-display/slot';
+import { slot } from '../slot-display/slot';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
