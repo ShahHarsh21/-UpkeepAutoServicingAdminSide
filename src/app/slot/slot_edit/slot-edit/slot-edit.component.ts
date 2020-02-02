@@ -16,32 +16,34 @@ export class SlotEditComponent implements OnInit {
     this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
     console.log(this.slot_id);
 
+
+  }
+
+  ngOnInit() {
+
     this.editSlot=new FormGroup({
       slot_register_id:new FormControl(null),
       vehicle_type: new FormControl(null),
       vehicle_model:new FormControl(null),
       service_type:new FormControl(null),
       time_period: new FormControl(null),
-      pickup_time: new FormControl(null),
+      pickup_date: new FormControl(null),
       pickup_address: new FormControl(null),
       requirment:new FormControl(null),
       drop_address:new FormControl(null),
       allotment_emp_id:new FormControl(null)
     });
-
-  }
-
-  ngOnInit() {
     this._slotdata.getSlotById(this.slot_id).subscribe(
-      (data:any)=>{
+      (data:slot[])=>{
         console.log(data);
-        this.formDataBind(data);
+        this.formDataBind(data[0]);
      }
     );
 
   }
 formDataBind(item:slot)
 {
+  console.log(item);
   this.editSlot.patchValue({
       slot_register_id:item.slot_register_id,
       vehicle_type:item.vehicle_type,
@@ -58,11 +60,11 @@ formDataBind(item:slot)
   onSlotedit()
   {
     console.log(this.editSlot.value);
-    // this._slotdata.updateSlot(this.editSlot.value).subscribe(
-    //   (data:any)=>{
-    //     console.log(data);
-    //     this._router.navigate(['/nav/Slot']);
-    //   }
-    // );
+    this._slotdata.updateSlot(this.editSlot.value).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this._router.navigate(['/nav/Slot']);
+      }
+    );
   }
 }

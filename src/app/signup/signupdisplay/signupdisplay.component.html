@@ -41,7 +41,7 @@
         <label class="alert alert-danger" *ngIf="signupForm.get('dob').hasError('required') && !signupForm.get('dob').pristine" >FIRST ENTER DATE</label>
       </div><br>
       <div class="form-group">
-        <button  type="submit"  [disabled]="!this.signupForm.valid">Signup</button>
+        <button  type="submit" type="button"  [disabled]="!this.signupForm.valid">Signup</button>
 
         <button   style="background-color: #f44336;" >Cancle</button>
       </div>
