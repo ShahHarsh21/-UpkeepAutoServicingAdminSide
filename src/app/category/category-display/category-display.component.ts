@@ -21,6 +21,7 @@ export class CategoryDisplayComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.dataSource.paginator=this.paginator;
     this._data.getAllCategory().subscribe(
       (data:category[])=>{
         console.log(data);

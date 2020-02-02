@@ -24,6 +24,7 @@ export class UserDisplayComponent implements OnInit {
 
 
   ngOnInit() {
+    this.dataSource.paginator=this.paginator;
     this  ._data.getAllUser().subscribe(
       (data:any)=>{
             this.userarr=data;

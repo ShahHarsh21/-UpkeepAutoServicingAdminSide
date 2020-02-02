@@ -22,6 +22,7 @@ export class ProductDisplayComponent implements OnInit {
   this.dataSource = new MatTableDataSource();
 }
   ngOnInit() {
+    this.dataSource.paginator=this.paginator;
     this._data.getAllProduct().subscribe(
       (data:any)=>{
             console.log(data);
