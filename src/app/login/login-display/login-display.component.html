@@ -8,7 +8,7 @@
   <div class="container">
    <!-- <mat-form-field> -->
       <label ><b>ENTER EMAIL</b></label>
-      <input matInput formControlName="email_id"  type="text" ><span><i class="material-icons" >mail</i></span>
+      <input matInput formControlName="email_id" type="text" ><mat-icon matPrefix>mail</mat-icon>
       <mat-label *ngIf="loginForm.get('email_id').hasError('required') && !loginForm.get('email_id').pristine ">Email
         should not be empty</mat-label>
       <mat-label *ngIf="loginForm.get('email_id').hasError('email') && !loginForm.get('email_id').pristine ">Invalid

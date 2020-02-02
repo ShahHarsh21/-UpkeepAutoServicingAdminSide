@@ -11,8 +11,15 @@ import { slot } from '../../slot-display/slot';
 })
 export class SlotEditComponent implements OnInit {
   editSlot:FormGroup;
+  slot_id:number;
   constructor(private _slotdata :SlotdataService,private _router:Router,private _act_routs:ActivatedRoute) {
-    var slot_id :number= this._act_routs.snapshot.params['slot_regester_id'];
+    this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
+    console.log(this.slot_id);
+
+
+  }
+
+  ngOnInit() {
 
     this.editSlot=new FormGroup({
       slot_register_id:new FormControl(null),
@@ -20,32 +27,30 @@ export class SlotEditComponent implements OnInit {
       vehicle_model:new FormControl(null),
       service_type:new FormControl(null),
       time_period: new FormControl(null),
-      pickup_time: new FormControl(null),
+      pickup_date: new FormControl(null),
       pickup_address: new FormControl(null),
       requirment:new FormControl(null),
       drop_address:new FormControl(null),
       allotment_emp_id:new FormControl(null)
     });
-  }
-
-  ngOnInit() {
-    this._slotdata.getAllSlots().subscribe(
-      (data:any)=>{
+    this._slotdata.getSlotById(this.slot_id).subscribe(
+      (data:slot[])=>{
         console.log(data);
-        this.formDataBind(data);
+        this.formDataBind(data[0]);
      }
     );
 
   }
 formDataBind(item:slot)
 {
+  console.log(item);
   this.editSlot.patchValue({
-    slot_register_id:item.slot_register_id,
-      vehicle_type:item.vehicle_model,
+      slot_register_id:item.slot_register_id,
+      vehicle_type:item.vehicle_type,
       vehicle_model:item.vehicle_model,
       service_type:item.service_type,
       time_period: item.time_period,
-      pickup_time: item.pickup_time,
+      pickup_date: item.pickup_date,
       pickup_address: item.pickup_address,
       requirment:item.requirment,
       drop_address:item.drop_address,

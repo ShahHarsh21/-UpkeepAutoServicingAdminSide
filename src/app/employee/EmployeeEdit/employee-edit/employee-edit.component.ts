@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { EmployeedataService } from '../../employeedata.service';
 import { employee } from '../../employee-display/employee';
 import { ActivatedRoute } from '@angular/router';
+import { emp_type } from '../../emp_type_class';
 
 @Component({
   selector: 'app-employee-edit',
@@ -26,7 +27,7 @@ export class EmployeeEditComponent implements OnInit {
   // user_type:string='';
   editEmployee:FormGroup;
   rout:string='';
-  typeArr:string[]=[];
+  typeArr:emp_type[]=[];
   designationArr:string[]=[];
   constructor(private _data:EmployeedataService,private _act_routs:ActivatedRoute) {
     this.editEmployee=new FormGroup({
@@ -79,8 +80,7 @@ export class EmployeeEditComponent implements OnInit {
         (data:any)=>{
           console.log(data);
           this.typeArr=data;
-        }
-      );
+        });
       this._data.getAllDesignation(item.employee_id).subscribe(
         (designationData:any)=>{
           console.log(designationData);

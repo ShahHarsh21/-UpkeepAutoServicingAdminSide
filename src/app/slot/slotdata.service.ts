@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../../environments/environment";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { slot } from './slot-display/slot';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,10 +27,9 @@ export class SlotdataService {
     return this._http.put(this.url+item.slot_register_id, body, { headers: head });
   }
   addSlots(item)
-  {console.log(item);
+  {
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
-
-    return this._http.put(this.url, body, { headers: head });
+    return this._http.post(this.url, body, { headers: head });
   }
 }

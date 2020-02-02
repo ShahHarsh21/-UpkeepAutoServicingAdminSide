@@ -48,7 +48,15 @@
       <!-- <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('pattern') " > Only digits</label> -->
     </div><br>
-
+    <div>
+      <mat-label><b>USER TYPE :</b></mat-label><br>
+      <select class="form-control" formControlName="user_type">
+        <option id="1">{{"USER"}}</option>
+        <option id="2">{{"ADMIN"}}</option>
+        <option id="3">{{"EMPLOYEE"}}</option>
+        <option id="4">{{"SUPER ADMIN"}}</option>
+      </select>
+    </div><br>
     <div class="form-group" >
       <button type="submit" class="btn">Submit</button>
       <button class="can">Cancle</button>

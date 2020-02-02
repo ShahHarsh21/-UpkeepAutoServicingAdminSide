@@ -11,7 +11,7 @@ import { CategoryEditComponent } from './category/categoryEdit/category-edit/cat
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
-import { EmployeeAddComponent } from '../app/employee/AddEmployee/employee-add.component';
+
 import { EmployeeEditComponent } from './employee/employeeEdit/employee-edit/employee-edit.component';
 import { SlotDisplayComponent } from './slot/slot-display/slot-display.component';
 import { SlotAddComponent } from './slot/slot-add/slot-add.component';
@@ -41,7 +41,6 @@ const arr:Routes=[
         {path:'colorEdit',component:ColorEditComponent},
         {path:'colorAdd',component:ColorAddComponent},
         {path:'Employee',component:EmployeeDisplayComponent},
-        {path:'EmployeeAdd',component:EmployeeAddComponent},
         {path:'EmployeeEdit/:employee_id',component:EmployeeEditComponent},
         {path:'Slot',component:SlotDisplayComponent},
         {path:'slotAdd',component:SlotAddComponent},
@@ -49,7 +48,7 @@ const arr:Routes=[
         {path:'supplier',component:SupplierDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
-        {path:'slotEdit/:slot_regester_id',component:SlotEditComponent}
+        {path:'slotEdit/:slot_register_id',component:SlotEditComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}
