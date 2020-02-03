@@ -11,6 +11,7 @@ import { slot } from '../slot-display/slot';
 })
 export class SlotEditComponent implements OnInit {
   editSlot:FormGroup;
+  flag:boolean=true;
   slot_id:number;
   constructor(private _slotdata :SlotdataService,private _router:Router,private _act_routs:ActivatedRoute) {
     this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
@@ -39,7 +40,11 @@ export class SlotEditComponent implements OnInit {
         this.formDataBind(data[0]);
      }
     );
+    console.log(localStorage.getItem("email_id"));
+    //  if()
+    //  {
 
+    //  }
   }
 formDataBind(item:slot)
 {

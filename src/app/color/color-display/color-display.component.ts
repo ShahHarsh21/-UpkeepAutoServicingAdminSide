@@ -45,19 +45,19 @@ export class ColorDisplayComponent implements OnInit {
           console.log(data);
           this.colorarr.splice(this.colorarr.indexOf(data),1);
           this.dataSource.data=this.colorarr;
-          this._routs.navigate(['/nav/color']);
+          this._routs.navigate(['/nav/color/']);
         }
       );
     }
   }
-  onEdit(row)
-  {
-      this._routs.navigate(['colorEdit']);
-  }
-  onViewMore(row)
-  {
-    // this._dialogref.open(,{data:row});
-  }
+  // onEdit(row)
+  // {
+  //     this._routs.navigate(['colorEdit']);
+  // }
+  // onViewMore(row)
+  // {
+  //   // this._dialogref.open(,{data:row});
+  // }
   onAddClick()
   {
     this._routs.navigate(['/nav/colorAdd']);

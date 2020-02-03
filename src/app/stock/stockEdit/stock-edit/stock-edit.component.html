@@ -1,0 +1,48 @@
+<!-- <p>stock-edit works!</p> -->
+<div class="container">
+
+  <form [formGroup]="editStock" (ngSubmit)="onStockEdit()" >
+    <div class="form-groupup">
+      <mat-label><b>Stock ID</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Stock ID" formControlName="stock_id" disabled>
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>FK_Supplier_ID</b></mat-label><br>
+      <input class="form-control" placeholder="Enter fk_Supplier_id" formControlName="fk_supplier_id" disabled>
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>FK_Color_ID</b></mat-label><br>
+      <input class="form-control" placeholder="Enter fk_color_id" formControlName="fk_color_id" disabled>
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>FK_Product_ID</b></mat-label><br>
+      <input class="form-control" placeholder="Enter fk_Product_id" formControlName="fk_product_id" disabled>
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Quantity</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Quantity" formControlName="quantity" >
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+    <div>
+    <div class="form-group">
+      <button  type="submit" class="btn btn-primary" > EDIT </button>
+    </div>
+</div>
+</form>

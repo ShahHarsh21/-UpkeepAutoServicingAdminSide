@@ -26,7 +26,7 @@ export class ProductdataService {
   }
   getProductById(product_id)
   {
-    return this._http.get(this.url,product_id);
+    return this._http.get(this.url+product_id);
   }
   addProduct(item)
   {

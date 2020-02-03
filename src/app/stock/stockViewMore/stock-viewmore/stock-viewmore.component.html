@@ -1,0 +1,18 @@
+<!-- <p>stock-viewmore works!</p> -->
+
+<mat-list>
+  <mat-list-item>{{product_name}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>{{product_description}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item >{{category_name}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>{{product_image}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>{{product_price}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>{{quantity}}</mat-list-item>
+</mat-list>
+<div mat-dialog-actions>
+    <button mat-button (click)="onClickCancel()">Cancel</button>
+</div>
