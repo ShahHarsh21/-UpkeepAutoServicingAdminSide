@@ -21,8 +21,9 @@ export class ProductEditComponent implements OnInit {
   pro_arr : Product[] = [];
   color_arr:color_class[]=[];
   cate_arr:category[]=[];
-  constructor(private _productdata : ProductdataService,private _colordata:ColordataService,private _catedata:CategorydataService,private _router:Router,private _act_routs:ActivatedRoute) {
-
+  constructor(private _productdata : ProductdataService,private _colordata:ColordataService,private _catedata:CategorydataService,private _router:Router,private _act_routs:ActivatedRoute) { }
+  ngOnInit()
+  {
     this._act_routs=this._act_routs.snapshot.params['product_id'];
       console.log( this._act_routs);
     this.editProduct=new FormGroup({
@@ -37,12 +38,8 @@ export class ProductEditComponent implements OnInit {
       fk_color_id : new FormControl(null),
       fk_color_name:new FormControl(null)}
     );
-  }
-  ngOnInit()
-  {
     this._productdata.getProductById(this._act_routs).subscribe(
       (data:any)=>{
-        console.log(data);
         this.formDataBind(data[0]);
       }
     );
@@ -59,8 +56,10 @@ export class ProductEditComponent implements OnInit {
         }
       );
   }
+
     formDataBind(item:Product)
     {
+      console.log(item);
       this.editProduct.patchValue({
         product_id : item.product_id,
         product_name : item.product_name,
@@ -72,24 +71,23 @@ export class ProductEditComponent implements OnInit {
         fk_color_id : item.fk_color_id,
         fk_color_name : this.color_arr.indexOf(this.editProduct.value.fk_color_id)
         });
-
     }
   onProductEdit()
   {
-    console.log(this.editProduct.value.fk_cat_id);
-    console.log(this.editProduct.value.fk_color_id);
-    let productObj={
-      product_id : this.editProduct.value.product_id,
-      product_name : this.editProduct.value.product_name,
-      product_description:this.editProduct.value.product_description,
-      fk_cat_id : this.editProduct.value.fk_cat_id,
-      product_price : this.editProduct.value.product_price,
-      product_image : this.editProduct.value.product_image,
-      fk_color_id : this.editProduct.value.fk_color_id,
-    };
+    console.log(this.editProduct.value);
+    // console.log(this.editProduct.value.fk_color_id);
+    // let productObj={
+    //   product_id : this.editProduct.value.product_id,
+    //   product_name : this.editProduct.value.product_name,
+    //   product_description:this.editProduct.value.product_description,
+    //   fk_cat_id : this.editProduct.value.fk_cat_id,
+    //   product_price : this.editProduct.value.product_price,
+    //   product_image : this.editProduct.value.product_image,
+    //   fk_color_id : this.editProduct.value.fk_color_id,
+    // };
 
-    this._productdata.updateProduct(productObj.product_id,productObj).subscribe(
-     (data)=>{
+    this._productdata.updateProduct(this.editProduct.value.product_id,this.editProduct.value).subscribe(
+      (data)=>{
         console.log(data);
         this._router.navigate(['/nav/product/']);
       }

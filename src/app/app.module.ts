@@ -49,6 +49,8 @@ import { OrderDetailsmoreComponent } from './order-details/order-detailsmore/ord
 import { SlotEditComponent } from './slot/slot-edit/slot-edit.component';
 import { ColorAddComponent } from './color/color-add/color-add.component';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
+import { StockEditComponent } from './stock/stockEdit/stock-edit/stock-edit.component';
+import { StockViewmoreComponent } from './stock/stockViewMore/stock-viewmore/stock-viewmore.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { CategoryAddComponent } from './category/category-add/category-add.compo
     ProductAddComponent,
     ColorDisplayComponent,
     ColorEditComponent,
+    SlotAddComponent,
+    CategoryEditComponent,
     EmployeeDisplayComponent,
     EmpViewmoreComponent,
     EmployeeEditComponent,
@@ -69,11 +73,12 @@ import { CategoryAddComponent } from './category/category-add/category-add.compo
     SlotDisplayComponent,
     SupplierDisplayComponent,
     SlotViewmoreComponent,
-    SlotAddComponent,
     UserViewMoreComponent,
     LoginDisplayComponent,
     SignupdisplayComponent,
     UseraddComponent,
+    StockEditComponent,
+    StockViewmoreComponent,
     UserEditComponent,
     PageNotFoundComponent,
     SlotEditComponent,
@@ -108,7 +113,9 @@ import { CategoryAddComponent } from './category/category-add/category-add.compo
     ReactiveFormsModule
   ],
   entryComponents: [
+    CategoryAddComponent,
     ProductViewMoreComponent,
+    StockViewmoreComponent,
     EmpViewmoreComponent,
     UserViewMoreComponent,
     SlotViewmoreComponent,

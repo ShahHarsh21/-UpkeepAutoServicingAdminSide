@@ -7,7 +7,7 @@ import { category } from './category';
   providedIn: 'root'
 })
 export class CategorydataService {
-  private url:string=environment.url+'nav/category/';
+  private url:string=environment.url+'category/';
   constructor(private _http : HttpClient) { }
   getAllCategory()
   {
@@ -23,6 +23,8 @@ export class CategorydataService {
   }
   getCategoryById(category_id)
   {
+    console.log(category_id);
+    // const body = JSON.stringify(category_id);
     return this._http.get(this.url+category_id);
   }
   addCategory(item:category)

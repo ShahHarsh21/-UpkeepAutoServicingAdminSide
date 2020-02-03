@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { EmployeedataService } from '../employeedata.service';
 import { employee } from '../employee-display/employee';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { emp_type } from '../emp_type_class';
 
 @Component({
@@ -29,11 +29,11 @@ export class EmployeeEditComponent implements OnInit {
   rout:string='';
   typeArr:emp_type[]=[];
   designationArr:string[]=[];
-  constructor(private _data:EmployeedataService,private _act_routs:ActivatedRoute) {
+  constructor(private _data:EmployeedataService,private _routs:Router,private _act_routs:ActivatedRoute) {
     this.editEmployee=new FormGroup({
       employee_id:new FormControl(null),
       employee_img:new FormControl(null),
-      employee_designation:new FormControl(null),
+      employee_designation:new FormControl("Supretender"),
       salary  :new FormControl(null),
       fk_user_id:new  FormControl(null),
       user_id: new FormControl(null),
@@ -42,7 +42,7 @@ export class EmployeeEditComponent implements OnInit {
       mobile_no:new FormControl(null),
       address:new FormControl(null),
       date_of_birth:new FormControl(null),
-      user_type:new FormControl(null)
+      user_type:new FormControl("Employee")
     });
   }
 
@@ -53,7 +53,6 @@ export class EmployeeEditComponent implements OnInit {
       (data:any)=>{
         console.log(data);
         this.formDataBind(data[0]);
-
       }
     );
   }
@@ -72,25 +71,15 @@ export class EmployeeEditComponent implements OnInit {
         address:item.address,
         date_of_birth:item.date_of_birth,
       });
-      this.type_data(item);
-    }
-    type_data(item:employee)
-    {
-      this._data.getAllType(item.fk_user_id).subscribe(
-        (data:any)=>{
-          console.log(data);
-          this.typeArr=data;
-        });
-      this._data.getAllDesignation(item.employee_id).subscribe(
-        (designationData:any)=>{
-          console.log(designationData);
-            this.designationArr=designationData;
-        }
-      );
-
     }
   onEmployeeEdit()
   {
-
+    console.log(this.editEmployee.value);
+    this._data.updateemployee(this.editEmployee.value.employee_id,this.editEmployee.value).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this._routs.navigate(['/nav/Employee/']);
+      }
+    );
   }
 }

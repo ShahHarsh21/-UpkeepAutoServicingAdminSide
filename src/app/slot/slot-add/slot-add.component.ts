@@ -32,17 +32,17 @@ export class SlotAddComponent implements OnInit {
   onSlotAdd()
   {
     console.log(this.addslot.value);
-    let slotObj={
-      vehicle_type:this.addslot.value.vehicle_type,
-      vehicle_model:this.addslot.value.vehicle_model,
-      service_type:this.addslot.value.service_type,
-      time_period:this.addslot.value.time_period,
-      pickup_time:this.addslot.value.pickup_time,
-      pickup_address:this.addslot.value.pickup_address,
-      requirment:this.addslot.value.requirment,
-      drop_address:this.addslot.value.drop_address
-    };
-    console.log(this.addslot.value);
+    // let slotObj={
+    //   vehicle_type:this.addslot.value.vehicle_type,
+    //   vehicle_model:this.addslot.value.vehicle_model,
+    //   service_type:this.addslot.value.service_type,
+    //   time_period:this.addslot.value.time_period,
+    //   pickup_time:this.addslot.value.pickup_time,
+    //   pickup_address:this.addslot.value.pickup_address,
+    //   requirment:this.addslot.value.requirment,
+    //   drop_address:this.addslot.value.drop_address
+    // };
+    // console.log(this.addslot.value);
     this._data.addSlots(this.addslot.value).subscribe(
       (data:any)=>{
         console.log(data);

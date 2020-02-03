@@ -1,0 +1,445 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200203.145134.2448.0.001.json",
+    "dumpEventTime": "2020-02-03T14:51:34Z",
+    "dumpEventTimeStamp": "1580721694945",
+    "processId": 2448,
+    "cwd": "E:\\UpkeepAutoServicing",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Dell\\AppData\\Roaming\\npm/node_modules/@angular/cli/bin/ng",
+      "serve",
+      "--o"
+    ],
+    "nodejsVersion": "v12.14.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.0",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.0/node-v12.14.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.0/node-v12.14.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Home Single Language",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 1876562,
+        "nice": 0,
+        "sys": 2012578,
+        "idle": 13693375,
+        "irq": 153078
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 2105640,
+        "nice": 0,
+        "sys": 1149437,
+        "idle": 14327218,
+        "irq": 33671
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 2535312,
+        "nice": 0,
+        "sys": 1785656,
+        "idle": 13261328,
+        "irq": 32984
+      },
+      {
+        "model": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+        "speed": 2712,
+        "user": 2425390,
+        "nice": 0,
+        "sys": 1259046,
+        "idle": 13897859,
+        "irq": 22015
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "74:e5:f9:fd:e3:28",
+        "address": "fe80::e8c4:9e2e:4003:5898",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 15
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "74:e5:f9:fd:e3:28",
+        "address": "192.168.0.101",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-MK4E30U"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6f1701729",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1705b4c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1704b08",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f17f369b",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1ff82de",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1fe0321",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1eadbec",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1eb5cf1",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1eab353",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1ea9b24",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1ecadf5",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f1c36e19",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f242404d",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23b160a",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f247cc49",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f23a3bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff6f239cf8c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x000000dbc7e1ffb8",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 337473536,
+    "totalCommittedMemory": 337473536,
+    "usedMemory": 272936584,
+    "availableMemory": 1855428728,
+    "memoryLimit": 2127560704,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 1835008,
+        "committedMemory": 1835008,
+        "capacity": 1833104,
+        "used": 1832960,
+        "available": 144
+      },
+      "old_space": {
+        "memorySize": 243904512,
+        "committedMemory": 243904512,
+        "capacity": 243530440,
+        "used": 185847000,
+        "available": 57683440
+      },
+      "code_space": {
+        "memorySize": 4096000,
+        "committedMemory": 4096000,
+        "capacity": 3722304,
+        "used": 2450848,
+        "available": 1271456
+      },
+      "map_space": {
+        "memorySize": 7344128,
+        "committedMemory": 7344128,
+        "capacity": 7336080,
+        "used": 3012240,
+        "available": 4323840
+      },
+      "large_object_space": {
+        "memorySize": 79409152,
+        "committedMemory": 79409152,
+        "capacity": 79210840,
+        "used": 79210840,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550400,
+        "used": 550400,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1833104,
+        "used": 0,
+        "available": 1833104
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 72.328,
+    "kernelCpuSeconds": 17.171,
+    "cpuConsumptionPercent": 7.05828,
+    "maxRss": 682176512,
+    "pageFaults": {
+      "IORequired": 506572,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 6176,
+      "writes": 12
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Dell\\AppData\\Roaming",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132222606627220168",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-MK4E30U",
+    "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Dell",
+    "LOCALAPPDATA": "C:\\Users\\Dell\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-MK4E30U",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\Dell\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\Dell\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Python27\\;C:\\Python27\\Scripts;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\Dell\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\Dell\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Dell\\AppData\\Roaming\\npm",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "8e09",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Users\\Dell\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SynaProgDir": "Synaptics\\SynTP",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\Windows",
+    "TEMP": "C:\\Users\\Dell\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\Dell\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-MK4E30U",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-MK4E30U",
+    "USERNAME": "Dell",
+    "USERPROFILE": "C:\\Users\\Dell",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\Windows",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.41.1",
+    "LANG": "en_US.UTF-8",
+    "COLORTERM": "truecolor"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\System32\\KERNEL32.DLL",
+    "C:\\Windows\\System32\\KERNELBASE.dll",
+    "C:\\Windows\\System32\\WS2_32.dll",
+    "C:\\Windows\\System32\\RPCRT4.dll",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\System32\\ADVAPI32.dll",
+    "C:\\Windows\\System32\\ucrtbase.dll",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\System32\\sechost.dll",
+    "C:\\Windows\\System32\\USER32.dll",
+    "C:\\Windows\\System32\\win32u.dll",
+    "C:\\Windows\\System32\\GDI32.dll",
+    "C:\\Windows\\System32\\gdi32full.dll",
+    "C:\\Windows\\System32\\msvcp_win.dll",
+    "C:\\Windows\\System32\\PSAPI.DLL",
+    "C:\\Windows\\System32\\CRYPT32.dll",
+    "C:\\Windows\\System32\\MSASN1.dll",
+    "C:\\Windows\\System32\\bcrypt.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\System32\\profapi.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\winmmbase.dll",
+    "C:\\Windows\\System32\\cfgmgr32.dll",
+    "C:\\Windows\\System32\\bcryptPrimitives.dll",
+    "C:\\Windows\\System32\\IMM32.DLL",
+    "C:\\Windows\\System32\\powrprof.dll",
+    "C:\\Windows\\System32\\UMPDC.dll",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\System32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\kernel.appcore.dll",
+    "C:\\Windows\\System32\\NSI.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\Windows\\System32\\fwpuclnt.dll"
+  ]
+}
