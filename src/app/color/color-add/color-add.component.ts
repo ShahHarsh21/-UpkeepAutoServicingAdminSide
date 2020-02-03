@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ColordataService } from '../../colordata.service';
+import { ColordataService } from '../colordata.service';
 import { Router } from '@angular/router';
 
 @Component({

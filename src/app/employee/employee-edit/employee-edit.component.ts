@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { EmployeedataService } from '../../employeedata.service';
-import { employee } from '../../employee-display/employee';
+import { EmployeedataService } from '../employeedata.service';
+import { employee } from '../employee-display/employee';
 import { ActivatedRoute } from '@angular/router';
-import { emp_type } from '../../emp_type_class';
+import { emp_type } from '../emp_type_class';
 
 @Component({
   selector: 'app-employee-edit',

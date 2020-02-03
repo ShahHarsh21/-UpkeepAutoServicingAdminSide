@@ -4,29 +4,33 @@ import{SignupdisplayComponent} from './signup/signupdisplay/signupdisplay.compon
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import{UserDisplayComponent}from './user/user-display/user-display.component';
 import { ProductDisplayComponent } from './product/product-display/product-display.component';
-import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
+import { ProductAddComponent } from './product/product-add/product-add.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { CategoryDisplayComponent } from './category/category-display/category-display.component';
+<<<<<<< HEAD
+=======
+import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+>>>>>>> 851a59081e498d61bbfec8717816e63eddef53be
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
-import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
+import { ColorEditComponent } from './color/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
 
-import { EmployeeEditComponent } from './employee/employeeEdit/employee-edit/employee-edit.component';
+import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { SlotDisplayComponent } from './slot/slot-display/slot-display.component';
 import { SlotAddComponent } from './slot/slot-add/slot-add.component';
 import { StockDisplayComponent } from './stock/stock-display/stock-display.component';
 import { SupplierDisplayComponent } from './supplier/supplier-display/supplier-display.component';
 import {UserauthguardService}from './userauthguard.service';
 import { UseraddComponent } from './user/useradd/useradd.component';
-import { UserEditComponent } from './user/userEdit/user-edit/user-edit.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SlotEditComponent } from './slot/slot_edit/slot-edit/slot-edit.component';
-import { CategoryAddComponent } from './category/categoryAdd/category-add/category-add.component';
-import { ColorAddComponent } from './color/colorAdd/color-add/color-add.component';
 import { CartDisplayComponent } from './cart/cart-display/cart-display.component';
 import { CartaddComponent } from './cart/cartadd/cartadd.component';
 import { CarteditComponent } from './cart/cartedit/cartedit.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { SlotEditComponent } from './slot/slot-edit/slot-edit.component';
+import { CategoryAddComponent } from './category/category-add/category-add.component';
+import { ColorAddComponent } from './color/color-add/color-add.component';
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},

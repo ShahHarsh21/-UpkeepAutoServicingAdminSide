@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Product } from '../../product';
+import { Product } from '../product';
 import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
 import { category } from 'src/app/category/category';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SlotdataService } from '../../slotdata.service';
+import { SlotdataService } from '../slotdata.service';
 import { FormGroup, FormControl } from '@angular/forms';
-import { slot } from '../../slot-display/slot';
+import { slot } from '../slot-display/slot';
 
 @Component({
   selector: 'app-slot-edit',

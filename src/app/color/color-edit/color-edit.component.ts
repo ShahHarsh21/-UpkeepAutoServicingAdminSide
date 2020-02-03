@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ColordataService } from '../../colordata.service';
+import { ColordataService } from '../colordata.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { color_class } from '../../color';
+import { color_class } from '../color';
 
 @Component({
   selector: 'app-color-edit',

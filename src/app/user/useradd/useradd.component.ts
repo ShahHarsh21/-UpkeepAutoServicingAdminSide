@@ -10,11 +10,6 @@ import { Router } from '@angular/router';
 })
 export class UseraddComponent implements OnInit {
   adduser:FormGroup;
-  invalidArrayNames: String[] = [
-    'jinal',
-    'shah',
-    'krunal'
-  ];
 
   constructor(public _data:UserdataService,private _router:Router) { }
 
@@ -29,7 +24,7 @@ export class UseraddComponent implements OnInit {
       }, [this.passwordMatch.bind(this)]),
 
       user_type: new FormControl('user'),
-      user_name: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z]*'), this.checkUname.bind(this)]),
+      user_name: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z]*')]),
       address: new FormControl(null),
       mobile_no: new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')]),
       dob:new FormControl(null)
@@ -41,13 +36,6 @@ export class UseraddComponent implements OnInit {
     if (pass != cpass) {
 
       return { 'sarkhanathi': true };
-    }
-    return null;
-  }
-  checkUname(c: AbstractControl): { [s: string]: boolean } {
-
-    if (this.invalidArrayNames.indexOf(c.value) != -1) {
-      return { 'invalidName': true };
     }
     return null;
   }
@@ -69,5 +57,9 @@ export class UseraddComponent implements OnInit {
         this._router.navigate(['nav/user/']);
       }
     );
+  }
+  onCancle()
+  {
+	this._router.navigate(['/nav/user/']);
   }
 }

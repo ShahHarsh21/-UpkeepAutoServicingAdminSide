@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductdataService } from '../../productdata.service';
+import { ProductdataService } from '../productdata.service';
 import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -49,8 +49,12 @@ export class ProductAddComponent implements OnInit {
      this._data.addProduct(x).subscribe(
      (data:any)=>{
        console.log(data);
-       this._router.navigate(['/nav/product']);
+       this._router.navigate(['/nav/product/']);
      }
    );
+  }
+  onCancle()
+  {
+    this._router.navigate(['/nav/product/']);
   }
 }
