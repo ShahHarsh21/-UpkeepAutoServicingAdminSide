@@ -11,13 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule,
-   MatFormFieldModule,
-    MatInputModule,
-     MatSortModule,
-     MatDialogModule} from '@angular/material';
-
-
+import { MatPaginatorModule,MatFormFieldModule,MatInputModule,MatSortModule,MatDialogModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,8 +23,6 @@ import { ProductViewMoreComponent } from './product/product_view_more/product-vi
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductAddComponent } from './product/productAdd/product-add/product-add.component';
 import { CategoryDisplayComponent } from './category/category-display/category-display.component';
-
-import { CategoryEditComponent } from './category/categoryEdit/category-edit/category-edit.component';
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color_edit/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
@@ -48,6 +40,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SlotEditComponent } from './slot/slot_edit/slot-edit/slot-edit.component';
 import { CategoryAddComponent } from './category/categoryAdd/category-add/category-add.component';
 import { ColorAddComponent } from './color/colorAdd/color-add/color-add.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { CartDisplayComponent } from './cart/cart-display/cart-display.component';
+import { CartviewmoreComponent } from './cart/cartviewmore/cartviewmore.component';
+import { CartaddComponent } from './cart/cartadd/cartadd.component';
+import { CarteditComponent } from './cart/cartedit/cartedit.component';
+import { cart } from './cart/cart';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { OrderDetailsmoreComponent } from './order-details/order-detailsmore/order-detailsmore.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,6 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
     ProductViewMoreComponent,
     ProductEditComponent,
     CategoryDisplayComponent,
-    CategoryEditComponent,
     ProductAddComponent,
     ColorDisplayComponent,
     ColorEditComponent,
@@ -79,6 +78,12 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
     SlotEditComponent,
     CategoryAddComponent,
     ColorAddComponent,
+    CartDisplayComponent,
+    CartviewmoreComponent,
+    CartaddComponent,
+    CarteditComponent,
+    OrderDetailsComponent,
+    OrderDetailsmoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,8 +110,11 @@ import { ColorAddComponent } from './color/colorAdd/color-add/color-add.componen
     ProductViewMoreComponent,
     EmpViewmoreComponent,
     UserViewMoreComponent,
-    SlotViewmoreComponent
-  ],
+    SlotViewmoreComponent,
+    CartviewmoreComponent,
+    OrderDetailsmoreComponent,
+    CategoryAddComponent
+     ],
   providers: [],
   bootstrap: [AppComponent]
 })

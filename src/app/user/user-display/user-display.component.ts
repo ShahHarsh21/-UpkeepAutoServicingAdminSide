@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { user } from '../user';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
@@ -25,7 +26,7 @@ export class UserDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator=this.paginator;
-    this  ._data.getAllUser().subscribe(
+    this._data.getAllUser().subscribe(
       (data:any)=>{
             this.userarr=data;
             this.dataSource.data=data;

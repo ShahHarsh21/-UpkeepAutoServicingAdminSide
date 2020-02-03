@@ -21,7 +21,7 @@ export class UserViewMoreComponent implements OnInit {
 
   ngOnInit() {
     this.user_id=this.data.user_id;
-    this.email_id=this.data.email_id
+    this.email_id=this.data.email_id;
     this.password=this.password;
     this.user_name=this.data.user_name;
     this.mobile_no=this.data.mobile_no;

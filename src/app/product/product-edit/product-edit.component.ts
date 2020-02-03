@@ -89,7 +89,7 @@ export class ProductEditComponent implements OnInit {
     };
 
     this._productdata.updateProduct(productObj.product_id,productObj).subscribe(
-      (data)=>{
+     (data)=>{
         console.log(data);
         this._router.navigate(['/nav/product/']);
       }

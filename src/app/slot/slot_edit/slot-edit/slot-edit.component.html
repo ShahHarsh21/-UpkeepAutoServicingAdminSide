@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Signup</h1>
+  <h1>Slot Edit Form</h1>
 
   <form [formGroup]="editSlot" (ngSubmit)="onSlotedit()" >
     <div class="form-groupup">
@@ -68,6 +68,6 @@
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
       </div><br>
     <div class="form-group">
-      <button  type="submit" class="btn btn-primary" >ADD SLOT</button>
+      <button  type="submit" class="btn btn-primary" >EDIT SLOT</button>
     </div>
 </form>

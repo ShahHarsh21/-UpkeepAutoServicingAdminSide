@@ -1,0 +1,19 @@
+<p>order-detailsmore works!</p>
+<p>order_detailsviewmore works!</p>
+<div class="container">
+  <mat-list>
+    <mat-list-item><i class="material-icons">perm_identity</i>{{order_details_id}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">mail</i>{{fk_order_id}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">mail</i>{{fk_product_id}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">library_books</i>{{quantity}}</mat-list-item>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+  <div >
+      <button  mat-button (click)="onClickCancel()" >Cancel</button>
+  </div>
+  </div>
+
