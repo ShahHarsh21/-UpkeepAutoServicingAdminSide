@@ -13,13 +13,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class CategoryAddComponent implements OnInit {
   categoryAdd:FormGroup;
   constructor(private _Data:CategorydataService,private _routs:Router,public dialogref: MatDialogRef<CategoryAddComponent>, @Inject(MAT_DIALOG_DATA) public data: category) {
+  }
+
+  ngOnInit() {
     this.categoryAdd=new FormGroup({
       category_id:new FormControl(null),
       category_name:new FormControl(null)
     });
-  }
-
-  ngOnInit() {
   }
   onCategoryAdd()
   {

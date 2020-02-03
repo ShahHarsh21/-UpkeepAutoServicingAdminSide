@@ -68,7 +68,7 @@ export class UserEditComponent implements OnInit {
       this._emp_data.addEmployee(this.user_rout).subscribe(
         (data:any)=>{
           console.log(data);
-          this._routs.navigate(['/nav/Employee/']);
+          this._routs.navigate(['/nav/user']);
         }
       );
     }

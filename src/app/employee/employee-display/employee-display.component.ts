@@ -24,6 +24,7 @@ export class EmployeeDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource();
+    this.dataSource.paginator=this.paginator;
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:any)=>{
         this.dataSource.data=data;

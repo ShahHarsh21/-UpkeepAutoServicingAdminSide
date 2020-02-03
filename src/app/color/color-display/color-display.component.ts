@@ -22,6 +22,7 @@ export class ColorDisplayComponent implements OnInit {
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit() {
+    this.dataSource.paginator=this.paginator;
     this._data.getAllColor().subscribe(
       (data:any)=>{
 

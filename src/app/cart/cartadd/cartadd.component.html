@@ -1,0 +1,35 @@
+<p>cartadd works!</p>
+<div class="container">
+
+  <form [formGroup]="addcart" (ngSubmit)="onCartAdd()" >
+    <div class="container">
+    <h1 class="hh"><b>ADD CART</b></h1>
+    <div class="form-group">
+      <div  class="form-group" >
+        <mat-label><b>cart_id</b></mat-label><br>
+        <input class="form-control"  placeholder="Enter Cart_Id" formControlName="cart_id"  type="number">
+        <br>
+
+    </div><br>
+    <div  class="form-group" >
+      <mat-label><b>fk_user_id</b></mat-label><br>
+      <input class="form-control"  placeholder="Enter User_Id" formControlName="fk_user_id"  type="number">
+      <br>
+      <br>
+    <div class="form-group" >
+      <mat-label><b>fk_product_id</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Product_Id" formControlName="fk_product_id" type="number">
+      <!-- <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('required') && !adduser.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('minlength') && !adduser.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('pattern') && !adduser.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>quantity</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Quantity" formControlName="quantity" type="number">
+    </div><br>
+       <div class="form-group">
+      <button  type="submit" class="btn btn-primary" >Add</button>
+      <button type="submit" class="btn btn-danger">Cancle</button>
+    </div>
+  </div>
+  </div>

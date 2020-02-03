@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SlotdataService } from '../slotdata.service';
-import { employee } from 'src/app/employee/employee-display/employee';
+//import { employee } from 'src/app/employee/employee-display/employee';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class SlotAddComponent implements OnInit {
 
   ngOnInit() {
     this.addslot=new FormGroup({
-      vehicle_type:new FormControl("SELECT VEHICLE IS 2 OR 4 WHEELER"),
+      vehicle_type:new FormControl("2 wheeler"),
       vehicle_model: new FormControl(),
       service_type:new FormControl("Body Paint & Design"),
       time_period: new FormControl(null),

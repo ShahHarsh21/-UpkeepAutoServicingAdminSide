@@ -56,7 +56,7 @@ export class SlotDisplayComponent implements OnInit {
       this._data.deleteSlot(row.slot_register_id).subscribe(
         (data:any)=>{
           console.log(data);
-          this.slotarr.splice(x,1);
+         this.slotarr.splice(this.slotarr.indexOf(row),1);
           this.dataSource.data=this.slotarr;
           this._router.navigate(['/nav/Slot']);
         }

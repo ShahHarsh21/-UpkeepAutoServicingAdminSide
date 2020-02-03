@@ -7,7 +7,7 @@
         </mat-form-field>
         <br>
 
-      <button type="submit">ADD</button>
+      <button type="submit" [disabled]="!this.addColor.valid">ADD</button>
     </form>
   </div>
 

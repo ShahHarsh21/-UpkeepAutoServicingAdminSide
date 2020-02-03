@@ -22,6 +22,7 @@ export class CategoryDisplayComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.dataSource.paginator=this.paginator;
     this._data.getAllCategory().subscribe(
       (data:category[])=>{
         console.log(data);
@@ -39,7 +40,6 @@ export class CategoryDisplayComponent implements OnInit {
   onDelete(row)
   {
     let x:number = this.categoryarr.indexOf(row);
-    console.log(row.category_id);
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
 
@@ -48,7 +48,7 @@ export class CategoryDisplayComponent implements OnInit {
           console.log(data);
           this.categoryarr.splice( this.categoryarr.indexOf(row),1);
           this.dataSource.data=this.categoryarr;
-          this._routes.navigate(['/nav/category/']);
+          this._routes.navigate(['nav/category/']);
         }
       );
     }
