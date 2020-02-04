@@ -23,8 +23,8 @@ export class SlotDisplayComponent implements OnInit {
   ngOnInit() {
     this._data.getAllSlots().subscribe(
       (data:any)=>{
-        console.log(data);
-        this.dataSource.data=data;
+        this.slotarr=data;
+        this.dataSource.data=this.slotarr;
       }
     );
   }

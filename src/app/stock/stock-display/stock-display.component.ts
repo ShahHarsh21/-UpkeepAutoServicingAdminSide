@@ -11,6 +11,7 @@ import { StockViewmoreComponent } from '../stockViewMore/stock-viewmore/stock-vi
   styleUrls: ['./stock-display.component.css']
 })
 export class StockDisplayComponent implements OnInit {
+  stockarr:stock[]=[];
   displayedColumns:string[]=['quantity','Action'];
   dataSource: MatTableDataSource<stock>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -23,8 +24,8 @@ export class StockDisplayComponent implements OnInit {
   ngOnInit() {
       this._data.getAllStock().subscribe(
         (data:stock[]) => {
-          console.log(data);
-          this.dataSource.data=data;
+          this.stockarr=data;
+          this.dataSource.data=this.stockarr;
         }
       );
   }
@@ -37,12 +38,15 @@ export class StockDisplayComponent implements OnInit {
   }
   onDelete(row)
   {
+    let x:number=this.stockarr.indexOf(row);
     if(confirm("ARE YOU SURE , YOU WANT TO DELETE?"))
     {
       this._data.deleteStock(row.stock_id).subscribe(
-        (data:any)=>{
+       (data:any)=>{
+       this.stockarr.splice(this.stockarr.indexOf(row),1);
+       this.dataSource.data=this.stockarr;
           console.log(data);
-          this._router.navigate(['/nav/stock']);
+          this._router.navigate(['nav/stock/']);
         }
       );
     }

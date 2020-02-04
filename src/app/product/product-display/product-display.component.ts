@@ -26,7 +26,8 @@ export class ProductDisplayComponent implements OnInit {
     this._data.getAllProduct().subscribe(
       (data:any)=>{
           console.log(data);
-          this.dataSource.data=data;
+          this.productarr=data;
+          this.dataSource.data=this.productarr;
       }
     );
   }
@@ -45,7 +46,7 @@ export class ProductDisplayComponent implements OnInit {
         (data:any)=>{
           this.productarr.splice(this.productarr.indexOf(item),1);
           this.dataSource.data=this.productarr;
-          this._router.navigate(['/nav/product/']);
+          this._router.navigate(['nav/product/']);
         }
       );
     }
