@@ -3,7 +3,6 @@
 </mat-form-field>
 
   <div class="mat-elevation-z8">
-
 <hr>
     <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="check">
@@ -49,7 +48,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;">
       </tr>
     </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
 
  </div>
 

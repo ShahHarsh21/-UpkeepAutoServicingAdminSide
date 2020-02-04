@@ -26,8 +26,8 @@ export class ColorDisplayComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllColor().subscribe(
       (data:any)=>{
-
-        this.dataSource.data=data;
+        this.colorarr=data;
+        this.dataSource.data=this.colorarr;
       }
     );
   }
@@ -44,10 +44,9 @@ export class ColorDisplayComponent implements OnInit {
     {
       this._data.deleteColor(row.color_id).subscribe(
         (data:any)=>{
-          console.log(data);
           this.colorarr.splice(this.colorarr.indexOf(data),1);
           this.dataSource.data=this.colorarr;
-          this._routs.navigate(['/nav/color/']);
+          this._routs.navigate(['nav/color/']);
         }
       );
     }

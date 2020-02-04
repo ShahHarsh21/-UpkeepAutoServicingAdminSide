@@ -46,9 +46,19 @@ export class ProductAddComponent implements OnInit {
    }
   onProductAdd()
   {
-     console.log(this.addproduct.value.fk_color_id);
-        let x=this.addproduct.value;
-     this._data.addProduct(x).subscribe(
+    let productobj = {
+    product_id: this.addproduct.value.product_id,
+    product_name: this.addproduct.value.product_name,
+    product_description: this.addproduct.value.product_description,
+    fk_cat_id:this.addproduct.value.fk_cat_id,
+    fk_cat_name:this.addproduct.value.fk_cat_name,
+    product_price: this.addproduct.value.product_price,
+    product_image: this.addproduct.value.product_image,
+    fk_color_id:this.addproduct.value.fk_color_id,
+    fk_color_name: this.addproduct.value.fk_color_name
+    };
+     console.log(productobj);
+     this._data.addProduct(productobj).subscribe(
      (data:any)=>{
        console.log(data);
        this._router.navigate(['/nav/product/']);

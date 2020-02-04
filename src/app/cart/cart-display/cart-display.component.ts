@@ -26,9 +26,8 @@ dataSource: MatTableDataSource<cart>;
     this.dataSource.paginator=this.paginator;
     this._data.getAllCart().subscribe(
       (data:any)=>{
-        console.log(data);
-        // this.cartarr=data;
-        this.dataSource.data=data;
+        this.cartarr=data;
+        this.dataSource.data=this.cartarr;
       }
     );
   }

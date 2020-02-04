@@ -1,29 +1,10 @@
-<!-- <p>product-display works!</p> -->
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
   <div class="mat-elevation-z8">
-    <!-- <div *ngIf="flag">
-          <form (ngSubmit)="User_FormAdd(f)"#f="ngForm">
-            <div class="form-group">
-            <label>Name</label>
-             <input name="Name" ngModel #Name="ngModel" type="string" placeholder="Enter Name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Mobile No</label>
-                 <input name="Mobile_No" ngModel #Mobile_No="ngModel" type="number" placeholder="Enter Mobile_No" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input name="Email_id"  ngModel #Email_id="ngModel" type="string" placeholder="Enter Email" class="form-control">
-            </div>
-            <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Save</button>
-            <button type="button" (click)="OnHide(flag)" class="btn btn-dark">cancel</button>
-            </form>
-</div> -->
+
 <hr>
- <!-- <button type="button" (click)="OnHide(flag)" class="btn btn-dark">Add new record</button> -->
     <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="check">
             <th mat-header-cell *matHeaderCellDef>Check</th>
@@ -54,5 +35,5 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;">
       </tr>
     </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
   </div>

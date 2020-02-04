@@ -22,8 +22,12 @@ export class CategoryAddComponent implements OnInit {
   }
   onCategoryAdd()
   {
-    console.log(this.categoryAdd.value);
-    this._Data.addCategory(this.categoryAdd.value).subscribe(
+    let categoryobj={
+      category_id:this.categoryAdd.value.category_id,
+      category_name:this.categoryAdd.value.category_name
+    };
+    console.log(categoryobj);
+    this._Data.addCategory(categoryobj).subscribe(
       (data:any)=>{
         console.log(data);
         this.dialogref.close();

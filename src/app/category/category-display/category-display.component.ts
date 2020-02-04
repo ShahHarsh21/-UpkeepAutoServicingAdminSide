@@ -26,7 +26,8 @@ export class CategoryDisplayComponent implements OnInit {
     this._data.getAllCategory().subscribe(
       (data:category[])=>{
         console.log(data);
-        this.dataSource.data=data;
+        this.categoryarr=data;
+        this.dataSource.data=this.categoryarr;
       }
     );
   }

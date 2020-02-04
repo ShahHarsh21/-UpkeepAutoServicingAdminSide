@@ -26,8 +26,7 @@ export class OrderDetailsComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllOrder_Details().subscribe(
       (data:any)=>{
-        console.log(data);
-        // this.cartarr=data;
+        //this.cartarr=data;
         this.dataSource.data=data;
       }
     );

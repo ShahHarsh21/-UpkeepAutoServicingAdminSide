@@ -1,6 +1,6 @@
-<div class="container">
+<div>
   <mat-list>
-  <form [formGroup]="addColor" >
+  <form [formGroup]="addColor" (ngSubmit)="onColorAdd()" >
 
       <mat-label><b>Color Name</b></mat-label>
       <mat-list-item><input  type="text" formControlName="color_name"></mat-list-item>

@@ -27,7 +27,8 @@ export class EmployeeDisplayComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:any)=>{
-        this.dataSource.data=data;
+        this.empArr=data;
+        this.dataSource.data=this.empArr;
       }
     );
     this._data.getAllEmployeeWithUserName().subscribe(
@@ -54,7 +55,7 @@ export class EmployeeDisplayComponent implements OnInit {
         (data:any)=>{
           this.empArr.splice(this.empArr.indexOf(row),1);
           this.dataSource.data=this.empArr;
-          this._routs.navigate(['/nav/Employee/']);
+          this._routs.navigate(['nav/Employee/']);
         }
       );
     }

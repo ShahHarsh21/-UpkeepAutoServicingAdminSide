@@ -7,7 +7,7 @@ import { ProductDisplayComponent } from './product/product-display/product-displ
 import { ProductAddComponent } from './product/product-add/product-add.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { CategoryDisplayComponent } from './category/category-display/category-display.component';
-import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+
 import { ColorDisplayComponent } from './color/color-display/color-display.component';
 import { ColorEditComponent } from './color/color-edit/color-edit.component';
 import { EmployeeDisplayComponent } from './employee/employee-display/employee-display.component';
