@@ -1,18 +1,7 @@
-/* Bordered form */
-form {
-  border: 2px solid black;
-  border-radius: 10px;
-  margin-top: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
-}
-
-/* Full-width inputs */
 input[type=text], input[type=password],input[type=number],input[type=date] {
   width: 100%;
   padding: 12px 20px;
-  margin: 2px 0px;
+  margin-top: 15px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -32,12 +21,12 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
   background-color: rgb(53, 20, 241);
   color: white;
   padding: 12px 20px;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 5%;
   margin-bottom: 1%;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 40%;
   border-radius: 20px;
 }
 .can{
@@ -46,7 +35,7 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 40%;
   border-radius: 20px;
 }
 
@@ -58,5 +47,10 @@ button:hover {
 /* Add padding to containers */
 .container {
   padding: 50px;
-
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10%;
 }

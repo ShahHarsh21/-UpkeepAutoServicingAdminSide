@@ -33,11 +33,13 @@ export class ProductAddComponent implements OnInit {
     });
     this._cat_data.getAllCategory().subscribe(
       (data:category[])=>{
+        console.log(data);
         this.catearr=data;
       }
     );
     this._color_data.getAllColor().subscribe(
       (data:color_class[])=>{
+        console.log(data);
         this.colorarr=data;
       }
     );

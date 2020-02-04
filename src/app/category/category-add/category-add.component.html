@@ -1,12 +1,13 @@
 <div class="container">
   <mat-list>
-    <form [formGroup]="categoryAdd" (ngSubmit)="onCategoryAdd()" >
+    <form [formGroup]="categoryAdd" >
       <mat-label><b>Category Name</b></mat-label><br>
       <mat-list-item><input matInput  formControlName="category_name" type="text"></mat-list-item>
-      <mat-divider></mat-divider>
+      <!-- <mat-divider></mat-divider> -->
+      <br>
       <div>
-        <button type="submit" class="btn" (click)="onCategoryAdd()" >ADD</button>
-        <button mat-button (click)="onClickCancel()">Cancel</button>
+        <button  class="btn" (click)="onCategoryAdd()" >ADD</button>
+        <button  class="can" (click)="onClickCancel()">Cancel</button>
       </div>
     </form>
   </mat-list>

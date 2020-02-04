@@ -3,6 +3,7 @@ import { MatTableDataSource, MatSort, MatPaginator, MatDialogRef, MatDialog } fr
 import { color_class } from '../color';
 import { ColordataService } from '../colordata.service';
 import { Router } from '@angular/router';
+import { ColorAddComponent } from '../color-add/color-add.component';
 
 @Component({
   selector: 'app-color-display',
@@ -61,6 +62,6 @@ export class ColorDisplayComponent implements OnInit {
   // }
   onAddClick()
   {
-    this._routs.navigate(['/nav/colorAdd']);
+    this._dialogref.open(ColorAddComponent);
   }
 }

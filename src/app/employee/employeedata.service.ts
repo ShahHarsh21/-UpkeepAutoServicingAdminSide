@@ -6,6 +6,7 @@ import { employee } from './employee-display/employee';
   providedIn: 'root'
 })
 export class EmployeedataService {
+  mechanic_url:string=environment.url+"machanic";
   url:string=environment.url+'employee/';
   url2:string=environment.url+'emp_designation/';
   url3:string=environment.url+'emp_type/';
@@ -28,6 +29,14 @@ export class EmployeedataService {
   {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.delete(this.url+employee_id,{headers:head});
+  }
+  getAllEmpWithDeliverBoy()
+  {
+    return this._http.get(this.url+'deliveryBoy/');
+  }
+  getAllEmpWithMachanic()
+  {
+    return this._http.get(this.mechanic_url);
   }
   addEmployee(fk_user_id: number)
   {

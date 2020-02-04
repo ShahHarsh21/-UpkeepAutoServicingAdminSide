@@ -1,14 +1,16 @@
-<!-- <p>color-add works!</p> -->
-<div>
-  <form [formGroup]="addColor" (ngSubmit)="onColorAdd()" >
+<div class="container">
+  <mat-list>
+  <form [formGroup]="addColor" >
 
-      <mat-form-field>
-          <input matInput placeholder="ENTER Color Name" formControlName="color_name">
-        </mat-form-field>
+      <mat-label><b>Color Name</b></mat-label>
+      <mat-list-item><input  type="text" formControlName="color_name"></mat-list-item>
         <br>
-
-      <button type="submit" [disabled]="!this.addColor.valid">ADD</button>
+    <div>
+      <button class="btn" (click)="onColorAdd()">ADD</button>
+      <button class="can" (click)="onClickCancel()">Cancle</button>
+    </div>
     </form>
-  </div>
+  </mat-list>
+</div>
 
 

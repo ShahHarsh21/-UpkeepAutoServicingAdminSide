@@ -17,7 +17,6 @@ export class CategoryAddComponent implements OnInit {
 
   ngOnInit() {
     this.categoryAdd=new FormGroup({
-      category_id:new FormControl(null),
       category_name:new FormControl(null)
     });
   }

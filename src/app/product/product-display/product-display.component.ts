@@ -63,4 +63,8 @@ export class ProductDisplayComponent implements OnInit {
   {
       this._dialog.open(ProductViewMoreComponent,{data:row});
   }
+  onEmpAllot(row)
+  {
+
+  }
 }

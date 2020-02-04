@@ -16,8 +16,6 @@ export class SlotEditComponent implements OnInit {
   constructor(private _slotdata :SlotdataService,private _router:Router,private _act_routs:ActivatedRoute) {
     this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
     console.log(this.slot_id);
-
-
   }
 
   ngOnInit() {

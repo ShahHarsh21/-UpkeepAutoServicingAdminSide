@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CartdataService } from '../cartdata.service';
 import { Router } from '@angular/router';
+import { cart } from '../cart';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-cartadd',
@@ -11,7 +13,7 @@ import { Router } from '@angular/router';
 export class CartaddComponent implements OnInit {
   addcart:FormGroup;
   invalidArrayNames:String[]=[];
-  constructor(public _data:CartdataService,private _router:Router ) { }
+  constructor(public _data:CartdataService,private _router:Router) { }
 
   ngOnInit() {
     this.addcart = new FormGroup({
@@ -23,18 +25,15 @@ export class CartaddComponent implements OnInit {
   }
   onCartAdd()
   {
-    let cartobj = {
-      cart_id:this.addcart.value.cart_id,
-      fk_user_id:this.addcart.value.fk_user_id,
-      fk_product_id:this.addcart.value.fk_product_id,
-      quantity:this.addcart.value.quantity,
-    };
-    console.log(cartobj);
-    this._data.addCart(cartobj).subscribe(
+    this._data.addCart(this.addcart.value).subscribe(
       (data:any)=>{
         console.log(data);
-        this._router.navigate(['nav/cart/']);
+        this._router.navigate(['/nav/cart/']);
       }
     );
+  }
+  onClickCancel()
+  {
+    this._router.navigate(['/nav/cart/']);
   }
 }

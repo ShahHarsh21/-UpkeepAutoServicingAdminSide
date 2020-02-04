@@ -63,4 +63,8 @@ export class SlotDisplayComponent implements OnInit {
       );
     }
   }
+  onEmpAllot()
+  {
+    this._router.navigate(['/nav/worker_allot/']);
+  }
 }

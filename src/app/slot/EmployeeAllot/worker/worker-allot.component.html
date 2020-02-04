@@ -1,0 +1,33 @@
+<p>delivery-boy-allot works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>SLOT DETAILS</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+<p></p>
+  </mat-card-content>
+  <mat-card-actions>
+  <!-- <mat-radio-group name="radioOpt1" [(ngModel)]="selectedRadio" (change)="onChange()">
+    <mat-radio-button *ngFor="let opt of options" [value]="opt">{{opt}}</mat-radio-button>
+  </mat-radio-group>
+  <div>
+      <button mat-button (click)="onAddToQueue()" name="AddToQueue" disabled></button>ADD TO QUEUE</button>
+      <button mat-button (click)="onAllotWorker()"name="AllotWorker" >ALLOT WOKER</button>
+      <button mat-button (click)="onClickConfirm()" >CONFIRM</button>
+    </div> -->
+
+    <input class="form-check-input" [checked]= "!showQueueBtn"  name="allot" type="radio" id = "allot" (click)="radioValueCheck('allot')">
+    <label for="allot" class="form-check-label">ALLOT WORKER</label><br>
+
+    <input class="form-check-input"  type="radio" name="allot" id = "addQueue" (click)="radioValueCheck('addQueue')">
+    <label for="addQueue" class="form-check-label">ADD TO QUEUE</label>
+
+    <button mat-button (click)="onAddToQueue()" name="AddToQueue" [disabled] ="!showQueueBtn">ADD TO QUEUE</button>
+    <button mat-button (click)="onAllotWorker()"name="AllotWorker" [disabled]="showQueueBtn">ALLOT WOKER</button>
+
+  </mat-card-actions>
+
+</mat-card>
+

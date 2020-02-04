@@ -27,7 +27,7 @@ export class CategorydataService {
     // const body = JSON.stringify(category_id);
     return this._http.get(this.url+category_id);
   }
-  addCategory(item:category)
+  addCategory(item)
   {
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);

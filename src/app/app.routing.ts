@@ -29,6 +29,8 @@ import { SlotEditComponent } from './slot/slot-edit/slot-edit.component';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
 import { ColorAddComponent } from './color/color-add/color-add.component';
 import { StockEditComponent } from './stock/stockEdit/stock-edit/stock-edit.component';
+import { DeliveryBoyAllotComponent } from './slot/EmployeeAllot/delivery-boy-allot/delivery-boy-allot.component';
+import { WorkerAllotComponent } from './slot/EmployeeAllot/worker/worker-allot.component';
 
 
 const arr:Routes=[
@@ -40,7 +42,7 @@ const arr:Routes=[
         {path:'product',component:ProductDisplayComponent},
         {path:'productEdit/:product_id',component:ProductEditComponent},
         {path:'category',component:CategoryDisplayComponent},
-        // {path:'categoryAdd',component:CategoryAddComponent},
+        {path:'categoryAdd',component:CategoryAddComponent},
         {path:'productAdd',component:ProductAddComponent},
         {path:'color',component:ColorDisplayComponent},
         {path:'colorEdit',component:ColorEditComponent},
@@ -58,7 +60,9 @@ const arr:Routes=[
         {path:'supplier',component:SupplierDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
-        {path:'slotEdit/:slot_register_id',component:SlotEditComponent}
+        {path:'slotEdit/:slot_register_id',component:SlotEditComponent},
+        {path:'deliveryboy_allot',component:DeliveryBoyAllotComponent},
+        {path:'worker_allot',component:WorkerAllotComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}
