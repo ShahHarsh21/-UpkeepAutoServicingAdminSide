@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
 import { UserdataService } from 'src/app/user/userdata.service';
 import { user } from 'src/app/user/user';
+import { WorkerPopupComponent } from './PopUp/worker-popup/worker-popup.component';
 
 @Component({
   selector: 'app-worker-allot',
@@ -15,6 +16,7 @@ export class WorkerAllotComponent implements OnInit {
   displayedColumns:string[]=['employee_name','employee_designation','Action'];
   empArr:employee[]=[];
   emp_name:string[]=[];
+  data:employee[];
   selectedRadio:string="";
   options:String[]=['ADD TO QUEUE','ALLOT WORKER'];
   dataSource: MatTableDataSource<employee>;
@@ -40,12 +42,6 @@ radioValueCheck(x) {
 
 
   ngOnInit() {
-    this._data.getAllEmpWithMachanic().subscribe(
-      (data:employee[])=>{
-        console.log(data);
-        this.dataSource.data=data;
-      }
-    );
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:any)=>{
         console.log(data);
@@ -61,17 +57,14 @@ radioValueCheck(x) {
     }
 
   }
-  onAllotWorker(row)
-  {
-    // this._dialog.open(,{data:row});
-  }
   onAddToQueue()
   {
     console.log("QUEUE");
   }
-  onClickConfirm()
+  onAllotWorker()
   {
     console.log("CONFIRM");
+    this._dialog.open(WorkerPopupComponent);
   }
   onChange(index:number):number
   {

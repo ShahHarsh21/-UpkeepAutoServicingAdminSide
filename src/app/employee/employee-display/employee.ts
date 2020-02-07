@@ -8,12 +8,12 @@ export class employee {
     public employee_type: string,
     public fk_user_id:number,
     public user_id: number,
-      public email_id: string,
-      public user_name:string,
-      public mobile_no: number,
-      public address: string,
-      public date_of_birth: Date,
-      public user_type:string) {
+    public email_id: string,
+    public user_name:string,
+    public mobile_no: number,
+    public address: string,
+    public date_of_birth: Date,
+    public user_type:string) {
   }
 
 }

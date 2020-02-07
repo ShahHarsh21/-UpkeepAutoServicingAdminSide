@@ -27,7 +27,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Welcome to UpKeepAutoServicing :==> {{email_id}}</span>
+      <span>Welcome to UpKeepAutoServicing <i class="material-icons">account_circle</i> {{email_id}}</span>
       <button (click)="onLogoutClick()" class="btn">Logout</button>
     </mat-toolbar>
     <router-outlet></router-outlet>

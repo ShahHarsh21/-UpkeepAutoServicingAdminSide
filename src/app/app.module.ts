@@ -70,6 +70,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DeliveryBoyAllotComponent } from './slot/EmployeeAllot/delivery-boy-allot/delivery-boy-allot.component';
 import { WorkerAllotComponent } from './slot/EmployeeAllot/worker/worker-allot.component';
 import { DeliveryboyViewmoreComponent } from './slot/EmployeeAllot/delivery-boy-allot/viewmore/deliveryboy-viewmore.component';
+import { WorkerPopupComponent } from './slot/EmployeeAllot/worker/PopUp/worker-popup/worker-popup.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { DeliveryboyViewmoreComponent } from './slot/EmployeeAllot/delivery-boy-
     DeliveryBoyAllotComponent,
     WorkerAllotComponent,
     DeliveryboyViewmoreComponent,
+    WorkerPopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -152,7 +154,8 @@ import { DeliveryboyViewmoreComponent } from './slot/EmployeeAllot/delivery-boy-
     CartviewmoreComponent,
     OrderDetailsmoreComponent,
     CategoryAddComponent,
-    ColorAddComponent
+    ColorAddComponent,
+    WorkerPopupComponent,
      ],
   providers: [],
   bootstrap: [AppComponent]
