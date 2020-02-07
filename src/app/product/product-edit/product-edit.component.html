@@ -30,6 +30,7 @@
     <div>
       <div class="form-group" >
         <mat-label><b>Color</b></mat-label><br>
+
         <select class="form-control" formControlName="fk_color_id" >
           <option *ngFor="let item of color_arr" [value]="item.color_id">{{item.color_name}}</option>
         </select>

@@ -4,6 +4,7 @@
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>SLOT DETAILS</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <!-- <!-- <mat-label>{{}}</mat-label> --> -->
   </mat-card-header>
   <mat-card-content>
 <p></p>
@@ -25,7 +26,7 @@
     <label for="addQueue" class="form-check-label">ADD TO QUEUE</label>
 
     <button mat-button (click)="onAddToQueue()" name="AddToQueue" [disabled] ="!showQueueBtn">ADD TO QUEUE</button>
-    <button mat-button (click)="onAllotWorker()"name="AllotWorker" [disabled]="showQueueBtn">ALLOT WOKER</button>
+    <button mat-button (click)="onAllotWorker()" name="AllotWorker" [disabled]="showQueueBtn">ALLOT WOKER</button>
 
   </mat-card-actions>
 

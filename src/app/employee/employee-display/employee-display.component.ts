@@ -28,12 +28,14 @@ export class EmployeeDisplayComponent implements OnInit {
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:any)=>{
         this.empArr=data;
+        console.log(data);
         this.dataSource.data=this.empArr;
       }
     );
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:employee[])=>{
         this.empArr=data;
+        console.log(data);
         this.dataSource.data=data;
       }
     );
