@@ -35,8 +35,8 @@ export class StockViewmoreComponent implements OnInit {
     this._pro_data.getProductById(this.fk_product_id).subscribe(
       (data:any)=>{
         console.log(data);
-          this.product_name=data[0].product_name;
-        this.product_price=data[0].product_price;
+        this.product_name=data[0].product_name;
+        this.product_price=data[0].product_price
         this.product_description=data[0].product_description;
         this.product_image=data[0].product_image;
         console.log(data[0].fk_cat_id);
