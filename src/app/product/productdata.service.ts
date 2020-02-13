@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 })
 export class ProductdataService {
   private url : string=environment.url+'product/';
+  private image_url:string=environment.url+'Product_image/';
   constructor(private _http : HttpClient) { }
 
   getAllProduct()
@@ -33,5 +34,21 @@ export class ProductdataService {
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.url, body, { headers: head });
+  }
+  getAllImage()
+  {
+    return this._http.get(this.image_url);
+  }
+  AddImage(item,fd)
+  {
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(this.image_url,fd,{headers:head});
+  }
+  updatePhoto (product_id,fd)
+  {
+    console.log(product_id);
+    console.log(fd);
+    return this._http.put(this.image_url + product_id, fd);
   }
 }

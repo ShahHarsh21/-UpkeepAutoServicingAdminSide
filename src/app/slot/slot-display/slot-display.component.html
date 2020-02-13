@@ -82,6 +82,9 @@
           <button (click)="onViewMore(row)"  mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
               <mat-icon>more</mat-icon>
           </button>
+          <button (click)="onEmpAllot(row)" mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
+            <mat-icon>edit</mat-icon>
+          </button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -93,8 +96,5 @@
       <button id="Add Record" (click)="onAddClick()" routerLink="/" mat-mini-fab color="warn" aria-label="ADD PRODUCT">
         <mat-icon>add</mat-icon>
       </button>
-      |
-          <button (click)="onEmpAllot()" mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
-            <mat-icon>edit</mat-icon>
-          </button> |
+     |
   </div>

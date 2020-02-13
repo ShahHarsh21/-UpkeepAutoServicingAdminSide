@@ -50,10 +50,8 @@ export class UseraddComponent implements OnInit {
       mobile_no: this.adduser.value.mobile_no,
       date_of_birth:this.adduser.value.dob,
     };
-    console.log(userobj);
     this._data.addUser(userobj).subscribe(
       (data:any)=>{
-        console.log(data);
         this._router.navigate(['nav/user/']);
       }
     );

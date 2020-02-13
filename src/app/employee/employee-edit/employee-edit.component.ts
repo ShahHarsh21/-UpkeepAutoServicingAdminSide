@@ -113,4 +113,8 @@ export class EmployeeEditComponent implements OnInit {
       }
     );
   }
+  onCancle()
+  {
+    this._routs.navigate(['/nav/Employee']);
+  }
 }

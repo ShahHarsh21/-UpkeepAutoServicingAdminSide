@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { employee } from '../employee-display/employee';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-emp-viewmore',
@@ -22,6 +23,7 @@ export class EmpViewmoreComponent implements OnInit {
   address: string='';
   date_of_birth: Date;
   user_type:string='';
+  EmpImage: string = '';
    constructor(public dialogref: MatDialogRef<EmpViewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: employee) { }
 
   ngOnInit() {
@@ -37,6 +39,7 @@ export class EmpViewmoreComponent implements OnInit {
     this.address=this.data.address;
     this.date_of_birth=this.data.date_of_birth;
     this.user_type=this.data.user_type;
+    this.EmpImage = environment.url + 'images/EmployeeImages/' + this.data.employee_img;
   }
   onClickCancel()
   {

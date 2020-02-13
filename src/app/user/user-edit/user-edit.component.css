@@ -9,7 +9,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password],input[type=number],input[type=date] {
+input[type=text], input[type=password],input[type=number],input[type=date], select[type=dropbox] {
   width: 90%;
   padding: 12px 20px;
   margin: 2px 0px;
@@ -54,13 +54,6 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
 /* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
 }
 
 /* Add padding to containers */

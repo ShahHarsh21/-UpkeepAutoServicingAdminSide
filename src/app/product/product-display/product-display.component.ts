@@ -4,6 +4,7 @@ import { Product } from '../product';
 import { MatTableDataSource, MatDialog, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
+import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({
   selector: 'app-product-display',
@@ -64,8 +65,8 @@ export class ProductDisplayComponent implements OnInit {
   {
       this._dialog.open(ProductViewMoreComponent,{data:row});
   }
-  onEmpAllot(row)
+  onImageAdd(row)
   {
-
+    this._router.navigate(['/nav/Add_image/'+row.product_id]);
   }
 }

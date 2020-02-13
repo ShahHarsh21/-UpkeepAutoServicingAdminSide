@@ -71,6 +71,7 @@ import { DeliveryBoyAllotComponent } from './slot/EmployeeAllot/delivery-boy-all
 import { WorkerAllotComponent } from './slot/EmployeeAllot/worker/worker-allot.component';
 import { DeliveryboyViewmoreComponent } from './slot/EmployeeAllot/delivery-boy-allot/viewmore/deliveryboy-viewmore.component';
 import { WorkerPopupComponent } from './slot/EmployeeAllot/worker/PopUp/worker-popup/worker-popup.component';
+import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { WorkerPopupComponent } from './slot/EmployeeAllot/worker/PopUp/worker-p
     WorkerAllotComponent,
     DeliveryboyViewmoreComponent,
     WorkerPopupComponent,
+    AddImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -156,6 +158,7 @@ import { WorkerPopupComponent } from './slot/EmployeeAllot/worker/PopUp/worker-p
     CategoryAddComponent,
     ColorAddComponent,
     WorkerPopupComponent,
+    AddImageComponent,
      ],
   providers: [],
   bootstrap: [AppComponent]

@@ -50,4 +50,8 @@ export class SlotAddComponent implements OnInit {
       }
     );
   }
+  onCancle()
+  {
+    this._routs.navigate(['/nav/Slot']);
+  }
 }

@@ -1,12 +1,12 @@
-<div>
+<div class="container">
   <mat-list>
   <form [formGroup]="addColor" (ngSubmit)="onColorAdd()" >
 
       <mat-label><b>Color Name</b></mat-label>
       <mat-list-item><input  type="text" formControlName="color_name"></mat-list-item>
-        <br>
+      <br>
     <div>
-      <button class="btn" (click)="onColorAdd()">ADD</button>
+      <button class="btn" type="submit">ADD</button>
       <button class="can" (click)="onClickCancel()">Cancle</button>
     </div>
     </form>

@@ -25,7 +25,6 @@ export class UserEditComponent implements OnInit {
   ngOnInit() {
 
       this.user_rout=this._act_routs.snapshot.params['user_id'];
-      console.log( this.user_rout);
 
     this.userEdit=new FormGroup({
       user_id:new FormControl(),
@@ -40,7 +39,6 @@ export class UserEditComponent implements OnInit {
 
     this._data.getUserById(this.user_rout).subscribe(
         (data:any)=>{
-          console.log(data);
           this.formDataBind(data[0]);
        }
       );
@@ -60,14 +58,10 @@ export class UserEditComponent implements OnInit {
   }
   onUserEdit()
   {
-    // console.log(this.userEdit.value);
-    // console.log(this.userEdit.value.user_type);
     if(this.userEdit.value.user_type == "Employee")
     {
-      console.log(this.userEdit.value);
       this._emp_data.addEmployee(this.user_rout).subscribe(
         (data:any)=>{
-          console.log(data);
           this._routs.navigate(['/nav/user']);
         }
       );
@@ -76,7 +70,6 @@ export class UserEditComponent implements OnInit {
     {
       this._data.updateUser(this.userEdit.value).subscribe(
         (data:any)=>{
-          console.log(data);
           this._routs.navigate(['/nav/user/']);
         }
       );

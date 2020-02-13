@@ -41,7 +41,7 @@ export class StockEditComponent implements OnInit {
       quantity:item.quantity
       });
     }
-    onStockEdit()
+  onStockEdit()
   {
     console.log(this.editStock.value);
     this._data.updateStock(this.editStock.value.stock_id,this.editStock.value).subscribe(
@@ -50,5 +50,9 @@ export class StockEditComponent implements OnInit {
         this._routs.navigate(['/nav/stock']);
       }
     );
+  }
+  onCancle()
+  {
+    this._routs.navigate(['/nav/stock']);
   }
 }

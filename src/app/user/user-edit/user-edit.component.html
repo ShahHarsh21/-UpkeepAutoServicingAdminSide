@@ -44,12 +44,10 @@
       <mat-label><b>DATE OF BIRTH</b></mat-label><br>
       <input class="form-control" placeholder="Enter Date Of Birth" formControlName="date_of_birth" type="date">
       <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
-      <!-- <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('maxlength')" >only 10 digits</label>
-      <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('pattern') " > Only digits</label> -->
     </div><br>
     <div>
       <mat-label><b>USER TYPE :</b></mat-label><br>
-      <select class="form-control" formControlName="user_type">
+      <select class="form-control" formControlName="user_type" type="dropbox">
         <option value="User">{{"USER"}}</option>
         <option value="Admin">{{"ADMIN"}}</option>
         <option value="Employee">{{"EMPLOYEE"}}</option>

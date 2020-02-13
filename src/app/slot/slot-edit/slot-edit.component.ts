@@ -70,4 +70,8 @@ formDataBind(item:slot)
       }
     );
   }
+  onCancle()
+  {
+    this._router.navigate(['nav/Slot/']);
+  }
 }

@@ -23,10 +23,8 @@ export class ColorAddComponent implements OnInit {
   }
   onColorAdd()
   {
-    console.log(this.addColor.value);
     this._data.addColor(this.addColor.value).subscribe(
       (data:any)=>{
-        console.log(data);
         this.dialogref.close();
       }
     );

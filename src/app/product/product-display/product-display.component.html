@@ -62,10 +62,13 @@
           </button> |
           <button (click)="onEdit(row)" mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
               <mat-icon>edit</mat-icon>
-            </button> |
+          </button> |
           <button (click)="onViewMore(row)"  mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
               <mat-icon>more</mat-icon>
-            </button>
+          </button>|
+          <button (click)="onImageAdd(row)"  mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
+            <mat-icon>app-add-image</mat-icon>
+          </button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

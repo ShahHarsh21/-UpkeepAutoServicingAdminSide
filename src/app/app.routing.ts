@@ -31,6 +31,7 @@ import { ColorAddComponent } from './color/color-add/color-add.component';
 import { StockEditComponent } from './stock/stockEdit/stock-edit/stock-edit.component';
 import { DeliveryBoyAllotComponent } from './slot/EmployeeAllot/delivery-boy-allot/delivery-boy-allot.component';
 import { WorkerAllotComponent } from './slot/EmployeeAllot/worker/worker-allot.component';
+import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 
 
 const arr:Routes=[
@@ -62,7 +63,8 @@ const arr:Routes=[
         {path:'userEdit/:user_id',component:UserEditComponent},
         {path:'slotEdit/:slot_register_id',component:SlotEditComponent},
         {path:'deliveryboy_allot',component:DeliveryBoyAllotComponent},
-        {path:'worker_allot',component:WorkerAllotComponent}
+        {path:'worker_allot/:slot_register_id',component:WorkerAllotComponent},
+        {path:'Add_image/:product_id',component:AddImageComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}

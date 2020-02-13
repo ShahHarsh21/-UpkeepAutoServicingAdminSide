@@ -4,6 +4,8 @@ import { slot } from '../../slot-display/slot';
 import { SlotdataService } from '../../slotdata.service';
 import { Router } from '@angular/router';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
+import { employee } from 'src/app/employee/employee-display/employee';
+import { DeliveryboyViewmoreComponent } from './viewmore/deliveryboy-viewmore.component';
 
 @Component({
   selector: 'app-delivery-boy-allot',
@@ -13,53 +15,36 @@ import { EmployeedataService } from 'src/app/employee/employeedata.service';
 export class DeliveryBoyAllotComponent implements OnInit {
   displayedColumns:string[]=['vehicle_type','vehicle_model','Action'];
   slotarr:slot[]=[];
-  dataSource: MatTableDataSource<slot>;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-
+  EMPIMG:string='';
+  empData:employee[]=[];
+  slot_id:number=0;
   constructor(private _emp_data:EmployeedataService,private _data:SlotdataService,private _dialog:MatDialog,private _router:Router) {
-    this.dataSource = new MatTableDataSource();
   }
-  onAddToQueue()
-  {
-    console.log("queue")
-
-  }
-  onClickConfirm()
-  {
-    console.log("confirm")
-  }
-
   ngOnInit() {
     this._data.getAllSlots().subscribe(
       (data:any)=>{
         console.log(data);
-        this.dataSource.data=data;
+        this.slot_id=data[0].slot_register_id;
+        console.log(this.slot_id);
       }
     );
-    // this._emp_data.getAllEmpWithDeliverBoy().subscribe(
-    //   (data:any)=>{
-    //     console.log(data);
-    //   }
-    // );
+    this._emp_data.getAllEmpWithDeliverBoy().subscribe(
+      (data:employee[])=>{
+        this.empData=data;
+        console.log(this.empData);
+      }
+    );
   }
-  applyFilter(filtervalue:string)
-  {
-      this.dataSource.filter = filtervalue.trim().toLowerCase();
-      if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
-     }
-  }
-  onViewMore(row)
-  {
-    // this._dialog.open(SlotViewmoreComponent,{data:row});
-  }
-  onAddToQueClick()
-  {
 
-  }
-  onDeliveryBoyConfirm()
+  onDeliveryBoyClick()
   {
-    this._router.navigate(['/nav/worker_allot/']);
+    console.log(this.slot_id);
+    this._dialog.open(DeliveryboyViewmoreComponent,{data:this.slot_id});
   }
+  onClickConfirm()
+  {
+    console.log("confirm")
+    this._router.navigate(['/nav/Slot']);
+  }
+
 }

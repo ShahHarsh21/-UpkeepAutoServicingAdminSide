@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="imageAdd" (ngSubmit)="onImageAdd()">
+      <h1 class="hh">Add Image</h1>
+      <br>
+      <mat-list-item>
+        <mat-list-item><i class="material-icons">perm_identity</i>{{product_name|uppercase}}</mat-list-item>
+        <br>
+        <input type="file" (change)="onchange($event)">
+      </mat-list-item>
+      <br>
+      <div>
+        <button type="submit" class="btn">ADD</button>
+        <button class="can" (click)="onClickCancel()">Cancel</button>
+      </div>
+    </form>
+</div>

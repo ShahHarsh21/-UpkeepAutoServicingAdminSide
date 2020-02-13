@@ -28,4 +28,8 @@ export class NavBarComponent implements OnInit {
     localStorage.clear();
     this._router.navigate(['/']);
   }
+  onSignupClick()
+  {
+    this._router.navigate(['/nav/signup']);
+  }
 }

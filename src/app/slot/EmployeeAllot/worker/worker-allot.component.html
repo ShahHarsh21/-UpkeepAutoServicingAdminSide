@@ -1,10 +1,18 @@
-<p>delivery-boy-allot works!</p>
+<!-- <p>delivery-boy-allot works!</p> -->
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>SLOT DETAILS</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    <!-- <!-- <mat-label>{{}}</mat-label> --> -->
+      <mat-list *ngFor="let item of slotArr">
+        <mat-list-item>{{item.vehicle_model}}</mat-list-item>
+        <mat-list-item>{{item.vehicle_type}}</mat-list-item>
+        <mat-list-item>{{item.service_type}}</mat-list-item>
+        <mat-list-item>{{item.pickup_date}}</mat-list-item>
+        <mat-list-item>{{item.pickup_address}}</mat-list-item>
+        <mat-list-item>{{item.requirment}}</mat-list-item>
+        <mat-list-item>{{item.time_period}}</mat-list-item>
+
+      </mat-list>
   </mat-card-header>
   <mat-card-content>
 <p></p>

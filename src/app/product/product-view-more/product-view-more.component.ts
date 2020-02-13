@@ -5,6 +5,7 @@ import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
 import { category } from 'src/app/category/category';
 import { CategorydataService } from 'src/app/category/categorydata.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-view-more',
@@ -23,17 +24,18 @@ export class ProductViewMoreComponent implements OnInit {
     fk_color_id:number=0;
     fk_cate_name:string='';
     fk_cat_id:number=0;
-
-  constructor(private _catedata:CategorydataService,private _colordata:ColordataService,public dialogref: MatDialogRef<ProductViewMoreComponent>, @Inject(MAT_DIALOG_DATA) public data: Product) { }
+    ProductImage :string = ' ';
+    constructor(private _catedata:CategorydataService,private _colordata:ColordataService,public dialogref: MatDialogRef<ProductViewMoreComponent>, @Inject(MAT_DIALOG_DATA) public data: Product) { }
 
   ngOnInit() {
     this.product_id = this.data.product_id;
     this.product_name = this.data.product_name;
     this.product_price = this.data.product_price;
+    this.product_image=this.data.product_image;
     this.product_description = this.data.product_description;
     this.fk_cat_id=this.data.fk_cat_id;
     this.fk_color_id=this.data.fk_color_id;
-    console.log(this.fk_color_id);
+
     this._colordata.getColorById(this.fk_color_id).subscribe(
       (data:color_class)=>{
         console.log(data);
@@ -49,6 +51,7 @@ export class ProductViewMoreComponent implements OnInit {
         console.log(this.fk_cate_name);
       }
     );
+    this.ProductImage = environment.url+ 'images/Product_image/' +this.data.product_image;
   }
   onClickCancel()
   {

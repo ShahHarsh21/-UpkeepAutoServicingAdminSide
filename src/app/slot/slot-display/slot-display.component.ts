@@ -63,8 +63,8 @@ export class SlotDisplayComponent implements OnInit {
       );
     }
   }
-  onEmpAllot()
+  onEmpAllot(row)
   {
-    this._router.navigate(['/nav/worker_allot/']);
+    this._router.navigate(['/nav/worker_allot/'+row.slot_register_id]);
   }
 }

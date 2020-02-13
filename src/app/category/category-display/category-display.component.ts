@@ -25,7 +25,6 @@ export class CategoryDisplayComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllCategory().subscribe(
       (data:category[])=>{
-        console.log(data);
         this.categoryarr=data;
         this.dataSource.data=this.categoryarr;
       }
@@ -46,7 +45,6 @@ export class CategoryDisplayComponent implements OnInit {
 
       this._data.deleteCategory(row.category_id).subscribe(
         (data:any)=>{
-          console.log(data);
           this.categoryarr.splice( this.categoryarr.indexOf(row),1);
           this.dataSource.data=this.categoryarr;
           this._routes.navigate(['nav/category/']);

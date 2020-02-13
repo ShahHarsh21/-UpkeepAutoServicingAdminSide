@@ -3,13 +3,13 @@
   <form [formGroup]="addslot" (ngSubmit)="onSlotAdd()" >
     <div class="form-groupup">
       <mat-label><b>Vehicle Model</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Vehicle Model" formControlName="vehicle_model" >
+      <input class="form-control" placeholder="Enter Vehicle Model" formControlName="vehicle_model" type="text" >
       <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
     </div><br>
     <div class="form-group" >
       <mat-label><b>Vehicle Type</b></mat-label><br>
-      <select class="form-control" formControlName="vehicle_type" >
+      <select class="form-control" formControlName="vehicle_type" type="dropbox">
           <option><b>SELECT VEHICLE IS 2 OR 4 WHEELER</b></option>
           <option value='2 wheeler'>2 WHEELER</option>
           <option value='3 wheeler'>4 WHEELER</option>
@@ -17,7 +17,8 @@
     </div><br>
       <div class="form-group" >
         <mat-label><b>Service Type</b></mat-label><br>
-        <select class="form-control" formControlName="service_type" >
+        <select class="form-control" formControlName="service_type" type="dropbox">
+          <option value=""><b>Select Service Type</b></option>
           <option value='Body Paint & Design'><b>BODY PAINT & DESIGN</b></option>
           <option value='Engine Oil & Filter'>ENGINE OIL & FILTER</option>
           <option value='Engine Diagonostic'>ENGINE DIAGONOSTIC</option>
@@ -30,21 +31,21 @@
       </div><br>
       <div class="form-group" >
         <mat-label><b>Time Period</b></mat-label><br>
-        <input type="time" formControlName="time_period" >
+        <input type="time" formControlName="time_period" type="time">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
       </div><br>
       <div class="form-group" >
         <mat-label><b>Pick-Up Date</b></mat-label><br>
-        <input type="date" formControlName="pickup_time">
+        <input type="date" formControlName="pickup_time" type="date">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
       </div><br>
       <div class="form-group" >
         <mat-label><b>Pickup Address</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Pickup Address" formControlName="pickup_address" >
+        <input class="form-control" placeholder="Enter Pickup Address" formControlName="pickup_address" type="text">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
@@ -52,19 +53,20 @@
 
       <div class="form-group" >
         <mat-label><b>Drop Address</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Drop Address" formControlName="drop_address">
+        <input class="form-control" placeholder="Enter Drop Address" formControlName="drop_address" type="text">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
       </div><br>
       <div class="form-group" >
         <mat-label><b>Requirment</b></mat-label><br>
-        <input class="form-control" placeholder="Enter Requirment" formControlName="requirment" >
+        <input class="form-control" placeholder="Enter Requirment" formControlName="requirment" type="text">
         <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
         <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
       </div><br>
     <div class="form-group">
-      <button  type="submit" class="btn btn-primary"  >ADD SLOT</button>
+      <button  type="submit" class="btn">Add Slot</button>
+      <button class="can" (click)="onCancle()">Cancle</button>
     </div>
 </form>

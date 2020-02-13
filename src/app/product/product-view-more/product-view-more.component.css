@@ -10,6 +10,10 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
 .icon{
   align-items: left;
 }
+.info{
+  float: right;
+  margin-left: 5px;
+}
 
 .hh{
   text-align: center;
@@ -43,8 +47,20 @@ button:hover {
   padding: 50px;
   border: 2px solid black;
   border-radius: 10px;
-  margin-top: 5%;
+  /*margin-top: 5%;
   margin-left: 5%;
-  margin-right: 5%;
+  margin-right: 5%;*/
   margin-bottom: 10%;
+}
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img{
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
 }

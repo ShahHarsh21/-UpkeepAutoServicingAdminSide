@@ -12,7 +12,7 @@ import { UserViewMoreComponent } from '../user-view-more/user-view-more.componen
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit {
-  displayedColumns:string[]=['email_id','password','user_name','Action'];
+  displayedColumns:string[]=['email_id','user_name','user_type','Action'];
   userarr:user[]=[];
   dataSource: MatTableDataSource<user>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -54,7 +54,6 @@ applyFilter(filtervalue:string)
         }
       );
     }
-    // this._data.deleteProduct
   }
   onAddClick()
   {
@@ -62,8 +61,6 @@ applyFilter(filtervalue:string)
   }
   onEdit(row)
   {
-    // let user_id=row.user_id;
-    console.log(row.user_id);
     this._router.navigate(['/nav/userEdit/'+row.user_id]);
   }
   onViewMore(row)

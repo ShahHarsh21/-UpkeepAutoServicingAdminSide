@@ -20,6 +20,7 @@ export class UserViewMoreComponent implements OnInit {
   constructor(public dialogref: MatDialogRef<UserViewMoreComponent>, @Inject(MAT_DIALOG_DATA) public data: user) { }
 
   ngOnInit() {
+    // console.log(this.data)
     this.user_id=this.data.user_id;
     this.email_id=this.data.email_id;
     this.password=this.password;
@@ -28,6 +29,8 @@ export class UserViewMoreComponent implements OnInit {
     this.address=this.data.address;
     this.date_of_birth=this.data.date_of_birth;
     this.user_type=this.data.user_type;
+    // console.log(this.mobile_no);
+
   }
   onClickCancel()
   {

@@ -9,7 +9,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password],input[type=number],input[type=date] {
+input[type=text], input[type=password],input[type=number],input[type=date] ,select[type=dropbox]{
   width: 90%;
   padding: 12px 20px;
   margin: 2px 0px;

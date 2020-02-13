@@ -2,19 +2,19 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>Delivery Boy Details</mat-card-title>
+    <mat-list *ngFor="let item of empData">
+      <mat-list-item>{{item.email_id}}</mat-list-item>
+      <mat-list-item>{{item.mobile_no}}</mat-list-item>
+      <mat-list-item>{{item.salary}}</mat-list-item>
+      <img src="{{item.employee_img}}" height="100px" width="100px">
+    </mat-list>
   </mat-card-header>
   <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
+    <img src="{{EMPIMG}}">
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="onAddToQueue()">ADD TO QUEUE</button>
-    <button mat-button (click)="onClickConfirm()" >CONFIRM</button>
+    <button mat-button (click)="onDeliveryBoyClick()" >Add Delivery Boy</button> |
   </mat-card-actions>
 
 </mat-card>

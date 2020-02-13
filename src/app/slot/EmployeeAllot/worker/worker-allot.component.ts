@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from '@angular/material';
 import { employee } from 'src/app/employee/employee-display/employee';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
 import { UserdataService } from 'src/app/user/userdata.service';
-import { user } from 'src/app/user/user';
 import { WorkerPopupComponent } from './PopUp/worker-popup/worker-popup.component';
+import { slot } from '../../slot-display/slot';
+import { SlotdataService } from '../../slotdata.service';
 
 @Component({
   selector: 'app-worker-allot',
@@ -17,46 +18,36 @@ export class WorkerAllotComponent implements OnInit {
   empArr:employee[]=[];
   emp_name:string[]=[];
   data:employee[];
+  slot_id:number=0;
+  slotArr:slot[]=[];
   selectedRadio:string="";
   options:String[]=['ADD TO QUEUE','ALLOT WORKER'];
-  dataSource: MatTableDataSource<employee>;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private _dialog: MatDialog,private _user_data:UserdataService,private _userData:UserdataService,private _data:EmployeedataService,private _routs:Router,private _dialogref:MatDialog) {
-    this.dataSource = new MatTableDataSource();
+  constructor(public _dataSlot:SlotdataService,public _act_routs:ActivatedRoute,private _dialog: MatDialog,private _userData:UserdataService,private _data:EmployeedataService,private _routs:Router,private _dialogref:MatDialog) {
+
+  }
+  public showQueueBtn = false;
+ngOnInit() {
+  this.slot_id = this._act_routs.snapshot.params['slot_register_id'];
+  console.log(this.slot_id);
+  this._dataSlot.getSlotById(this.slot_id).subscribe(
+    (data:any)=>{
+      this.slotArr=data;
+    }
+  );
   }
 
-
-  public showQueueBtn = false;
-
-radioValueCheck(x) {
-
+  radioValueCheck(x)
+  {
     if(x=="addQueue")
     {
       this.showQueueBtn = true;
     }
-    else {
+    else
+    {
       this.showQueueBtn = false;
     }
-}
-
-
-  ngOnInit() {
-    this._data.getAllEmployeeWithUserName().subscribe(
-      (data:any)=>{
-        console.log(data);
-        this.dataSource.data=data;
-      }
-    );
   }
-  applyFilter(filtervalue:string)
-    {
-      this.dataSource.filter = filtervalue.trim().toLowerCase();
-      if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
-    }
 
-  }
   onAddToQueue()
   {
     console.log("QUEUE");
@@ -64,7 +55,7 @@ radioValueCheck(x) {
   onAllotWorker()
   {
     console.log("CONFIRM");
-    this._dialog.open(WorkerPopupComponent);
+    this._dialog.open(WorkerPopupComponent ,{data:this.slot_id});
   }
   onChange(index:number):number
   {

@@ -51,14 +51,6 @@ export class ColorDisplayComponent implements OnInit {
       );
     }
   }
-  // onEdit(row)
-  // {
-  //     this._routs.navigate(['colorEdit']);
-  // }
-  // onViewMore(row)
-  // {
-  //   // this._dialogref.open(,{data:row});
-  // }
   onAddClick()
   {
     this._dialogref.open(ColorAddComponent);

@@ -6,6 +6,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
 import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
+import { MatDialogRef, MatDialog } from '@angular/material';
+import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({
   selector: 'app-product-add',
@@ -16,7 +18,7 @@ export class ProductAddComponent implements OnInit {
     addproduct:FormGroup;
     catearr:category[]=[];
     colorarr:color_class[]=[];
-  constructor(private _color_data:ColordataService,private _cat_data:CategorydataService,private _data:ProductdataService,private _router:Router) { }
+  constructor(private _color_data:ColordataService,private _cat_data:CategorydataService,private _data:ProductdataService,private _router:Router,public _dialog:MatDialog) { }
   ngOnInit() {
     this.addproduct=new FormGroup({
 
@@ -44,29 +46,12 @@ export class ProductAddComponent implements OnInit {
       }
     );
    }
-  onProductAdd()
-  {
-    let productobj = {
-    product_id: this.addproduct.value.product_id,
-    product_name: this.addproduct.value.product_name,
-    product_description: this.addproduct.value.product_description,
-    fk_cat_id:this.addproduct.value.fk_cat_id,
-    fk_cat_name:this.addproduct.value.fk_cat_name,
-    product_price: this.addproduct.value.product_price,
-    product_image: this.addproduct.value.product_image,
-    fk_color_id:this.addproduct.value.fk_color_id,
-    fk_color_name: this.addproduct.value.fk_color_name
-    };
-     console.log(productobj);
-     this._data.addProduct(productobj).subscribe(
-     (data:any)=>{
-       console.log(data);
-       this._router.navigate(['/nav/product/']);
-     }
-   );
-  }
   onCancle()
   {
     this._router.navigate(['/nav/product/']);
+  }
+  onImageAdd()
+  {
+    this._dialog.open(AddImageComponent);
   }
 }

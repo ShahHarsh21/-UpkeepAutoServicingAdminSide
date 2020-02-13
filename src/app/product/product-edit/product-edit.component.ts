@@ -93,4 +93,8 @@ export class ProductEditComponent implements OnInit {
       }
     );
   }
+  onCancle()
+  {
+    this._router.navigate(['/nav/product/']);
+  }
 }
