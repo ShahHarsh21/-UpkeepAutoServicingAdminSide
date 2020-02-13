@@ -12,8 +12,9 @@ import { UserViewMoreComponent } from '../user-view-more/user-view-more.componen
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit {
-  displayedColumns:string[]=['email_id','user_name','user_type','Action'];
+  displayedColumns:string[]=['check','email_id','password','user_name','Action'];
   userarr:user[]=[];
+  deleteuserarr:number[]=[];
   dataSource: MatTableDataSource<user>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -55,6 +56,32 @@ applyFilter(filtervalue:string)
       );
     }
   }
+  onchecheckboxchange(row:user)
+  {
+    if(this,this.userarr.find(x => x == row.user_id))
+    {
+        this.deleteuserarr.splice(this.deleteuserarr.indexOf(row.user_id),1);
+    }
+    else{
+      this.deleteuserarr.push(row.user_id);
+    }
+  }
+  onDeleteAll(row)
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+      this._data.DeleteAllUser(this.deleteuserarr).subscribe(
+        (data:user)=>{
+          for(let i=0;i<this.deleteuserarr.length;i++)
+          {
+                let x=this.userarr.find(x => x.user_id == this.deleteuserarr[i]);
+                this.userarr.splice(this.userarr.indexOf(x),1);
+          }
+          this.dataSource.data=this.userarr;
+          this.dataSource.paginator=this.paginator;
+          this.dataSource.sort=this.sort;
+     });
+  }
+}
   onAddClick()
   {
     this._router.navigate(['/nav/userAdd']);

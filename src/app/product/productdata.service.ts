@@ -7,7 +7,11 @@ import { environment } from '../../environments/environment';
 })
 export class ProductdataService {
   private url : string=environment.url+'product/';
+<<<<<<< HEAD
   private image_url:string=environment.url+'Product_image/';
+=======
+  private deleteurl: string=environment.url+'deleteAllPro/'
+>>>>>>> d94ac1dad7b561d1a519877481dc80aee62d392e
   constructor(private _http : HttpClient) { }
 
   getAllProduct()
@@ -50,5 +54,11 @@ export class ProductdataService {
     console.log(product_id);
     console.log(fd);
     return this._http.put(this.image_url + product_id, fd);
+  deleteallPro(item:number[])
+  {
+    console.log(item)
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(this.deleteurl, body, { headers: head });
   }
 }

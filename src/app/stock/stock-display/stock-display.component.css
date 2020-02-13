@@ -15,3 +15,8 @@ id
   align-content: center;
   align-items: center;
 }
+.mybtn
+{
+  width:15%;
+  float: left;
+}

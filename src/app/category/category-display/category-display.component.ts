@@ -11,8 +11,9 @@ import { CategoryAddComponent } from '../category-add/category-add.component';
   styleUrls: ['./category-display.component.css']
 })
 export class CategoryDisplayComponent implements OnInit {
-  displayedColumns:string[]=['category_name','Action'];
+  displayedColumns:string[]=['check','category_name','Action'];
   categoryarr:category[]=[];
+  deletecatarr:number[]=[];
   dataSource: MatTableDataSource<category>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -56,4 +57,32 @@ export class CategoryDisplayComponent implements OnInit {
   {
     this._dialog.open(CategoryAddComponent);
   }
+  oncheckboxchange(row:category)
+  {
+    if(this,this.categoryarr.find(x => x == row.category_id))
+    {
+        this.deletecatarr.splice(this.deletecatarr.indexOf(row.category_id),1);
+    }
+    else{
+      this.deletecatarr.push(row.category_id);
+    }
+  }
+  onDeleteAll()
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+    this._data.deleteallCat(this.deletecatarr).subscribe(
+      (data:category)=>{
+        for(let i=0;i<this.deletecatarr.length;i++)
+        {
+              let x=this.categoryarr.find(x => x.category_id == this.deletecatarr[i]);
+              this.categoryarr.splice(this.categoryarr.indexOf(x),1);
+        }
+        this.dataSource.data=this.categoryarr;
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+   });
+  }
+  }
+
 }
+

@@ -41,6 +41,7 @@ export class EmpViewmoreComponent implements OnInit {
     this.user_type=this.data.user_type;
     this.EmpImage = environment.url + 'images/EmployeeImages/' + this.data.employee_img;
   }
+
   onClickCancel()
   {
     this.dialogref.close();

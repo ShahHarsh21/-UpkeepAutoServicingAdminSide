@@ -12,8 +12,9 @@ import { order_details } from '../order-details/order_details';
   styleUrls: ['./order-details.component.css']
 })
 export class OrderDetailsComponent implements OnInit {
-  displayedColoumns:string[]=['order_details_id','quantity','Action'];
+  displayedColoumns:string[]=['check','order_details_id','quantity','Action'];
   orderarr:order_details[]=[];
+  deleteordearr:number[]=[];
   dataSource:MatTableDataSource<order_details>;
   @ViewChild(MatPaginator,{static:true}) paginator :MatPaginator;
   @ViewChild(MatSort ,{static:true}) sort: MatSort;
@@ -42,5 +43,33 @@ export class OrderDetailsComponent implements OnInit {
   {
       console.log(row)
       this._dialog.open(OrderDetailsmoreComponent,{data:row});
+  }
+  onDeleteAll(row)
+  {
+     if(confirm('Are You Sure To Delete Multiple User?')){
+    this._data.deleteorder_details(this.deleteordearr).subscribe(
+      (data:order_details)=>{
+        for(let i=0;i<this.deleteordearr.length;i++)
+        {
+              let x=this.orderarr.find(x => x.order_details_id == this.deleteordearr[i]);
+              this.orderarr.splice(this.orderarr.indexOf(x),1);
+        }
+        this.dataSource.data=this.orderarr;
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+   });
+
+  }
+  }
+  oncheckboxchange(row:order_details)
+  {
+    if(this,this.orderarr.find(x => x == row.order_details_id))
+    {
+        this.deleteordearr.splice(this.deleteordearr.indexOf(row.order_details_id),1);
+    }
+    else{
+      this.deleteordearr.push(row.order_details_id);
+    }
+
   }
 }

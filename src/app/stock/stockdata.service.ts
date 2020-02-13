@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class StockdataService {
   url:string=environment.url+'stock/';
+  deleteurl:string=environment.url+'deletestock/';
   constructor(public _http:HttpClient) { }
   getAllStock()
   {
@@ -31,5 +32,12 @@ export class StockdataService {
       const body = JSON.stringify(item);
       const head = new HttpHeaders().set(environment.header, environment.value);
       return this._http.put(this.url+item.stock_id, body, { headers: head });
+   }
+   deleteAllStock(item:number[])
+   {
+     console.log(item)
+     const body = JSON.stringify(item);
+     const head = new HttpHeaders().set(environment.header, environment.value);
+     return this._http.post(this.deleteurl, body, { headers: head });
    }
 }
