@@ -8,6 +8,7 @@ import { cart } from './cart';
 })
 export class CartdataService {
 private url:string = environment.url+'cart/';
+private deleteurl:string = environment.url+'DeleteAllCart/'
   constructor(private _http:HttpClient) { }
 
   getAllCart()
@@ -36,6 +37,14 @@ private url:string = environment.url+'cart/';
       const head = new HttpHeaders().set(environment.header, environment.value);
       return this._http.put(this.url+item.cart_id, body, { headers: head });
     }
+    DeleteAllCart(item:number[])
+    {
+      console.log(item)
+      const body = JSON.stringify(item);
+      const head = new HttpHeaders().set(environment.header, environment.value);
+      return this._http.post(this.deleteurl, body, { headers: head });
+    }
+
 }
 
 

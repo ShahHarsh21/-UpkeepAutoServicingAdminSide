@@ -7,6 +7,8 @@ import { employee } from './employee-display/employee';
 })
 export class EmployeedataService {
   mechanic_url:string=environment.url+"machanic";
+  private deleteurl:string =environment.url+'deleteAllEmp/'
+
   url:string=environment.url+'employee/';
   urlEmpImg: string = environment.url + 'EmpImg/';
   url2:string=environment.url+'emp_designation/';
@@ -47,8 +49,6 @@ export class EmployeedataService {
   {
     console.log(fk_user_id);
     let obj= {"fk_user_id": fk_user_id};
-    //const body = JSON.stringify(obj);
-    //console.log(body);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.url,obj,{headers:head});
   }
@@ -65,5 +65,12 @@ export class EmployeedataService {
   updatePhoto (employee_id,fd)
   {
     return this._http.put(this.urlEmpImg + employee_id, fd);
+  }
+  deleteAllEmp(item:number[])
+  {
+    console.log(item)
+    const body = JSON.stringify(item);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(this.deleteurl, body, { headers: head });
   }
 }

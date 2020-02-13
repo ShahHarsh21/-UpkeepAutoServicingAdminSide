@@ -12,7 +12,8 @@ import { StockViewmoreComponent } from '../stockViewMore/stock-viewmore/stock-vi
 })
 export class StockDisplayComponent implements OnInit {
   stockarr:stock[]=[];
-  displayedColumns:string[]=['quantity','Action'];
+  deletestockarr:number[]=[];
+  displayedColumns:string[]=['check','quantity','Action'];
   dataSource: MatTableDataSource<stock>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -50,6 +51,32 @@ export class StockDisplayComponent implements OnInit {
         }
       );
     }
+  }
+  oncheckboxchange(row:stock)
+  {
+    if(this,this.stockarr.find(x => x == row.stock_id))
+    {
+        this.deletestockarr.splice(this.deletestockarr.indexOf(row.stock_id),1);
+    }
+    else{
+      this.deletestockarr.push(row.stock_id);
+    }
+  }
+  onDeleteAll(row)
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+    this._data.deleteStock(this.deletestockarr).subscribe(
+      (data:stock)=>{
+        for(let i=0;i<this.deletestockarr.length;i++)
+        {
+              let x=this.stockarr.find(x => x.stock_id == this.deletestockarr[i]);
+              this.stockarr.splice(this.stockarr.indexOf(x),1);
+        }
+        this.dataSource.data=this.stockarr;
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+   });
+  }
   }
   onEdit(row)
   {

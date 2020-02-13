@@ -5,4 +5,3 @@ export class emp_type {
         public user_type:string) {
   }
 }
-

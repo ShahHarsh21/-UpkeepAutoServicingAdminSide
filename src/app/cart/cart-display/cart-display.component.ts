@@ -11,8 +11,9 @@ import { cart } from '../cart';
   styleUrls: ['./cart-display.component.css']
 })
 export class CartDisplayComponent implements OnInit {
-displayedColumns:string[]=['cart_id','quantity','Action'];
+displayedColumns:string[]=['check','cart_id','quantity','Action'];
 cartarr:cart[]=[];
+deletecartarr:number[]=[];
 dataSource: MatTableDataSource<cart>;
 @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -38,7 +39,32 @@ dataSource: MatTableDataSource<cart>;
       this.dataSource.paginator.firstPage();
     }
   }
-
+  onchecheckboxchange(row:cart)
+  {
+    if(this,this.cartarr.find(x => x == row.cart_id))
+    {
+        this.deletecartarr.splice(this.deletecartarr.indexOf(row.cart_id),1);
+    }
+    else{
+      this.deletecartarr.push(row.cart_id);
+    }
+  }
+  onDeleteAll(row)
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+      this._data.DeleteAllCart(this.deletecartarr).subscribe(
+        (data:cart)=>{
+          for(let i=0;i<this.deletecartarr.length;i++)
+          {
+                let x=this.cartarr.find(x => x.cart_id == this.deletecartarr[i]);
+                this.cartarr.splice(this.cartarr.indexOf(x),1);
+          }
+          this.dataSource.data=this.cartarr;
+          this.dataSource.paginator=this.paginator;
+          this.dataSource.sort=this.sort;
+     });
+  }
+}
   onDelete(row)
   {
     let x:number= this.cartarr.indexOf(row);

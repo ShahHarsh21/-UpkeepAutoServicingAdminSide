@@ -60,11 +60,8 @@ export class UserEditComponent implements OnInit {
   }
   onUserEdit()
   {
-    // console.log(this.userEdit.value);
-    // console.log(this.userEdit.value.user_type);
     if(this.userEdit.value.user_type == "Employee")
     {
-      console.log(this.userEdit.value);
       this._emp_data.addEmployee(this.user_rout).subscribe(
         (data:any)=>{
           console.log(data);

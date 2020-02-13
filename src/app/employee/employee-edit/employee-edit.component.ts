@@ -55,7 +55,6 @@ export class EmployeeEditComponent implements OnInit {
     console.log(this.rout);
     this._data.getEmployeeById(this.rout).subscribe(
       (data: any) => {
-        console.log(data[0]);
         this.formDataBind(data[0]);
       }
     );
@@ -67,7 +66,6 @@ export class EmployeeEditComponent implements OnInit {
 
   onchange(f) {
     this.selectedFile = <File>f.target.files[0];
-    console.log(this.selectedFile);
   }
   formDataBind(item: employee) {
 
@@ -85,29 +83,23 @@ export class EmployeeEditComponent implements OnInit {
       date_of_birth: item.date_of_birth,
     });
     this.EmpImage = environment.url + 'images/EmployeeImages/' + item.employee_img;
-    console.log(this.EmpImage);
   }
   onEmployeeEdit() {
-    console.log(this.editEmployee.value);
     this._data.updateemployee(this.editEmployee.value.employee_id, this.editEmployee.value).subscribe(
       (data: any) => {
-        console.log(data);
         this._routs.navigate(['/nav/Employee/']);
       });
 
     const fd = new FormData();
     if (this.selectedFile != null) {
-      console.log(this.selectedFile);
       fd.append("img", this.selectedFile, this.selectedFile.name);
     }
     else {
       fd.append("img", this.editEmployee.value.employee_img);
     }
-    console.log(this.editEmployee.value);
 
     this._data.updatePhoto(this.editEmployee.value.employee_id, fd).subscribe(
       (data: any) => {
-        console.log(data);
         alert("YOU IMAGE HAS BEEN UPDATED");
         this._routs.navigate(['/nav/Employee']);
       }

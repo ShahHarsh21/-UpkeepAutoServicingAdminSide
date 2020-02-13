@@ -8,6 +8,7 @@ import { order_details } from '../order-details/order_details';
 })
 export class OrderDetailsdataService {
   private url:string= environment.url+'order_details/';
+  private deleteurl:string=environment.url+'deleteAllOrderDetails/';
   constructor(public _http:HttpClient) { }
 
   getAllOrder_Details()
@@ -35,6 +36,13 @@ export class OrderDetailsdataService {
       const body = JSON.stringify(item);
       const head = new HttpHeaders().set(environment.header, environment.value);
       return this._http.put(this.url+item.order_details_id, body, { headers: head });
+    }
+    deleteorder_details(item:number[])
+    {
+      console.log(item)
+      const body = JSON.stringify(item);
+      const head = new HttpHeaders().set(environment.header, environment.value);
+      return this._http.post(this.deleteurl, body, { headers: head });
     }
 }
 

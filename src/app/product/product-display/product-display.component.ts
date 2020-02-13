@@ -4,6 +4,7 @@ import { Product } from '../product';
 import { MatTableDataSource, MatDialog, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
+import { EmployeeDisplayComponent } from 'src/app/employee/employee-display/employee-display.component';
 
 @Component({
   selector: 'app-product-display',
@@ -11,8 +12,9 @@ import { ProductViewMoreComponent } from '../product-view-more/product-view-more
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
-  displayedColumns:string[]=['product_name','product_price','Action'];
+  displayedColumns:string[]=['check','product_name','product_price','Action'];
   productarr:Product[]=[];
+  deleteproarr:number[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -37,7 +39,7 @@ export class ProductDisplayComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
   }
-  }
+}
   onDelete(item:Product)
   {
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
@@ -64,8 +66,30 @@ export class ProductDisplayComponent implements OnInit {
   {
       this._dialog.open(ProductViewMoreComponent,{data:row});
   }
-  onEmpAllot(row)
+  oncheckboxchange(row:Product)
   {
-
+    if(this,this.productarr.find(x => x == row.product_id))
+    {
+        this.deleteproarr.splice(this.deleteproarr.indexOf(row.product_id),1);
+    }
+    else{
+      this.deleteproarr.push(row.product_id);
+    }
+  }
+  onDeleteAll()
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+    this._data.deleteallPro(this.deleteproarr).subscribe(
+      (data:Product)=>{
+        for(let i=0;i<this.deleteproarr.length;i++)
+        {
+              let x=this.productarr.find(x => x.product_id == this.deleteproarr[i]);
+              this.productarr.splice(this.productarr.indexOf(x),1);
+        }
+        this.dataSource.data=this.productarr;
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+   });
+  }
   }
 }

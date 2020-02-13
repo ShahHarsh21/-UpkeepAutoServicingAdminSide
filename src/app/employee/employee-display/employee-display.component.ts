@@ -13,9 +13,10 @@ import { user } from 'src/app/user/user';
   styleUrls: ['./employee-display.component.css']
 })
 export class EmployeeDisplayComponent implements OnInit {
-  displayedColumns:string[]=['employee_name','employee_designation','Action'];
+  displayedColumns:string[]=['check','employee_name','employee_designation','Action'];
   empArr:employee[]=[];
   emp_name:string[]=[];
+  deleteemparr:number[]=[];
   dataSource: MatTableDataSource<employee>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -28,14 +29,12 @@ export class EmployeeDisplayComponent implements OnInit {
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:any)=>{
         this.empArr=data;
-        console.log(data);
         this.dataSource.data=this.empArr;
       }
     );
     this._data.getAllEmployeeWithUserName().subscribe(
       (data:employee[])=>{
         this.empArr=data;
-        console.log(data);
         this.dataSource.data=data;
       }
     );
@@ -74,4 +73,33 @@ export class EmployeeDisplayComponent implements OnInit {
   {
     this._routs.navigate(['/nav/EmployeeAdd']);
   }
+
+  onDeleteAll()
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+    this._data.deleteAllEmp(this.deleteemparr).subscribe(
+      (data:employee)=>{
+        for(let i=0;i<this.deleteemparr.length;i++)
+        {
+              let x=this.empArr.find(x => x.employee_id == this.deleteemparr[i]);
+              this.empArr.splice(this.empArr.indexOf(x),1);
+        }
+        this.dataSource.data=this.empArr;
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+   });
+  }
 }
+  oncheckboxchange(row:employee)
+  {
+    if(this,this.empArr.find(x => x == row.employee_id))
+    {
+        this.deleteemparr.splice(this.deleteemparr.indexOf(row.employee_id),1);
+    }
+    else{
+      this.deleteemparr.push(row.employee_id);
+    }
+  }
+
+}
+

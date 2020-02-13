@@ -8,6 +8,7 @@ import { user } from './user';
 })
 export class UserdataService {
   private url:string=environment.url+'user/';
+  private deleteurl:string=environment.url+'deleteAllUser/'
   constructor(private _http:HttpClient) { }
 
   getAllUser()
@@ -35,5 +36,12 @@ export class UserdataService {
       const body = JSON.stringify(item);
       const head = new HttpHeaders().set(environment.header, environment.value);
       return this._http.put(this.url+item.user_id, body, { headers: head });
+    }
+    DeleteAllUser(item:number[])
+    {
+      console.log(item)
+      const body = JSON.stringify(item);
+      const head = new HttpHeaders().set(environment.header, environment.value);
+      return this._http.post(this.deleteurl, body, { headers: head });
     }
 }
