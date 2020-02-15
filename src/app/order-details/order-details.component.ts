@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrderDetailsmoreComponent } from '../order-details/order-detailsmore/order-detailsmore.component';
-import { MatTableDataSource, MatDialog, MatSort, MatPaginator } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { OrderDetailsdataService } from '../order-details/order-detailsdata.service';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';

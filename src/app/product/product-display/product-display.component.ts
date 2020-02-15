@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductdataService } from '../productdata.service';
 import { Product } from '../product';
-import { MatTableDataSource, MatDialog, MatPaginator, MatSort } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';

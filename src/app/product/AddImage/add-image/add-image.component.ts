@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ProductdataService } from '../../productdata.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from '../../product';
 import { FormGroup, FormControl } from '@angular/forms';
 import { environment } from 'src/environments/environment';

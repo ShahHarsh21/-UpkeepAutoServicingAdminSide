@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatCardActions, MatCardTitle, MatCardSubtitle, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatCardActions, MatCardTitle, MatCardSubtitle } from '@angular/material/card';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { employee } from 'src/app/employee/employee-display/employee';
 import { Router } from '@angular/router';
 import { EmployeeAllotdataService } from '../../employee-allotdata.service';

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { employee } from '../employee-display/employee';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
 
 @Component({

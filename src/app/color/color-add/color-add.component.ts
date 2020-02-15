@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ColordataService } from '../colordata.service';
 import { Router } from '@angular/router';
 import { color_class } from '../color';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-color-add',

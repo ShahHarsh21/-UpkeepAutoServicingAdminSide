@@ -6,7 +6,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
 import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
-import { MatDialogRef, MatDialog } from '@angular/material';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({

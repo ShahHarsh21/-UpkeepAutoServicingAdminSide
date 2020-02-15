@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from '../categorydata.service';
 import { Router } from '@angular/router';
 import { category } from '../category';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-category-add',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { employee } from 'src/app/employee/employee-display/employee';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { EmployeedataService } from 'src/app/employee/employeedata.service';
