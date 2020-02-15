@@ -15,11 +15,7 @@ export class EmployeedataService {
   Username_url:string=environment.url+'emp_With_Username/';
   private deleteurl:string =environment.url+'deleteAllEmp/'
 
-  url:string=environment.url+'employee/';
-  urlEmpImg: string = environment.url + 'EmpImg/';
-  url2:string=environment.url+'emp_designation/';
-  url3:string=environment.url+'emp_type/';
-  url4:string=environment.url+'emp_With_Username/';
+
   constructor(private _http:HttpClient) { }
   //
   getAllEmployeeWithUserName()
