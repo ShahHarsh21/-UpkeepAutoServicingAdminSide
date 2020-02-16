@@ -4,7 +4,7 @@ import { CategorydataService } from 'src/app/category/categorydata.service';
 import { StockdataService } from '../../Stockdata.service';
 import { ProductdataService } from 'src/app/product/productdata.service';
 import { ActivatedRoute } from '@angular/router';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { stock } from '../../stock';
 import { Product } from 'src/app/product/product';
 
