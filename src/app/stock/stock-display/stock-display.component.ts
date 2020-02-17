@@ -65,7 +65,7 @@ export class StockDisplayComponent implements OnInit {
       this.deletestockarr.push(row.stock_id);
     }
   }
-  onDeleteAll(row)
+  onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
     this._data.deleteStock(this.deletestockarr).subscribe(

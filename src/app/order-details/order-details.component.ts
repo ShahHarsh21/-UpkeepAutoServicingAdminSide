@@ -47,7 +47,7 @@ export class OrderDetailsComponent implements OnInit {
       console.log(row)
       this._dialog.open(OrderDetailsmoreComponent,{data:row});
   }
-  onDeleteAll(row)
+  onDeleteAll()
   {
      if(confirm('Are You Sure To Delete Multiple User?')){
     this._data.deleteorder_details(this.deleteordearr).subscribe(

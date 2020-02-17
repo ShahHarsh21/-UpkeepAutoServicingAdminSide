@@ -4,13 +4,10 @@ import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
-<<<<<<< HEAD
-import { MatDialogRef, MatDialog } from '@angular/material';
-=======
-import { ColordataService } from 'src/app/color/colordata.service';
-import { color_class } from 'src/app/color/color';
+//import { MatDialogRef, MatDialog } from '@angular/material';
+//import { ColordataService } from 'src/app/color/colordata.service';
+//import { color_class } from 'src/app/color/color';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
->>>>>>> 5bbe9755614024273aaebcfc03ec8967733907e4
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({
@@ -43,7 +40,7 @@ export class ProductAddComponent implements OnInit {
       }
     );
    }
-   onUseonProductAdd()
+   onProductAdd()
   {
     let productobj = {
       product_id: this.addproduct.value.email_id,
