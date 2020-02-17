@@ -1,8 +1,6 @@
 import { Component, OnInit, Inject, inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from '../product';
-import { ColordataService } from 'src/app/color/colordata.service';
-import { color_class } from 'src/app/color/color';
 import { category } from 'src/app/category/category';
 import { CategorydataService } from 'src/app/category/categorydata.service';
 import { environment } from 'src/environments/environment';
@@ -13,7 +11,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./product-view-more.component.css']
 })
 export class ProductViewMoreComponent implements OnInit {
-    color_arr:color_class[]=[];
     cate_arr:category[]=[];
     product_id : number = 0;
     product_name : string = '';
@@ -25,7 +22,7 @@ export class ProductViewMoreComponent implements OnInit {
     fk_cate_name:string='';
     fk_cat_id:number=0;
     ProductImage :string = ' ';
-    constructor(private _catedata:CategorydataService,private _colordata:ColordataService,public dialogref: MatDialogRef<ProductViewMoreComponent>, @Inject(MAT_DIALOG_DATA) public data: Product) { }
+    constructor(private _catedata:CategorydataService,public dialogref: MatDialogRef<ProductViewMoreComponent>, @Inject(MAT_DIALOG_DATA) public data: Product) { }
 
   ngOnInit() {
     this.product_id = this.data.product_id;
@@ -36,13 +33,6 @@ export class ProductViewMoreComponent implements OnInit {
     this.fk_cat_id=this.data.fk_cat_id;
     this.fk_color_id=this.data.fk_color_id;
 
-    this._colordata.getColorById(this.fk_color_id).subscribe(
-      (data:color_class)=>{
-        console.log(data);
-        this.fk_color_name=data[0].color_name;
-        console.log(this.fk_color_name);
-      }
-    );
     console.log(this.fk_cat_id);
     this._catedata.getCategoryById(this.fk_cat_id).subscribe(
       (data:category)=>{

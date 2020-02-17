@@ -1,10 +1,10 @@
 <div class="container">
     <mat-list>
-      <mat-label><b>USER NAME :</b></mat-label>
-      <mat-list-item>{{user_name}}</mat-list-item>
+      <mat-label class="label"><b>USER NAME :</b></mat-label>
+      <mat-list-item><i class="material-icons">perm_identity</i>{{user_name}}</mat-list-item>
       <mat-divider></mat-divider>
       <mat-label><b>Email-ID :</b></mat-label>
-      <mat-list-item>{{email_id}}</mat-list-item>
+      <mat-list-item><i class="material-icons">mail</i>{{email_id}}</mat-list-item>
       <mat-divider></mat-divider>
       <mat-label><b>MOBILE NO :</b></mat-label>
       <mat-list-item><i class="material-icons">mobile_screen_share</i>{{mobile_no}}</mat-list-item>
@@ -19,21 +19,6 @@
       <mat-list-item><i class="material-icons">account_circle</i>{{user_type}}</mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>
-    <button mat-button (click)="onClickCancel()" >Cancel</button>
-<mat-list>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{user_name}}</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">mail</i>{{email_id}}</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">mobile_screen_share</i>{{mobile_no}}</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">library_books</i>{{address}}</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">date_range</i>{{date_of_birth}}</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">account_circle</i>{{user_type}}</mat-list-item>
-  <mat-divider></mat-divider>
-</mat-list>
 <div >
     <button  mat-button (click)="onClickCancel()" >Cancel</button>
 </div>

@@ -8,7 +8,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
-import { EmployeeDisplayComponent } from 'src/app/employee/employee-display/employee-display.component';
 
 @Component({
   selector: 'app-product-display',

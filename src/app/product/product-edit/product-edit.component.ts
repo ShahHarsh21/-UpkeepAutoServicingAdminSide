@@ -4,9 +4,7 @@ import { ProductdataService } from 'src/app/product/productdata.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { isNgTemplate } from '@angular/compiler';
-import { ColordataService } from 'src/app/color/colordata.service';
 import { CategorydataService } from 'src/app/category/categorydata.service';
-import { color_class } from 'src/app/color/color';
 import { category } from 'src/app/category/category';
 import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
@@ -19,9 +17,8 @@ export class ProductEditComponent implements OnInit {
 
   editProduct:FormGroup;
   pro_arr : Product[] = [];
-  color_arr:color_class[]=[];
   cate_arr:category[]=[];
-  constructor(private _productdata : ProductdataService,private _colordata:ColordataService,private _catedata:CategorydataService,private _router:Router,private _act_routs:ActivatedRoute) { }
+  constructor(private _productdata : ProductdataService,private _catedata:CategorydataService,private _router:Router,private _act_routs:ActivatedRoute) { }
   ngOnInit()
   {
     this._act_routs=this._act_routs.snapshot.params['product_id'];
@@ -49,12 +46,6 @@ export class ProductEditComponent implements OnInit {
           this.cate_arr=data;
         }
       );
-      this._colordata.getAllColor().subscribe(
-        (data:color_class[])=>{
-          console.log(data);
-          this.color_arr=data;
-        }
-      );
   }
 
     formDataBind(item:Product)
@@ -68,8 +59,7 @@ export class ProductEditComponent implements OnInit {
         fk_cat_name:this.cate_arr.indexOf(this.editProduct.value.fk_cat_id),
         product_price : item.product_price,
         product_image : item.product_image,
-        fk_color_id : item.fk_color_id,
-        fk_color_name : this.color_arr.indexOf(this.editProduct.value.fk_color_id)
+        fk_color_id : item.fk_color_id
         });
     }
   onProductEdit()

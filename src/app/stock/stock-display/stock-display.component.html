@@ -5,6 +5,9 @@
   <div class="mat-elevation-z8">
 
 <hr>
+<button mat-raised-button  id="Add Record" (click)="onAddClick()"   color="primary" aria-label="ADD USER">
+  <mat-icon >add</mat-icon>ADD
+  </button>
     <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="check">
             <th mat-header-cell *matHeaderCellDef>Check</th>

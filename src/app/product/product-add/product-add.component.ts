@@ -4,9 +4,13 @@ import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
+<<<<<<< HEAD
+import { MatDialogRef, MatDialog } from '@angular/material';
+=======
 import { ColordataService } from 'src/app/color/colordata.service';
 import { color_class } from 'src/app/color/color';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+>>>>>>> 5bbe9755614024273aaebcfc03ec8967733907e4
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({
@@ -17,8 +21,7 @@ import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 export class ProductAddComponent implements OnInit {
     addproduct:FormGroup;
     catearr:category[]=[];
-    colorarr:color_class[]=[];
-  constructor(private _color_data:ColordataService,private _cat_data:CategorydataService,private _data:ProductdataService,private _router:Router,public _dialog:MatDialog) { }
+  constructor(private _cat_data:CategorydataService,private _data:ProductdataService,private _router:Router,public _dialog:MatDialog) { }
   ngOnInit() {
     this.addproduct=new FormGroup({
 
@@ -37,12 +40,6 @@ export class ProductAddComponent implements OnInit {
       (data:category[])=>{
         console.log(data);
         this.catearr=data;
-      }
-    );
-    this._color_data.getAllColor().subscribe(
-      (data:color_class[])=>{
-        console.log(data);
-        this.colorarr=data;
       }
     );
    }

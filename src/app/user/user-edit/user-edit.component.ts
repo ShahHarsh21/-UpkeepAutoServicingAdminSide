@@ -3,9 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { UserdataService } from '../userdata.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { user } from '../user';
-import { emp_type } from 'src/app/employee/emp_type_class';
 import { Type } from '@angular/compiler';
-import { EmployeedataService } from 'src/app/employee/employeedata.service';
 
 
 @Component({
@@ -17,8 +15,7 @@ export class UserEditComponent implements OnInit {
   [x: string]: any;
   userEdit:FormGroup;
   user_rout:number=0;
-  typeArr:emp_type[]=[];
-  constructor(public _emp_data:EmployeedataService,public _data:UserdataService,public _act_routs:ActivatedRoute,public _routs:Router) {
+  constructor(public _data:UserdataService,public _act_routs:ActivatedRoute,public _routs:Router) {
 
   }
 
@@ -52,9 +49,8 @@ export class UserEditComponent implements OnInit {
       user_name:item.user_name,
       mobile_no:item.mobile_no,
       address:item.address,
-      date_of_birth:item.date_of_birth,
-      user_type:item.user_type
-    });
+      date_of_birth:item.date_of_birth
+      });
   }
   onUserEdit()
   {
