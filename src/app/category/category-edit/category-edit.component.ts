@@ -32,7 +32,7 @@ export class CategoryEditComponent implements OnInit {
     this._data.updateCategory(this.category_id,item).subscribe(
       (data:any)=>{
         console.log(data);
-        this._routs.navigate(['category']);
+        this._routs.navigate(['nav/category/']);
       }
     );
   }
