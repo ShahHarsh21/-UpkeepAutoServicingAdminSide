@@ -11,31 +11,31 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./category-add.component.css']
 })
 export class CategoryAddComponent implements OnInit {
-  categoryAdd:FormGroup;
-  constructor(private _Data:CategorydataService,private _routs:Router,public dialogref: MatDialogRef<CategoryAddComponent>, @Inject(MAT_DIALOG_DATA) public data: category) {
-  }
+  // categoryAdd:FormGroup;
+   constructor(private _Data:CategorydataService,private _routs:Router,public dialogref: MatDialogRef<CategoryAddComponent>, @Inject(MAT_DIALOG_DATA) public data: category) {
+   }
 
   ngOnInit() {
-    this.categoryAdd=new FormGroup({
-      category_name:new FormControl(null)
-    });
-  }
-  onCategoryAdd()
-  {
-    let categoryobj={
-      category_id:this.categoryAdd.value.category_id,
-      category_name:this.categoryAdd.value.category_name
-    };
-    this._Data.addCategory(categoryobj).subscribe(
-      (data:any)=>{
-        this.dialogref.close();
-      }
-    );
-  }
-  onClickCancel()
-  {
-    this.dialogref.close();
-  }
+  //   this.categoryAdd=new FormGroup({
+  //     category_name:new FormControl(null)
+  //   });
+   }
+  // onCategoryAdd()
+  // {
+  //   let categoryobj={
+  //     category_id:this.categoryAdd.value.category_id,
+  //     category_name:this.categoryAdd.value.category_name
+  //   };
+  //   this._Data.addCategory(categoryobj).subscribe(
+  //     (data:any)=>{
+  //       this.dialogref.close();
+  //     }
+  //   );
+  // }
+  // onClickCancel()
+  // {
+  //   this.dialogref.close();
+  // }
 }
 
 

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
   <form [formGroup]="editProduct" (ngSubmit)="onProductEdit()" >
     <h1 class="hh"><b>Edit Product</b></h1>
@@ -6,15 +6,15 @@
     <div class="form-groupup">
       <mat-label><b>Product Name</b></mat-label><br>
       <input class="form-control" placeholder="Enter Name" formControlName="product_name" type="text">
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
+       <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Product Description</b></mat-label><br>
       <input class="form-control" placeholder="Enter Product Description" formControlName="product_description" type="text" >
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
+       <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Category Name</b></mat-label><br>
@@ -25,20 +25,20 @@
     <div class="form-group" >
       <mat-label><b>Product Price</b></mat-label><br>
       <input class="form-control" placeholder="Enter Product Price" formControlName="product_price" type="text">
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label>
     </div><br>
-    <!-- <div>
+    <div>
       <div class="form-group" >
         <mat-label><b>Color</b></mat-label><br>
         <select class="form-control" formControlName="fk_color_id" type="dropbox">
           <option *ngFor="let item of color_arr" [value]="item.color_id">{{item.color_name}}</option>
         </select>
-      </div><br> -->
+      </div><br>
     <div class="form-group">
       <button  class="btn" >Submit</button>
       <button  class="can" (click)="onCancle()" >Cancle</button>
     </div>
 
-</form>
+</form> -->

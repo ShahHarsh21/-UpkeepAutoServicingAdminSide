@@ -13,11 +13,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardActions, MatCardTitle, MatCardSubtitle, MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSortModule } from '@angular/material/sort';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,6 +45,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
+import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
+import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,8 @@ import { ServiceDisplayComponent } from './service/serviceDisplay/service-displa
     AddImageComponent,
     StockAddComponent,
     ServiceDisplayComponent,
+    AddVehicleAssignedComponent,
+    VehicleDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,10 +94,13 @@ import { ServiceDisplayComponent } from './service/serviceDisplay/service-displa
     MatSidenavModule,
     MatIconModule,
     MatSortModule,
+    // MatLabel,
+    MatGridListModule,
     MatCardModule,
     MatListModule,
     MatInputModule,
     MatTableModule,
+
     MatPaginatorModule,
     MatCheckboxModule,
     MatFormFieldModule,
