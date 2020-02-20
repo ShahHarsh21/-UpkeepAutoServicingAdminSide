@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserdataService } from '../userdata.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { user } from '../user';
@@ -21,17 +21,16 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit() {
 
-      this.user_rout=this._act_routs.snapshot.params['user_id'];
+    this.user_rout=this._act_routs.snapshot.params['user_id'];
 
     this.userEdit=new FormGroup({
       user_id:new FormControl(),
-      email_id:new FormControl(),
+      email_id:new FormControl(null, [Validators.required, Validators.email]),
       password:new FormControl(),
-      user_name:new FormControl(),
-      mobile_no:new FormControl(),
+      user_name:new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('[a-zA-Z]*')]),
+      mobile_no:new FormControl(null, [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')]),
       address:new FormControl(),
-      date_of_birth:new FormControl(),
-      user_type:new FormControl()
+      date_of_birth:new FormControl()
     });
 
     this._data.getUserById(this.user_rout).subscribe(
@@ -74,6 +73,6 @@ export class UserEditComponent implements OnInit {
   }
   onCancle()
   {
-	this._router.navigate(['/nav/user/']);
+	  this._router.navigate(['/nav/user/']);
   }
 }

@@ -69,7 +69,7 @@ applyFilter(filtervalue:string)
       this.deleteuserarr.push(row.user_id);
     }
   }
-  onDeleteAll(row)
+  onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.DeleteAllUser(this.deleteuserarr).subscribe(
@@ -95,6 +95,6 @@ applyFilter(filtervalue:string)
   }
   onViewMore(row)
   {
-      this._dialog.open(UserViewMoreComponent,{data:row});
+    this._dialog.open(UserViewMoreComponent,{data:row});
   }
 }

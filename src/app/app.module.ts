@@ -44,6 +44,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
+import { WorkerDisplayComponent } from './worker/workerDisplay/worker-display.component';
+import { WorkerAddComponent } from './worker/workerAdd/worker-add.component';
+import { WorkereditComponent } from './worker/workerEdit/workeredit.component';
+import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.component';
+import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
+import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
+import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +83,13 @@ import { ServiceDisplayComponent } from './service/serviceDisplay/service-displa
     AddImageComponent,
     StockAddComponent,
     ServiceDisplayComponent,
+    WorkerDisplayComponent,
+    WorkerAddComponent,
+    WorkereditComponent,
+    WorkerviewmoreComponent,
+    ServiceEditComponent,
+    ServiceViewmoreComponent,
+    ServiceAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,9 +118,11 @@ import { ServiceDisplayComponent } from './service/serviceDisplay/service-displa
     ProductViewMoreComponent,
     StockViewmoreComponent,
     UserViewMoreComponent,
+    WorkerviewmoreComponent,
     OrderDetailsmoreComponent,
     CategoryAddComponent,
     AddImageComponent,
+    ServiceViewmoreComponent
      ],
   providers: [],
   bootstrap: [AppComponent]

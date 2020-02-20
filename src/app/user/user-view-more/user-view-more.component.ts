@@ -28,12 +28,6 @@ export class UserViewMoreComponent implements OnInit {
     this.mobile_no=this.data.mobile_no;
     this.address=this.data.address;
     this.date_of_birth=this.data.date_of_birth;
-    this.user_type=this.data.user_type;
-    // console.log(this.mobile_no);
+  }
 
-  }
-  onClickCancel()
-  {
-    this.dialogref.close();
-  }
 }

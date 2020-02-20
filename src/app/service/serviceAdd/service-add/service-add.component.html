@@ -1,44 +1,49 @@
+<!-- <p>service-add works!</p> -->
 <div class="container">
 
-  <form [formGroup]="editProduct" (ngSubmit)="onProductEdit()" >
-    <h1 class="hh"><b>Edit Product</b></h1>
+
+  <form [formGroup]="addService" (ngSubmit)="onServiceAdd()" >
+    <h1 class="hh"><b>Add Product</b></h1>
 
     <div class="form-groupup">
-      <mat-label><b>Product Name</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Name" formControlName="product_name" type="text">
+      <mat-label><b>Vehicle Registered No</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Vehicle Registered No" formControlName="vehicle_no" type="text" >
       <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
     </div><br>
     <div class="form-group" >
-      <mat-label><b>Product Description</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Product Description" formControlName="product_description" type="text" >
+      <mat-label><b>Meter Reading</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Meter Reading" formControlName="meter_reading" type="text" >
       <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
     </div><br>
+
     <div class="form-group" >
-      <mat-label><b>Category Name</b></mat-label><br>
-      <select class="form-control" formControlName="fk_cat_id" type="dropbox">
-        <option *ngFor="let item of cate_arr" [value]="item.category_id">{{item.category_name}}</option>
+      <mat-label><b>Fuel Tank Status</b></mat-label><br>
+      <select class="form-control" formControlName="fuel_tank" placeholder="" type="dropbox" >
+        <option>SELECT FUEL TANK</option>
+        <option>FULL TANK</option>
+        <option>MEDIUM TANK</option>
+        <option>HALF TANK</option>
       </select>
     </div><br>
+
     <div class="form-group" >
-      <mat-label><b>Product Price</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Product Price" formControlName="product_price" type="text">
+      <mat-label><b>Add Your Ramrks :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Your Remarks" formControlName="reamark" type="text" >
       <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
     </div><br>
-    <div>
-      <div class="form-group" >
-        <mat-label><b>Color</b></mat-label><br>
-        <select class="form-control" formControlName="fk_color_id" type="dropbox">
-
-        </select>
-      </div><br>
-    <div class="form-group">
-      <button  class="btn" >Submit</button>
-      <button  class="can" (click)="onCancle()" >Cancle</button>
+    <mat-label><b>Your Complqaints:</b></mat-label><br>
+    <div class="form-group" *ngFor="let item of serviceArr">
+      <input type="checkbox" (change)="onServiceCheck(item)" value="{{item}}">{{item}}<br>
     </div>
-</div>
+  <div>
+    <div class="form-group">
+      <button  type="submit" class="btn" >Submit</button>
+      <button   class="can" (click)="onCancle()" >Cancle </button>
+    </div>
+  </div>
 </form>
