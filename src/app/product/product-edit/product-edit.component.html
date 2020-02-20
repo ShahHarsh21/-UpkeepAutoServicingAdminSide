@@ -29,16 +29,16 @@
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
     </div><br>
-    <div>
+    <!-- <div>
       <div class="form-group" >
         <mat-label><b>Color</b></mat-label><br>
         <select class="form-control" formControlName="fk_color_id" type="dropbox">
 
         </select>
-      </div><br>
+      </div><br> -->
     <div class="form-group">
       <button  class="btn" >Submit</button>
       <button  class="can" (click)="onCancle()" >Cancle</button>
     </div>
-</div>
+
 </form>

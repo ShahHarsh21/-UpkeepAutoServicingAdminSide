@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
-import { MatDialogRef, MatDialog } from '@angular/material';
+import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
 @Component({
@@ -38,15 +38,37 @@ export class ProductAddComponent implements OnInit {
     );
    }
    onProductAdd()
+<<<<<<< HEAD
    {
 
    }
   onCancle()
+=======
+>>>>>>> 10ddfeca22dc1bece095c935a59854d63da9a93c
   {
-    this._router.navigate(['/nav/product/']);
-  }
-  onImageAdd()
-  {
-    this._dialog.open(AddImageComponent);
-  }
+    let productobj = {
+      product_id: this.addproduct.value.email_id,
+      product_name: this.addproduct.value.password_group.user_password,
+      product_description: this.addproduct.value.user_type,
+      fk_cat_id: this.addproduct.value.user_name,
+      fk_cat_name: this.addproduct.value.address,
+      product_price: this.addproduct.value.mobile_no,
+      product_image:this.addproduct.value.dob,
+      fk_color_id:this.addproduct.value.fk_color_id,
+      fk_color_name:this.addproduct.value.fk_color_name
+    };
+    this._data.addProduct(productobj).subscribe(
+      (data:any)=>{
+        this._router.navigate(['nav/product/']);
+      }
+    );
+  // onCancle()
+  // {
+  //   this._router.navigate(['/nav/product/']);
+  // }
+  // onImageAdd()
+  // {
+  //   this._dialog.open(AddImageComponent);
+  // }
+}
 }
