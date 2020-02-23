@@ -22,7 +22,7 @@ import { StockEditComponent } from './stock/stockEdit/stock-edit/stock-edit.comp
 
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
-import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
+//import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
 import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
 
 
@@ -45,7 +45,7 @@ const arr:Routes=[
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
         {path:'Add_image/:product_id',component:AddImageComponent},
-        {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
+    //    {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
         {path:'vehicleAssigned',component:VehicleDisplayComponent}
     ]
     },
