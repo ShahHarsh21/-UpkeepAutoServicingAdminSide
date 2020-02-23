@@ -6,6 +6,7 @@ public constructor(
   public meter_reading: string,
   public fuel_tank: string,
   public remark: string,
-  public complaints: string
+  public complaints: string,
+  public worker_id?:number
 ) {}
 }

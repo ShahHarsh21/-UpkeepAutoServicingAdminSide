@@ -45,7 +45,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
-//import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
+import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
 import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
 
 @NgModule({
@@ -79,7 +79,7 @@ import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDispla
     AddImageComponent,
     StockAddComponent,
     ServiceDisplayComponent,
-  //  AddVehicleAssignedComponent,
+    AddVehicleAssignedComponent,
     VehicleDisplayComponent,
   ],
   imports: [

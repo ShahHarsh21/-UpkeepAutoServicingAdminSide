@@ -33,11 +33,13 @@ export class VehicleDisplayComponent implements OnInit {
     );
   }
 
-  applyFilter(value)
+  applyFilter(filtervalue:string)
   {
-
-
+    this.dataSource.filter = filtervalue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
   }
+}
   onAddClick()
   {
       this._routes.navigate(['/nav/vehicleAssignedAdd']);
