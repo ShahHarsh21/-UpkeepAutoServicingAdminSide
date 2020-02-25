@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ServiceDataService } from '../../service-data.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Service_class } from '../../service_class';
 import { UserdataService } from 'src/app/user/userdata.service';
 

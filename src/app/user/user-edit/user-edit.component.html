@@ -4,12 +4,6 @@
     <div class="container">
     <h1 class="hh"  >USER EDIT</h1>
     <br>
-    <div class="form-group" >
-      <mat-label><b>USER ID</b></mat-label><br>
-      <input class="form-control" placeholder="Enter SLOT REGISTER ID" formControlName="user_id" disabled type="text">
-      <label class="alert alert-danger" *ngIf="userEdit.get('email_id').hasError('required') && !userEdit.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="userEdit.get('email_id').hasError('email') && !userEdit.get('email_id').pristine" >Email is Invalid</label>
-    </div><br>
 
     <div class="form-group" >
       <mat-label><b>EMAIL ID</b></mat-label><br>
@@ -31,7 +25,7 @@
     </div><br>
     <div class="form-group" >
       <mat-label><b>ADDRESS</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Address" formControlName="address" type="text">
+      <input class="form-control" placeholder="Enter Address" formControlName="address" type="text1">
     </div><br>
     <div class="form-group" >
       <mat-label><b>MOBILE NO</b></mat-label><br>
@@ -44,15 +38,6 @@
       <mat-label><b>DATE OF BIRTH</b></mat-label><br>
       <input class="form-control" placeholder="Enter Date Of Birth" formControlName="date_of_birth" type="date">
       <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
-    </div><br>
-    <div>
-      <mat-label><b>USER TYPE :</b></mat-label><br>
-      <select class="form-control" formControlName="user_type" type="dropbox">
-        <option value="User">{{"USER"}}</option>
-        <option value="Admin">{{"ADMIN"}}</option>
-        <option value="Employee">{{"EMPLOYEE"}}</option>
-        <option value="Super Admin">{{"SUPER ADMIN"}}</option>
-      </select>
     </div><br>
     <div class="form-group" >
       <button type="submit" class="btn">Submit</button>

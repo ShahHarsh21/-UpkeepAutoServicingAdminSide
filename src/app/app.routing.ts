@@ -23,6 +23,14 @@ import { SupplierDisplayComponent } from './supplier/supplier-display/supplier-d
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 
+//import { CategoryAddComponent } from './category/category-add/category-add.component';
+
+//import { StockEditComponent } from './stock/stockEdit/stock-edit/stock-edit.component';
+
+//import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
+//import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
+import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
+import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
 import { WorkerDisplayComponent } from './worker/workerDisplay/worker-display.component';
 import { WorkereditComponent } from './worker/workerEdit/workeredit.component';
 import { WorkerAddComponent } from './worker/workerAdd/worker-add.component';
@@ -52,6 +60,11 @@ const arr:Routes=[
         {path:'stockEdit/:stock_id',component:StockEditComponent},
         {path:'stockAdd',component:StockAddComponent},
         {path:'supplier',component:SupplierDisplayComponent},
+        {path:'userAdd',component:UseraddComponent},
+        {path:'userEdit/:user_id',component:UserEditComponent},
+        {path:'Add_image/:product_id',component:AddImageComponent},
+        {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
+        {path:'vehicleAssigned',component:VehicleDisplayComponent},
         {path:'worker',component:WorkerDisplayComponent},
         {path:'workerEdit/:worker_id',component:WorkereditComponent},
         {path:'workerAdd',component:WorkerAddComponent},

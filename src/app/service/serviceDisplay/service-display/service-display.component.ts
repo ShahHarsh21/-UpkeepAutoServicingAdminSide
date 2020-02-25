@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+
+//import { MatTableDataSource, MatSort, MatPaginator, MatDialog } from '@angular/material';
 import { Service_class } from '../../service_class';
 import { ServiceDataService } from '../../service-data.service';
 import { Router } from '@angular/router';
