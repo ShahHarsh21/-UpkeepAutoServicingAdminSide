@@ -1,0 +1,49 @@
+<div class="form-group" >
+
+  <form [formGroup]="workerAdd" (ngSubmit)="onWorkerAdd()" >
+    <div class="container">
+    <h1 class="hh"  >WORKER ADD</h1>
+    <br>
+    <div class="form-group" >
+      <mat-label><b>Email Id</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text">
+      <label class="alert alert-danger" *ngIf="workerAdd.get('email_id').hasError('required') && !workerAdd.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('email_id').hasError('email') && !workerAdd.get('email_id').pristine" >Email is Invalid</label>
+    </div><br>
+    <div>
+      <mat-label><b>Password</b></mat-label><br>
+     <input class="form-control" type="password" placeholder="Enter Password" formControlName="password">
+      <label class="alert alert-danger" *ngIf="workerAdd.get('password').hasError('required') && !workerAdd.get('password').pristine" >Password is required</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('password').hasError('minlength') && !workerAdd.get('password').pristine" >Password shoul be > 8</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>USER NAME</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Name" formControlName="worker_name" type="text">
+      <label class="alert alert-danger" *ngIf="workerAdd.get('worker_name').hasError('required') && !workerAdd.get('worker_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('worker_name').hasError('minlength') && !workerAdd.get('worker_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('worker_name').hasError('pattern') && !workerAdd.get('worker_name').pristine" > Only Chars</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Address</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Address" formControlName="address" type="text">
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Mobile No</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
+      <label class="alert alert-danger" *ngIf="workerAdd.get('mobile_no').hasError('required') && !workerAdd.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="workerAdd.get('mobile_no').hasError('pattern') " > Only digits</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Joining Date</b></mat-label><br>
+      <input class="form-control" placeholder="Enter joining Date"  type="date" formControlName="joining_date">
+    </div><br>
+    <div class="form-group" >
+      <button type="submit" class="btn" [disabled]="workerAdd.invalid">Submit</button>
+      <button class="can" (click)="onCancle()">Cancle</button>
+    </div>
+  </div>
+  </form>
+</div>
+
+

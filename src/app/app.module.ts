@@ -45,8 +45,18 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
+<<<<<<< HEAD
 import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
 import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
+=======
+import { WorkerDisplayComponent } from './worker/workerDisplay/worker-display.component';
+import { WorkerAddComponent } from './worker/workerAdd/worker-add.component';
+import { WorkereditComponent } from './worker/workerEdit/workeredit.component';
+import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.component';
+import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
+import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
+import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
+>>>>>>> 73c969f60655828ca247f4b40d30f55ac97a0336
 
 @NgModule({
   declarations: [
@@ -79,8 +89,18 @@ import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDispla
     AddImageComponent,
     StockAddComponent,
     ServiceDisplayComponent,
+<<<<<<< HEAD
     AddVehicleAssignedComponent,
     VehicleDisplayComponent,
+=======
+    WorkerDisplayComponent,
+    WorkerAddComponent,
+    WorkereditComponent,
+    WorkerviewmoreComponent,
+    ServiceEditComponent,
+    ServiceViewmoreComponent,
+    ServiceAddComponent,
+>>>>>>> 73c969f60655828ca247f4b40d30f55ac97a0336
   ],
   imports: [
     BrowserModule,
@@ -112,9 +132,11 @@ import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDispla
     ProductViewMoreComponent,
     StockViewmoreComponent,
     UserViewMoreComponent,
+    WorkerviewmoreComponent,
     OrderDetailsmoreComponent,
     CategoryAddComponent,
     AddImageComponent,
+    ServiceViewmoreComponent
      ],
   providers: [],
   bootstrap: [AppComponent]

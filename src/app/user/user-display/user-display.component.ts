@@ -95,6 +95,6 @@ applyFilter(filtervalue:string)
   }
   onViewMore(row)
   {
-      this._dialog.open(UserViewMoreComponent,{data:row});
+    this._dialog.open(UserViewMoreComponent,{data:row});
   }
 }

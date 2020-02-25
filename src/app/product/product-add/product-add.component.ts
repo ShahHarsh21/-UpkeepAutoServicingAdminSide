@@ -4,9 +4,6 @@ import { Router } from '@angular/router';
 import { category } from 'src/app/category/category';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CategorydataService } from 'src/app/category/categorydata.service';
-//import { MatDialogRef, MatDialog } from '@angular/material';
-//import { ColordataService } from 'src/app/color/colordata.service';
-//import { color_class } from 'src/app/color/color';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
 
@@ -41,6 +38,13 @@ export class ProductAddComponent implements OnInit {
     );
    }
    onProductAdd()
+<<<<<<< HEAD
+   {
+
+   }
+  onCancle()
+=======
+>>>>>>> 10ddfeca22dc1bece095c935a59854d63da9a93c
   {
     let productobj = {
       product_id: this.addproduct.value.email_id,

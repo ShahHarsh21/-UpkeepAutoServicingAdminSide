@@ -49,8 +49,5 @@ export class StockViewmoreComponent implements OnInit {
       }
     );
   }
-  onClickCancel()
-  {
-    this.dialogref.close();
-  }
+
 }

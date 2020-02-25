@@ -43,8 +43,5 @@ export class ProductViewMoreComponent implements OnInit {
     );
     this.ProductImage = environment.url+ 'images/Product_image/' +this.data.product_image;
   }
-  onClickCancel()
-  {
-    this.dialogref.close();
-  }
+
 }
