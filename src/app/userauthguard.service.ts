@@ -7,7 +7,6 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 export class UserauthguardService implements CanActivate {
 
   canActivate(_active: ActivatedRouteSnapshot, _state: RouterStateSnapshot): boolean {
-
     if (localStorage.getItem('email_id') != null) {
       return true;
     }
@@ -15,5 +14,5 @@ export class UserauthguardService implements CanActivate {
     this._router.navigate(['']);
     return false;
   }
-  constructor(private _router:Router) { }
+  constructor(private _router:Router) {  }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { worker } from '../worker';
+import {  MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {  MatDialogRef  } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
+import { worker } from '../worker';
 import { WorkerService } from '../worker.service';
 
 @Component({

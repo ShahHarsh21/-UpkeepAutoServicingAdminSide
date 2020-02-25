@@ -1,0 +1,16 @@
+<div class="container">
+  <img src="{{worker_image}}" height="100px" width="200px" alt="Worker Images">
+    <mat-list>
+      <mat-list-item><i class="material-icons">perm_identity</i>{{vehicle_no}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><i class="material-icons"> </i>{{worker_name}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{remark}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>{{status}}</mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+    <div>
+      <button mat-button (click)="onCloseClick()">Back/Close</button>
+    </div>
+  </div>

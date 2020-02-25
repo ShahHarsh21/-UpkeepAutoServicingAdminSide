@@ -58,20 +58,17 @@ const arr:Routes=[
         {path:'stockEdit/:stock_id',component:StockEditComponent},
         {path:'stockAdd',component:StockAddComponent},
         {path:'supplier',component:SupplierDisplayComponent},
-<<<<<<< HEAD
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
         {path:'Add_image/:product_id',component:AddImageComponent},
         {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
-        {path:'vehicleAssigned',component:VehicleDisplayComponent}
-=======
+        {path:'vehicleAssigned',component:VehicleDisplayComponent},
         {path:'worker',component:WorkerDisplayComponent},
         {path:'workerEdit/:worker_id',component:WorkereditComponent},
         {path:'workerAdd',component:WorkerAddComponent},
         {path:'service',component:ServiceDisplayComponent},
         {path:'serviceAdd',component:ServiceAddComponent},
         {path:'serviceEdit/:service_id',component:ServiceEditComponent}
->>>>>>> 73c969f60655828ca247f4b40d30f55ac97a0336
     ]
     },
     {path:'**',component:PageNotFoundComponent}

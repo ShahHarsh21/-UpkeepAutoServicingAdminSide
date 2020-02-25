@@ -6,6 +6,8 @@ import { MatSort } from '@angular/material/sort';
 import { VehicleAssignedService } from '../../vehicle-assigned.service';
 import { Router } from '@angular/router';
 import { VehicleAssignedModel } from 'src/app/VehicleAssignedModel';
+import { MatDialog } from '@angular/material/dialog';
+import { VehicleviewmoreComponent } from '../../vehicleviewmore/vehicleviewmore.component';
 
 @Component({
   selector: 'app-vehicle-display',
@@ -13,13 +15,13 @@ import { VehicleAssignedModel } from 'src/app/VehicleAssignedModel';
   styleUrls: ['./vehicle-display.component.css']
 })
 export class VehicleDisplayComponent implements OnInit {
-  displayedColumns:string[]=['vehicle_no','worker_name','status'];
+  displayedColumns:string[]=['vehicle_no','worker_name','status','Action'];
   dataSource: MatTableDataSource<VehicleAssignedModel>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private _data:VehicleAssignedService,public _routes:Router) {
+  constructor(private _data:VehicleAssignedService,public _routes:Router,public _dialog:MatDialog) {
     this.dataSource=new MatTableDataSource();
   }
 
@@ -44,5 +46,8 @@ export class VehicleDisplayComponent implements OnInit {
   {
       this._routes.navigate(['/nav/vehicleAssignedAdd']);
   }
-
+  onViewMore(row)
+  {
+    this._dialog.open(VehicleviewmoreComponent,{data:row});
+  }
 }

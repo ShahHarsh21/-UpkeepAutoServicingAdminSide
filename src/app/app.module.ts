@@ -11,6 +11,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+
+
 import { MatCardActions, MatCardTitle, MatCardSubtitle, MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
@@ -18,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSortModule } from '@angular/material/sort';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,10 +47,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddImageComponent } from './product/AddImage/add-image/add-image.component';
 import { StockAddComponent } from './stock/stockAdd/stock-add/stock-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
-<<<<<<< HEAD
 import { AddVehicleAssignedComponent } from './VehicleAssigned/add-vehicle-assigned/add-vehicle-assigned.component';
 import { VehicleDisplayComponent } from './VehicleAssigned/vehicleAssignedDisplay/vehicle-display/vehicle-display.component';
-=======
 import { WorkerDisplayComponent } from './worker/workerDisplay/worker-display.component';
 import { WorkerAddComponent } from './worker/workerAdd/worker-add.component';
 import { WorkereditComponent } from './worker/workerEdit/workeredit.component';
@@ -56,7 +56,7 @@ import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.
 import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
 import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
 import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
->>>>>>> 73c969f60655828ca247f4b40d30f55ac97a0336
+import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
 
 @NgModule({
   declarations: [
@@ -89,10 +89,8 @@ import { ServiceAddComponent } from './service/serviceAdd/service-add/service-ad
     AddImageComponent,
     StockAddComponent,
     ServiceDisplayComponent,
-<<<<<<< HEAD
     AddVehicleAssignedComponent,
     VehicleDisplayComponent,
-=======
     WorkerDisplayComponent,
     WorkerAddComponent,
     WorkereditComponent,
@@ -100,7 +98,7 @@ import { ServiceAddComponent } from './service/serviceAdd/service-add/service-ad
     ServiceEditComponent,
     ServiceViewmoreComponent,
     ServiceAddComponent,
->>>>>>> 73c969f60655828ca247f4b40d30f55ac97a0336
+    VehicleviewmoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -136,7 +134,9 @@ import { ServiceAddComponent } from './service/serviceAdd/service-add/service-ad
     OrderDetailsmoreComponent,
     CategoryAddComponent,
     AddImageComponent,
-    ServiceViewmoreComponent
+    ServiceViewmoreComponent,
+    VehicleviewmoreComponent
+    //VehicleAssignedviewmorecomponent
      ],
   providers: [],
   bootstrap: [AppComponent]
