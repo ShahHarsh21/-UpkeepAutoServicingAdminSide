@@ -1,0 +1,12 @@
+<p>worker-image-add works!</p>
+<div>
+  <form (ngSubmit)="onImageSubmit()" [formGroup]="editWorkerImg">
+    <div>
+      <img src="{{workerImg}}" height="200px" width="200px">
+    </div>
+    <input type="file" alt="Your Photo" formControlName="image" (change)="onChange($event)">
+    <div>
+      <button type="submit">Add/Edit Image</button>
+    </div>
+  </form>
+</div>

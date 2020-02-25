@@ -51,6 +51,7 @@ import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.
 import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
 import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
 import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
+import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/worker-image-add.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { ServiceAddComponent } from './service/serviceAdd/service-add/service-ad
     ServiceEditComponent,
     ServiceViewmoreComponent,
     ServiceAddComponent,
+    WorkerImageAddComponent,
   ],
   imports: [
     BrowserModule,

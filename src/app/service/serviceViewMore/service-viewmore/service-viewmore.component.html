@@ -1,17 +1,22 @@
-<!-- <p>service-viewmore works!</p> -->
 <div class="container">
-  <div class="info">
-    <mat-list>
-      <mat-list-item>{{vehicle_no}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{meter_Reading}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{fuel_tank}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>{{remark}}</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item> {{complaints}}</mat-list-item>
+      <mat-list>
+        <mat-label><b>Vehicle No :</b></mat-label>
+        <mat-list-item>{{vehicle_no}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Meter Reading :</b></mat-label>
+        <mat-list-item>{{meter_Reading}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Fuel Tank :</b></mat-label>
+        <mat-list-item>{{fuel_tank}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Remark :</b></mat-label>
+        <mat-list-item>{{remark}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Complaints :</b></mat-label>
+        <mat-list-item> {{complaints}}</mat-list-item>
     </mat-list>
-  </div>
+    <div>
+      <button (click)="onClose()">Close</button>
+    </div>
 </div>
 

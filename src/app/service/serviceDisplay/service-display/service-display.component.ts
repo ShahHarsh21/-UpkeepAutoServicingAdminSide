@@ -74,8 +74,4 @@ export class ServiceDisplayComponent implements OnInit {
   {
     this._dialog.open(ServiceViewmoreComponent,{data:row});
   }
-  onDeleteAll()
-  {
-
-  }
 }

@@ -9,17 +9,27 @@ import { worker } from './worker';
 export class WorkerService {
   private url:string=environment.url+'worker/';
   private deleteurl:string=environment.url+'deleteWorker/';
-
+  private workerAll_url:string=environment.url+'worker_All/';
+  private workerImgUrl: string=environment.url+'worker_image/';
   constructor(private _http:HttpClient) { }
 
   getAllWorker()
   {
-    return this._http.get(this.url);
+    return this._http.get(this.workerAll_url);
   }
   getWorkerById(worker_id)
   {
     let x = new HttpHeaders().set(environment.header,environment.value);
     return this._http.get(this.url+worker_id);
+  }
+  getWorkerPhotById(worker_id)
+  {
+    console.log(worker_id);
+    return this._http.get(this.workerImgUrl+worker_id);
+  }
+  updateWorkerImage(worker_id,fd)
+  {
+    return this._http.put(this.workerImgUrl+worker_id,fd);
   }
   addWorker(item)
   {

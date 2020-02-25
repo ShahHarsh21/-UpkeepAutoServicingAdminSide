@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceDataService } from '../../service-data.service';
 import { Service_class } from '../../service_class';
@@ -12,23 +12,21 @@ import { Service_class } from '../../service_class';
 export class ServiceEditComponent implements OnInit {
   editService :  FormGroup;
   service_routs_id:number;
-  serviceArr:string[]=[
-    "Air-Condtioning",
-    "Break Repairs",
-    "Engine Diagnostic",
-    'Heating & Cooling',
-    "Oil,Lube",
-    "Steering & Suspension",
-    "Transmission Repair",
-    "Battery Service",
-    "Exhaust System",
-    "Emissions",
-    "Pvt Maintenance",
-    "Tire Pressure",
-    "Tire Service",
-    "Other"
+  serviceArr:any[]=[
+    { 'Name': 'Air-Condtioning', 'isChecked': false },
+    { 'Name': 'Break Repairs', 'isChecked': false },
+    { 'Name': 'Heating & Cooling', 'isChecked': false },
+    { 'Name': 'Oil & Lube', 'isChecked': false },
+    { 'Name': 'Steering & Suspension', 'isChecked': false },
+    { 'Name': 'Transmission Repair', 'isChecked': false },
+    { 'Name': 'Battery Service', 'isChecked': false },
+    { 'Name': 'Exhaust System', 'isChecked': false },
+    { 'Name': 'Emissions', 'isChecked': false },
+    { 'Name': 'Pvt Maintenance', 'isChecked': false },
+    { 'Name': 'Tire Pressure', 'isChecked': false },
+    { 'Name': 'Other', 'isChecked': false }
   ];
-  checkServiceArr : string[];
+  checkServiceArr : string[]=[];
 
   constructor(public _route:Router,public _Act_routs:ActivatedRoute,public _Data:ServiceDataService) { }
   ngOnInit() {
@@ -37,11 +35,11 @@ export class ServiceEditComponent implements OnInit {
     this.editService=new FormGroup({
       service_id :new FormControl(null),
       fk_user_id:new FormControl(null),
-      vehicle_no:new FormControl(null),
-      meter_reading :new FormControl(null),
-      fuel_tank:new FormControl(null),
+      vehicle_no:new FormControl(null,Validators.required),
+      meter_reading :new FormControl(null,Validators.required),
+      fuel_tank:new FormControl(null,Validators.required),
       remark :new FormControl(null),
-      complaints:new FormControl(null)
+      complaints:new FormControl(null,Validators.required)
     });
     this._Data.getServiceById(this.service_routs_id).subscribe(
       (service_Data:any)=>{
@@ -62,10 +60,39 @@ export class ServiceEditComponent implements OnInit {
         remark : item.remark,
         complaints : item.complaints
         });
+
+        // let arr:string [] = [];
+        // arr =  item.complaints.split(',');
+        // //for(let i=0; i<this.serviceArr.length;i++) {
+        //   for(let j=0; j<arr.length; j++) {
+        //     if(this.serviceArr.find(x => x.Name == arr[j]))
+        //     {
+        //       this.serviceArr.indexOf(x).is
+        //     }
+        //   }
+        // //}
+
     }
   onCancle()
   {
   }
+
+  onServiceCheck(item)
+  {
+    console.log(item);
+    // console.log(this.checkServiceArr.find(item));
+    // console.log(this.checkServiceArr.push(item));
+    if(this.checkServiceArr.find(x => x == item))
+    {
+        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item),1);
+    }
+    else
+    {
+      this.checkServiceArr.push(item.Name);
+    }
+    console.log(this.checkServiceArr);
+  }
+
   onServiceEdit()
   {
     console.log(this.editService.value);
@@ -75,18 +102,5 @@ export class ServiceEditComponent implements OnInit {
         this._route.navigate(['/nav/service']);
       }
     );
-  }
-  onServiceCheck(item)
-  {
-    console.log(item);
-    if(this.checkServiceArr.find(x => x == item))
-    {
-        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item),1);
-    }
-    else
-    {
-      this.checkServiceArr.push(item);
-    }
-    console.log(this.checkServiceArr);
   }
 }

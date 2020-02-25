@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { format } from 'url';
 import { ServiceDataService } from '../../service-data.service';
 import { Router } from '@angular/router';
@@ -34,11 +34,11 @@ export class ServiceAddComponent implements OnInit {
     this.addService=new FormGroup({
       service_id : new FormControl(null),
       fk_user_id : new FormControl(null),
-      vehicle_no : new FormControl(null),
-      meter_reading : new FormControl(null),
-      fuel_tank : new FormControl(null),
-      reamark : new FormControl(null),
-      complaints : new FormControl(null),
+      vehicle_no : new FormControl(null,Validators.required),
+      meter_reading : new FormControl(null,Validators.required),
+      fuel_tank : new FormControl(null,Validators.required),
+      remark : new FormControl(null),
+      complaints : new FormControl(null,Validators.required),
     });
   }
 
@@ -51,7 +51,8 @@ export class ServiceAddComponent implements OnInit {
   onServiceAdd()
   {
     console.log(this.addService.value);
-    this.addService.value.complaints=this.checkServiceArr;
+
+    this.addService.value.complaints=this.checkServiceArr.toString();
     this._Data.addService(this.addService.value).subscribe(
       (data:any)=>{
         console.log(data);

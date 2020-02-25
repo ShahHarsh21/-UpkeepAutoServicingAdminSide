@@ -29,12 +29,14 @@ import { WorkerAddComponent } from './worker/workerAdd/worker-add.component';
 import { ServiceDisplayComponent } from './service/serviceDisplay/service-display/service-display.component';
 import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
 import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
+import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/worker-image-add.component';
 
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
     {
     path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
+        {path:'',component:ServiceDisplayComponent},
         {path:'signup',component:SignupdisplayComponent},
         {path:'user',component:UserDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
@@ -55,7 +57,8 @@ const arr:Routes=[
         {path:'workerAdd',component:WorkerAddComponent},
         {path:'service',component:ServiceDisplayComponent},
         {path:'serviceAdd',component:ServiceAddComponent},
-        {path:'serviceEdit/:service_id',component:ServiceEditComponent}
+        {path:'serviceEdit/:service_id',component:ServiceEditComponent},
+        {path:'wokerImage/:worker_id',component:WorkerImageAddComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}

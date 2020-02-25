@@ -30,4 +30,8 @@ export class UserViewMoreComponent implements OnInit {
     this.date_of_birth=this.data.date_of_birth;
   }
 
+  onClose()
+  {
+    this.dialogref.close();
+  }
 }

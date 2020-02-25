@@ -11,7 +11,7 @@ import { WorkerviewmoreComponent } from '../workerViewmore/workerviewmore.compon
   styleUrls: ['./worker-display.component.css']
 })
 export class WorkerDisplayComponent implements OnInit {
-  displayedColumns:string[]=['check','email_id','password','worker_name','Action'];
+  displayedColumns:string[]=['check','email_id','worker_name','Action'];
   workerarr:worker[]=[];
   deleteworkerarr:number[]=[];
   dataSource: MatTableDataSource<worker>;
@@ -27,6 +27,7 @@ export class WorkerDisplayComponent implements OnInit {
     this._data.getAllWorker().subscribe(
       (data:any)=>{
             this.workerarr=data;
+            console.log(data);
             this.dataSource.data=data;
       }
     );
@@ -77,5 +78,9 @@ onEdit(row)
 onViewMore(row)
 {
   this._dialog.open(WorkerviewmoreComponent,{data:row.worker_id});
+}
+onAddImage(row)
+{
+  this._router.navigate(['/nav/wokerImage/'+row.worker_id]);
 }
 }

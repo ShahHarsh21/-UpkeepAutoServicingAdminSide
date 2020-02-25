@@ -1,23 +1,18 @@
-<p>service-edit works!</p>
-<!-- <p>service-add works!</p> -->
 <div class="container">
 
 
   <form [formGroup]="editService" (ngSubmit)="onServiceEdit()">
-    <h1 class="hh"><b>Add Product</b></h1>
+    <h1 class="hh"><b>Edit Servive</b></h1>
 
     <div class="form-groupup">
       <mat-label><b>Vehicle Registered No</b></mat-label><br>
-      <input class="form-control" placeholder="Enter Vehicle Registered No" formControlName="vehicle_no" type="text" >
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
+       <input class="form-control" placeholder="Enter Vehicle Registered No" formControlName="vehicle_no" type="text" >
+      <label class="alert alert-danger" *ngIf="editService.get('vehicle_no').hasError('required') && !editService.get('vehicle_no').pristine" >Vehicle Registered No is required</label>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Meter Reading</b></mat-label><br>
       <input class="form-control" placeholder="Enter Meter Reading" formControlName="meter_reading" type="text" >
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+      <label class="alert alert-danger" *ngIf="editService.get('meter_reading').hasError('required') && !editService.get('meter_reading').pristine" >Meter Reading is required</label>
     </div><br>
 
     <div class="form-group" >
@@ -28,22 +23,20 @@
         <option value="medium">MEDIUM TANK</option>
         <option value="full">Full TANK</option>
       </select>
+      <label class="alert alert-danger" *ngIf="editService.get('fuel_tank').hasError('required') && !editService.get('fuel_tank').pristine" >Fuel Tank Status is required</label>
     </div><br>
 
     <div class="form-group" >
       <mat-label><b>Add Your Ramrks :</b></mat-label><br>
       <input class="form-control" placeholder="Enter Your Remarks" formControlName="remark" type="text" >
-      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
-      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
     </div><br>
     <mat-label><b>Your Complqaints:</b></mat-label><br>
     <div class="form-group" *ngFor="let item of serviceArr">
-      <input type="checkbox"  formControlName="complaints"  (check)="onServiceCheck(item)" value="{{item}}">{{item}}<br>
+      <input type="checkbox" (change)="onServiceCheck(item)" [checked]="item.isChecked" value="{{item.Name}}">{{item.Name}}<br>
     </div>
   <div>
     <div class="form-group">
-      <button  type="submit" class="btn" >Submit</button>
+      <button  type="submit" class="btn" [disabled]=editService.invalid>Submit</button>
       <button   class="can" (click)="onCancle()" >Cancle </button>
     </div>
   </div>

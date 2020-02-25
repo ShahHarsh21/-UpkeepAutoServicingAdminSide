@@ -38,13 +38,10 @@ export class ProductAddComponent implements OnInit {
     );
    }
    onProductAdd()
-<<<<<<< HEAD
    {
 
    }
   onCancle()
-=======
->>>>>>> 10ddfeca22dc1bece095c935a59854d63da9a93c
   {
     let productobj = {
       product_id: this.addproduct.value.email_id,
