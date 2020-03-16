@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { environment } from 'src/environments/environment';
 import { worker } from '../worker';
 import { WorkerService } from '../worker.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-workerviewmore',
@@ -17,28 +18,26 @@ export class WorkerviewmoreComponent implements OnInit {
   address : string = '';
   worker_image: string = '';
   joining_date : string='';
-  workerImage :string = ' ';
-  constructor(public _data:WorkerService,public dialogref: MatDialogRef<WorkerviewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: number) { }
+
+  constructor(public _data:WorkerService,public _act_routs:ActivatedRoute,public _router :Router) { }
 
   ngOnInit() {
-    this._data.getWorkerById(this.data).subscribe(
-      (Worker_Data:any)=>{
-        console.log(Worker_Data);
-        this.worker_id = Worker_Data[0].worker_id;
-        this.worker_name = Worker_Data[0].worker_name;
-        this.email_id=Worker_Data[0].email_id;
-        this.mobile_no = Worker_Data[0].mobile_no;
-        this.worker_image=Worker_Data[0].worker_image;
-        this.address = Worker_Data[0].address;
-        this.joining_date = Worker_Data[0].joining_date;
-        console.log(Worker_Data[0].worker_image);
-        this.workerImage = environment.url+ 'Images/WorkerImages/' + Worker_Data[0].worker_image;
+    this.worker_id=this._act_routs.snapshot.params['worker_id'];
+    this._data.getWorkerById(this.worker_id).subscribe(
+      (workerData:any[])=>{
+        console.log(workerData);
+        this.worker_id =workerData[0].worker_id,
+        this.worker_name=workerData[0].worker_name,
+        this.email_id =workerData[0].email_id,
+        this.mobile_no=workerData[0].mobile_no,
+        this.address = workerData[0].address,
+        this.joining_date=workerData[0].joining_date
       }
     );
 
   }
   onClickClose()
   {
-    this.dialogref.close();
+    this._router.navigate(['/nav/worker']);
   }
 }

@@ -22,24 +22,18 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
 
 
 /* Set a style for all buttons */
-button {
-  background-color: #f44336;
-  color: white;
-  padding: 12px 20px;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 70%;
-  margin-bottom: 1%;
-  border: none;
-  cursor: pointer;
-  width: 70%;
-  height: 5%;
-  border-radius: 20px;
-}
-
-/* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
+}
+.mybtn1
+{
+  width:15%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 20px;
 }
 
 /* Add padding to containers */
@@ -47,9 +41,9 @@ button:hover {
   padding: 50px;
   border: 2px solid black;
   border-radius: 10px;
-  /*margin-top: 5%;
+  margin-top: 5%;
   margin-left: 5%;
-  margin-right: 5%;*/
+  margin-right: 5%;
   margin-bottom: 10%;
 }
 /* Center the avatar image inside this container */
@@ -69,5 +63,5 @@ label
   padding:50px;
   font-family:comic;
   font-size:10px;
-  font-color:blue;
+  color:blue;
 }

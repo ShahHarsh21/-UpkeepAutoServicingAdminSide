@@ -3,10 +3,8 @@ import { worker } from '../worker';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatDialog } from '@angular/material/dialog';
 import { WorkerService } from '../worker.service';
 import { Router } from '@angular/router';
-import { WorkerviewmoreComponent } from '../workerViewmore/workerviewmore.component';
 
 @Component({
   selector: 'app-worker-display',
@@ -14,14 +12,14 @@ import { WorkerviewmoreComponent } from '../workerViewmore/workerviewmore.compon
   styleUrls: ['./worker-display.component.css']
 })
 export class WorkerDisplayComponent implements OnInit {
-  displayedColumns:string[]=['check','email_id','worker_name','Action'];
+  displayedColumns:string[]=['check','email_id','worker_name','mobile_no','Action'];
   workerarr:worker[]=[];
   deleteworkerarr:number[]=[];
   dataSource: MatTableDataSource<worker>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private _data:WorkerService, private _dialog:MatDialog, private _router:Router) {
+  constructor(private _data:WorkerService, private _router:Router) {
     this.dataSource = new MatTableDataSource();
    }
 
@@ -48,7 +46,34 @@ applyFilter(filtervalue:string)
   {
     this._router.navigate(['/nav/workerAdd/']);
   }
-  onchecheckboxchange(row)
+  onEdit(row)
+  {
+    this._router.navigate(['/nav/workerEdit/'+row.worker_id]);
+  }
+  onViewMore(row)
+  {
+    this._router.navigate(['/nav/workerViewMore/'+row.worker_id]);
+  }
+  onAddImage(row)
+  {
+    this._router.navigate(['/nav/wokerImage/'+row.worker_id]);
+  }
+  onDelete(row)
+  {
+    console.log(row);
+    let x:number = this.workerarr.indexOf(row);
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
+    {
+      this._data.deleteWorker(row.worker_id).subscribe(
+        (data:any)=>{
+          this.workerarr.splice(this.workerarr.indexOf(row),1);
+          this.dataSource.data=this.workerarr;
+          this._router.navigate(['nav/worker/']);
+        }
+      );
+    }
+  }
+  onchecheckboxchange(row:worker)
   {
     if(this,this.workerarr.find(x => x == row.worker_id))
     {
@@ -58,10 +83,10 @@ applyFilter(filtervalue:string)
       this.deleteworkerarr.push(row.worker_id);
     }
   }
-  onDelete()
+  onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
-      this._data.deleteAllWorkerByid(this.deleteworkerarr).subscribe(
+      this._data.DeleteAllWorker(this.deleteworkerarr).subscribe(
         (data:worker)=>{
           for(let i=0;i<this.deleteworkerarr.length;i++)
           {
@@ -69,21 +94,9 @@ applyFilter(filtervalue:string)
                 this.workerarr.splice(this.workerarr.indexOf(x),1);
           }
           this.dataSource.data=this.workerarr;
-         this.dataSource.paginator=this.paginator;
+          this.dataSource.paginator=this.paginator;
           this.dataSource.sort=this.sort;
      });
   }
-}
-onEdit(row)
-{
-  this._router.navigate(['/nav/workerEdit/'+row.worker_id]);
-}
-onViewMore(row)
-{
-  this._dialog.open(WorkerviewmoreComponent,{data:row.worker_id});
-}
-onAddImage(row)
-{
-  this._router.navigate(['/nav/wokerImage/'+row.worker_id]);
 }
 }

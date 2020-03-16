@@ -8,6 +8,7 @@
       <mat-label><b>Vehicle Registered No</b></mat-label><br>
        <input class="form-control" placeholder="Enter Vehicle Registered No" formControlName="vehicle_no" type="text" >
       <label class="alert alert-danger" *ngIf="editService.get('vehicle_no').hasError('required') && !editService.get('vehicle_no').pristine" >Vehicle Registered No is required</label>
+      <label class="alert alert-danger" *ngIf="editService.get('vehicle_no').hasError('pattern') && !editService.get('vehicle_no').pristine" >Vehicle Registered No must required in valid fromate of (ex:GJ-01-XY-0000)</label>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Meter Reading</b></mat-label><br>

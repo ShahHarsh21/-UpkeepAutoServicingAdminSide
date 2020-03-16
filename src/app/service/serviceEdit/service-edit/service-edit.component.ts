@@ -35,7 +35,7 @@ export class ServiceEditComponent implements OnInit {
     this.editService=new FormGroup({
       service_id :new FormControl(null),
       fk_user_id:new FormControl(null),
-      vehicle_no:new FormControl(null,Validators.required),
+      vehicle_no: new FormControl(null,Validators.required,Validators.pattern[('(([A-Za-z]){2,3}(|-)(?:[0-9]){1,2}(|-)(?:[A-Za-z]){2}(|-)([0-9]){1,4})|(([A-Za-z]){2,3}(|-)([0-9]){1,4})')]),
       meter_reading :new FormControl(null,Validators.required),
       fuel_tank:new FormControl(null,Validators.required),
       remark :new FormControl(null),
@@ -64,13 +64,19 @@ export class ServiceEditComponent implements OnInit {
         // let arr:string [] = [];
         // arr =  item.complaints.split(',');
         // //for(let i=0; i<this.serviceArr.length;i++) {
-        //   for(let j=0; j<arr.length; j++) {
-        //     if(this.serviceArr.find(x => x.Name == arr[j]))
+        //   for(let i=0; i<arr.length; i++) {
+
+        //     console.log(arr);
+        //     console.log(this.serviceArr.find(x => x.Name == arr[i]));
+        //     if(this.serviceArr.find(x => x.Name == arr[i]))
         //     {
-        //       this.serviceArr.indexOf(x).is
+        //       let index = this.serviceArr.indexOf(arr[i]);
+        //       console.log(index);
+
+        //       //this.serviceArr[index].isChecked = true;
         //     }
         //   }
-        // //}
+        //}
 
     }
   onCancle()
@@ -82,9 +88,9 @@ export class ServiceEditComponent implements OnInit {
     console.log(item);
     // console.log(this.checkServiceArr.find(item));
     // console.log(this.checkServiceArr.push(item));
-    if(this.checkServiceArr.find(x => x == item))
+    if(this.checkServiceArr.find(x => x == item.Name))
     {
-        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item),1);
+        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item.Name),1);
     }
     else
     {
@@ -96,6 +102,7 @@ export class ServiceEditComponent implements OnInit {
   onServiceEdit()
   {
     console.log(this.editService.value);
+    this.editService.value.complaints = this.checkServiceArr.toString();
     this._Data.updateService(this.service_routs_id,this.editService.value).subscribe(
       (data:any)=>{
         console.log(data);

@@ -5,13 +5,13 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar><i class="material-icons">home_work</i>Menu</mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item routerLink="/nav/service"><i class="material-icons">supervised_user_circle</i>Service</a>
       <a mat-list-item routerLink="/nav/user"><i class="material-icons">supervised_user_circle</i>User</a>
       <a mat-list-item routerLink="/nav/worker"><i class="material-icons">supervised_user_circle</i>Worker</a>
-      <a mat-list-item routerLink="/nav/service"><i class="material-icons">supervised_user_circle</i>Service</a>
-      <a mat-list-item routerLink="/nav/product"><i class="material-icons">control_point_duplicate</i>Product</a>
+      <!-- <a mat-list-item routerLink="/nav/product"><i class="material-icons">control_point_duplicate</i>Product</a>
       <a mat-list-item routerLink="/nav/category"><i class="material-icons">category</i>Category</a>
       <a mat-list-item routerLink="/nav/stock"><i class="material-icons">local_pharmacy</i>Stock</a>
-      <a mat-list-item routerLink="/nav/order_details"><i class="material-icons">bookmark_border</i>Order-Details</a>
+      <a mat-list-item routerLink="/nav/order_details"><i class="material-icons">bookmark_border</i>Order-Details</a>-->
       <a mat-list-item routerLink="/nav/vehicleAssigned"><i class="material-icons">bookmark_border</i>vehice-assigned</a>
 
     </mat-nav-list>
@@ -22,12 +22,14 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
+        class="btn btn-success"
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Welcome to UpKeepAutoServicing <i class="material-icons">account_circle</i> {{email_id}}</span>
-      <button (click)="onLogoutClick()" class="btn1">Logout</button>
+      <button mat-raised-button (click)="onLogoutClick()" class="mybtn" color="warn" aria-label="Example icon-button with a heart icon">Logout
+      </button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

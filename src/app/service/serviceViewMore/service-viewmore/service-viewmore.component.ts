@@ -1,9 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ServiceDataService } from '../../service-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Service_class } from '../../service_class';
 import { UserdataService } from 'src/app/user/userdata.service';
+import { user } from 'src/app/user/user';
+import { userSerivce_class } from 'src/app/class/userService_class';
 
 @Component({
   selector: 'app-service-viewmore',
@@ -12,30 +14,22 @@ import { UserdataService } from 'src/app/user/userdata.service';
 })
 export class ServiceViewmoreComponent implements OnInit {
     public service_id :number;
-    public fk_user_id:number;
-    public vehicle_no:string;
-    public meter_Reading :string;
-    public fuel_tank:string;
-    public remark :string;
-    public complaints:string;
-  constructor(private _userdata:UserdataService,public dialogref: MatDialogRef<ServiceViewmoreComponent>, @Inject(MAT_DIALOG_DATA) public data: Service_class) { }
+    public arr:userSerivce_class[]=[];
+    public user_id:number=0;
+  constructor(public _ServiceData:ServiceDataService,private _userdata:UserdataService,public _act_routs:ActivatedRoute,public _router:Router) { }
 
   ngOnInit() {
-    this._userdata.getUserById(this.data.fk_user_id).subscribe(
-      (userData:any[])=>{
-        console.log(userData);
+    this.service_id=this._act_routs.snapshot.params['service_id'];
+    console.log(this.service_id);
+    this._ServiceData.getUserServiceByUserId(this.service_id).subscribe(
+      (serviceData:any[])=>{
+        console.log(serviceData);
+        this.arr=serviceData;
       }
     );
-    this.service_id = this.data.service_id,
-    this.fk_user_id = this.data.fk_user_id,
-    this.vehicle_no = this.data.vehicle_no,
-    this.meter_Reading = this.data.meter_reading,
-    this.fuel_tank = this.data.fuel_tank,
-    this.remark = this.data.remark,
-    this.complaints = this.data.complaints;
   }
   onClose()
   {
-    this.dialogref.close();
+    this._router.navigate(['/nav/service']);
   }
 }

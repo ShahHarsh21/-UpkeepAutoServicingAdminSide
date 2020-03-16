@@ -1,6 +1,4 @@
 <div class="container">
-
-
   <form [formGroup]="addService" (ngSubmit)="onServiceAdd()" >
     <h1 class="hh"><b>Add service</b></h1>
 
@@ -15,18 +13,17 @@
       <label class="alert alert-danger" *ngIf="addService.get('meter_reading').hasError('required') && !addService.get('meter_reading').pristine" >Meter Reading is required</label>
     </div><br>
 
-    <div class="form-group" >
+    <div class="form-group" class="dropdown-menu">
       <mat-label><b>Fuel Tank Status</b></mat-label><br>
       <select class="form-control" formControlName="fuel_tank" placeholder="" type="dropbox" >
-        <option>SELECT FUEL TANK</option>
-        <option>FULL TANK</option>
-        <option>MEDIUM TANK</option>
-        <option>HALF TANK</option>
+        <option class="dropdown-item">SELECT FUEL TANK</option>
+        <option class="dropdown-item">FULL TANK</option>
+        <option class="dropdown-item">MEDIUM TANK</option>
+        <option class="dropdown-item">HALF TANK</option>
       </select>
-      <label class="alert alert-danger" *ngIf="addService.get('fuel_tank').hasError('required') && !addService.get('fuel_tank').pristine" >Complaint is required <br>You Must Have To Check Complaints Which You Want</label>
     </div><br>
 
-    <div class="form-group" >
+    <div class="form-group">
       <mat-label><b>Add Your Ramarks :</b></mat-label><br>
      <input class="form-control" placeholder="Enter Your Remarks" formControlName="remark" type="text">
 
@@ -37,7 +34,7 @@
     </div>
   <div>
     <div class="form-group">
-      <button  type="submit" class="btn" [disabled]=addService.invalid>Submit</button>
+      <button  type="submit" class="btn">Submit</button>
       <button   class="can" (click)="onCancle()" >Cancle </button>
     </div>
   </div>

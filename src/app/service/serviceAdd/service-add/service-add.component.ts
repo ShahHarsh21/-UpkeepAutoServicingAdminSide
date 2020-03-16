@@ -36,7 +36,7 @@ export class ServiceAddComponent implements OnInit {
       fk_user_id : new FormControl(null),
       vehicle_no : new FormControl(null,Validators.required),
       meter_reading : new FormControl(null,Validators.required),
-      fuel_tank : new FormControl(null,Validators.required),
+      fuel_tank : new FormControl(null),
       remark : new FormControl(null),
       complaints : new FormControl(null,Validators.required),
     });
@@ -51,18 +51,16 @@ export class ServiceAddComponent implements OnInit {
   onServiceAdd()
   {
     console.log(this.addService.value);
-
     this.addService.value.complaints=this.checkServiceArr.toString();
+    console.log(this.addService);
     this._Data.addService(this.addService.value).subscribe(
       (data:any)=>{
-        console.log(data);
         this._routs.navigate(['/nav/service']);
       }
     );
   }
   onServiceCheck(item)
   {
-    console.log(item);
     // console.log(this.checkServiceArr.find(item));
     // console.log(this.checkServiceArr.push(item));
     if(this,this.checkServiceArr.find(x => x == item))
@@ -73,6 +71,5 @@ export class ServiceAddComponent implements OnInit {
     {
       this.checkServiceArr.push(item);
     }
-    console.log(this.checkServiceArr);
   }
 }
