@@ -32,7 +32,8 @@ export class VehicleDisplayComponent implements OnInit {
     this._data.getAllVehicleAssigned().subscribe(
       (data: VehicleAssignedModel[]) => {
           console.log(data);
-          this.dataSource.data = data;
+          this.vehiclearr=data
+          this.dataSource.data = this.vehiclearr;
       }
     );
   }
@@ -48,20 +49,18 @@ export class VehicleDisplayComponent implements OnInit {
   {
       this._routes.navigate(['/nav/vehicleAssignedAdd']);
   }
-  onDelete(item:VehicleAssignedModel)
-  {
-
-    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
-    {
-      this._data.deleteVehicle_assigned(item.vehicle_assigned_id).subscribe(
-        (data:any)=>{
-          this.vehiclearr.splice(this.vehiclearr.indexOf(item),1);
-          this.dataSource.data=this.vehiclearr;
-          this._routes.navigate(['nav/vehicleAssigned/']);
-
-        }
-      );
-    }
+  onDelete(item)  {
+    console.log(item)
+       if (confirm("Are you sure you want to delete"))
+      {
+        this._data.deleteVehicle_assigned(item.vehicle_assigned_id).subscribe(
+          (data)=>{
+            this.vehiclearr.splice(this.vehiclearr.indexOf(item),1);
+            this.dataSource.data=this.vehiclearr;
+            alert("Record is deleted");
+          }
+        );
+      }
   }
   onDeleteAll()
   {
