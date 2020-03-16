@@ -48,10 +48,17 @@ export class WorkerService {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.put(this.url+item.worker_id, body, { headers: head });
   }
-  deleteAllWorkerByid(item:number[])
+  DeleteAllWorker(item:number[])
   {
+    console.log(item)
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.deleteurl, body, { headers: head });
+  }
+  deleteWorker(worker_id: number)
+  {
+    console.log(worker_id);
+    let x = new HttpHeaders().set(environment.header,environment.value);
+    return this._http.delete(this.url + worker_id ,{headers:x});
   }
 }

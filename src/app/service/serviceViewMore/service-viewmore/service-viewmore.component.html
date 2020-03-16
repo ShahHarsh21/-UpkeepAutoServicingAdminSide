@@ -1,22 +1,46 @@
-<div class="container">
+<div class="container" *ngFor="let item of arr">
       <mat-list>
+        <mat-label><b>User Name :</b></mat-label>
+        <mat-list-item>{{item.user_name}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>E-mail Id :</b></mat-label>
+        <mat-list-item>{{item.email_id}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>User's Mobile No:</b></mat-label>
+        <mat-list-item>{{item.mobile_no}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>User's Address :</b></mat-label>
+        <mat-list-item>{{item.address}}</mat-list-item>
+        <mat-divider></mat-divider>
         <mat-label><b>Vehicle No :</b></mat-label>
-        <mat-list-item>{{vehicle_no}}</mat-list-item>
+        <mat-list-item>{{item.vehicle_no}}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-label><b>Meter Reading :</b></mat-label>
-        <mat-list-item>{{meter_Reading}}</mat-list-item>
+        <mat-list-item>{{item.meter_reading}}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-label><b>Fuel Tank :</b></mat-label>
-        <mat-list-item>{{fuel_tank}}</mat-list-item>
+        <mat-list-item>{{item.fuel_tank}}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-label><b>Remark :</b></mat-label>
-        <mat-list-item>{{remark}}</mat-list-item>
+        <mat-list-item>{{item.remark}}</mat-list-item>
         <mat-divider></mat-divider>
         <mat-label><b>Complaints :</b></mat-label>
-        <mat-list-item> {{complaints}}</mat-list-item>
+        <mat-list-item> {{item.complaints}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Status :</b></mat-label>
+        <mat-list-item> {{item.status}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Assigned Worker :</b></mat-label>
+        <mat-list-item> {{item.worker_name}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Arrival Date :</b></mat-label>
+        <mat-list-item> {{item.Arrival_date}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-label><b>Estimated Date :</b></mat-label>
+        <mat-list-item> {{item.Estimated_date}}</mat-list-item>
     </mat-list>
-    <div>
-      <button (click)="onClose()">Close</button>
+    <div class="button">
+      <button mat-raised-button color="primary" (click)="onClose()">Back</button>
     </div>
 </div>
 

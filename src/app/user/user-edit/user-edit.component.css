@@ -37,32 +37,18 @@ input[type=text1] {
 
 
 /* Set a style for all buttons */
-.btn {
-  background-color: rgb(53, 20, 241);
-  color: white;
-  padding: 12px 20px;
+button:hover {
+  opacity: 0.8;
+}
+button
+{
+  width:15%;
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: 1%;
-  border: none;
+  margin-right: 10%;
   cursor: pointer;
   width: 30%;
-  border-radius: 20px;
-}
-.can{
-  background-color: #f44336;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-  border-radius: 20px;
-}
-
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
 }
 
 /* Add padding to containers */

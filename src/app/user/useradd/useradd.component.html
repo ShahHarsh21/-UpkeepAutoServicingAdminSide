@@ -41,8 +41,8 @@
       <input class="form-control" type="date" formControlName="dob" >
     </div><br>
     <div class="form-group">
-      <button  type="submit" class="btn" >Add</button>
-      <button  class="can">Cancle</button>
+      <button mat-raised-button class="mybtn1" id="Add Record" type="submit"   color="primary" aria-label="ADD USER">Submit</button>
+      <button mat-raised-button class="mybtn1" id="Add Record" (click)="onCancle()" color="warn" aria-label="ADD USER">Cancle</button>
     </div>
   </div>
   </form>

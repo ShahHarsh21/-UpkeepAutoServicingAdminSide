@@ -9,6 +9,7 @@ import { Service_class } from '../../service_class';
 import { ServiceDataService } from '../../service-data.service';
 import { Router } from '@angular/router';
 import { ServiceViewmoreComponent } from '../../serviceViewMore/service-viewmore/service-viewmore.component';
+import { service_with_all_class } from 'src/app/class/service_with_all_class';
 
 @Component({
   selector: 'app-service-display',
@@ -17,29 +18,37 @@ import { ServiceViewmoreComponent } from '../../serviceViewMore/service-viewmore
 })
 export class ServiceDisplayComponent implements OnInit {
   displayedColumns:string[]=['check','vehicle_no','meter_reading','fuel_tank','Action'];
-  serviceArr:Service_class[]=[];
+  serviceArr:service_with_all_class[]=[];
   deleteServiceArr:number[]=[];
   dataSource: MatTableDataSource<Service_class>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public _service_data:ServiceDataService,public _router:Router,public _dialog:MatDialog) {
+  constructor(public _service_data:ServiceDataService,public _router:Router) {
     this.dataSource = new MatTableDataSource();
   }
 
   ngOnInit() {
-    this._service_data.getAllService().subscribe(
+    this._service_data.getAllServiceWithAll().subscribe(
       (data:any)=>{
-        console.log(data);
         this.dataSource.data=data;
-        // this.serviceArr=data;
+        console.log(this.dataSource.data);
+        this.serviceArr=data;
       }
     );
+  }
+  onSearchKeyPress(filtervalue : string)
+  {
+    this.dataSource.filter = filtervalue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
   applyFilter(filtervalue:string)
   {
     this.dataSource.filter = filtervalue.trim().toLowerCase();
-    if (this.dataSource.paginator) {
+    if (this.dataSource.paginator)
+    {
       this.dataSource.paginator.firstPage();
     }
   }
@@ -47,36 +56,37 @@ export class ServiceDisplayComponent implements OnInit {
   {
     this._router.navigate(['/nav/serviceAdd']);
   }
-  oncheckboxchange(row)
+  // oncheckboxchange(row)
+  // {
+  //   if(this.deleteServiceArr.find(x => x == row.service_id))
+  //   {
+  //       this.deleteServiceArr.splice(this.deleteServiceArr.indexOf(row.service_id),1);
+  //   }
+  //   else
+  //   {
+  //     this.deleteServiceArr.push(row.service_id);
+  //   }
+  // }
+  onDelete(row)
   {
-    if(this.deleteServiceArr.find(x => x == row.service_id))
+    let x:number = this.serviceArr.indexOf(row);
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
-        this.deleteServiceArr.splice(this.deleteServiceArr.indexOf(row.service_id),1);
-    }
-    else
-    {
-      this.deleteServiceArr.push(row.service_id);
-    }
-  }
-  onDelete()
-  {
-    console.log(this.deleteServiceArr);
-    if(confirm('Are You Sure To Delete Multiple User?'))
-    {
-
-      this._service_data.deleteAllService(this.deleteServiceArr).subscribe(
-        (Data:any)=>{
-          console.log(Data);
+      this._service_data.deleteService(row.worker_id).subscribe(
+        (data:any)=>{
+          this.serviceArr.splice(this.serviceArr.indexOf(row),1);
+          this.dataSource.data=this.serviceArr;
+          this._router.navigate(['nav/service/']);
         }
       );
     }
-}
+  }
   onEdit(row)
   {
     this._router.navigate(['/nav/serviceEdit/'+row.service_id]);
   }
   onViewMore(row)
   {
-    this._dialog.open(ServiceViewmoreComponent,{data:row});
+    this._router.navigate(['/nav/serviceViewmore/'+row.service_id]);
   }
 }

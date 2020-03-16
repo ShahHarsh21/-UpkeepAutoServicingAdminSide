@@ -40,8 +40,8 @@
       <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
     </div><br>
     <div class="form-group" >
-      <button type="submit" class="btn">Submit</button>
-      <button class="can" (click)="onCancle()">Cancle</button>
+      <button mat-raised-button id="Add Record" type="submit"   color="primary">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent">Back</button>
     </div>
   </div>
   </form>

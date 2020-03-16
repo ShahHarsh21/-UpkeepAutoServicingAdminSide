@@ -38,6 +38,9 @@ import { ServiceDisplayComponent } from './service/serviceDisplay/service-displa
 import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
 import { ServiceEditComponent } from './service/serviceEdit/service-edit/service-edit.component';
 import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/worker-image-add.component';
+import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
+import { UserViewMoreComponent } from './user/user-view-more/user-view-more.component';
+import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.component';
 
 
 const arr:Routes=[
@@ -71,6 +74,9 @@ const arr:Routes=[
         {path:'service',component:ServiceDisplayComponent},
         {path:'serviceAdd',component:ServiceAddComponent},
         {path:'serviceEdit/:service_id',component:ServiceEditComponent},
+        {path:'userViewmore/:user_id',component:UserViewMoreComponent},
+        {path:'serviceViewmore/:service_id',component:ServiceViewmoreComponent},
+        {path:'workerViewMore/:worker_id',component:WorkerviewmoreComponent},
         {path:'wokerImage/:worker_id',component:WorkerImageAddComponent}
     ]
     },

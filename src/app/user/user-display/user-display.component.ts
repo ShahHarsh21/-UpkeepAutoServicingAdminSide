@@ -1,13 +1,11 @@
 
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { user } from '../user';
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserdataService } from '../userdata.service';
 import { Router } from '@angular/router';
-import { UserViewMoreComponent } from '../user-view-more/user-view-more.component';
 
 @Component({
   selector: 'app-user-display',
@@ -15,7 +13,7 @@ import { UserViewMoreComponent } from '../user-view-more/user-view-more.componen
   styleUrls: ['./user-display.component.css']
 })
 export class UserDisplayComponent implements OnInit {
-  displayedColumns:string[]=['check','email_id','password','user_name','Action'];
+  displayedColumns:string[]=['check','email_id','user_name','mobile_no','Action'];
   userarr:user[]=[];
   deleteuserarr:number[]=[];
   dataSource: MatTableDataSource<user>;
@@ -23,7 +21,7 @@ export class UserDisplayComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
-  constructor(private _data:UserdataService, private _dialog:MatDialog, private _router:Router) {
+  constructor(private _data:UserdataService, private _router:Router) {
     this.dataSource = new MatTableDataSource();
    }
 
@@ -95,6 +93,6 @@ applyFilter(filtervalue:string)
   }
   onViewMore(row)
   {
-    this._dialog.open(UserViewMoreComponent,{data:row});
+    this._router.navigate(['/nav/userViewmore/'+row.user_id]);
   }
 }
