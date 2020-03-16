@@ -13,17 +13,31 @@ export class VehicleAssignedService {
   urlNotAssi_Vehicles: string = environment.url + 'Vehicle_not_assigned/';
   urlWorker: string = environment.url + 'worker/';
   urlVehicle: string = environment.url + 'service/';
-  private deleteurl: string=environment.url+'deleteAllvehicle_Assigned/';
-
+  deleteurl: string=environment.url+'deleteAllvehicle_Assigned/';
   constructor(private _http:HttpClient) { }
+
+
+
   getAllVehicleAssigned()
   {
     return this._http.get<VehicleAssignedModel[]>(this.url);
   }
-  getVehicleById(vehicle_assigned_id)
+  deleteVehicle_assigned(Vehicle_assigned_id:number)
   {
-    return  this._http.get(environment.url+'vehicleAssigned/'+vehicle_assigned_id);
+   let x = new HttpHeaders().set(environment.header,environment.value);
+   return this._http.delete(this.url + Vehicle_assigned_id,{headers:x});
   }
+  DeleteAllVehicle_assigned(item:number[])
+    {
+      console.log(item)
+      const body = JSON.stringify(item);
+      const head = new HttpHeaders().set(environment.header, environment.value);
+      return this._http.post(this.deleteurl, body, { headers: head });
+    }
+    getVehicleById(vehicle_assigned_id)
+    {
+      return  this._http.get(environment.url+'vehicleAssigned/'+vehicle_assigned_id);
+    }
   addVehicleAssigned(item)
   {
     //const body = JSON.stringify(item);
