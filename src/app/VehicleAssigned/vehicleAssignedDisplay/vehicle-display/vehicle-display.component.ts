@@ -48,6 +48,7 @@ export class VehicleDisplayComponent implements OnInit {
   }
   onViewMore(row)
   {
-    this._dialog.open(VehicleviewmoreComponent,{data:row});
+    // console.log(row.vehicle_assigned_id);
+    this._routes.navigate(['/nav/VehicleAssignedViewmore/'+row.vehicle_assigned_id]);
   }
 }

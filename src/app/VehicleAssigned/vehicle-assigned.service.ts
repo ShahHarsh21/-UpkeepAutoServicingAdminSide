@@ -23,8 +23,10 @@ export class VehicleAssignedService {
   {
     return this._http.get<VehicleAssignedModel[]>(this.url);
   }
-
-
+  getVehicleById(vehicle_assigned_id)
+  {
+    return  this._http.get(environment.url+'vehicleAssigned/'+vehicle_assigned_id);
+  }
   addVehicleAssigned(item)
   {
     //const body = JSON.stringify(item);

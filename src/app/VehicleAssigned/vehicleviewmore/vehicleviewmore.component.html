@@ -1,16 +1,24 @@
 <div class="container">
   <img src="{{worker_image}}" height="100px" width="200px" alt="Worker Images">
-    <mat-list>
-      <mat-list-item><i class="material-icons">perm_identity</i>{{vehicle_no}}</mat-list-item>
+  <mat-list>
+      <mat-label><b>Vehicle Registered No:</b></mat-label>
+      <mat-list-item>{{vehicle_no}}</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item><i class="material-icons"> </i>{{worker_name}}</mat-list-item>
+      <mat-label><b>Owner Of the Vehicle:</b></mat-label>
+      <mat-list-item>{{user_name}}</mat-list-item>
       <mat-divider></mat-divider>
+      <mat-label><b>Assigned Wroker Name :</b></mat-label>
+      <mat-list-item>{{worker_name}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-label><b>User's Remarks:</b></mat-label>
       <mat-list-item>{{remark}}</mat-list-item>
       <mat-divider></mat-divider>
+      <mat-label><b>Status of Vehicle :</b></mat-label>
       <mat-list-item>{{status}}</mat-list-item>
       <mat-divider></mat-divider>
-    </mat-list>
-    <div>
-      <button mat-button (click)="onCloseClick()">Back/Close</button>
-    </div>
+  </mat-list>
+  <div class="button">
+    <button mat-raised-button color="primary" (click)="onCloseClick()">Back</button>
   </div>
+</div>
+
