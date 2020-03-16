@@ -22,6 +22,11 @@ export class WorkerService {
     let x = new HttpHeaders().set(environment.header,environment.value);
     return this._http.get(this.url+worker_id);
   }
+  deleteworker(worker_id: number)
+   {
+    let x = new HttpHeaders().set(environment.header,environment.value);
+    return this._http.delete(this.url + worker_id ,{headers:x});
+  }
   getWorkerPhotById(worker_id)
   {
     console.log(worker_id);

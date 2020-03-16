@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 export class ProductdataService {
   private url : string=environment.url+'product/';
   private image_url:string=environment.url+'Product_image/';
-  private deleteurl: string=environment.url+'deleteAllPro/'
+  private deleteurl: string=environment.url+'deleteAllPro/';
   constructor(private _http : HttpClient) { }
 
   getAllProduct()

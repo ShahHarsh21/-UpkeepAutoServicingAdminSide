@@ -58,7 +58,7 @@ applyFilter(filtervalue:string)
       this.deleteworkerarr.push(row.worker_id);
     }
   }
-  onDelete()
+  onDelete(row)
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.deleteAllWorkerByid(this.deleteworkerarr).subscribe(
@@ -73,6 +73,10 @@ applyFilter(filtervalue:string)
           this.dataSource.sort=this.sort;
      });
   }
+}
+onDeleteAll()
+{
+
 }
 onEdit(row)
 {

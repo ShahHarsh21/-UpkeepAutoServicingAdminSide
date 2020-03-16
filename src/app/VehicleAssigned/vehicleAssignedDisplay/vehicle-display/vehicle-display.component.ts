@@ -15,8 +15,10 @@ import { VehicleviewmoreComponent } from '../../vehicleviewmore/vehicleviewmore.
   styleUrls: ['./vehicle-display.component.css']
 })
 export class VehicleDisplayComponent implements OnInit {
-  displayedColumns:string[]=['vehicle_no','worker_name','status','Action'];
+  displayedColumns:string[]=['check','vehicle_no','worker_name','status','Action'];
   dataSource: MatTableDataSource<VehicleAssignedModel>;
+  vehiclearr:VehicleAssignedModel[]=[];
+  deletevehiclearr:number[]=[];
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -45,6 +47,47 @@ export class VehicleDisplayComponent implements OnInit {
   onAddClick()
   {
       this._routes.navigate(['/nav/vehicleAssignedAdd']);
+  }
+  onDelete(item:VehicleAssignedModel)
+  {
+
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
+    {
+      this._data.deleteVehicle_assigned(item.vehicle_assigned_id).subscribe(
+        (data:any)=>{
+          this.vehiclearr.splice(this.vehiclearr.indexOf(item),1);
+          this.dataSource.data=this.vehiclearr;
+          this._routes.navigate(['nav/vehicleAssigned/']);
+
+        }
+      );
+    }
+  }
+  onDeleteAll()
+  {
+    if(confirm('Are You Sure To Delete Multiple User?')){
+      this._data.DeleteAllVehicle_assigned(this.deletevehiclearr).subscribe(
+        (data:VehicleAssignedModel)=>{
+          for(let i=0;i<this.deletevehiclearr.length;i++)
+          {
+                let x=this.vehiclearr.find(x => x.vehicle_assigned_id == this.deletevehiclearr[i]);
+                this.vehiclearr.splice(this.vehiclearr.indexOf(x),1);
+          }
+          this.dataSource.data=this.vehiclearr;
+          this.dataSource.paginator=this.paginator;
+          this.dataSource.sort=this.sort;
+     });
+    }
+  }
+  onchecheckboxchange(row)
+  {
+    if(this,this.vehiclearr.find(x => x == row.worker_id))
+    {
+        this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.worker_id),1);
+    }
+    else{
+      this.deletevehiclearr.push(row.worker_id);
+    }
   }
   onViewMore(row)
   {
