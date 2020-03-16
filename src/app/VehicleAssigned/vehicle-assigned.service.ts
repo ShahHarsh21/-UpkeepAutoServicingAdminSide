@@ -14,10 +14,8 @@ export class VehicleAssignedService {
   urlWorker: string = environment.url + 'worker/';
   urlVehicle: string = environment.url + 'service/';
   private deleteurl: string=environment.url+'deleteAllvehicle_Assigned/';
+
   constructor(private _http:HttpClient) { }
-
-
-
   getAllVehicleAssigned()
   {
     return this._http.get<VehicleAssignedModel[]>(this.url);
