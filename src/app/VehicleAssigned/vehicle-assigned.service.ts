@@ -9,14 +9,14 @@ import { VehicleAssignedModel } from '../VehicleAssignedModel';
   providedIn: 'root'
 })
 export class VehicleAssignedService {
-
-  constructor(private _http:HttpClient) { }
-
   url: string = environment.url + 'Vehicle_assigned/';
   urlNotAssi_Vehicles: string = environment.url + 'Vehicle_not_assigned/';
   urlWorker: string = environment.url + 'worker/';
   urlVehicle: string = environment.url + 'service/';
   private deleteurl: string=environment.url+'deleteAllvehicle_Assigned/';
+  constructor(private _http:HttpClient) { }
+
+
 
   getAllVehicleAssigned()
   {
