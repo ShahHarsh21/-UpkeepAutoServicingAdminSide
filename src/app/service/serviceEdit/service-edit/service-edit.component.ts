@@ -58,25 +58,21 @@ export class ServiceEditComponent implements OnInit {
         meter_reading : item.meter_reading,
         fuel_tank:item.fuel_tank,
         remark : item.remark,
-        complaints : item.complaints
         });
 
-        // let arr:string [] = [];
-        // arr =  item.complaints.split(',');
-        // //for(let i=0; i<this.serviceArr.length;i++) {
-        //   for(let i=0; i<arr.length; i++) {
+        /* to select the checkbox */
+        let arr:string [] = [];
+        arr =  item.complaints.split(',');
 
-        //     console.log(arr);
-        //     console.log(this.serviceArr.find(x => x.Name == arr[i]));
-        //     if(this.serviceArr.find(x => x.Name == arr[i]))
-        //     {
-        //       let index = this.serviceArr.indexOf(arr[i]);
-        //       console.log(index);
-
-        //       //this.serviceArr[index].isChecked = true;
-        //     }
-        //   }
-        //}
+          for(let i=0; i<arr.length; i++) {
+            if(this.serviceArr.find(x => x.Name == arr[i]))
+            {
+              let currentItem = this.serviceArr.find(x => x.Name == arr[i]);
+              let index = this.serviceArr.indexOf(currentItem);
+              this.serviceArr[index].isChecked = true;
+              this.checkServiceArr.push(currentItem.Name); //also add this name to checked Arr
+            }
+          }
 
     }
   onCancle()
@@ -85,16 +81,13 @@ export class ServiceEditComponent implements OnInit {
 
   onServiceCheck(item)
   {
-    console.log(item);
-    // console.log(this.checkServiceArr.find(item));
-    // console.log(this.checkServiceArr.push(item));
-    if(this.checkServiceArr.find(x => x == item.Name))
+    if(this.checkServiceArr.find(x => x == item))
     {
-        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item.Name),1);
+        this.checkServiceArr.splice(this.checkServiceArr.indexOf(item),1);
     }
     else
     {
-      this.checkServiceArr.push(item.Name);
+      this.checkServiceArr.push(item);
     }
     console.log(this.checkServiceArr);
   }

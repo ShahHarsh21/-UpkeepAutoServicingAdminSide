@@ -12,38 +12,36 @@ import { concat } from 'rxjs';
   styleUrls: ['./service-add.component.css']
 })
 export class ServiceAddComponent implements OnInit {
-  serviceArr:string[]=[
-    "Air-Condtioning",
-    "Break Repairs",
-    "Engine Diagnostic",
-    'Heating & Cooling',
-    "Oil,Lube",
-    "Steering & Suspension",
-    "Transmission Repair",
-    "Battery Service",
-    "Exhaust System",
-    "Emissions",
-    "Pvt Maintenance",
-    "Tire Pressure",
-    "Tire Service",
-    "Other"
+  serviceArr:any[]=[
+    { 'Name': 'Air-Condtioning', 'isChecked': false },
+    { 'Name': 'Break Repairs', 'isChecked': false },
+    { 'Name': 'Heating & Cooling', 'isChecked': false },
+    { 'Name': 'Oil & Lube', 'isChecked': false },
+    { 'Name': 'Steering & Suspension', 'isChecked': false },
+    { 'Name': 'Transmission Repair', 'isChecked': false },
+    { 'Name': 'Battery Service', 'isChecked': false },
+    { 'Name': 'Exhaust System', 'isChecked': false },
+    { 'Name': 'Emissions', 'isChecked': false },
+    { 'Name': 'Pvt Maintenance', 'isChecked': false },
+    { 'Name': 'Tire Pressure', 'isChecked': false },
+    { 'Name': 'Other', 'isChecked': false }
   ];
   checkServiceArr : string[]=[];
   addService : FormGroup;
-  constructor(public _Data:ServiceDataService,public _routs:Router) {
+  constructor(public _Data:ServiceDataService,public _routs:Router) { }
+
+  ngOnInit() {
     this.addService=new FormGroup({
       service_id : new FormControl(null),
       fk_user_id : new FormControl(null),
       vehicle_no : new FormControl(null,Validators.required),
       meter_reading : new FormControl(null,Validators.required),
-      fuel_tank : new FormControl(null),
+      fuel_tank : new FormControl('FULL TANK'),
       remark : new FormControl(null),
       complaints : new FormControl(null,Validators.required),
     });
   }
 
-  ngOnInit() {
-  }
   onCancle()
   {
     this._routs.navigate(['/nav/serviceAdd']);
@@ -51,8 +49,8 @@ export class ServiceAddComponent implements OnInit {
   onServiceAdd()
   {
     console.log(this.addService.value);
-    this.addService.value.complaints=this.checkServiceArr.toString();
-    console.log(this.addService);
+    this.addService.value.complaints = this.checkServiceArr.toString();
+    this.addService.value.fk_user_id = 1;
     this._Data.addService(this.addService.value).subscribe(
       (data:any)=>{
         this._routs.navigate(['/nav/service']);

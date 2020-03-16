@@ -20,9 +20,9 @@
       <mat-label><b>Fuel Tank Status</b></mat-label><br>
       <select class="form-control" formControlName="fuel_tank" type="dropbox" >
         <option>SELECT FUEL TANK</option>
-        <option value="half">Half TANK</option>
-        <option value="medium">MEDIUM TANK</option>
-        <option value="full">Full TANK</option>
+        <option value="Half TANK">Half TANK</option>
+        <option value="MEDIUM TANK">MEDIUM TANK</option>
+        <option value="Full TANK">Full TANK</option>
       </select>
       <label class="alert alert-danger" *ngIf="editService.get('fuel_tank').hasError('required') && !editService.get('fuel_tank').pristine" >Fuel Tank Status is required</label>
     </div><br>
@@ -33,11 +33,11 @@
     </div><br>
     <mat-label><b>Your Complqaints:</b></mat-label><br>
     <div class="form-group" *ngFor="let item of serviceArr">
-      <input type="checkbox" (change)="onServiceCheck(item)" [checked]="item.isChecked" value="{{item.Name}}">{{item.Name}}<br>
+      <input type="checkbox" (change)="onServiceCheck(item.Name)" [checked]="item.isChecked" value="{{item.Name}}">{{item.Name}}<br>
     </div>
   <div>
     <div class="form-group">
-      <button mat-raised-button id="Add Record" type="submit"   color="primary" [disabled]=editService.invalid>Submit</button>
+      <button mat-raised-button id="Add Record" type="submit"  [disabled] = "!editService.valid"  color="primary">Submit</button>
       <button mat-raised-button id="Add Record" (click)="onCancle()"  color="accent">Back</button>
     </div>
   </div>

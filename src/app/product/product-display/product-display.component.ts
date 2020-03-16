@@ -67,7 +67,7 @@ export class ProductDisplayComponent implements OnInit {
   }
   onViewMore(row)
   {
-      this._dialog.open(ProductViewMoreComponent,{data:row});
+    this._router.navigate(['/nav/productViewmore/'+row.product_id]);
   }
   onImageAdd(row)
   {

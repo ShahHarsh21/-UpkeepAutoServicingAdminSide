@@ -1,9 +1,9 @@
-<mat-grid-list cols="2" rowHeight="2:1" *ngIf="this.dataSourceVehicle.data.length>0">
+<mat-grid-list cols="2" rowHeight="1:1" *ngIf="this.dataSourceVehicle.data.length>0" >
   <mat-grid-tile >
 
     <mat-grid-tile-header style="text-align: center;"> VEHICLES </mat-grid-tile-header>
 
-    <table mat-table [dataSource]="dataSourceVehicle" matSort>
+    <table mat-table [dataSource]="dataSourceVehicle" matSort >
 
       <ng-container matColumnDef="check">
         <th mat-header-cell *matHeaderCellDef></th>

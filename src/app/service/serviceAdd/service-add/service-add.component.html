@@ -16,7 +16,6 @@
     <div class="form-group" class="dropdown-menu">
       <mat-label><b>Fuel Tank Status</b></mat-label><br>
       <select class="form-control" formControlName="fuel_tank" placeholder="" type="dropbox" >
-        <option class="dropdown-item">SELECT FUEL TANK</option>
         <option class="dropdown-item">FULL TANK</option>
         <option class="dropdown-item">MEDIUM TANK</option>
         <option class="dropdown-item">HALF TANK</option>
@@ -28,9 +27,9 @@
      <input class="form-control" placeholder="Enter Your Remarks" formControlName="remark" type="text">
 
     </div><br>
-    <mat-label><b>Your Complqaints:</b></mat-label><br>
+    <mat-label><b>Your Complaints:</b></mat-label><br>
     <div class="form-group" *ngFor="let item of serviceArr">
-      <input type="checkbox" (change)="onServiceCheck(item)" value="{{item}}">{{item}}<br>
+      <input type="checkbox" (change)="onServiceCheck(item.Name)" value="{{item.isChecked}}">{{item.Name}}<br>
     </div>
   <div>
     <div class="form-group">
