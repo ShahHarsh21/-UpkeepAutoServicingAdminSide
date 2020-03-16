@@ -20,6 +20,7 @@ export class VehicleAssignedService {
   {
     return this._http.get<VehicleAssignedModel[]>(this.url);
   }
+<<<<<<< HEAD
   deleteVehicle_assigned(Vehicle_assigned_id:number)
   {
    let x = new HttpHeaders().set(environment.header,environment.value);
@@ -33,6 +34,12 @@ export class VehicleAssignedService {
       return this._http.post(this.deleteurl, body, { headers: head });
     }
 
+=======
+  getVehicleById(vehicle_assigned_id)
+  {
+    return  this._http.get(environment.url+'vehicleAssigned/'+vehicle_assigned_id);
+  }
+>>>>>>> d4584c929067bfc76de61345e9319e1e41837256
   addVehicleAssigned(item)
   {
     //const body = JSON.stringify(item);

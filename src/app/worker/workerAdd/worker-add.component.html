@@ -39,8 +39,8 @@
       <input class="form-control" placeholder="Enter joining Date"  type="date" formControlName="joining_date">
     </div><br>
     <div class="form-group" >
-      <button type="submit" class="btn" [disabled]="workerAdd.invalid">Submit</button>
-      <button class="can" (click)="onCancle()">Cancle</button>
+      <button mat-raised-button id="Add Record" type="submit"   color="primary" class="button" [disabled]="workerAdd.invalid" aria-label="ADD USER">Submit</button>
+      <button mat-raised-button id="Add Record" class = "button" (click)="onCancle()" (click)="onCancle()" color="accent" aria-label="ADD USER" >Back</button>
     </div>
   </div>
   </form>

@@ -41,6 +41,7 @@ import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/w
 import { ServiceViewmoreComponent } from './service/serviceViewMore/service-viewmore/service-viewmore.component';
 import { UserViewMoreComponent } from './user/user-view-more/user-view-more.component';
 import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.component';
+import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
 
 
 const arr:Routes=[
@@ -68,6 +69,7 @@ const arr:Routes=[
         {path:'Add_image/:product_id',component:AddImageComponent},
         {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
         {path:'vehicleAssigned',component:VehicleDisplayComponent},
+        {path:'VehicleAssignedViewmore/:vehicle_assigned_id',component:VehicleviewmoreComponent},
         {path:'worker',component:WorkerDisplayComponent},
         {path:'workerEdit/:worker_id',component:WorkereditComponent},
         {path:'workerAdd',component:WorkerAddComponent},

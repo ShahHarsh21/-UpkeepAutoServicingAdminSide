@@ -32,17 +32,16 @@ input[type=text], input[type=password],input[type=number],input[type=date] {
 button:hover {
   opacity: 0.8;
 }
-.mybtn1
+button
 {
   width:15%;
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: 1%;
+  margin-right: 10%;
   cursor: pointer;
   width: 30%;
-  border-radius: 20px;
 }
-
 /* Add padding to containers */
 .container {
   padding: 50px;
