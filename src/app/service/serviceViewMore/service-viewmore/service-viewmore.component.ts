@@ -23,7 +23,6 @@ export class ServiceViewmoreComponent implements OnInit {
     console.log(this.service_id);
     this._ServiceData.getUserServiceByUserId(this.service_id).subscribe(
       (serviceData:any[])=>{
-        console.log(serviceData);
         this.arr=serviceData;
       }
     );

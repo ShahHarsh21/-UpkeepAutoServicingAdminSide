@@ -40,8 +40,6 @@ export class VehicleAssignedService {
     }
   addVehicleAssigned(item)
   {
-    //const body = JSON.stringify(item);
-    //const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.url, item);
   }
 

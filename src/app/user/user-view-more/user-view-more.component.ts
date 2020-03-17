@@ -24,7 +24,6 @@ export class UserViewMoreComponent implements OnInit {
 
   ngOnInit() {
     this.user_id=this._Act_routs.snapshot.params['user_id'];
-    console.log(this.user_id);
     this._userData.getUserById(this.user_id).subscribe(
       (userData:any)=>{
         this.userArr=userData;
@@ -44,8 +43,6 @@ export class UserViewMoreComponent implements OnInit {
     this.mobile_no=data.mobile_no;
     this.address=data.address;
     this.date_of_birth=data.date_of_birth;
-    // this.vehicle_no=data.vehicle_no;
-    // thi.status=data.status;
     this.VehiclesArr.push();
   }
   onClose()

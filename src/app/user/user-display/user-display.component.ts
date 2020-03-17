@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { user } from '../user';
 import { MatPaginator } from '@angular/material/paginator';

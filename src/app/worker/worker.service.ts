@@ -29,7 +29,6 @@ export class WorkerService {
   }
   getWorkerPhotById(worker_id)
   {
-    console.log(worker_id);
     return this._http.get(this.workerImgUrl+worker_id);
   }
   updateWorkerImage(worker_id,fd)
@@ -50,14 +49,12 @@ export class WorkerService {
   }
   DeleteAllWorker(item:number[])
   {
-    console.log(item)
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.deleteurl, body, { headers: head });
   }
   deleteWorker(worker_id: number)
   {
-    console.log(worker_id);
     let x = new HttpHeaders().set(environment.header,environment.value);
     return this._http.delete(this.url + worker_id ,{headers:x});
   }

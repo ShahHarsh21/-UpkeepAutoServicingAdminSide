@@ -36,7 +36,6 @@ export class WorkereditComponent implements OnInit {
   }
   formDataBind(item:worker)
   {
-    console.log(item);
     this.workerEdit.patchValue({
       worker_id:item.worker_id,
       email_id:item.email_id,
@@ -49,7 +48,6 @@ export class WorkereditComponent implements OnInit {
   }
   onWorkerEdit()
   {
-    console.log(this.workerEdit.value);
     this._data.updateWorker(this.workerEdit.value).subscribe(
       (data:any)=>{
         this._routs.navigate(['/nav/worker/']);

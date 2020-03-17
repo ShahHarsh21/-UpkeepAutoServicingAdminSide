@@ -17,7 +17,6 @@ export class UserdataService {
   }
   getAllUSerWithService(user_id)
   {
-    // console.log(environment.url+'user_Service/'+user_id);
     return this._http.get(environment.url+'user_Service/'+user_id);
   }
   getUserById(user_id)
@@ -44,7 +43,6 @@ export class UserdataService {
   }
   DeleteAllUser(item:number[])
   {
-    console.log(item)
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.deleteurl, body, { headers: head });
