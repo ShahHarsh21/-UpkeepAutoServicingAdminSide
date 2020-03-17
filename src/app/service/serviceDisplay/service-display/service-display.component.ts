@@ -47,8 +47,7 @@ export class ServiceDisplayComponent implements OnInit {
   applyFilter(filtervalue:string)
   {
     this.dataSource.filter = filtervalue.trim().toLowerCase();
-    if (this.dataSource.paginator)
-    {
+    if (this.dataSource.paginator){
       this.dataSource.paginator.firstPage();
     }
   }
