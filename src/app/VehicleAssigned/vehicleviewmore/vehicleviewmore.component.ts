@@ -41,7 +41,7 @@ export class VehicleviewmoreComponent implements OnInit {
   }
   onCloseClick()
   {
-    this._routs.navigate[('/nav/vehicleAssigned/')];
+    this._routs.navigate(['/nav/vehicleAssigned/']);
   }
   }
 

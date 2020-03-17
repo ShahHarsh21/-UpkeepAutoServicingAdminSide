@@ -3,6 +3,7 @@ import { VehicleModel } from 'src/app/VehicleModel';
 import { WorkerModel } from 'src/app/WorkerModel';
 import { VehicleAssignedService } from '../vehicle-assigned.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-vehicle-assigned',
@@ -19,7 +20,7 @@ export class AddVehicleAssignedComponent implements OnInit {
   selectedWorkerID: number = 0;
   dataSourceWorker: MatTableDataSource<WorkerModel>;
 
-  constructor(private _vehicleAssignedData: VehicleAssignedService) {
+  constructor(private _vehicleAssignedData: VehicleAssignedService, private _router:Router) {
     this.dataSourceVehicle = new MatTableDataSource();
     this.dataSourceWorker = new MatTableDataSource();
    }
@@ -67,5 +68,9 @@ export class AddVehicleAssignedComponent implements OnInit {
         }
       });
     }
+  }
+  onCancle()
+  {
+        this._router.navigate(['/nav/vehicleAssigned/']);
   }
 }

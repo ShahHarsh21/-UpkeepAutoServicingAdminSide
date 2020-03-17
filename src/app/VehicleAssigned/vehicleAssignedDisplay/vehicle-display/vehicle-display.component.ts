@@ -90,7 +90,6 @@ export class VehicleDisplayComponent implements OnInit {
   }
   onViewMore(row)
   {
-    // console.log(row.vehicle_assigned_id);
     this._routes.navigate(['/nav/VehicleAssignedViewmore/'+row.vehicle_assigned_id]);
   }
 }
