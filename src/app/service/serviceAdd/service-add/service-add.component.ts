@@ -38,7 +38,7 @@ export class ServiceAddComponent implements OnInit {
       meter_reading : new FormControl(null,Validators.required),
       fuel_tank : new FormControl('FULL TANK'),
       remark : new FormControl(null),
-      complaints : new FormControl(null,Validators.required),
+      complaints : new FormControl(null),
     });
   }
 

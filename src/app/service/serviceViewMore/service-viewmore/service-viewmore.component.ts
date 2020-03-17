@@ -13,16 +13,21 @@ import { userSerivce_class } from 'src/app/class/userService_class';
   styleUrls: ['./service-viewmore.component.css']
 })
 export class ServiceViewmoreComponent implements OnInit {
-    public service_id :number;
-    public arr:userSerivce_class[]=[];
+
+  public service_id :number;
+    public arr:userSerivce_class;
     public user_id:number=0;
-  constructor(public _ServiceData:ServiceDataService,private _userdata:UserdataService,public _act_routs:ActivatedRoute,public _router:Router) { }
+
+  constructor(public _ServiceData:ServiceDataService,
+    private _userdata:UserdataService,
+    public _act_routs:ActivatedRoute,public _router:Router) { }
 
   ngOnInit() {
     this.service_id=this._act_routs.snapshot.params['service_id'];
     console.log(this.service_id);
     this._ServiceData.getUserServiceByUserId(this.service_id).subscribe(
-      (serviceData:any[])=>{
+      (serviceData:userSerivce_class)=>{
+        console.log(serviceData);
         this.arr=serviceData;
       }
     );

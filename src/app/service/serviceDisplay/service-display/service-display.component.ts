@@ -47,8 +47,7 @@ export class ServiceDisplayComponent implements OnInit {
   applyFilter(filtervalue:string)
   {
     this.dataSource.filter = filtervalue.trim().toLowerCase();
-    if (this.dataSource.paginator)
-    {
+    if (this.dataSource.paginator){
       this.dataSource.paginator.firstPage();
     }
   }
@@ -72,7 +71,7 @@ export class ServiceDisplayComponent implements OnInit {
     let x:number = this.serviceArr.indexOf(row);
     if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
     {
-      this._service_data.deleteService(row.worker_id).subscribe(
+      this._service_data.deleteService(row.service_id).subscribe(
         (data:any)=>{
           this.serviceArr.splice(this.serviceArr.indexOf(row),1);
           this.dataSource.data=this.serviceArr;

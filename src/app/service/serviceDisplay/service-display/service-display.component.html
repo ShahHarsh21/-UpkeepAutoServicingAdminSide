@@ -16,18 +16,18 @@
           </mat-card-header>
           <mat-card-content>
           <p>
-            <b>Worker:</b> {{item.worker_name}}
+            <b>Worker:</b> {{item.worker_name == null ? 'Not Available' : item.worker_name}}
           </p>
           <p>
-            <b>Status:</b> {{item.status}}
+            <b>Status:</b> {{ item.status == null ? 'Not Assigned': item.status  }}
           </p>
           <p>
             <b>Complaints:</b>{{item.complaints}}
           </p>
           <p>
-            <b>Arrival Date:</b> 4/2/2020
+            <b>Arrival Date:</b> {{item.Arrival_date}}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-            <b>Est. Date:</b> 5/2/2020
+            <b>Est. Date:</b> {{item.Estimated_date}}
           </p>
           </mat-card-content>
           <mat-card-actions>

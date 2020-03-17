@@ -33,6 +33,7 @@ export class VehicleDisplayComponent implements OnInit {
       (data: VehicleAssignedModel[]) => {
           console.log(data);
           this.vehiclearr=data
+          console.log(this.vehiclearr);
           this.dataSource.data = this.vehiclearr;
       }
     );
@@ -52,40 +53,42 @@ export class VehicleDisplayComponent implements OnInit {
   onDelete(item)  {
     console.log(item)
        if (confirm("Are you sure you want to delete"))
-      {
-        this._data.deleteVehicle_assigned(item.vehicle_assigned_id).subscribe(
+        {
+          this._data.deleteVehicle_assigned(item.vehicle_assigned_id).subscribe(
           (data)=>{
             this.vehiclearr.splice(this.vehiclearr.indexOf(item),1);
             this.dataSource.data=this.vehiclearr;
             alert("Record is deleted");
-          }
+        }
         );
       }
   }
   onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
-    //   this._data.DeleteAllVehicle_assigned(this.deletevehiclearr).subscribe(
-    //     (data:VehicleAssignedModel)=>{
-    //       for(let i=0;i<this.deletevehiclearr.length;i++)
-    //       {
-    //             let x=this.vehiclearr.find(x => x.vehicle_assigned_id == this.deletevehiclearr[i]);
-    //             this.vehiclearr.splice(this.vehiclearr.indexOf(x),1);
-    //       }
-    //       this.dataSource.data=this.vehiclearr;
-    //       this.dataSource.paginator=this.paginator;
-    //       this.dataSource.sort=this.sort;
-    //  });
+      this._data.DeleteAllVehicle_assigned(this.deletevehiclearr).subscribe(
+        (data:VehicleAssignedModel)=>{
+          for(let i=0;i<this.deletevehiclearr.length;i++)
+          {
+                let x=this.vehiclearr.find(x => x.vehicle_assigned_id == this.deletevehiclearr[i]);
+                this.vehiclearr.splice(this.vehiclearr.indexOf(x),1);
+                this.dataSource.data=this.vehiclearr;
+                this.dataSource.paginator=this.paginator;
+                this.dataSource.sort=this.sort;
+
+          }
+          this.vehiclearr=[];
+     });
     }
   }
   onchecheckboxchange(row)
   {
-    if(this,this.vehiclearr.find(x => x == row.worker_id))
+    if(this.vehiclearr.find(x => x == row.vehicle_assigned_id))
     {
-        this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.worker_id),1);
+        this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.vehicle_assigned_id),1);
     }
     else{
-      this.deletevehiclearr.push(row.worker_id);
+      this.deletevehiclearr.push(row.vehicle_assigned_id);
     }
   }
   onViewMore(row)

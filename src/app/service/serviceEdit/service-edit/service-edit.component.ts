@@ -39,7 +39,7 @@ export class ServiceEditComponent implements OnInit {
       meter_reading :new FormControl(null,Validators.required),
       fuel_tank:new FormControl(null,Validators.required),
       remark :new FormControl(null),
-      complaints:new FormControl(null,Validators.required)
+      complaints:new FormControl(null)
     });
     this._Data.getServiceById(this.service_routs_id).subscribe(
       (service_Data:any)=>{
@@ -94,6 +94,7 @@ export class ServiceEditComponent implements OnInit {
 
   onServiceEdit()
   {
+    console.log(this.editService);
     console.log(this.editService.value);
     this.editService.value.complaints = this.checkServiceArr.toString();
     this._Data.updateService(this.service_routs_id,this.editService.value).subscribe(
