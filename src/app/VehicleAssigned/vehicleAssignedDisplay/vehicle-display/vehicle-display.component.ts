@@ -65,7 +65,6 @@ export class VehicleDisplayComponent implements OnInit {
   }
   onDeleteAll()
   {
-    console.log("hello");
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.DeleteAllVehicle_assigned(this.deletevehiclearr).subscribe(
         (data:VehicleAssignedModel)=>{
@@ -76,20 +75,20 @@ export class VehicleDisplayComponent implements OnInit {
                 this.dataSource.data=this.vehiclearr;
                 this.dataSource.paginator=this.paginator;
                 this.dataSource.sort=this.sort;
-                this.vehiclearr=[];
+
           }
+          this.vehiclearr=[];
      });
     }
   }
   onchecheckboxchange(row)
   {
-    console.log("hii");
-    if(this.vehiclearr.find(x => x == row.worker_id))
+    if(this.vehiclearr.find(x => x == row.vehicle_assigned_id))
     {
-        this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.worker_id),1);
+        this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.vehicle_assigned_id),1);
     }
     else{
-      this.deletevehiclearr.push(row.worker_id);
+      this.deletevehiclearr.push(row.vehicle_assigned_id);
     }
   }
   onViewMore(row)
