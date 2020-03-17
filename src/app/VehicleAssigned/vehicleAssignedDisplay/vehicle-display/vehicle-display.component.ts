@@ -33,6 +33,7 @@ export class VehicleDisplayComponent implements OnInit {
       (data: VehicleAssignedModel[]) => {
           console.log(data);
           this.vehiclearr=data
+          console.log(this.vehiclearr);
           this.dataSource.data = this.vehiclearr;
       }
     );
@@ -64,6 +65,7 @@ export class VehicleDisplayComponent implements OnInit {
   }
   onDeleteAll()
   {
+    console.log("hello");
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.DeleteAllVehicle_assigned(this.deletevehiclearr).subscribe(
         (data:VehicleAssignedModel)=>{
@@ -71,16 +73,18 @@ export class VehicleDisplayComponent implements OnInit {
           {
                 let x=this.vehiclearr.find(x => x.vehicle_assigned_id == this.deletevehiclearr[i]);
                 this.vehiclearr.splice(this.vehiclearr.indexOf(x),1);
+                this.dataSource.data=this.vehiclearr;
+                this.dataSource.paginator=this.paginator;
+                this.dataSource.sort=this.sort;
+                this.vehiclearr=[];
           }
-          this.dataSource.data=this.vehiclearr;
-          this.dataSource.paginator=this.paginator;
-          this.dataSource.sort=this.sort;
      });
     }
   }
   onchecheckboxchange(row)
   {
-    if(this,this.vehiclearr.find(x => x == row.worker_id))
+    console.log("hii");
+    if(this.vehiclearr.find(x => x == row.worker_id))
     {
         this.deletevehiclearr.splice(this.deletevehiclearr.indexOf(row.worker_id),1);
     }
