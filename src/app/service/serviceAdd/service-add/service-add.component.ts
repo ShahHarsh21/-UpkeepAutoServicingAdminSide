@@ -5,6 +5,8 @@ import { ServiceDataService } from '../../service-data.service';
 import { Router } from '@angular/router';
 import { Service_class } from '../../service_class';
 import { concat } from 'rxjs';
+import { userSerivce_class } from 'src/app/class/userService_class';
+import { UserdataService } from 'src/app/user/userdata.service';
 
 @Component({
   selector: 'app-service-add',
@@ -28,7 +30,7 @@ export class ServiceAddComponent implements OnInit {
   ];
   checkServiceArr : string[]=[];
   addService : FormGroup;
-  constructor(public _Data:ServiceDataService,public _routs:Router) { }
+  constructor(public _Data:ServiceDataService,public _routs:Router, public _userData:UserdataService) { }
 
   ngOnInit() {
     this.addService=new FormGroup({
@@ -36,10 +38,17 @@ export class ServiceAddComponent implements OnInit {
       fk_user_id : new FormControl(null),
       vehicle_no : new FormControl(null,Validators.required),
       meter_reading : new FormControl(null,Validators.required),
-      fuel_tank : new FormControl('FULL TANK'),
+      fuel_tank : new FormControl('Full Tank'),
       remark : new FormControl(null),
       complaints : new FormControl(null),
     });
+
+    this._userData.getAllUser().subscribe(
+      (data: userSerivce_class[]) => {
+
+      }
+    );
+
   }
 
   onCancle()

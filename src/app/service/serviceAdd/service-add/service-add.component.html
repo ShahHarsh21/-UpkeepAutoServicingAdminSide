@@ -2,12 +2,13 @@
   <form [formGroup]="addService" (ngSubmit)="onServiceAdd()" >
     <h1 class="hh"><b>Add service</b></h1>
 
-    <div class="form-groupup">
+    <div class="form-group">
       <mat-label><b>Vehicle Registered No</b></mat-label><br>
       <input class="form-control" placeholder="Enter Vehicle Registered No" formControlName="vehicle_no" type="text" >
       <label class="alert alert-danger" *ngIf="addService.get('vehicle_no').hasError('required') && !addService.get('vehicle_no').pristine" >Vehicle Registered No is required</label>
     </div><br>
-    <div class="form-group" >
+
+    <div class="form-group">
       <mat-label><b>Meter Reading</b></mat-label><br>
       <input class="form-control" placeholder="Enter Meter Reading" formControlName="meter_reading" type="text" >
       <label class="alert alert-danger" *ngIf="addService.get('meter_reading').hasError('required') && !addService.get('meter_reading').pristine" >Meter Reading is required</label>
@@ -16,9 +17,9 @@
     <div class="form-group" class="dropdown-menu">
       <mat-label><b>Fuel Tank Status</b></mat-label><br>
       <select class="form-control" formControlName="fuel_tank" placeholder="" type="dropbox" >
-        <option class="dropdown-item">FULL TANK</option>
-        <option class="dropdown-item">MEDIUM TANK</option>
-        <option class="dropdown-item">HALF TANK</option>
+        <option class="dropdown-item" value="Full Tank">Full Tank</option>
+        <option class="dropdown-item" value="Half Tank">Half TANK</option>
+
       </select>
     </div><br>
 

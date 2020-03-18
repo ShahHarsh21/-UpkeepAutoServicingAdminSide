@@ -31,6 +31,7 @@ export class UserDisplayComponent implements OnInit {
       (data:any)=>{
             this.userarr=data;
             this.dataSource.data=data;
+            this.dataSource.sort=this.sort;
       }
     );
   }

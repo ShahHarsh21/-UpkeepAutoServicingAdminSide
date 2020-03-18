@@ -18,17 +18,23 @@
   width: 100%;
 }
 .example-card {
-  /* max-width: 240px;
+   max-width: 240px;
   min-height: 320px;
   margin-left: 10px;
   margin-bottom: 10px;
   border-radius: 5%;
   float: right;
   align-items: right;
-  border-color: blue; */
-  display: table-cell; /* Make elements inside the container behave like table cells */
+  border-color: blue;
+  /* display: table-cell; */
+   /* Make elements inside the container behave like table cells */
 
 }
+.g50000
+{
+  color: blueviolet;
+}
+
 /* input
 {
   align-items: center;

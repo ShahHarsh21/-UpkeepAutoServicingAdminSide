@@ -27,9 +27,9 @@ export class WorkerDisplayComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllWorker().subscribe(
       (data:any)=>{
-            console.log(data);
             this.workerarr=data;
             this.dataSource.data=data;
+            this.dataSource.sort=this.sort;
       }
     );
   }
@@ -83,7 +83,7 @@ applyFilter(filtervalue:string)
       this.deleteworkerarr.push(row.worker_id);
     }
   }
-  onDeleteAll()
+   onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.DeleteAllWorker(this.deleteworkerarr).subscribe(
