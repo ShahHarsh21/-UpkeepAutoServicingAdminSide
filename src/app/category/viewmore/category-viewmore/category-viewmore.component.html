@@ -1,0 +1,17 @@
+<!-- <p>category-viewmore works!</p> -->
+<div class="container"  *ngFor="let item of productArr ; let i = index">
+  <img src="{{product_img}}" alt="Product Image">
+  <mat-list>
+    <mat-label><b>({{i}})</b></mat-label><br><mat-label><b>Product Name :</b></mat-label>
+    <mat-list-item>{{item.product_name}}</mat-list-item>
+    <mat-divider></mat-divider>
+
+    <mat-label><b>Product Price :</b></mat-label>
+    <mat-list-item>{{item.product_price}}</mat-list-item>
+    <mat-divider></mat-divider>
+
+</mat-list>
+</div>
+<div class="button">
+  <button mat-raised-button color="primary" (click)="onClose()">Back</button>
+</div>

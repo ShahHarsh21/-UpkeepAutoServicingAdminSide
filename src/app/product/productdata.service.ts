@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { category } from '../category/category';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class ProductdataService {
   getAllProduct()
   {
     return this._http.get(this.url);
+  }
+  getAllProductByCategory(category_id)
+  {
+    return this._http.get(environment.url+'productServices/'+category_id);
   }
   deleteProduct(product_id: number)
   {

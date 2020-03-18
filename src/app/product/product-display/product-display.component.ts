@@ -67,6 +67,7 @@ export class ProductDisplayComponent implements OnInit {
   }
   onViewMore(row)
   {
+    console.log(row.product_id);
     this._router.navigate(['/nav/productViewmore/'+row.product_id]);
   }
   onImageAdd(row)

@@ -43,6 +43,7 @@ import { UserViewMoreComponent } from './user/user-view-more/user-view-more.comp
 import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.component';
 import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
 import { ProductViewMoreComponent } from './product/product-view-more/product-view-more.component';
+import { CategoryViewmoreComponent } from './category/viewmore/category-viewmore/category-viewmore.component';
 
 
 const arr:Routes=[
@@ -61,6 +62,7 @@ const arr:Routes=[
         {path:'Add_image/:product_id',component:AddImageComponent},
         {path:'category',component:CategoryDisplayComponent},
         {path:'categoryAdd',component:CategoryAddComponent},
+        {path:'categoryViewmore/:category_id',component:CategoryViewmoreComponent},
         {path:'order_details',component:OrderDetailsComponent},
         {path:'stock',component:StockDisplayComponent},
         {path:'stockEdit/:stock_id',component:StockEditComponent},

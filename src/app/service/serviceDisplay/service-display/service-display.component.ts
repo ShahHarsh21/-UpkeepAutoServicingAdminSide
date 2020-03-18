@@ -24,6 +24,7 @@ export class ServiceDisplayComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
+  flag :number = 0;
   constructor(public _service_data:ServiceDataService,public _router:Router) {
     this.dataSource = new MatTableDataSource();
   }
@@ -34,6 +35,14 @@ export class ServiceDisplayComponent implements OnInit {
         this.dataSource.data=data;
         console.log(this.dataSource.data);
         this.serviceArr=data;
+        if(data[0].status == "Assigned")
+        {
+          this.flag = 1;
+        }
+        else
+        {
+          this.flag = 0;
+        }
       }
     );
   }

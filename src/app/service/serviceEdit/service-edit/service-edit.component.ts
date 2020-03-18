@@ -3,6 +3,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceDataService } from '../../service-data.service';
 import { Service_class } from '../../service_class';
+import { userSerivce_class } from 'src/app/class/userService_class';
+import { UserdataService } from 'src/app/user/userdata.service';
+import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
+import { user } from 'src/app/user/user';
 
 @Component({
   selector: 'app-service-edit',
@@ -26,9 +30,11 @@ export class ServiceEditComponent implements OnInit {
     { 'Name': 'Tire Pressure', 'isChecked': false },
     { 'Name': 'Other', 'isChecked': false }
   ];
+  fk_user_id : number = 0;
   checkServiceArr : string[]=[];
+  userArr :user[]=[];
 
-  constructor(public _route:Router,public _Act_routs:ActivatedRoute,public _Data:ServiceDataService) { }
+  constructor(public _route:Router,public _Act_routs:ActivatedRoute,public _Data:ServiceDataService,public _userData :UserdataService) { }
   ngOnInit() {
     this.service_routs_id=this._Act_routs.snapshot.params['service_id'];
     console.log(this.service_routs_id);
@@ -37,14 +43,23 @@ export class ServiceEditComponent implements OnInit {
       fk_user_id:new FormControl(null),
       vehicle_no: new FormControl(null,Validators.required,Validators.pattern[('(([A-Za-z]){2,3}(|-)(?:[0-9]){1,2}(|-)(?:[A-Za-z]){2}(|-)([0-9]){1,4})|(([A-Za-z]){2,3}(|-)([0-9]){1,4})')]),
       meter_reading :new FormControl(null,Validators.required),
-      fuel_tank:new FormControl(null,Validators.required),
+      fuel_tank:new FormControl(Validators.required),
       remark :new FormControl(null),
       complaints:new FormControl(null)
     });
+
     this._Data.getServiceById(this.service_routs_id).subscribe(
       (service_Data:any)=>{
         console.log(service_Data);
         this.formDataBind(service_Data[0]);
+        // console.log( service_Data[0].fk_user_id);
+      }
+    );
+    this._userData.getAllUser().subscribe(
+      (UserData : any[])=>{
+
+        console.log(UserData);
+        this.userArr=UserData;
       }
     );
   }
@@ -77,6 +92,7 @@ export class ServiceEditComponent implements OnInit {
     }
   onCancle()
   {
+    this._route.navigate(['/nav/service/']);
   }
 
   onServiceCheck(item)

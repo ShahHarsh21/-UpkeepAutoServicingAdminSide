@@ -58,6 +58,7 @@ import { ServiceViewmoreComponent } from './service/serviceViewMore/service-view
 import { ServiceAddComponent } from './service/serviceAdd/service-add/service-add.component';
 import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/worker-image-add.component';
 import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
+import { CategoryViewmoreComponent } from './category/viewmore/category-viewmore/category-viewmore.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehi
     ServiceAddComponent,
     WorkerImageAddComponent,
     VehicleviewmoreComponent,
+    CategoryViewmoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,8 +139,9 @@ import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehi
     CategoryAddComponent,
     AddImageComponent,
     ServiceViewmoreComponent,
-    VehicleviewmoreComponent
+    VehicleviewmoreComponent,
     //VehicleAssignedviewmorecomponent
+    CategoryViewmoreComponent
      ],
   providers: [],
   bootstrap: [AppComponent]

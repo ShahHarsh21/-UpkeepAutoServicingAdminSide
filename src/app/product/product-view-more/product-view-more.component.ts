@@ -38,15 +38,13 @@ export class ProductViewMoreComponent implements OnInit {
         this.fk_cat_id=productData[0].fk_cat_id;
         this.fk_color_id=productData[0].fk_color_id;
         this.ProductImage = environment.url+ 'images/Product_image/' +productData[0].product_image;
-      }
-    );
-
-    console.log(this.fk_cat_id);
-    this._catedata.getCategoryById(this.fk_cat_id).subscribe(
-      (data:category)=>{
-        console.log(data);
-        this.fk_cate_name=data[0].category_name;
-        console.log(this.fk_cate_name);
+        this._catedata.getCategoryById(this.fk_cat_id).subscribe(
+          (data:category)=>{
+            console.log(data);
+            this.fk_cate_name=data[0].category_name;
+            console.log(this.fk_cate_name);
+          }
+        );
       }
     );
   }

@@ -18,9 +18,11 @@
           <p>
             <b>Worker:</b> {{item.worker_name == null ? 'Not Available' : item.worker_name}}
           </p>
-          <p>
-            <b>Status:</b> {{ item.status == null ? 'Not Assigned': item.status  }}
+
+          <p><b>Status:</b>
+             <span [ngClass]="{green: item.status =='Assigned', red: item.status != 'Assigned'}" >{{ item.status == null ? 'Not Assigned': item.status }}</span>
           </p>
+
           <p>
             <b>Complaints:</b>{{item.complaints}}
           </p>
