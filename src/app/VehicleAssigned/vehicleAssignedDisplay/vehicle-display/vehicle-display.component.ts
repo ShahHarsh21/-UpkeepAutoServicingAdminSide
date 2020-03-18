@@ -31,10 +31,9 @@ export class VehicleDisplayComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this._data.getAllVehicleAssigned().subscribe(
       (data: VehicleAssignedModel[]) => {
-          console.log(data);
           this.vehiclearr=data
-          console.log(this.vehiclearr);
           this.dataSource.data = this.vehiclearr;
+          this.dataSource.sort=this.sort;
       }
     );
   }

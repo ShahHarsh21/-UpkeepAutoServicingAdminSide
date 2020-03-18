@@ -27,9 +27,9 @@ export class WorkerDisplayComponent implements OnInit {
     this.dataSource.paginator=this.paginator;
     this._data.getAllWorker().subscribe(
       (data:any)=>{
-            console.log(data);
             this.workerarr=data;
             this.dataSource.data=data;
+            this.dataSource.sort=this.sort;
       }
     );
   }
