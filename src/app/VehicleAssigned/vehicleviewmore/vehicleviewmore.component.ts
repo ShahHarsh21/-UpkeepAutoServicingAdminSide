@@ -4,6 +4,7 @@ import { VehicleModel } from 'src/app/VehicleModel';
 import { VehicleAssignedModel } from 'src/app/VehicleAssignedModel';
 import { VehicleAssignedService } from '../vehicle-assigned.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-vehicleviewmore',
   templateUrl: './vehicleviewmore.component.html',
@@ -20,6 +21,7 @@ export class VehicleviewmoreComponent implements OnInit {
     public remark?: string;
     public worker_image : string;
     public user_name :string ;
+    WorkerImage:string='';
   constructor( public _data: VehicleAssignedService,public _routs :Router,public _Act_routs : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class VehicleviewmoreComponent implements OnInit {
         this.remark = vehicleData[0].remark,
         this.worker_image = vehicleData[0].worker_image
         this.user_name = vehicleData[0].user_name
+        this.WorkerImage = environment.url+ 'Images/WorkerImages/' +vehicleData[0].worker_image;
       }
     );
   }

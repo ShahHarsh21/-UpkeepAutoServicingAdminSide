@@ -83,7 +83,7 @@ applyFilter(filtervalue:string)
       this.deleteworkerarr.push(row.worker_id);
     }
   }
-  onDeleteAll()
+   onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
       this._data.DeleteAllWorker(this.deleteworkerarr).subscribe(

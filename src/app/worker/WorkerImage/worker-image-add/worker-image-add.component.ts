@@ -31,6 +31,10 @@ export class WorkerImageAddComponent implements OnInit {
   {
     this.selectedFile = <File>f.target.files[0];
   }
+  onclose()
+  {
+    this._router.navigate(["/nav/worker/"]);
+  }
 
   onImageSubmit()
   {

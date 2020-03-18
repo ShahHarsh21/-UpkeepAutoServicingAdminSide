@@ -20,7 +20,6 @@
       <mat-label><b>Fuel Tank Status</b></mat-label><br>
       <select class="form-control" formControlName="fuel_tank" type="dropbox" >
         <option value="Half Tank">Half Tank</option>
-        <option value="Medium Tank">Medium Tank</option>
         <option value="Full Tank">Full Tank</option>
       </select>
       <label class="alert alert-danger" *ngIf="editService.get('fuel_tank').hasError('required') && !editService.get('fuel_tank').pristine" >Fuel Tank Status is required</label>
