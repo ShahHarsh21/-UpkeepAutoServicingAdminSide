@@ -7,6 +7,7 @@ import { Service_class } from '../../service_class';
 import { concat } from 'rxjs';
 import { userSerivce_class } from 'src/app/class/userService_class';
 import { UserdataService } from 'src/app/user/userdata.service';
+import { user } from 'src/app/user/user';
 
 @Component({
   selector: 'app-service-add',
@@ -30,6 +31,7 @@ export class ServiceAddComponent implements OnInit {
   ];
   checkServiceArr : string[]=[];
   addService : FormGroup;
+  userArr :user[]=[];
   constructor(public _Data:ServiceDataService,public _routs:Router, public _userData:UserdataService) { }
 
   ngOnInit() {
@@ -44,8 +46,10 @@ export class ServiceAddComponent implements OnInit {
     });
 
     this._userData.getAllUser().subscribe(
-      (data: userSerivce_class[]) => {
-
+      (data: user[]) => {
+        // console.log(data);
+        this.userArr = data;
+        // console.log(this.userArr);
       }
     );
 
@@ -57,7 +61,7 @@ export class ServiceAddComponent implements OnInit {
   }
   onServiceAdd()
   {
-    console.log(this.addService.value);
+    // console.log(this.addService.value);
     this.addService.value.complaints = this.checkServiceArr.toString();
     this.addService.value.fk_user_id = 1;
     this._Data.addService(this.addService.value).subscribe(

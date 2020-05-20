@@ -33,7 +33,6 @@ button {
 button:hover {
   opacity: 0.8;
 }
-
 /* Add padding to containers */
 .container {
   padding: 50px;
@@ -44,3 +43,13 @@ button:hover {
   margin-right: 5%;
   margin-bottom: 10%;
 }
+
+.green
+{
+  color: green;
+}
+
+.red {
+  color: red;
+}
+

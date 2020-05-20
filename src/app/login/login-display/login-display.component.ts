@@ -34,7 +34,8 @@ export class LoginDisplayComponent implements OnInit {
       }
     );
   }
-  else{
+  else
+  {
     alert('uname or password must not be empty');
   }
   }

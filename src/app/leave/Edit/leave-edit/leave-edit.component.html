@@ -1,0 +1,58 @@
+<div class="form-group" >
+
+  <form [formGroup]="approveLeaveForm" (ngSubmit)="onLeaveEdit()" >
+    <div class="container">
+    <h1 class="hh"  >USER EDIT</h1>
+    <br>
+
+
+    <div class="form-group" >
+      <mat-label><b>Worker Name :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Worker Name" formControlName="worker_name" type="text">
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>EMAIL ID</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text">
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Leave Start Date</b></mat-label><br>
+      <input class="form-control" formControlName="leaveStartDate" type="date">
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Leave End Date</b></mat-label><br>
+      <input class="form-control" formControlName="leaveEndDate" type="date">
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Status :</b></mat-label><br>
+      <div class="mat-radio-button">
+        <mat-radio-button #rgbtnselected (change)="onRadioChange(rgbtnselected.value)"  formControlName="status" value="Approved">Approved</mat-radio-button><br>
+        <mat-radio-button #rgbtnselected (change)="onRadioChange(rgbtnselected.value)"  formControlName="status" value="Not Approved">Not Approved</mat-radio-button><br>
+        <mat-radio-button #rgbtnselected (change)="onRadioChange(rgbtnselected.value)"  formControlName="status" value="Waiting">Waiting</mat-radio-button><br>
+      </div>
+    </div><br>
+
+    <div class="form-group">
+      <select formControlName="Leave_Type" (change)="onTypeChange($event)">
+        <option value="Vacation">Vacation</option>
+        <option value="Medical Leave">Medical Leave</option>
+        <option value="Qutting">Qutting</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group" >
+      <mat-label><b>Comment :</b></mat-label><br>
+      <textarea class="form-control" formControlName="comment"></textarea>
+    </div><br>
+
+    <div class="form-group" >
+      <button mat-raised-button id="Add Record" type="submit"   color="primary">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onClickBack()" color="accent">Back</button>
+    </div>
+  </div>
+  </form>
+</div>

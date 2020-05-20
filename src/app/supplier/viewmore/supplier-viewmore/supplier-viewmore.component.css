@@ -1,0 +1,49 @@
+
+.green
+{
+  color: green;
+}
+
+.red {
+  color: red;
+}
+.mat-form-field {
+  font-size: 16px;
+  width: 100%;
+}
+.example-card {
+  max-width: 100%;
+  min-height:30%;
+  margin-bottom: 10px;
+  align-items: center;
+  border-color: blue;
+  /* display: table-cell; */
+   /* Make elements inside the container behave like table cells */
+
+}
+.g50000
+{
+  color: blueviolet;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  width: 100%;
+}
+
+td, th {
+  width: 15%;
+}
+.mybtn
+{
+width:15%;
+float: left;
+}
+img
+{
+  height: 40px;
+  width: 40px;
+}

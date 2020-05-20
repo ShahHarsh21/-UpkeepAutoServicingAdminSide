@@ -62,7 +62,7 @@ export class ServiceDisplayComponent implements OnInit {
   }
   onAddClick()
   {
-    this._router.navigate(['/nav/serviceAdd']);
+    this._router.navigate(['/nav/serviceAdd/']);
   }
   // oncheckboxchange(row)
   // {

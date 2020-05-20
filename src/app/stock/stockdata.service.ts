@@ -12,6 +12,14 @@ export class StockdataService {
   {
     return this._http.get(this.url);
   }
+  getAllQuanitity()
+  {
+    return this._http.get(environment.url+'stockQuantity/');
+  }
+  getSupplier(stock_id)
+  {
+    return this._http.get(environment.url + 'stock_supplier/' + stock_id);
+  }
   getStockById(stock_id)
    {
         return this._http.get(this.url+stock_id);

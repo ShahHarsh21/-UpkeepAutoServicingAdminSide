@@ -5,6 +5,7 @@ import { VehicleAssignedModel } from 'src/app/VehicleAssignedModel';
 import { VehicleAssignedService } from '../vehicle-assigned.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { WorkerService } from 'src/app/worker/worker.service';
 @Component({
   selector: 'app-vehicleviewmore',
   templateUrl: './vehicleviewmore.component.html',
@@ -22,11 +23,12 @@ export class VehicleviewmoreComponent implements OnInit {
     public worker_image : string;
     public user_name :string ;
     WorkerImage:string='';
-  constructor( public _data: VehicleAssignedService,public _routs :Router,public _Act_routs : ActivatedRoute) { }
+  constructor(public _workerData : WorkerService, public _data: VehicleAssignedService,public _routs :Router,public _Act_routs : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.vehicle_assigned_id=this._Act_routs.snapshot.params['vehicle_assigned_id']
     console.log(this.vehicle_assigned_id);
+
     this._data.getVehicleById(this.vehicle_assigned_id).subscribe(
       (vehicleData : any[])=>{
         console.log(vehicleData);
@@ -38,9 +40,20 @@ export class VehicleviewmoreComponent implements OnInit {
         this.remark = vehicleData[0].remark,
         this.worker_image = vehicleData[0].worker_image
         this.user_name = vehicleData[0].user_name
-        this.WorkerImage = environment.url+ 'Images/WorkerImages/' +vehicleData[0].worker_image;
+        this.worker_id = vehicleData[0].fk_worker_id
+        console.log(this.worker_id);
+
+        this._workerData.getImageById(this.worker_id).subscribe(
+          (workerImage : any)=>{
+            console.log(workerImage);
+            this.worker_image = environment.url + 'public/Images/WorkerImages/' + workerImage;
+            console.log(this.worker_image);
+          }
+        );
+
       }
     );
+
   }
   onCloseClick()
   {

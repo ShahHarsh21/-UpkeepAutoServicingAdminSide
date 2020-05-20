@@ -15,8 +15,17 @@ id
   align-content: center;
   align-items: center;
 }
-.mybtn
+.product_img
 {
-  width:15%;
-  float: left;
+  height: 10px;
+  width: 30px
 }
+.green
+{
+  color: green;
+}
+
+.red {
+  color: red;
+}
+

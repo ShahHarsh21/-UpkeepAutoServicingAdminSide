@@ -1,0 +1,74 @@
+.green
+{
+  color: green;
+}
+
+.red {
+  color: red;
+}
+.yellow
+{
+  color:yellow;
+}
+/* Full-width inputs */
+input[type=text], input[type=password],input[type=number],input[type=date] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 2px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.icon{
+  align-items: left;
+}
+.info{
+  float: right;
+  margin-left: 5px;
+}
+
+.hh{
+  text-align: center;
+  font-family: 'Courier New';
+}
+
+
+/* Set a style for all buttons */
+button {
+  color: black;
+  padding: 12px 20px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 70%;
+  margin-bottom: 1%;
+  border: none;
+  width: 20%;
+  height: 5%;
+}
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  /*margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;*/
+  margin-bottom: 10%;
+}
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img{
+  width: 250px;
+  height: 250px;
+  border-radius: 10%;
+}

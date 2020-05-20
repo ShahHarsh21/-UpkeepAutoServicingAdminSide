@@ -65,6 +65,7 @@ export class AddVehicleAssignedComponent implements OnInit {
         // console.log(x);
         if (x.insertId > 0) {
           alert('Successfully Assgined');
+          this._router.navigate(['/nav/vehicleAssigned/']);
         }
       });
     }

@@ -1,0 +1,63 @@
+/* Bordered form */
+form {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password],input[type=number],input[type=date], select[type=dropbox] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 2px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+input[type=text1] {
+  width: 90%;
+  height: 50%;
+  padding: 12px 20px;
+  margin: 2px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.icon{
+  align-items: left;
+}
+
+.hh{
+  text-align: center;
+  font-family: 'Courier New';
+}
+
+
+/* Set a style for all buttons */
+button:hover {
+  opacity: 0.8;
+}
+button
+{
+  width:15%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+  cursor: pointer;
+  width: 30%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 50px;
+}
+
+.rgbtnselected
+{
+  padding-right: 10px;
+  margin-right: 10px;
+}

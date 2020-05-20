@@ -19,15 +19,21 @@
       <select class="form-control" formControlName="fuel_tank" placeholder="" type="dropbox" >
         <option class="dropdown-item" value="Full Tank">Full Tank</option>
         <option class="dropdown-item" value="Half Tank">Half TANK</option>
-
       </select>
     </div><br>
 
     <div class="form-group">
       <mat-label><b>Add Your Ramarks :</b></mat-label><br>
      <input class="form-control" placeholder="Enter Your Remarks" formControlName="remark" type="text">
-
     </div><br>
+
+    <mat-label><b>Owner's Name :</b></mat-label><br>
+    <div class="form-group" >
+      <select type="dropbox" class="form-control" formControlName="fk_user_id" aria-placeholder="Vehicle's Owner">
+        <option  *ngFor="let item of userArr" value="{{item.user_id}}">{{item.user_name}}</option>
+      </select>
+    </div>
+
     <mat-label><b>Your Complaints:</b></mat-label><br>
     <div class="form-group" *ngFor="let item of serviceArr">
       <input type="checkbox" (change)="onServiceCheck(item.Name)" value="{{item.isChecked}}">{{item.Name}}<br>

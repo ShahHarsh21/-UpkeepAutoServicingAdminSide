@@ -17,6 +17,10 @@ export class WorkerService {
   {
     return this._http.get(this.workerAll_url);
   }
+  getImageById(worker_id)
+  {
+    return this._http.get(environment.url+'worker_image/'+worker_id);
+  }
   getWorkerById(worker_id)
   {
     let x = new HttpHeaders().set(environment.header,environment.value);

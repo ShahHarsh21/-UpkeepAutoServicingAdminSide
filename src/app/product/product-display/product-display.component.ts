@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ProductViewMoreComponent } from '../product-view-more/product-view-more.component';
 import { AddImageComponent } from '../AddImage/add-image/add-image.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-display',
@@ -18,6 +19,7 @@ export class ProductDisplayComponent implements OnInit {
   displayedColumns:string[]=['check','product_name','product_price','Action'];
   productarr:Product[]=[];
   deleteproarr:number[]=[];
+  product_img : any[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -33,6 +35,13 @@ export class ProductDisplayComponent implements OnInit {
           console.log(data);
           this.productarr=data;
           this.dataSource.data=this.productarr;
+      }
+    );
+
+    this._data.getAllImage().subscribe(
+      (image : string[])=>{
+        console.log(environment.url + 'public/Images/Product_image/'+image);
+        // this.product_img = environment.url + 'public/Images/Product_image/' + image;
       }
     );
   }

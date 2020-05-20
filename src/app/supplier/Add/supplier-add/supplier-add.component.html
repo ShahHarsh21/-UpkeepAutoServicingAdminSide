@@ -1,0 +1,36 @@
+<!-- <p>supplier-add works!</p> -->
+<div class="container">
+
+  <form [formGroup]="addSupplier" (ngSubmit)="onUserAdd()">
+    <div class="container">
+    <h1 class="hh"><b>Add Supplier</b></h1>
+    <div class="form-group" >
+      <mat-label><b>Supplier Name:</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Supplier Name" formControlName="supplier_name" type="text">
+      <label class="alert alert-danger" *ngIf="addSupplier.get('supplier_name').hasError('required') && !addSupplier.get('supplier_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addSupplier.get('supplier_name').hasError('minlength') && !addSupplier.get('supplier_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addSupplier.get('supplier_name').hasError('pattern') && !addSupplier.get('supplier_name').pristine" > Only Chars</label>
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Firm Name:</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Firm (shop) Name" formControlName="firm_name" type="text">
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Firm Address :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Firm's Address" formControlName="firm_address" type="text">
+    </div><br>
+    <div class="form-group" >
+      <mat-label><b>Contact No :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Mobile" formControlName="contact_no" type="text">
+      <label class="alert alert-danger" *ngIf="addSupplier.get('contact_no').hasError('required') && !addSupplier.get('contact_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addSupplier.get('contact_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addSupplier.get('contact_no').hasError('pattern') " > Only digits</label>
+    </div><br>
+
+    <div class="form-group">
+        <button mat-raised-button id="Add Record" type="submit"   color="primary" aria-label="ADD USER">Submit</button>
+        <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent" aria-label="ADD USER" >Back</button>
+    </div>
+  </div>
+  </form>
+</div>

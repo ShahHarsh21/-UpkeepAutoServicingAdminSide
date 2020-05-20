@@ -44,6 +44,15 @@ import { WorkerviewmoreComponent } from './worker/workerViewmore/workerviewmore.
 import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
 import { ProductViewMoreComponent } from './product/product-view-more/product-view-more.component';
 import { CategoryViewmoreComponent } from './category/viewmore/category-viewmore/category-viewmore.component';
+import { ServiceRedirectComponent } from './service/service-redirect/service-redirect.component';
+import { StockViewmoreComponent } from './stock/stockViewMore/stock-viewmore/stock-viewmore.component';
+import { SupplierEditComponent } from './supplier/Edit/supplier-edit/supplier-edit.component';
+import { SupplierAddComponent } from './supplier/Add/supplier-add/supplier-add.component';
+import { SupplierViewmoreComponent } from './supplier/viewmore/supplier-viewmore/supplier-viewmore.component';
+import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-display.component';
+import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
+import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
+import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
 
 
 const arr:Routes=[
@@ -52,38 +61,60 @@ const arr:Routes=[
     path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
         {path:'',component:ServiceDisplayComponent},
         {path:'signup',component:SignupdisplayComponent},
+
         {path:'user',component:UserDisplayComponent},
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
+        {path:'userViewmore/:user_id',component:UserViewMoreComponent},
+
         {path:'product',component:ProductDisplayComponent},
         {path:'productViewmore/:product_id',component:ProductViewMoreComponent},
         {path:'productEdit/:product_id',component:ProductEditComponent},
         {path:'productAdd',component:ProductAddComponent},
         {path:'Add_image/:product_id',component:AddImageComponent},
+        {path:'Add_image/:product_id',component:AddImageComponent},
+
         {path:'category',component:CategoryDisplayComponent},
         {path:'categoryAdd',component:CategoryAddComponent},
         {path:'categoryViewmore/:category_id',component:CategoryViewmoreComponent},
+
         {path:'order_details',component:OrderDetailsComponent},
+
         {path:'stock',component:StockDisplayComponent},
         {path:'stockEdit/:stock_id',component:StockEditComponent},
         {path:'stockAdd',component:StockAddComponent},
+        {path:'stockViewmore/:stock_id',component:StockViewmoreComponent},
+
         {path:'supplier',component:SupplierDisplayComponent},
+        {path:'supplierEdit/:supplier_id',component:SupplierEditComponent},
+        {path:'supplierAdd',component:SupplierAddComponent},
+        {path:'supplier_viewmore/:supplier_id',component:SupplierViewmoreComponent},
+
         {path:'userAdd',component:UseraddComponent},
         {path:'userEdit/:user_id',component:UserEditComponent},
-        {path:'Add_image/:product_id',component:AddImageComponent},
+        {path:'userViewmore/:user_id',component:UserViewMoreComponent},
+
+
         {path:'vehicleAssignedAdd',component:AddVehicleAssignedComponent},
         {path:'vehicleAssigned',component:VehicleDisplayComponent},
         {path:'VehicleAssignedViewmore/:vehicle_assigned_id',component:VehicleviewmoreComponent},
+
         {path:'worker',component:WorkerDisplayComponent},
         {path:'workerEdit/:worker_id',component:WorkereditComponent},
         {path:'workerAdd',component:WorkerAddComponent},
+        {path:'workerViewMore/:worker_id',component:WorkerviewmoreComponent},
+        {path:'wokerImage/:worker_id',component:WorkerImageAddComponent},
+
         {path:'service',component:ServiceDisplayComponent},
         {path:'serviceAdd',component:ServiceAddComponent},
         {path:'serviceEdit/:service_id',component:ServiceEditComponent},
-        {path:'userViewmore/:user_id',component:UserViewMoreComponent},
+        {path:'serviceRedirect',component:ServiceRedirectComponent},
         {path:'serviceViewmore/:service_id',component:ServiceViewmoreComponent},
-        {path:'workerViewMore/:worker_id',component:WorkerviewmoreComponent},
-        {path:'wokerImage/:worker_id',component:WorkerImageAddComponent}
+
+        {path:'leave',component:LeaveDisplayComponent},
+        {path:'leaveViewmore/:leave_id',component:LeaveViewmoreComponent},
+        {path:'pastLeave/:leave_id',component:PastLeavesComponent},
+        {path:'leaveEdit/:leave_id',component:LeaveEditComponent}
     ]
     },
     {path:'**',component:PageNotFoundComponent}

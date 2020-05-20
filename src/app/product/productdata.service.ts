@@ -45,6 +45,10 @@ export class ProductdataService {
   {
     return this._http.get(this.image_url);
   }
+  getImageById(product_id)
+  {
+    return this._http.get(this.image_url+product_id);
+  }
   AddImage(item,fd)
   {
     const body = JSON.stringify(item);

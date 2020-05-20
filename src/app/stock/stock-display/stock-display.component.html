@@ -2,44 +2,60 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
-  <div class="mat-elevation-z8">
-
-<hr>
-<button mat-raised-button  id="Add Record" (click)="onAddClick()"   color="primary" aria-label="ADD USER">
-  <mat-icon >add</mat-icon>ADD
+<div class="mat-elevation-z8">
+  <button mat-raised-button  id="Add Record" (click)="onAddClick()" color="primary" aria-label="ADD USER">
+    <mat-icon >add</mat-icon>ADD/Edit
   </button>
-    <table mat-table [dataSource]="dataSource" matSort>
-          <ng-container matColumnDef="check">
-            <th mat-header-cell *matHeaderCellDef>Check</th>
-            <td mat-cell *matCellDef="let row">
-            <mat-checkbox (change)="oncheckboxchange(row)"></mat-checkbox>
-            </td>
-          </ng-container>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="check">
+      <th mat-header-cell *matHeaderCellDef>Check</th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (change)="oncheckboxchange(row)"></mat-checkbox>
+      </td>
+      </ng-container>
 
-      <ng-container matColumnDef="quantity">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
-        <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
-      </ng-container>
-      <ng-container matColumnDef="Action">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-        <td mat-cell *matCellDef="let row">
-          <button (click)="onDelete(row)" mat-mini-fab color="warn" aria-label="Example icon-button with a heart icon">
-            <mat-icon>delete</mat-icon>
-          </button> |
-          <button (click)="onEdit(row)" mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
-              <mat-icon>edit</mat-icon>
-            </button> |
-          <button (click)="onViewMore(row)"  mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
-              <mat-icon>more</mat-icon>
-            </button>
-        </td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-      </tr>
-    </table>
-      <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
-      <button mat-raised-button (click)="onDeleteAll()" class="mybtn" color="warn" aria-label="Example icon-button with a heart icon">
-        <mat-icon>delete</mat-icon>DELETE ALL
+    <ng-container matColumnDef="Image">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Image</th>
+      <td mat-cell *matCellDef="let row"> {{row.product_img}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="product_name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Name</th>
+      <td mat-cell *matCellDef="let row"> {{row.product_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="product_price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Price</th>
+      <td mat-cell *matCellDef="let row"> {{row.product_price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef>Quantity</th>
+      <td mat-cell *matCellDef="let row">
+        <span [ngClass]="{green: row.quantity >1000 , red: row.quantity <= 1000 }" >{{row.quantity}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef> ACTION </th>
+      <td mat-cell *matCellDef="let row">
+      <button (click)="onEdit(row)" mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
+        <mat-icon>edit</mat-icon>
+      </button> |
+      <button (click)="onDelete(row)" mat-mini-fab color="warn" aria-label="Example icon-button with a heart icon">
+        <mat-icon>delete</mat-icon>
+      </button> |
+      <button (click)="onViewMore(row)"  mat-mini-fab color="primary" aria-label="Example icon-button with a heart icon">
+        <mat-icon>subject</mat-icon>
       </button>
+    </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10,25,100]"></mat-paginator>
+    <button mat-raised-button (click)="onDeleteAll()" class="mybtn" color="warn" aria-label="Example icon-button with a heart icon">
+      <mat-icon>delete</mat-icon>DELETE ALL
+    </button>
   </div>

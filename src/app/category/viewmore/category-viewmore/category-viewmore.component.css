@@ -1,62 +1,48 @@
-/* Full-width inputs */
-input[type=text], input[type=password],input[type=number],input[type=date] {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 2px 0px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+
+
+/* .col {
+  display: table;
+    width: 100%;
+} */
+
+.green
+{
+  color: green;
 }
-.icon{
-  align-items: left;
+
+.red {
+  color: red;
 }
-.info{
+.mat-form-field {
+  font-size: 16px;
+  width: 100%;
+}
+.example-card {
+   max-width: 240px;
+  min-height: 320px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5%;
   float: right;
-  margin-left: 5px;
+  align-items: right;
+  border-color: blue;
+  /* display: table-cell; */
+   /* Make elements inside the container behave like table cells */
+
+}
+.g50000
+{
+  color: blueviolet;
 }
 
-.hh{
-  text-align: center;
-  font-family: 'Courier New';
+/* input
+{
+  align-items: center;
+  float: center;
 }
-
-
-/* Set a style for all buttons */
-button {
-  color: black;
-  padding: 12px 20px;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 70%;
-  margin-bottom: 1%;
-  border: none;
-  width: 20%;
-  height: 5%;
-}
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 50px;
-  border: 2px solid black;
-  border-radius: 10px;
-  /*margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;*/
-  margin-bottom: 10%;
-}
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img{
-  width: 300px;
-  height: 300px;
-  border-radius: 10%;
+ .example-header-image {
+  background-size: cover;
+} */
+.example-header-image {
+  background-size: cover;
 }

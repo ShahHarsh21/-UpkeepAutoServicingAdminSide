@@ -23,7 +23,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { LoginDisplayComponent } from './login/login-display/login-display.component';
 import { SignupdisplayComponent } from './signup/signupdisplay/signupdisplay.component';
 import { UserDisplayComponent } from './user/user-display/user-display.component';
@@ -59,6 +61,14 @@ import { ServiceAddComponent } from './service/serviceAdd/service-add/service-ad
 import { WorkerImageAddComponent } from './worker/WorkerImage/worker-image-add/worker-image-add.component';
 import { VehicleviewmoreComponent } from './VehicleAssigned/vehicleviewmore/vehicleviewmore.component';
 import { CategoryViewmoreComponent } from './category/viewmore/category-viewmore/category-viewmore.component';
+import { ServiceRedirectComponent } from './service/service-redirect/service-redirect.component';
+import { SupplierEditComponent } from './supplier/Edit/supplier-edit/supplier-edit.component';
+import { SupplierAddComponent } from './supplier/Add/supplier-add/supplier-add.component';
+import { SupplierViewmoreComponent } from './supplier/viewmore/supplier-viewmore/supplier-viewmore.component';
+import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-display.component';
+import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
+import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
+import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +113,14 @@ import { CategoryViewmoreComponent } from './category/viewmore/category-viewmore
     WorkerImageAddComponent,
     VehicleviewmoreComponent,
     CategoryViewmoreComponent,
+    ServiceRedirectComponent,
+    SupplierEditComponent,
+    SupplierAddComponent,
+    SupplierViewmoreComponent,
+    LeaveDisplayComponent,
+    LeaveViewmoreComponent,
+    LeaveEditComponent,
+    PastLeavesComponent,
   ],
   imports: [
     BrowserModule,

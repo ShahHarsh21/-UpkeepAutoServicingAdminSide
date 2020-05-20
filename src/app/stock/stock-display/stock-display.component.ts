@@ -7,6 +7,11 @@ import { StockdataService } from '../Stockdata.service';
 import { stock } from '../stock';
 import { Router } from '@angular/router';
 import { StockViewmoreComponent } from '../stockViewMore/stock-viewmore/stock-viewmore.component';
+// import { Product } from 'src/app/product/product';
+import { ProductdataService } from 'src/app/product/productdata.service';
+// import { ProductViewMoreComponent } from 'src/app/product/product-view-more/product-view-more.component';
+import { Product_stock } from 'src/app/class/product_stock';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-stock-display',
@@ -14,22 +19,33 @@ import { StockViewmoreComponent } from '../stockViewMore/stock-viewmore/stock-vi
   styleUrls: ['./stock-display.component.css']
 })
 export class StockDisplayComponent implements OnInit {
-  stockarr:stock[]=[];
+  stockarr:Product_stock[]=[];
   deletestockarr:number[]=[];
-  displayedColumns:string[]=['check','quantity','Action'];
-  dataSource: MatTableDataSource<stock>;
+  product_img :string[]=[];
+  quantity :string []=[];
+  str : string  = environment.url + 'public/Images/Product_image/';
+  displayedColumns:string[]=['check','Image','product_name','product_price','quantity','Action'];
+  dataSource: MatTableDataSource<Product_stock>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public _data:StockdataService,public _router:Router,private _dialog: MatDialog) {
+  constructor(public _data:StockdataService,public _router:Router,private _productData : ProductdataService) {
     this.dataSource = new MatTableDataSource();
    }
 
   ngOnInit() {
-      this._data.getAllStock().subscribe(
-        (data:stock[]) => {
+      this._data.getAllQuanitity().subscribe(
+        (data:Product_stock[]) => {
           this.stockarr=data;
-          this.dataSource.data=this.stockarr;
+          this.dataSource.data  = this.stockarr;
+          console.log(data);
+        }
+      );
+
+      this._productData.getAllImage().subscribe(
+        (imageData :any[])=>{
+          // console.log(imageData);
+          this.product_img = imageData;
         }
       );
   }
@@ -55,27 +71,28 @@ export class StockDisplayComponent implements OnInit {
       );
     }
   }
-  oncheckboxchange(row:stock)
+  oncheckboxchange(row:Product_stock)
   {
-    if(this,this.stockarr.find(x => x == row.stock_id))
-    {
-        this.deletestockarr.splice(this.deletestockarr.indexOf(row.stock_id),1);
-    }
-    else{
-      this.deletestockarr.push(row.stock_id);
-    }
+    // if(this,this.stockarr.find(x => x == row.stock_id))
+    // {
+    //     this.deletestockarr.splice(this.deletestockarr.indexOf(row.stock_id),1);
+    // }
+    // else
+    // {
+    //   this.deletestockarr.push(row.stock_id);
+    // }
   }
   onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
     this._data.deleteStock(this.deletestockarr).subscribe(
-      (data:stock)=>{
+      (data:Product_stock)=>{
         for(let i=0;i<this.deletestockarr.length;i++)
         {
               let x=this.stockarr.find(x => x.stock_id == this.deletestockarr[i]);
               this.stockarr.splice(this.stockarr.indexOf(x),1);
         }
-        this.dataSource.data=this.stockarr;
+        // this.dataSource.data=this.stockarr;
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
    });
@@ -87,7 +104,7 @@ export class StockDisplayComponent implements OnInit {
   }
   onViewMore(row)
   {
-    this._dialog.open(StockViewmoreComponent,{data:row});
+    this._router.navigate(['/nav/stockViewmore/'+row.stock_id]);
   }
   onAddClick()
   {

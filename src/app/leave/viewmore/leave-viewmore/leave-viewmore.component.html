@@ -1,0 +1,25 @@
+<!-- <p>leave-viewmore works!</p> -->
+<div class="container">
+  <img src={{worker_img}}>
+  <mat-list>
+    <mat-list-item><mat-label><b>Worker Name :</b></mat-label>{{worker_name | uppercase}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>Email Id :</b></mat-label>{{email_id}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>Mobile No :</b></mat-label> +91 {{mobile_no}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>Leave Start Date :</b></mat-label>{{leaveStartDate}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>Leave End Date :</b></mat-label>{{leaveEndDate}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>Status :</b></mat-label>
+      <span [ngClass]="{green: status =='Approved', yellow: status == 'Waiting' , red: status == 'Not Approved'}" ><b>{{ status }}</b></span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><mat-label><b>comment :</b></mat-label>{{comment}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+  <div class="button">
+    <button mat-raised-button (click)="onClose()" color="primary" >Back</button>
+  </div>
+</div>

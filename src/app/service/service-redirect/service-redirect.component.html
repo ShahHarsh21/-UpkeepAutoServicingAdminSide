@@ -1,0 +1,15 @@
+<!-- <p>service-redirect works!</p> -->
+<div>
+  <ng-container matColumnDef="check">
+    <form [formGroup]="redirectForm" (ngSubmit)="onServiceEdit()">
+      <div class="formGroup">
+        <input type="radio" value="1" #usertyperdbtn (change)="onValueChange()">Registred User
+        <input type="radio" value="2" #usertyperdbtn (change)="onValueChange()">New User
+      </div>
+
+      <div class="formGroup">
+        <button type="submit">Proceed</button>
+      </div>
+    </form>
+  </ng-container>
+</div>

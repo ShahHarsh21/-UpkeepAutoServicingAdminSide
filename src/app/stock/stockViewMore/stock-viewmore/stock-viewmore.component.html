@@ -1,15 +1,28 @@
 <div class="container">
-<mat-list>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{product_name}}</mat-list-item>
+<mat-list *ngFor="let item of DataArr">
+  <mat-label><b>Product Name :</b></mat-label>
+  <mat-list-item>{{item.product_name | uppercase}}</mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{product_description}}</mat-list-item>
+
+  <mat-label><b>Category Name :</b></mat-label>
+  <mat-list-item >{{item.category_name | uppercase}}</mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item ><i class="material-icons">perm_identity</i>{{category_name}}</mat-list-item>
+
+  <mat-label><b>Product Price :</b></mat-label>
+  <mat-list-item>{{item.product_price | currency:'INR'}}</mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{product_image}}</mat-list-item>
+
+  <mat-label><b>Quantity :</b></mat-label>
+  <mat-list-item>
+    <span [ngClass]="{green: item.quantity >1000 , red: item.quantity <= 1000 }" >{{item.quantity}} per Unit</span>
+  </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{product_price}}</mat-list-item>
+
+  <mat-label><b>Product Description :</b></mat-label>
+  <mat-list-item>{{item.product_description}}</mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item><i class="material-icons">perm_identity</i>{{quantity}}</mat-list-item>
+
 </mat-list>
+
+    <button mat-raised-button color="primary" (click)="onClickBack()">Back</button>
 </div>

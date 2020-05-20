@@ -16,6 +16,7 @@ export class CategoryViewmoreComponent implements OnInit {
   cat_id :number = 0;
   product_img : string ='';
   Img :string[]=[];
+  displayedColumns :string [] = ['product_name','product_price','product_description','product_image','product_color'];
   productArr : Product[]=[];
   ngOnInit() {
     this.cat_id = this._act_routs.snapshot.params['category_id'];

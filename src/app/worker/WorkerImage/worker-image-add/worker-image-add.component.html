@@ -1,4 +1,4 @@
-<p>worker-image-add works!</p>
+<!-- <p>worker-image-add works!</p> -->
 <div>
   <form (ngSubmit)="onImageSubmit()" [formGroup]="editWorkerImg">
     <div>
@@ -6,8 +6,9 @@
     </div>
     <input type="file" alt="Your Photo" formControlName="image" (change)="onChange($event)">
     <div>
-      <button type="submit">Add/Edit Image</button>
-      <button  (click)="onclose()">cancle</button>
+
+      <button mat-raised-button id="Add Record" type="submit"   color="primary">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onclose()" color="accent">Back</button>
     </div>
   </form>
 </div>
