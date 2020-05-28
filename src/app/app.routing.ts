@@ -59,6 +59,7 @@ const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
     {
     path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
+        {path:'',component:AdminDashboardComponent},
         {path:'home',component:AdminDashboardComponent},
 
         {path:'signup',component:SignupdisplayComponent},
