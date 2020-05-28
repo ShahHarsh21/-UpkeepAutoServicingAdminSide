@@ -53,13 +53,14 @@ import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-displ
 import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
-
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
     {
     path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
-        {path:'',component:ServiceDisplayComponent},
+        {path:'home',component:AdminDashboardComponent},
+
         {path:'signup',component:SignupdisplayComponent},
 
         {path:'user',component:UserDisplayComponent},

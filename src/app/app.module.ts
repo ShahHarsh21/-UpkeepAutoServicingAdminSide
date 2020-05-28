@@ -23,7 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { routingArr } from './app.routing';
-
+import { ChartModule, ChartsModule } from '@progress/kendo-angular-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginDisplayComponent } from './login/login-display/login-display.component';
@@ -69,6 +69,9 @@ import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-displ
 import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import 'hammerjs';
+
 
 @NgModule({
   declarations: [
@@ -118,6 +121,7 @@ import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leave
     SupplierAddComponent,
     SupplierViewmoreComponent,
     LeaveDisplayComponent,
+    AdminDashboardComponent,
     LeaveViewmoreComponent,
     LeaveEditComponent,
     PastLeavesComponent,
@@ -134,6 +138,7 @@ import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leave
     MatSidenavModule,
     MatIconModule,
     MatSortModule,
+    ChartModule,
     // MatLabel,
     MatGridListModule,
     MatCardModule,
@@ -146,7 +151,8 @@ import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leave
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   entryComponents: [
     ProductViewMoreComponent,
@@ -159,7 +165,8 @@ import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leave
     ServiceViewmoreComponent,
     VehicleviewmoreComponent,
     //VehicleAssignedviewmorecomponent
-    CategoryViewmoreComponent
+    CategoryViewmoreComponent,
+    AdminDashboardComponent
      ],
   providers: [],
   bootstrap: [AppComponent]
