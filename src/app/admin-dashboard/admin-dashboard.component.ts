@@ -15,16 +15,14 @@ class model {
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-     public DonutData: any[] = [];
+   public DonutData: any[] = [];
    public pieData: any[] = [];
    public labelContent(e: any): string {
    return e.category;
    console.log(this.pieData);
 
 }
- // public labelContent1(e: any): string {
-   // return e.category;
-  //}
+
   constructor(public serobj: DashboardService, private intl: IntlService) {
     this.labelContent = this.labelContent.bind(this);
   }

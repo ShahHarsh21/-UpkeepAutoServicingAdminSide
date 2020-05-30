@@ -7,5 +7,4 @@ export class stock{
     public fk_product_id?:number,
     public quantity?:number) {
   }
-
 }

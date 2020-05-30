@@ -39,11 +39,7 @@ export class ProductAddComponent implements OnInit {
    }
    onProductAdd()
    {
-
-   }
-  onCancle()
-  {
-    let productobj = {
+      let productobj = {
       product_id: this.addproduct.value.email_id,
       product_name: this.addproduct.value.password_group.user_password,
       product_description: this.addproduct.value.user_type,
@@ -53,19 +49,20 @@ export class ProductAddComponent implements OnInit {
       product_image:this.addproduct.value.dob,
       fk_color_id:this.addproduct.value.fk_color_id,
       fk_color_name:this.addproduct.value.fk_color_name
-    };
-    this._data.addProduct(productobj).subscribe(
-      (data:any)=>{
-        this._router.navigate(['nav/product/']);
-      }
+      };
+         this._data.addProduct(productobj).subscribe(
+             (data:any)=>{
+              this._router.navigate(['nav/product/']);
+           }
     );
-  // onCancle()
-  // {
-  //   this._router.navigate(['/nav/product/']);
-  // }
+}
+  onCancle()
+  {
+    this._router.navigate(['/nav/product/']);
+  }
   // onImageAdd()
   // {
   //   this._dialog.open(AddImageComponent);
   // }
 }
-}
+

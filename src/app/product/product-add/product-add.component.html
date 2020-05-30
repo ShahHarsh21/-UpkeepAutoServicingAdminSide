@@ -1,6 +1,7 @@
 <div class="container">
 
   <form [formGroup]="addproduct" (ngSubmit)="onProductAdd()" >
+    <div class="container">
     <h1 class="hh"><b>Add Product</b></h1>
 
     <div class="form-groupup">
@@ -38,8 +39,10 @@
         </select>
       </div><br> -->
     <div class="form-group">
-      <button  type="submit" class="btn" >Submit</button>
-      <!-- <button   class="can" (click)="onCancle()" >Cancle </button> -->
+      <button mat-raised-button id="Add Record" type="submit"   color="primary" aria-label="ADD PRODUCT">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent" aria-label="ADD PRODUCT" >Back</button>
     </div>
 </div>
+</div>
 </form>
+</div>

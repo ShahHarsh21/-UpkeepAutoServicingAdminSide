@@ -7,7 +7,6 @@ import { LeaveDataService } from '../../leave-data.service';
 import { Router } from '@angular/router';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { WorkerService } from 'src/app/worker/worker.service';
-
 @Component({
   selector: 'app-leave-display',
   templateUrl: './leave-display.component.html',

@@ -8,7 +8,7 @@ import { user } from './user';
 })
 export class UserdataService {
   private url:string=environment.url+'user/';
-  private deleteurl:string=environment.url+'deleteAllUser/'
+  private deleteurl:string=environment.url+'deleteAllUser/';
   constructor(private _http:HttpClient) { }
 
   getAllUser()

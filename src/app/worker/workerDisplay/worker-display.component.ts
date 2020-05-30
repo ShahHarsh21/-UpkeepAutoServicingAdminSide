@@ -68,6 +68,7 @@ applyFilter(filtervalue:string)
         (data:any)=>{
           this.workerarr.splice(this.workerarr.indexOf(row),1);
           this.dataSource.data=this.workerarr;
+          console.log(data);
           this._router.navigate(['nav/worker/']);
         }
       );

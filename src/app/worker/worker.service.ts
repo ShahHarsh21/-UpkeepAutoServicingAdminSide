@@ -53,6 +53,7 @@ export class WorkerService {
   }
   DeleteAllWorker(item:number[])
   {
+    console.log(item);
     const body = JSON.stringify(item);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.deleteurl, body, { headers: head });

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from "../../environments/environment";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { stock } from './stock';
+
 @Injectable({
   providedIn: 'root'
 })
 export class StockdataService {
-  url:string=environment.url+'stock/';
-  deleteurl:string=environment.url+'deletestock/';
-  constructor(public _http:HttpClient) { }
+  private url:string=environment.url+'stock/';
+  private deleteurl:string=environment.url+'deleteAllStock/';
+  constructor(private _http:HttpClient) { }
   getAllStock()
   {
     return this._http.get(this.url);
@@ -43,7 +45,7 @@ export class StockdataService {
    }
    deleteAllStock(item:number[])
    {
-     console.log(item)
+     console.log(item);
      const body = JSON.stringify(item);
      const head = new HttpHeaders().set(environment.header, environment.value);
      return this._http.post(this.deleteurl, body, { headers: head });

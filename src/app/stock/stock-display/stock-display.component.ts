@@ -26,6 +26,7 @@ export class StockDisplayComponent implements OnInit {
   str : string  = environment.url + 'public/Images/Product_image/';
   displayedColumns:string[]=['check','Image','product_name','product_price','quantity','Action'];
   dataSource: MatTableDataSource<Product_stock>;
+
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -58,6 +59,7 @@ export class StockDisplayComponent implements OnInit {
   }
   onDelete(row)
   {
+    console.log(row);
     let x:number=this.stockarr.indexOf(row);
     if(confirm("ARE YOU SURE , YOU WANT TO DELETE?"))
     {
@@ -85,14 +87,15 @@ export class StockDisplayComponent implements OnInit {
   onDeleteAll()
   {
     if(confirm('Are You Sure To Delete Multiple User?')){
-    this._data.deleteStock(this.deletestockarr).subscribe(
+    this._data.deleteAllStock(this.deletestockarr).subscribe(
       (data:Product_stock)=>{
         for(let i=0;i<this.deletestockarr.length;i++)
         {
+              console.log(data);
               let x=this.stockarr.find(x => x.stock_id == this.deletestockarr[i]);
               this.stockarr.splice(this.stockarr.indexOf(x),1);
         }
-        // this.dataSource.data=this.stockarr;
+        this.dataSource.data=this.stockarr;
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
    });
