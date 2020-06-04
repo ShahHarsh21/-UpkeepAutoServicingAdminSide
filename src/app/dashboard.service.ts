@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardService {
   public url:string=environment.url+"dashboard/";
+  public orderurl:string=environment.url+"dashboardorder/";
 
   constructor(public _http:HttpClient) { }
 
@@ -19,4 +20,9 @@ export class DashboardService {
   {
     return this._http.get(this.url);
   }
+  getAllorder(selectedyear)
+  {
+    return this._http.get(this.orderurl+selectedyear);
+  }
+
 }

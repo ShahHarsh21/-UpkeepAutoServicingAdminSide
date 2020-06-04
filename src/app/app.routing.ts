@@ -54,6 +54,18 @@ import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-vi
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CartDisplayComponent } from './Cart/Display/cart-display/cart-display.component';
+import { OrderDisplayComponent } from './Order/Display/order-display/order-display.component';
+import { OrderViewMoreComponent } from './Order/ViewMore/order-view-more/order-view-more.component';
+import { OrderEditComponent } from './Order/Edit/order-edit/order-edit.component';
+import { OrderDetailsDisplayComponent } from './OrderDetails/Display/order-details-display/order-details-display.component';
+import { OrderDetailsViewMoreComponent } from './OrderDetails/ViewMore/order-details-view-more/order-details-view-more.component';
+import { OrderDetailsEditComponent } from './OrderDetails/Edit/order-details-edit/order-details-edit.component';
+import { CartDetailsDisplayComponent } from './CartDetails/Display/cart-details-display/cart-details-display.component';
+import { CartDetailsEditComponent } from './CartDetails/Edit/cart-details-edit/cart-details-edit.component';
+import { CartDetailsViewMoreComponent } from './CartDetails/Viewmore/cart-details-view-more/cart-details-view-more.component';
+import { CartEditComponent } from './Cart/Edit/cart-edit/cart-edit.component';
+import { CartViewmoreComponent } from './Cart/ViewMore/cart-viewmore/cart-viewmore.component';
 
 const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
@@ -116,7 +128,24 @@ const arr:Routes=[
         {path:'leave',component:LeaveDisplayComponent},
         {path:'leaveViewmore/:leave_id',component:LeaveViewmoreComponent},
         {path:'pastLeave/:leave_id',component:PastLeavesComponent},
-        {path:'leaveEdit/:leave_id',component:LeaveEditComponent}
+        {path:'leaveEdit/:leave_id',component:LeaveEditComponent},
+
+        {path:'Cart',component:CartDisplayComponent},
+        {path:'CartViewMore/:cart_id',component:CartViewmoreComponent},
+        {path:'CartEdit/:cart_id',component:CartEditComponent},
+
+        {path:'CartDetails',component:CartDetailsDisplayComponent},
+        {path:'CartDetailsViewMore/:CartDetails_id',component:CartDetailsViewMoreComponent},
+        {path:'CartDetailsEdit/:CartDetails_id',component:CartDetailsEditComponent},
+
+
+        {path:'Order',component:OrderDisplayComponent},
+        {path:'OrderViewMore/:orderDetail_id',component:OrderViewMoreComponent},
+        {path:'OrderEdit/:orderDetail_id',component:OrderEditComponent},
+
+        {path:'OrderDetails',component:OrderDetailsDisplayComponent},
+        {path:'OrderDetailsViewMore/:orderDetail_id',component:OrderDetailsViewMoreComponent},
+        {path:'OrderDetailsEdit/:orderDetail_id',component:OrderDetailsEditComponent},
     ]
     },
     {path:'**',component:PageNotFoundComponent}

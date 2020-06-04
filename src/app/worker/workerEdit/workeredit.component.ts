@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { WorkerService } from '../worker.service';
+import { WorkerService} from '../worker.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { worker } from '../worker';
 
@@ -12,6 +12,7 @@ import { worker } from '../worker';
 export class WorkereditComponent implements OnInit {
   [x: string]: any;
   workerEdit:FormGroup;
+  // var newDate : Date('dd-mm-yyyy');
   worker_rout:number=0;
   constructor(public _data:WorkerService,public _act_routs:ActivatedRoute,public _routs:Router) { }
 
@@ -28,8 +29,11 @@ export class WorkereditComponent implements OnInit {
       joining_date:new FormControl(),
     });
 
+
     this._data.getWorkerById(this.worker_rout).subscribe(
         (data:any)=>{
+          var newDate = new Date();
+          newDate:data[0].joining_date;
           this.formDataBind(data[0]);
        }
       );
@@ -43,7 +47,6 @@ export class WorkereditComponent implements OnInit {
       worker_name:item.worker_name,
       mobile_no:item.mobile_no,
       address:item.address,
-      joining_date:item.joining_date
       });
   }
   onWorkerEdit()
@@ -56,6 +59,6 @@ export class WorkereditComponent implements OnInit {
   }
   onCancle()
   {
-	  this._router.navigate(['/nav/worker/']);
+	  this._routs.navigate(['/nav/worker/']);
   }
 }

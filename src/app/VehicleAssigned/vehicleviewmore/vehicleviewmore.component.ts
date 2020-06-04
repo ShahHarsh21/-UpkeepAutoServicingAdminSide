@@ -41,15 +41,15 @@ export class VehicleviewmoreComponent implements OnInit {
         this.worker_image = vehicleData[0].worker_image
         this.user_name = vehicleData[0].user_name
         this.worker_id = vehicleData[0].fk_worker_id
-        console.log(this.worker_id);
+        console.log(this.worker_image);
 
-        this._workerData.getImageById(this.worker_id).subscribe(
-          (workerImage : any)=>{
-            console.log(workerImage);
-            this.worker_image = environment.url + 'public/Images/WorkerImages/' + workerImage;
-            console.log(this.worker_image);
-          }
-        );
+        // this._workerData.getImageById(this.worker_id).subscribe(
+        //   (workerImage : any)=>{
+        //     console.log(workerImage);
+        //     this.worker_image = environment.url + '/Images/WorkerImages/' + workerImage;
+        //     console.log(this.worker_image);
+        //   }
+        // );
 
       }
     );

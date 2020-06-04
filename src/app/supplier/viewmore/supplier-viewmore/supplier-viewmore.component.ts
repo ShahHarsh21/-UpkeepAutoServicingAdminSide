@@ -5,6 +5,8 @@ import { SupplierdataService } from '../../supplierdata.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductdataService } from 'src/app/product/productdata.service';
 import { environment } from 'src/environments/environment';
+import { MatDialog } from '@angular/material/dialog';
+// import { ImagePopUpPageComponent } from '../../ImagePopUp/image-pop-up-page/image-pop-up-page.component';
 
 @Component({
   selector: 'app-supplier-viewmore',
@@ -18,7 +20,7 @@ export class SupplierViewmoreComponent implements OnInit {
   flag :boolean = true;
   productImage : string[]=[];
   displayedColumns:string[]=['product_image','product_name','product_price','quantity','category_name'];
-  constructor(public _act_routs : ActivatedRoute,public _product_image : ProductdataService , public _data : SupplierdataService,public _router : Router) { }
+  constructor(public _act_routs : ActivatedRoute,public _product_image : ProductdataService , public _data : SupplierdataService,public _router : Router,public _dialog : MatDialog) { }
 
   ngOnInit() {
 
@@ -38,6 +40,10 @@ export class SupplierViewmoreComponent implements OnInit {
         this.dataSource.data=this.supplier_Arr;
       }
     );
+  }
+  onImageClick(product_image)
+  {
+    // this._dialog.open(ImagePopUpPageComponent,{data:product_image});
   }
   onClose()
   {

@@ -23,7 +23,7 @@ export class WorkerImageAddComponent implements OnInit {
     });
     this._workerData.getWorkerPhotById(this.params_worker_id).subscribe(
       (Data:any)=>{
-         this.workerImg = environment.url+ 'Images/WorkerImages/' + Data[0].worker_image;
+         this.workerImg =  Data[0].worker_image;
       }
     );
   }

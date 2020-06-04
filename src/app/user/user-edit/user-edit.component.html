@@ -14,14 +14,18 @@
     <div>
       <mat-label><b>PASSWORD</b></mat-label><br>
       <input class="form-control" type="password" placeholder="Enter Password" formControlName="password" disabled>
-    <label class="alert alert-danger" *ngIf="userEdit.get('password').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="userEdit.get('password').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <mat-label><b>USER NAME</b></mat-label><br>
       <input class="form-control" placeholder="Enter Name" formControlName="user_name" type="text">
-      <label class="alert alert-danger" *ngIf="userEdit.get('user_name').hasError('required') && !userEdit.get('user_name').pristine" >Name is required</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="userEdit.get('user_name').hasError('required') && !userEdit.get('user_name').pristine" >Name is required</label>
       <label class="alert alert-danger" *ngIf="userEdit.get('user_name').hasError('minlength') && !userEdit.get('user_name').pristine" >Name shoul be > 5</label>
       <label class="alert alert-danger" *ngIf="userEdit.get('user_name').hasError('pattern') && !userEdit.get('user_name').pristine" > Only Chars</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <mat-label><b>ADDRESS</b></mat-label><br>
@@ -30,18 +34,22 @@
     <div class="form-group" >
       <mat-label><b>MOBILE NO</b></mat-label><br>
       <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
+      <mat-error>
       <label class="alert alert-danger" *ngIf="userEdit.get('mobile_no').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="userEdit.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="userEdit.get('mobile_no').hasError('pattern') " > Only digits</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <mat-label><b>DATE OF BIRTH</b></mat-label><br>
       <input class="form-control" placeholder="Enter Date Of Birth" formControlName="date_of_birth" type="date">
-      <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="userEdit.get('date_of_birth').hasError('required') && !userEdit.get('mobile_no').pristine" >mobile no is required</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <button mat-raised-button id="Add Record" type="submit"   color="primary">Submit</button>
-      <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent">Back</button>
+      <button mat-raised-button  (click)="onCancle()" color="accent">Back</button>
     </div>
   </div>
   </form>

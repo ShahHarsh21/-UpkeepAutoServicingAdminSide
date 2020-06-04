@@ -20,7 +20,7 @@
           </p>
 
           <p><b>Status:</b>
-             <span [ngClass]="{green: item.status =='Assigned', red: item.status != 'Assigned'}" >{{ item.status == null ? 'Not Assigned': item.status }}</span>
+             <span [ngClass]="{green: item.status =='Done', red: item.status == 'Assigned',purple:item.status =='In_process'}" >{{ item.status == null ? 'Not Assigned': item.status }}</span>
           </p>
 
           <p>

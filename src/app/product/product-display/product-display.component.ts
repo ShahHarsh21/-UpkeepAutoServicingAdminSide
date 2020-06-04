@@ -16,10 +16,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./product-display.component.css']
 })
 export class ProductDisplayComponent implements OnInit {
-  displayedColumns:string[]=['check','product_name','product_price','Action'];
+  displayedColumns:string[]=['check','product_img','product_name','product_price','Action'];
   productarr:Product[]=[];
   deleteproarr:number[]=[];
-  product_img : any[]=[];
+  product_img : string[]=[];
   dataSource: MatTableDataSource<Product>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -31,19 +31,29 @@ export class ProductDisplayComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator=this.paginator;
     this._data.getAllProduct().subscribe(
-      (data:any)=>{
+      (data:Product[])=>{
           console.log(data);
           this.productarr=data;
           this.dataSource.data=this.productarr;
+          console.log(this.dataSource.data);
+          for (let index = 0; index < data.length; index++)
+          {
+            this.product_img[index] = data[index].product_image;
+          }
+          console.log(this.product_img);
       }
     );
 
-    this._data.getAllImage().subscribe(
-      (image : string[])=>{
-        console.log(environment.url + 'public/Images/Product_image/'+image);
-        // this.product_img = environment.url + 'public/Images/Product_image/' + image;
-      }
-    );
+    // this._data.getAllImage().subscribe(
+    //   (ImageData : any[])=>{
+    //     console.log(ImageData);
+    //     for (let index = 0; index < ImageData.length; index++)
+    //     {
+    //       this.product_img[index] = ImageData[index];
+    //       console.log(this.product_img[index]);
+    //     }
+    //   }
+    // );
   }
   applyFilter(filtervalue:string)
   {

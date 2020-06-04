@@ -42,7 +42,17 @@ export class SupplierDisplayComponent implements OnInit {
   }
   onDelete(row)
   {
-    // this._data.deleteSupplier()
+    let x:number = this.supplierarr.indexOf(row);
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
+    {
+      this._data.deleteSupplier(row.user_id).subscribe(
+        (data:any)=>{
+          this.supplierarr.splice(this.supplierarr.indexOf(row),1);
+          this.dataSource.data=this.supplierarr;
+          this._router.navigate(['nav/supplier/']);
+        }
+      );
+    }
   }
   onEdit(row)
   {
