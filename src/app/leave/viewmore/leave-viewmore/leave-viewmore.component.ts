@@ -34,14 +34,14 @@ export class LeaveViewmoreComponent implements OnInit {
         this.leaveStartDate =leaveData[0].leaveStartDate,
         this.leaveEndDate =leaveData[0].leaveEndDate,
         this.comment=leaveData[0].comment,
-        this.status =leaveData[0].status
-        this.fk_worker_id = leaveData[0].fk_worker_id
+        this.status =leaveData[0].status,
+        this.fk_worker_id = leaveData[0].fk_worker_id,
 
 
         this._workerDataService.getImageById(this.fk_worker_id).subscribe(
           (workerImg : any)=>{
             console.log(workerImg[0]);
-            this.worker_img = environment.url + 'public/Images/WorkerImages/' + workerImg[0];
+            this.worker_img = environment.url + 'Images/WorkerImages/' + workerImg[0].worker_image;
           }
         );
       }

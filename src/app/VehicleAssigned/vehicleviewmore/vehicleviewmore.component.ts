@@ -38,9 +38,9 @@ export class VehicleviewmoreComponent implements OnInit {
         this.vehicle_no = vehicleData[0].vehicle_no,
         this.worker_name = vehicleData[0].worker_name,
         this.remark = vehicleData[0].remark,
-        this.worker_image = vehicleData[0].worker_image
-        this.user_name = vehicleData[0].user_name
-        this.worker_id = vehicleData[0].fk_worker_id
+        this.worker_image = vehicleData[0].worker_image,
+        this.user_name = vehicleData[0].user_name,
+        this.worker_id = vehicleData[0].fk_worker_id,
         console.log(this.worker_image);
 
         // this._workerData.getImageById(this.worker_id).subscribe(
