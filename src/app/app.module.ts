@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 
-
 import { MatCardActions, MatCardTitle, MatCardSubtitle, MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
@@ -69,7 +68,6 @@ import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-displ
 import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import 'hammerjs';
 
 
@@ -121,7 +119,6 @@ import 'hammerjs';
     SupplierAddComponent,
     SupplierViewmoreComponent,
     LeaveDisplayComponent,
-    AdminDashboardComponent,
     LeaveViewmoreComponent,
     LeaveEditComponent,
     PastLeavesComponent,
@@ -138,21 +135,20 @@ import 'hammerjs';
     MatSidenavModule,
     MatIconModule,
     MatSortModule,
-    ChartModule,
-    // MatLabel,
     MatGridListModule,
     MatCardModule,
     MatListModule,
     MatInputModule,
     MatTableModule,
 
+    ChartModule,
+    ChartsModule,
     MatPaginatorModule,
     MatCheckboxModule,
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
   ],
   entryComponents: [
     ProductViewMoreComponent,
@@ -166,7 +162,6 @@ import 'hammerjs';
     VehicleviewmoreComponent,
     //VehicleAssignedviewmorecomponent
     CategoryViewmoreComponent,
-    AdminDashboardComponent
      ],
   providers: [],
   bootstrap: [AppComponent]
