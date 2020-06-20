@@ -6,8 +6,10 @@
     <div class="form-groupup">
       <mat-label><b>Email Id</b></mat-label><br>
       <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text">
-      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
+      </mat-error>
     </div><br>
     <div formGroupName="password_group" class="form-group" >
       <mat-label><b>Password</b></mat-label><br>
@@ -16,14 +18,18 @@
       <br>
       <mat-label><b>Confirm Password</b></mat-label><br>
       <input class="form-control" type="password" placeholder="Enter confirm Password" formControlName="user_confirm_password" >
-    <label class="alert alert-danger" *ngIf="adduser.get('password_group').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="adduser.get('password_group').hasError('sarkhanathi')"  >Both password and confirm password should be same.</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <mat-label><b>User Name</b></mat-label><br>
       <input class="form-control" placeholder="Enter Name" formControlName="user_name" type="text">
-      <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('required') && !adduser.get('user_name').pristine" >Name is required</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('required') && !adduser.get('user_name').pristine" >Name is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('minlength') && !adduser.get('user_name').pristine" >Name shoul be > 5</label>
       <label class="alert alert-danger" *ngIf="adduser.get('user_name').hasError('pattern') && !adduser.get('user_name').pristine" > Only Chars</label>
+      </mat-error>
     </div><br>
     <div class="form-group" >
       <mat-label><b>Address</b></mat-label><br>
@@ -32,17 +38,19 @@
     <div class="form-group" >
       <mat-label><b>Mobile No</b></mat-label><br>
       <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
-      <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
+      <mat-error>
+        <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('pattern') " > Only digits</label>
+      </mat-error>
     </div><br>
     <div>
     <mat-label><b>Date Of Birth :</b></mat-label><br>
       <input class="form-control" type="date" formControlName="dob" >
     </div><br>
     <div class="form-group">
-        <button mat-raised-button id="Add Record" type="submit"   color="primary" aria-label="ADD USER">Submit</button>
-        <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent" aria-label="ADD USER" >Back</button>
+      <button mat-raised-button id="Add Record" type="submit"   color="primary" aria-label="ADD USER">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent" aria-label="ADD USER" >Back</button>
     </div>
   </div>
   </form>

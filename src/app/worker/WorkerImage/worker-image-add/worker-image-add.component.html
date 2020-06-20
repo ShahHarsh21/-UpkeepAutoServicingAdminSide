@@ -2,7 +2,7 @@
 <div>
   <form (ngSubmit)="onImageSubmit()" [formGroup]="editWorkerImg">
     <div>
-      <img src="{{workerImg}}" height="200px" width="200px">
+      <img src="http://localhost:3000/Images/WorkerImages/{{workerImg}}" height="200px" width="200px">
     </div>
     <input type="file" alt="Your Photo" formControlName="image" (change)="onChange($event)">
     <div>

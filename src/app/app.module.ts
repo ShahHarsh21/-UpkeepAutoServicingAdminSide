@@ -69,6 +69,18 @@ import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-vi
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
 import 'hammerjs';
+import { CartDisplayComponent } from './Cart/Display/cart-display/cart-display.component';
+import { CartViewmoreComponent } from './Cart/ViewMore/cart-viewmore/cart-viewmore.component';
+import { CartDetailsDisplayComponent } from './CartDetails/Display/cart-details-display/cart-details-display.component';
+import { CartDetailsViewMoreComponent } from './CartDetails/Viewmore/cart-details-view-more/cart-details-view-more.component';
+import { CartDetailsEditComponent } from './CartDetails/Edit/cart-details-edit/cart-details-edit.component';
+import { CartEditComponent } from './Cart/Edit/cart-edit/cart-edit.component';
+import { OrderDisplayComponent } from './Order/Display/order-display/order-display.component';
+import { OrderViewMoreComponent } from './Order/ViewMore/order-view-more/order-view-more.component';
+import { OrderEditComponent } from './Order/Edit/order-edit/order-edit.component';
+import { OrderDetailsDisplayComponent } from './OrderDetails/Display/order-details-display/order-details-display.component';
+import { OrderDetailsEditComponent } from './OrderDetails/Edit/order-details-edit/order-details-edit.component';
+import { OrderDetailsViewMoreComponent } from './OrderDetails/ViewMore/order-details-view-more/order-details-view-more.component';
 
 
 @NgModule({
@@ -122,6 +134,18 @@ import 'hammerjs';
     LeaveViewmoreComponent,
     LeaveEditComponent,
     PastLeavesComponent,
+    CartDisplayComponent,
+    CartViewmoreComponent,
+    CartDetailsDisplayComponent,
+    CartDetailsViewMoreComponent,
+    CartDetailsEditComponent,
+    CartEditComponent,
+    OrderDisplayComponent,
+    OrderViewMoreComponent,
+    OrderEditComponent,
+    OrderDetailsDisplayComponent,
+    OrderDetailsEditComponent,
+    OrderDetailsViewMoreComponent,
   ],
   imports: [
     BrowserModule,

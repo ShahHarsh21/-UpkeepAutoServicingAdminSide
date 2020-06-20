@@ -24,7 +24,7 @@ export class CategoryViewmoreComponent implements OnInit {
     this._productData.getAllProductByCategory(this.cat_id).subscribe(
       (productData : any[])=>{
         this.productArr = productData;
-        console.log(productData[0].product_img);
+        console.log(this.productArr);
       }
     );
   }

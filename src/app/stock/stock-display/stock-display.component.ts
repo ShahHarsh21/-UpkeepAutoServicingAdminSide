@@ -40,15 +40,22 @@ export class StockDisplayComponent implements OnInit {
           this.stockarr=data;
           this.dataSource.data  = this.stockarr;
           console.log(data);
+          for (let index = 0; index < data.length; index++)
+          {
+            this.dataSource.data[index].product_img = environment.url + "Images/Product_image/" + data[index].product_img;
+          }
         }
       );
 
-      this._productData.getAllImage().subscribe(
-        (imageData :any[])=>{
-          // console.log(imageData);
-          this.product_img = imageData;
-        }
-      );
+        // this._productData.getAllImage().subscribe(
+        //   (imageData :any)=>{
+        //     for (let index = 0; index < imageData.length; index++)
+        //     {
+        //       this.product_img[index] = "http://localhost:3000/Images/Product_image/" + imageData[index];
+        //     }
+        //     console.log(this.product_img);
+        //   }
+        // );
   }
   applyFilter(filtervalue:string)
   {
