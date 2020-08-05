@@ -1,6 +1,7 @@
 <div class="container">
   <img src={{ProductImage}}>
-  <mat-list>
+
+  <mat-list class="info">
     <mat-list-item><mat-label class="label"><b>PRODUCT NAME :</b></mat-label>{{product_name |uppercase}}</mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item><mat-label><b>Category Name :</b></mat-label>{{fk_cate_name}}</mat-list-item>
@@ -10,7 +11,6 @@
     <mat-list-item><mat-label><b>Product Price :</b></mat-label>{{product_price | currency:"INR"}}</mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
-  <div class="button">
-    <button mat-raised-button (click)="onClose()" color="primary" >Back</button>
-  </div>
+  <button mat-raised-button (click)="onClose()" color="primary" >Back</button>
+
 </div>
