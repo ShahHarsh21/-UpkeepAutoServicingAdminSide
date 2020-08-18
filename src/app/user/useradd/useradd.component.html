@@ -8,7 +8,7 @@
       <input class="form-control" placeholder="Enter Email" formControlName="email_id" type="text">
       <mat-error>
         <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('required') && !adduser.get('email_id').pristine" >Email is required</label>
-      <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
+        <label class="alert alert-danger" *ngIf="adduser.get('email_id').hasError('email') && !adduser.get('email_id').pristine" >Email is Invalid</label>
       </mat-error>
     </div><br>
     <div formGroupName="password_group" class="form-group" >
@@ -39,7 +39,7 @@
       <mat-label><b>Mobile No</b></mat-label><br>
       <input class="form-control" placeholder="Enter Mobile" formControlName="mobile_no" type="number">
       <mat-error>
-        <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('required') && !adduser.get('mobile_no').pristine" >mobile no is required</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
       <label class="alert alert-danger" *ngIf="adduser.get('mobile_no').hasError('pattern') " > Only digits</label>
       </mat-error>

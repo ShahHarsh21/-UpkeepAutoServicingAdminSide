@@ -8,6 +8,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Order } from '../Order/order';
+import { dashboard } from '../class/dashboard';
+
 
 
 declare var require: any;
@@ -16,6 +18,7 @@ var now = new Date();
 class model {
   constructor(public kind: string, public share: number) { }
 }
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -32,7 +35,12 @@ export class AdminDashboardComponent implements OnInit {
   public DonutData: any[] = [];
   currentYear = now.getFullYear();
   selectedYear: number = this.currentYear;
-  yearArray : number[] = [2018,2019];
+  yearArray : any[] = [
+    {'year' : '2017'},
+    {'year' : '2018'},
+    {'year' : '2019'},
+    {'year' : '2020'},
+  ];
   customerCount: number;
   TodaysCOH: number;
   feedbackCount: number;
@@ -42,9 +50,11 @@ export class AdminDashboardComponent implements OnInit {
   public labelContent(e: any): string {
     return e.category;
   }
-
+  public DataArr : dashboard[];
+  public countArr : number[]=[];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+
 
   constructor(public serobj: DashboardService, private intl: IntlService) {
     this.labelContent = this.labelContent.bind(this);
@@ -57,8 +67,19 @@ export class AdminDashboardComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  ngOnInit() {
+  ngOnInit(): void {
 
+    this.serobj.orderCust('2020-08-02').subscribe(
+      (data:dashboard[])=>{
+        console.log(data)
+        this.DataArr = data;
+        // for(let i=0 ; i < data.length ; i++)
+        // {
+        //   this.countArr = data[i].count;
+        // }
+        console.log(this.DataArr)
+      }
+    );
     this.serobj.getOrder().subscribe(
       (dataTodaysOrderCount: any) => {
         // console.log(dataCustomerCount);
@@ -72,6 +93,11 @@ export class AdminDashboardComponent implements OnInit {
       for (let y = this.startyr; y <= this.currentYear; y++)
       {
         this.yearArray.push(y);
+        this.serobj.orderCust(y).subscribe(
+          (data:any)=>{
+            this.yearArray = data;
+          }
+        )
       }
 
       console.log(this.selectedYear);
@@ -103,6 +129,6 @@ export class AdminDashboardComponent implements OnInit {
       }
     });
     console.log(this.orderData, this.months);
-
   }
+
 }

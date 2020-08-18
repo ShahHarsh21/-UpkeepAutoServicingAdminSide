@@ -81,6 +81,7 @@ import { OrderEditComponent } from './Order/Edit/order-edit/order-edit.component
 import { OrderDetailsDisplayComponent } from './OrderDetails/Display/order-details-display/order-details-display.component';
 import { OrderDetailsEditComponent } from './OrderDetails/Edit/order-details-edit/order-details-edit.component';
 import { OrderDetailsViewMoreComponent } from './OrderDetails/ViewMore/order-details-view-more/order-details-view-more.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -146,6 +147,7 @@ import { OrderDetailsViewMoreComponent } from './OrderDetails/ViewMore/order-det
     OrderDetailsDisplayComponent,
     OrderDetailsEditComponent,
     OrderDetailsViewMoreComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,18 +3,22 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar><i class="material-icons">home_work</i>Menu</mat-toolbar>
+    <mat-toolbar>
+      <div class="imgcontainer">
+        <img  src="http://localhost:3000/Images/Logo/Logo.jpeg" alt="Avatar" class="avatar" >
+       </div>
+    </mat-toolbar>
+    <hr>
     <mat-nav-list>
-      <a mat-list-item routerLink="/nav/home">Home</a>
-      <a mat-list-item routerLink="/nav/service"><i class="material-icons">supervised_user_circle</i>Service</a>
-      <a mat-list-item routerLink="/nav/user"><i class="material-icons">supervised_user_circle</i>User</a>
-      <a mat-list-item routerLink="/nav/worker"><i class="material-icons">supervised_user_circle</i>Worker</a>
-      <a mat-list-item routerLink="/nav/vehicleAssigned"><i class="material-icons">bookmark_border</i>vehice-assigned</a>
-      <a mat-list-item routerLink="/nav/product"><i class="material-icons">control_point_duplicate</i>Product</a>
+      <a mat-list-item routerLink="/nav/service">Service</a>
+      <a mat-list-item routerLink="/nav/user">User</a>
+      <a mat-list-item routerLink="/nav/worker">Worker</a>
+      <a mat-list-item routerLink="/nav/vehicleAssigned">vehice-assigned</a>
+      <a mat-list-item routerLink="/nav/product">Product</a>
       <a mat-list-item routerLink="/nav/Order">Order</a>
-      <a mat-list-item routerLink="/nav/category"><i class="material-icons">category</i>Category</a>
-      <a mat-list-item routerLink="/nav/stock"><i class="material-icons">local_pharmacy</i>Stock</a>
-      <a mat-list-item routerLink="/nav/order_details"><i class="material-icons">bookmark_border</i>Order-Details</a>
+      <a mat-list-item routerLink="/nav/category">Category</a>
+      <a mat-list-item routerLink="/nav/stock">Stock</a>
+      <!-- <a mat-list-item routerLink="/nav/order_details">Order-Details</a> -->
       <a mat-list-item routerLink="/nav/supplier">Supplier Details</a>
       <a mat-list-item routerLink="/nav/leave">Leave Approval</a>
     </mat-nav-list>

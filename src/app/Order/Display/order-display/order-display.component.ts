@@ -64,7 +64,7 @@ export class OrderDisplayComponent implements OnInit {
 
   onViewMore(row)
   {
-    this._router.navigate(['/nav/OrderDetails/']);
+    this._router.navigate(['/nav/OrderDetailsViewMore/'+row.order_id]);
   }
 
   onImageAdd(row)

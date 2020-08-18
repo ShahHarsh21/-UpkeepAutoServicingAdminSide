@@ -25,4 +25,8 @@ export class DashboardService {
     return this._http.get(this.orderurl+selectedyear);
   }
 
+  orderCust(order_date)
+  {
+    return this._http.get(environment.url+'Dashboard/'+order_date);
+  }
 }

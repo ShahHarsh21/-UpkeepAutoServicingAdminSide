@@ -15,10 +15,10 @@ export class OrderDetailsdataService {
   {
     return this._http.get(this.url);
   }
-  getAllOrder_DetailsById()
+  getAllOrder_DetailsById(order_id)
   {
     let x = new HttpHeaders().set(environment.header,environment.value);
-    return this._http.get(this.url);
+    return this._http.get(environment.url+'UserDetailsSecondRouter/'+order_id);
   }
   deleteOrder_Details(order_details_id: number)
    {

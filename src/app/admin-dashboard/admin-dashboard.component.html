@@ -8,8 +8,7 @@
           <mat-card-title>
             Select Year
             <select (change)="onYearChange()" [(ngModel)]="selectedYear">
-
-              <option [ngValue]="item" *ngFor="let item of yearArray">{{item}}</option>
+              <option [ngValue]="item" *ngFor="let item of DataArr">{{item.count}}</option>
             </select>
           </mat-card-title>
         </mat-card-header>

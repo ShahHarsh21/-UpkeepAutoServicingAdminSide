@@ -15,6 +15,8 @@ import { WorkerService } from 'src/app/worker/worker.service';
 export class LeaveDisplayComponent implements OnInit {
 
   displayedColumns:string[]=['check','worker_name','LeaveStartDate','LeaveEndDate','Leave_type','status','Action'];
+  leavearr:Leave[]=[];
+  deleteleavearr:number[]=[];
   dataSource: MatTableDataSource<Leave>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -32,26 +34,42 @@ export class LeaveDisplayComponent implements OnInit {
     );
   }
 
-  applyFilter(value)
+  applyFilter(filtervalue:string)
   {
-
+    this.dataSource.filter = filtervalue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 
-  oncheckboxchange(row)
+  oncheckboxchange(row:Leave)
   {
-
+    if(this,this.leavearr.find(x => x == row.leave_id))
+    {
+        this.deleteleavearr.splice(this.deleteleavearr.indexOf(row.leave_id),1);
+    }
+    else{
+      this.deleteleavearr.push(row.leave_id);
+    }
   }
-
   onAddClick()
   {
-
+      this._routs.navigate(['/nav/leaveAdd']);
   }
-
   onDelete(row)
   {
-
+    let x:number = this.leavearr.indexOf(row);
+    if(confirm("ARE YOU SURE YOU WANT TO DELETE ?"))
+    {
+      this._leaveService.deleteleave(row.user_id).subscribe(
+        (data:any)=>{
+          this.leavearr.splice(this.leavearr.indexOf(row),1);
+          this.dataSource.data=this.leavearr;
+          this._routs.navigate(['nav/leave/']);
+        }
+      );
+    }
   }
-
   onEdit(row)
   {
     this._routs.navigate(['/nav/leaveEdit/'+row.leave_id]);
@@ -70,6 +88,18 @@ export class LeaveDisplayComponent implements OnInit {
 
   onDeleteAll()
   {
-
+    if(confirm('Are You Sure To Delete Multiple User?')){
+      this._leaveService.DeleteAllLeave(this.deleteleavearr).subscribe(
+        (data:Leave)=>{
+          for(let i=0;i<this.deleteleavearr.length;i++)
+          {
+                let x=this.leavearr.find(x => x.leave_id == this.deleteleavearr[i]);
+                this.leavearr.splice(this.leavearr.indexOf(x),1);
+          }
+          this.dataSource.data=this.leavearr;
+          this.dataSource.paginator=this.paginator;
+          this.dataSource.sort=this.sort;
+     });
   }
+}
 }

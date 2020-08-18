@@ -1,1 +1,36 @@
-<p>order-details-view-more works!</p>
+<div class="container">
+  <mat-list>
+    <mat-list-item><mat-label class="label"><b>USER NAME :</b></mat-label>{{user_name}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">mail</i><mat-label><b>Email-ID :</b></mat-label>{{email_id}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">mobile_screen_share</i><mat-label><b>MOBILE NO :</b></mat-label>{{mobile_no}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">library_books</i><mat-label><b>ADDRESS :</b></mat-label>{{address | uppercase}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item><i class="material-icons">date_range</i><mat-label><b>DATE OF BIRTH :</b></mat-label>{{date_of_birth | uppercase}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <mat-label><b>Your Registered Vehicle in Our Company :</b></mat-label>
+      <table>
+          <tr *ngFor="let item of VehiclesArr">
+            <td><b>Vehicle No :</b></td>
+            <td>{{item.vehicle_no}}</td>
+
+            &nbsp;&nbsp;
+            <td><b>Status :</b></td>
+            <td>{{item.status}}</td>
+
+          </tr>
+      </table>
+      <mat-label></mat-label>
+      <mat-divider></mat-divider>
+      <!-- <mat-list-item><mat-label><b>Vehicle Register No :</b></mat-label>{{vehicle_no | uppercase}}</mat-list-item> -->
+      <!-- <mat-divider></mat-divider> -->
+    </mat-list>
+    <mat-divider></mat-divider>
+  </mat-list>
+  <div class="button">
+    <button mat-raised-button (click)="onClose()" color="primary" >Back</button>
+  </div>
+</div>
