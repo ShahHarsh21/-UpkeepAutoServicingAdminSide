@@ -25,7 +25,7 @@ export class ProductAddComponent implements OnInit {
       fk_cat_id:new FormControl(null),
       fk_cat_name:new FormControl(),
       product_price:new FormControl(null),
-      product_image:new FormControl(null),
+      // product_image:new FormControl(null),
       fk_color_name:new FormControl(null),
       fk_color_id:new FormControl(null)
 
@@ -41,17 +41,18 @@ export class ProductAddComponent implements OnInit {
    {
       let productobj = {
       product_id: this.addproduct.value.email_id,
-      product_name: this.addproduct.value.password_group.user_password,
-      product_description: this.addproduct.value.user_type,
-      fk_cat_id: this.addproduct.value.user_name,
+      product_name: this.addproduct.value.product_name,
+      product_description: this.addproduct.value.product_description,
+      fk_cat_id: this.addproduct.value.fk_cat_id,
       fk_cat_name: this.addproduct.value.address,
-      product_price: this.addproduct.value.mobile_no,
-      product_image:this.addproduct.value.dob,
+      product_price: this.addproduct.value.product_price,
+      // product_image:this.addproduct.value.dob,
       fk_color_id:this.addproduct.value.fk_color_id,
-      fk_color_name:this.addproduct.value.fk_color_name
+      fk_color_name:this.addproduct.value.fk_color_name,
       };
          this._data.addProduct(productobj).subscribe(
              (data:any)=>{
+               console.log(data)
               this._router.navigate(['nav/product/']);
            }
     );

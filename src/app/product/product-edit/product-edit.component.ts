@@ -64,17 +64,17 @@ export class ProductEditComponent implements OnInit {
   {
     console.log(this.editProduct.value);
     // console.log(this.editProduct.value.fk_color_id);
-    // let productObj={
-    //   product_id : this.editProduct.value.product_id,
-    //   product_name : this.editProduct.value.product_name,
-    //   product_description:this.editProduct.value.product_description,
-    //   fk_cat_id : this.editProduct.value.fk_cat_id,
-    //   product_price : this.editProduct.value.product_price,
-    //   product_image : this.editProduct.value.product_image,
-    //   fk_color_id : this.editProduct.value.fk_color_id,
-    // };
+    let productObj={
+      product_id : this.editProduct.value.product_id,
+      product_name : this.editProduct.value.product_name,
+      product_description:this.editProduct.value.product_description,
+      fk_cat_id : this.editProduct.value.fk_cat_id,
+      product_price : this.editProduct.value.product_price,
+      product_image : this.editProduct.value.product_image,
+      fk_color_id : this.editProduct.value.fk_color_id,
+    };
 
-    this._productdata.updateProduct(this.editProduct.value.product_id,this.editProduct.value).subscribe(
+    this._productdata.updateProduct(this.editProduct.value.product_id,productObj).subscribe(
       (data)=>{
         console.log(data);
         this._router.navigate(['/nav/product/']);
