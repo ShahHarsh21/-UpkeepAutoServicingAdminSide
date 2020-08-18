@@ -31,18 +31,10 @@
       <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
     </div><br>
 
-    <div>
-      <!-- <div class="form-group" >
-        <mat-label><b>Color</b></mat-label><br>
-        <select class="form-control" formControlName="fk_color_name" placeholder="Select Product Color" type="dropbox" >
-
-        </select>
-      </div><br> -->
     <div class="form-group">
       <button mat-raised-button id="Add Record" type="submit"   color="primary" aria-label="ADD PRODUCT">Submit</button>
       <button mat-raised-button id="Add Record" (click)="onCancle()" color="accent" aria-label="ADD PRODUCT" >Back</button>
     </div>
-</div>
 </div>
 </form>
 </div>

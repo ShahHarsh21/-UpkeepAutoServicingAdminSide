@@ -21,8 +21,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
-import { routingArr } from './app.routing';
-import { ChartModule, ChartsModule } from '@progress/kendo-angular-charts';
+import { routingArr } from './app.routing';0
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginDisplayComponent } from './login/login-display/login-display.component';
@@ -165,8 +164,6 @@ import { OrderDetailsViewMoreComponent } from './OrderDetails/ViewMore/order-det
     MatInputModule,
     MatTableModule,
 
-    ChartModule,
-    ChartsModule,
     MatPaginatorModule,
     MatCheckboxModule,
     MatFormFieldModule,

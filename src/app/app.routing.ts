@@ -53,7 +53,6 @@ import { LeaveDisplayComponent } from './leave/Display/leave-display/leave-displ
 import { LeaveViewmoreComponent } from './leave/viewmore/leave-viewmore/leave-viewmore.component';
 import { LeaveEditComponent } from './leave/Edit/leave-edit/leave-edit.component';
 import { PastLeavesComponent } from './leave/Display/past/past-leaves/past-leaves.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CartDisplayComponent } from './Cart/Display/cart-display/cart-display.component';
 import { OrderDisplayComponent } from './Order/Display/order-display/order-display.component';
 import { OrderViewMoreComponent } from './Order/ViewMore/order-view-more/order-view-more.component';
@@ -71,8 +70,7 @@ const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
     {
     path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
-        {path:'',component:AdminDashboardComponent},
-        {path:'home',component:AdminDashboardComponent},
+        {path:'',component:UserDisplayComponent},
         {path:'signup',component:SignupdisplayComponent},
 
         {path:'user',component:UserDisplayComponent},

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaveDataService } from 'src/app/leave/leave-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-past-leaves',
@@ -23,7 +23,7 @@ export class PastLeavesComponent implements OnInit {
   public address: string;
   public worker_image: string;
   public joining_date: string;
-  constructor(private _leaveData : LeaveDataService,private _act_routs : ActivatedRoute) { }
+  constructor(private _leaveData : LeaveDataService,private _act_routs : ActivatedRoute,private _router : Router) { }
 
   ngOnInit() {
 
@@ -51,4 +51,8 @@ export class PastLeavesComponent implements OnInit {
     );
   }
 
+  onClickBAck()
+  {
+    this._router.navigate(['/nav/leave/'])
+  }
 }
